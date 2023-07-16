@@ -1,24 +1,22 @@
-import '../assets/styles/Card.css'
+import '../assets/styles/Card.scss'
+import gameimage from '../assets/images/gameimage.jpg';
 
 
 const GameCard = (props) =>{
     return(
         <div className="Game-card" onClick={handleClick}>
             <div className ="Game-image-card">
-                {props.Img==null ? <img src={profileimg} alt=""/> : <img src={props.Img} alt=""/>}
+                {props.Img==null ? <img src={gameimage} alt=""/> : <img src={props.Img} alt=""/>}
             </div>
             <div className ="Game-inside-text">
                 <h2 className='fonttextsize'>{props.Title}</h2>
-                <h2 className='fonttextsize2'>{props.artist_name}</h2>
+                <h2 className='fonttextsize'>{props.Cost}</h2>
             </div>
         </div>
     )
     function handleClick()
     {
-        if(props.is_Artist==false)
-            window.location.href = "/ShowUserProfile/"+props.Id;
-        else
-            window.location.href = "/ShowArtist/"+props.Id;
+        window.location.href = "/randomgame";
     }
 }
-export default ProfileCard;
+export default GameCard;

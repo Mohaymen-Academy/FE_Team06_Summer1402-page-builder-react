@@ -1,0 +1,39 @@
+.Game-card{
+    position:relative;
+    border-radius: 8px;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: column ;
+    transition: 0.1s;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin: 15px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    .Game-image-card{
+        margin-bottom: 10px;
+        img{
+            width: 250px;
+            height: 250px;
+            margin-top: 20px;
+            margin-left: 20px;
+            border-radius: 10%;
+        }
+    }
+    .Game-inside-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .fonttextsize{
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+}
