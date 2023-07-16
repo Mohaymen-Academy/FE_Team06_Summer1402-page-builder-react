@@ -1,4 +1,53 @@
 .header{
+    margin-top: 0;
     display: flex;
     background-color: #1d1c1c;
+    justify-content: space-between;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
+.LeftHeader{
+    color:white;
+    display: flex;
+}
+.headerText{
+    padding-left: 10px;
+    padding-right: 10px;
+    font: normal;
+}
+
+.RightHeader{
+    align-content: center;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+button{
+    background-color: #1d1c1c;
+    color: white;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+button:hover{
+    background-color: #193764;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+line{
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border: solid  10px white ;
+}
+.vl{
+    margin-top: 10px;
+    padding-top: 25px;
+    border-left: 1px solid white;
+    height: 10px;
 }
