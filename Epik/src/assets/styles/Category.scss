@@ -3,11 +3,35 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 50px;
-    .Category-cards{
+    .Category-title{
+        padding-left: 30px;
+        padding-right: 30px;
         display: flex;
         flex-direction: row;
-        width: 100%;
-        height: 100%;
+        justify-content: space-between;
+        .Category-buttons{
+            padding-top: 30px;
+        }        
     }
+    .Category-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: transform 0.3s ease-in-out;
+        .slide-left {
+            transform: translateX(-100%);
+          }
+          
+          .slide-right {
+            transform: translateX(100%);
+          }
+          
+          .Category-cards.slide-left,
+          .Category-cards.slide-right {
+            transform: translateX(0%);
+          }
+      }
 }
+
