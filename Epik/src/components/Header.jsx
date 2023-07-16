@@ -1,11 +1,12 @@
 import React from 'react';
-// import {epicgame} from '../assets/images/epicgame.png';
+import epicgames from '../assets/images/epicgames.jpeg';
+import header from '../assets/styles/header.css'
 const Header = () => {
     return (
         <div 
-        class='header'>
+        className='header'>
             header
-            {/* <img src={epicgame} alt="" />             */}
+            <img src={epicgames} alt="" />             
         </div>
     );
 }
