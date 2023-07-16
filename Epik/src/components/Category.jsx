@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from "./Card.jsx";
 import gameimage from '../assets/images/gameimage.jpg';
 import '../assets/styles/Category.scss'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { debounce } from 'lodash';
 
 function Category() {
   const [firstGameIndex, setFirstGameIndex] = useState(0);
-  const [screenSize, setScreenSize] = useState("large");
   
   const games = [
     {
@@ -58,31 +56,13 @@ function Category() {
 
   // Define the number of games to show for different screen sizes
   const gamesToShow = {
-    small: 2,
+    small: 3,
     medium: 4,
     large: 5
   };
 
-  // Define a debounced function to update the screen size and displayed games
-  const handleResize = debounce(() => {
-    const width = window.innerWidth;
-    if (width < 768) {
-      setScreenSize("small");
-      setFirstGameIndex(0);
-    } else if (width < 992) {
-      setScreenSize("medium");
-      setFirstGameIndex(Math.min(firstGameIndex, games.length - gamesToShow.medium));
-    } else {
-      setScreenSize("large");
-      setFirstGameIndex(Math.min(firstGameIndex, games.length - gamesToShow.large));
-    }
-  }, 200);
-
-  // Call the handleResize function whenever the window is resized
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  });
+  // Get the current screen size
+  const screenSize = window.innerWidth < 768 ? "small" : window.innerWidth < 992 ? "medium" : "large";
 
   const handleNextClick = () => {
     setFirstGameIndex((prevIndex) => Math.min(prevIndex + gamesToShow[screenSize], games.length - gamesToShow[screenSize]));
