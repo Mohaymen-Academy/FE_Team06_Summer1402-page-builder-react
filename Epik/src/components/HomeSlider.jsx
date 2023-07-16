@@ -1,14 +1,10 @@
 import React from 'react';
-import homeSlide from '../assets/images/homesliderbigimage.jpg';
-import '../assets/styles/homeslider.css';
+import slideimage from '../assets/images/homesliderbigimage.jpg';
+import HomeSliderBigPicture from './HomeSliderBigPicture';
 const HomeSlider = () => {
     return (
         <div>
-            <div
-                className={'BigImage'}
-                style={{ background: `url(${homeSlide})`}}
-                >
-            </div>  
+            <HomeSliderBigPicture image={slideimage} desc={'This is very good game every one should buy this'} isFree={true} />
         </div>
     );
 }

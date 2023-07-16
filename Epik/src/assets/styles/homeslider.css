@@ -1,11 +1,27 @@
 .BigImage{
+    color: white;
+    position: relative;
     background-position: 0% 0%;
     background-size: 100% 100%;
-    width: 500px;
-    height: 300px;
-    /* border: 2px solid black; */
-    /* padding: 25px; */
-    background-size:     cover;                      /* <------ */
+    width: 600px;
+    height: 400px;
+    background-size:     cover;                      
     background-repeat:   no-repeat;
-    /* background-position: center center; */
+}
+.playButton{
+    color: black;
+    background-color: white;
+    border: solid 2px ;
+    padding :10px;
+    /* border-color: #101312; */
+    border-radius: 5px;
+}
+.whishButton{
+    color: white;
+    background: none;
+}
+.container{
+    position: absolute;
+    bottom: 0; 
+    width:30% ;
 }
