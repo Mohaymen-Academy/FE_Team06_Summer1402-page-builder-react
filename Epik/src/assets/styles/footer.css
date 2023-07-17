@@ -4,10 +4,29 @@
 /* Solid border */
 hr.solid {
     border-top: 1px solid #bbb;
-    padding-left: 10px;
-    padding-right: 10px;
+    opacity: 0.3;
+    width: 94%;
 }
 .footer{
     background-color: #1d1c1c;
     color: white;
+}
+td{
+    padding: 10px;
+}
+.tablecontent{
+    /* text-align: -webkit-left; */
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.discription{
+    padding: 15px;
+    padding-bottom: 40px;
+    font-size: 10px;
+}
+a:hover{
+    color: #244285;
+}
+.links{
+    padding: 15px;
 }
