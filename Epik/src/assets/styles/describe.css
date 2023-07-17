@@ -33,7 +33,15 @@
     padding-left: 106px;
     padding-top:50px ;
     border-radius: 10px;
+    /* cursor: pointer; */
+}
+.imageclass:hover {
+    box-shadow: 1px 1px 1px 1px #f6f9fc ;
+    /* border-color: antiquewhite; */
+    /* width: 210px;
+    height: 110px; */
 }
 .title{
     position: absolute;
+    cursor: pointer;
 }

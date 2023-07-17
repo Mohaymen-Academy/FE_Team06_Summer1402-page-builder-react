@@ -11,7 +11,7 @@ const Describe = (props) => {
             <div className='categories'>
                 {/* <div className=""> */}
                 {categories.map((cat,index) =>
-                    <DesCard key={index} title={cat.title} image={cat.image} />
+                    <DesCard key={index} title={cat.title} image={cat.image}  />
                 )}
                 {/* </div> */}
             </div>
