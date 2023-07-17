@@ -4,9 +4,14 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 export default function HomeSliderBigPicture({ image, desc, isFree }) {
     return (
         <div>
-            <div
-                className={'BigImage'}
-                style={{ background: `url(${image})` }}>
+        <div
+            className='BigImage'
+            style={{ 
+                backgroundImage: `url(${image})`,
+                backgroundPosition: 'center center',
+                backgroundSize: '800px 500px'
+            }}
+        >
                 <div
                     className='container'>
                     {

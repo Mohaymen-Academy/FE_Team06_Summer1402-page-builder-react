@@ -1,12 +1,11 @@
-.BigImage{
+.BigImage {
     color: white;
     position: relative;
-    background-position: 0% 0%;
-    background-size: 100% 100%;
-    width: 600px;
+    background-position: center center;
+    width: 800px;
     height: 94.5%;
-    background-size:     cover;                      
-    background-repeat:   no-repeat;
+    background-size: 600px 94.5%;
+    background-repeat: no-repeat;
     border-radius: 10px;
     margin-top: 15px;
 }

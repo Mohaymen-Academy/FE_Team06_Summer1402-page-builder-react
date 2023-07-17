@@ -85,7 +85,7 @@ function Category(props) {
   const gamesToShow = {
     small: 3,
     medium: 4,
-    large: 4
+    large: 5
   };
 
   // Get the current screen size

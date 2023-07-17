@@ -1,9 +1,9 @@
-import homeslide1 from './homslide1.jpg'
-import homeslide2 from './homslide2.jpg'
-import homeslide3 from './homslide3.jpg'
-import homeslide4 from './homslide4.jpg'
-import homeslide5 from './homslide5.jpg'
-import homeslide6 from './homslide6.jpg'
+import homeslide1 from './1.jpg'
+import homeslide2 from './2.jpg'
+import homeslide3 from './3.jpg'
+import homeslide4 from './4.jpg'
+import homeslide5 from './5.jpg'
+import homeslide6 from './6.jpg'
 export {
     homeslide1,
     homeslide2,
