@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../assets/styles/CategoryCard.scss'
 import { makeStyles } from "@material-ui/core/styles";
 
-const CategoryCard = (props) =>{
+const Describe = (props) =>{
     return(
         <div className="category-describtion">
             <div className="imagepart">
@@ -15,4 +15,4 @@ const CategoryCard = (props) =>{
 
     )
 }
-export default CategoryCard;
+export default Describe;
