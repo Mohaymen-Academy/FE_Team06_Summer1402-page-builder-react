@@ -6,7 +6,11 @@ function App() {
     <>
     <Header/>
     <HomeSlider/>
-    <Category/>
+    <Category Title = "Recent Games"/>
+    <Category Title = "Most Played Games"/>
+    <Category Title = "Populare Games"/>
+
+
     <Footer/>
     </>
   )

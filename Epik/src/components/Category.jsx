@@ -4,7 +4,38 @@ import gameimage from '../assets/images/gameimage.jpg';
 import '../assets/styles/Category.scss'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+<<<<<<< HEAD
 function Category() {
+=======
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    width: '220px',
+    height: '50px',
+    color: '#FFFF',
+    marginTop: '20px',
+    "&.MuiButton-root": {
+      // border: "2px black solid"
+    },
+    "&.MuiButton-text": {
+      color: "grey"
+    },
+    "&.MuiButton-contained": {
+      color: "#FFFF",
+      backgroundColor: "#343333",
+    },
+    "&.MuiButton-contained:hover": {
+      color: "white",
+      backgroundColor: "#343333",
+      borderColor: '#FFFF',
+      border: "1px white solid"
+    },
+  }
+}));
+function Category(props) {
+  const classes = useStyles();
+>>>>>>> 6ab340d3d18140a346041abd4cd7cd52997dcb08
   const [firstGameIndex, setFirstGameIndex] = useState(0);
   
   const games = [
@@ -80,10 +111,10 @@ function Category() {
   return (
     <div className="Category">
       <div className="Category-title">
-        <h1>Category</h1>
+        <h1>{props.Title}</h1>
         <div className="Category-buttons">
-          <ArrowBackIosNewIcon onClick={handlePrevClick} disabled={firstGameIndex === 0}/>
-          <ArrowForwardIosIcon onClick={handleNextClick} disabled={firstGameIndex + gamesToShow[screenSize] >= games.length} />
+          <ArrowBackIosNewIcon className={classes.button} onClick={handlePrevClick} disabled={firstGameIndex === 0}/>
+          <ArrowForwardIosIcon className={classes.button} onClick={handleNextClick} disabled={firstGameIndex + gamesToShow[screenSize] >= games.length} />
         </div>
       </div>
 
