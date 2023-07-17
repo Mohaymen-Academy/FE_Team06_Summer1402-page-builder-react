@@ -7,6 +7,7 @@
     height: 400px;
     background-size:     cover;                      
     background-repeat:   no-repeat;
+    border-radius: 10px;
 }
 .playButton{
     color: black;
@@ -19,9 +20,15 @@
 .whishButton{
     color: white;
     background: none;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
 }
 .container{
     position: absolute;
     bottom: 0; 
-    width:30% ;
+    width:40% ;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }

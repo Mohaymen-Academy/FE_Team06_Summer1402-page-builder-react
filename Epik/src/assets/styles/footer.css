@@ -1,6 +1,6 @@
-.Icons{
+/* .Icons{
 
-}
+} */
 /* Solid border */
 hr.solid {
     border-top: 1px solid #bbb;
@@ -9,4 +9,5 @@ hr.solid {
 }
 .footer{
     background-color: #1d1c1c;
+    color: white;
 }

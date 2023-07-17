@@ -1,10 +1,18 @@
 import React from 'react';
 import slideimage from '../assets/images/homesliderbigimage.jpg';
 import HomeSliderBigPicture from './HomeSliderBigPicture';
+import CardContainer from './CardContainer';
 const HomeSlider = () => {
     return (
-        <div>
-            <HomeSliderBigPicture image={slideimage} desc={'This is very good game every one should buy this'} isFree={true} />
+        <div
+        style={{
+        display:'flex'
+        ,justifyContent:'center'}}>
+            <HomeSliderBigPicture 
+            image={slideimage} 
+            desc={'This is very good game every one should buy this'} 
+            isFree={true} />
+            <CardContainer/>
         </div>
     );
 }

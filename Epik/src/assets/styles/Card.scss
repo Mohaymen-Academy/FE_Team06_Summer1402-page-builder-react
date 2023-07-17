@@ -1,11 +1,12 @@
 .card{
     position:relative;
     border-radius: 8px;
-    width: 250px;
-    height: 350px;
+    width: 150px;
+    height: 50px;
     background-color: rgb(24, 24, 24);
     display: flex;
-    flex-direction: column ;
+    justify-content: space-between;
+    flex-direction: row ;
     transition: 0.1s;
     cursor: pointer;
     margin-bottom: 15px;
@@ -22,10 +23,10 @@
         align-items: center;
 
         img{
-            width: 200px;
-            height: 200px;
-            margin-top: 20px;
-            // margin-left: 20px;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 5px;
             border-radius: 8px;
         }
     }
@@ -35,9 +36,10 @@
         justify-content: center;
         align-items: center;
         .fonttextsize{
-            font-size: 20px;
+            font-size: 13px;
             font-weight: bold;
             color: #fff;
         }
+        padding-right: 5px;
     }
 }
