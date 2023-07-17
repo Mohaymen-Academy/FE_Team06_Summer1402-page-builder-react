@@ -25,7 +25,7 @@
 .RightHeader{
     padding-left: 15px;
     padding-right: 15px;
-    align-content: center;
+    /* align-content: center; */
     display: flex;
     flex-wrap: wrap;
 }

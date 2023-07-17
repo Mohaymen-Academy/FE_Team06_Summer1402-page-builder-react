@@ -13,7 +13,8 @@ export default function HomeSliderBigPicture({ image, desc, isFree }) {
             }}
         >
                 <div
-                    className='container'>
+                    className='container'
+                    >
                     {
                         isFree ?
                             <h5>

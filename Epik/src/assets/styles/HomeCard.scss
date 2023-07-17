@@ -8,7 +8,6 @@
     flex-direction: row ;
     transition: 0.1s;
     cursor: pointer;
-    animation: mymove 5s infinite;
     // margin-bottom: 15px;
     margin: 15px;
     position: relative;
@@ -45,12 +44,11 @@
         }
     }
 }
-.animation-paused {
+.Game-card.animationstart {
     // animation-fill-mode: forwards;
-    animation-play-state: paused;
-    background-color: rgb(24,24,24) ;
+    animation: mymove 5s infinite;
+    // background-color: rgb(24,24,24) ;
 }
-
 @keyframes mymove {
     from {
       background-color: rgb(24,24,24);

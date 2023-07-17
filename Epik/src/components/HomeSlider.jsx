@@ -6,11 +6,10 @@ import {games} from '../Data/games.js'
 
 const HomeSlider = () => {
     const [choosenCard, setchoosenCard] = useState(0);
-    
-    
+
     useEffect(() => {
       const intervalId = setInterval(() => {
-      setchoosenCard(prevCounter => (prevCounter + 1)%games.length);
+      setchoosenCard(prevCounter => (prevCounter+1)%games.length);
       }, 5000);
       return () => clearInterval(intervalId);
     }, []); 
