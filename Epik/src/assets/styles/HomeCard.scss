@@ -48,7 +48,7 @@
 .animation-paused {
     // animation-fill-mode: forwards;
     animation-play-state: paused;
-    background-color: rgb(24,24,24);
+    background-color: rgb(24,24,24) !important;
 }
 
 @keyframes mymove {
