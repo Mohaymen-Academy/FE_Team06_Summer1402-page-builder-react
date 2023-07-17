@@ -53,16 +53,6 @@ function Category(props) {
   // Get the current screen size
   const screenSize = window.innerWidth < 768 ? "small" : window.innerWidth < 992 ? "medium" : "large";
 
-  const handleNextClick = () => {
-    setFirstGameIndex((prevIndex) => Math.min(prevIndex + gamesToShow[screenSize], games.length - gamesToShow[screenSize]));
-    document.querySelector(".Category-cards").classList.add("slide-left");
-  };
-
-  const handlePrevClick = () => {
-    setFirstGameIndex((prevIndex) => Math.max(prevIndex - gamesToShow[screenSize], 0));
-    document.querySelector(".Category-cards").classList.add("slide-right");
-  };
-
   // Get the games to display based on the current screen size
   const displayedGames = games.slice(firstGameIndex, firstGameIndex + gamesToShow[screenSize]);
 
@@ -71,8 +61,7 @@ function Category(props) {
       <div className="Category-title">
         <h1>{props.Title}</h1>
         <div className="Category-buttons">
-          <ArrowBackIosNewIcon className={classes.button} onClick={handlePrevClick} disabled={firstGameIndex === 0}/>
-          <ArrowForwardIosIcon className={classes.button} onClick={handleNextClick} disabled={firstGameIndex + gamesToShow[screenSize] >= games.length} />
+          <h5 onClick={handleClick} style={{color:"White", cursor:"pointer" , textDecoration:"underline"}}>View All</h5>
         </div>
       </div>
 
@@ -83,6 +72,11 @@ function Category(props) {
       </div>
     </div>
   );
+  function handleClick()
+  {
+      window.location.href = "/";
+
+  }
 }
 
 export default Category;
