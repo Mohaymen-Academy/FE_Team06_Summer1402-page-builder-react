@@ -17,6 +17,7 @@ const GameCard = (props) =>{
     function handleClick()
     {
         window.location.href = "/randomgame";
+
     }
 }
 export default GameCard;

@@ -10,7 +10,6 @@ function App() {
     <Category Title = "Most Played Games"/>
     <Category Title = "Populare Games"/>
 
-
     <Footer/>
     </>
   )

@@ -6,9 +6,6 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 function CardContainer({games,choosenCard}) {
-
-
-
   return (
       <div className="Container-cards">
         {games.map((game) => (

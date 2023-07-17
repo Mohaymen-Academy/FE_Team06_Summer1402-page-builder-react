@@ -11,7 +11,8 @@
     margin-bottom: 15px;
     margin: 15px;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    // transition: all 0.3s ease-in-out;
+    animation: cardcarousel 1s inherit alternate linear;
     &:hover{
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
@@ -41,3 +42,12 @@
         }
     }
 }
+@keyframes cardcarousel {
+    from{
+      transform: translateX(0);
+    }
+    to{
+        transform: translateX(calc(-100% + 300px));
+  
+    }
+  }
