@@ -4,9 +4,6 @@ import gameimage from '../assets/images/gameimage.jpg';
 import '../assets/styles/Category.scss'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-<<<<<<< HEAD
-function Category() {
-=======
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Category(props) {
   const classes = useStyles();
->>>>>>> 6ab340d3d18140a346041abd4cd7cd52997dcb08
   const [firstGameIndex, setFirstGameIndex] = useState(0);
   
   const games = [

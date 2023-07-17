@@ -57,7 +57,8 @@ const HomeSlider = () => {
         <div
         style={{
         display:'flex'
-        ,justifyContent:'center'}}>
+        ,justifyContent:'center',
+        alignContent:'center'}}>
             <HomeSliderBigPicture 
             image={games[choosenCard].image} 
             desc={'This is very good game every one should buy this'} 

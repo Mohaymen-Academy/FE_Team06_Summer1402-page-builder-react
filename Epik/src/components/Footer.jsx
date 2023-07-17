@@ -12,30 +12,30 @@ export default function Footer() {
                         <th>Resources</th>
                         <th></th>
                         <th></th>
-                        <th>Made by Epic</th>
+                        <th>Made by EpiK</th>
                         <th></th>
                     </tr>
                     <tr>
-                        <td>kwjehroweiur</td>
-                        <td>iwyerouoit24</td>
-                        <td>wl;erkwpuort</td>
-                        <td>,c.mbptri45u</td>
-                        <td>poqwirotijn4</td>
+                        <td>Distribute on Epik Games</td>
+                        <td>Careers</td>
+                        <td>Company</td>
+                        <td>Fan Art Policy</td>
+                        {/* <td>poqwirotijn4</td> */}
                     </tr>
                     <tr>
-                        <td>kwjehroweiur</td>
-                        <td>iwyerouoit24</td>
-                        <td>wl;erkwpuort</td>
-                        <td>,c.mbptri45u</td>
-                        <td>poqwirotijn4</td>
+                        <td>Server Status</td>
+                        <td>UX Research</td>
+                        <td>Store EULA</td>
+                        {/* <td>,c.mbptri45u</td> */}
+                        {/* <td>poqwirotijn4</td> */}
                     </tr>
 
                     <tr>
-                        <td>kwjehroweiur</td>
-                        <td>iwyerouoit24</td>
-                        <td>wl;erkwpuort</td>
-                        <td>,c.mbptri45u</td>
-                        <td>poqwirotijn4</td>
+                        <td>Online Services</td>
+                        <td>Community Rules</td>
+                        <td>Epic Newsroom</td>
+                        {/* <td>,c.mbptri45u</td>
+                        <td>poqwirotijn4</td> */}
                     </tr>
                     
                     <tr>
