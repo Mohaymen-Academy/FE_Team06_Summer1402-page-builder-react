@@ -47,7 +47,7 @@ function CardContainer() {
   ];        
 
   return (
-      <div className="Category-cards">
+      <div className="Container-cards">
         {games.map((game) => (
           <HomeCard key={game.id} Title={game.title}  Img={game.image} />
         ))}
