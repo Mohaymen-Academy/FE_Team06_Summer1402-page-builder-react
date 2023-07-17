@@ -49,7 +49,7 @@ const HomeSlider = () => {
     useEffect(() => {
       const intervalId = setInterval(() => {
       setchoosenCard(prevCounter => (prevCounter + 1)%games.length);
-      }, 5100);
+      }, 5000);
       return () => clearInterval(intervalId);
     }, []); 
 
