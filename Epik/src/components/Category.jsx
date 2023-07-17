@@ -5,6 +5,7 @@ import '../assets/styles/Category.scss'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { makeStyles } from "@material-ui/core/styles";
+import {games} from '../Data/games.js'
 
 const useStyles = makeStyles((theme) => ({
   button: {
