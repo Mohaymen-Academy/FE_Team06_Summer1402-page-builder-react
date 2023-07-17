@@ -58,7 +58,7 @@ function Category() {
   const gamesToShow = {
     small: 3,
     medium: 4,
-    large: 5
+    large: 4
   };
 
   // Get the current screen size

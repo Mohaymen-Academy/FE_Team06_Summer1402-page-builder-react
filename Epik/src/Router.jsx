@@ -5,7 +5,7 @@ import HomeSlider from "./components/HomeSlider.jsx";
 import Footer from './components/Footer.jsx';
 import Category from "./components/Category.jsx";
 import CardContainer from "./components/CardContainer.jsx";
-
+import App from './App.jsx';
 
 import React, { usestate , useEffect } from "react";
 
@@ -14,6 +14,7 @@ const AppRouter = () => {
   return (
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<App/>} />
           <Route path='/Header' element={<Header/>} />
           <Route path='/HomeSlider' exact element={<HomeSlider/>} />
           <Route path='/Footer' exact element={<Footer/>} />
