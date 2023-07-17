@@ -1,12 +1,9 @@
-
 .Container-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transition: transform 0.3s ease-in-out;
-  }
-
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: transform 0.3s ease-in-out;
+}

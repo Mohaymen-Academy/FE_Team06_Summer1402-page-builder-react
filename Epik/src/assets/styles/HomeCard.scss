@@ -1,10 +1,9 @@
 .Game-card{
     position:relative;
     border-radius: 8px;
-    width: 150px;
-    height: 50px;
+    width: 250px;
+    height: 100px;
     background-color: rgb(24, 24, 24);
-    animation: mymove 5s infinite;
     display: flex;
     flex-direction: row ;
     transition: 0.1s;
@@ -12,24 +11,24 @@
     // margin-bottom: 15px;
     margin: 15px;
     position: relative;
-    // transition: all 0.3s ease-in-out;
-    // &:hover{
-    //     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    // }
-
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
     .Game-image-card{
         // margin-bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        // img{
-        //     width: 70px;
-        //     height: 70px;
-        //     // margin-top: 20px;
-        //     margin-left: 15px;
-        //     border-radius: 8px;
-        //     margin-bottom: 15px;
-        // }
+
+        img{
+            width: 70px;
+            height: 70px;
+            // margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
     }
     .Game-inside-text{
         display: flex;
@@ -42,19 +41,5 @@
             font-weight: bold;
             color: #fff;
         }
-    }
-}
-.animation-paused {
-    // animation-fill-mode: forwards;
-    animation-play-state: paused;
-    background-color: rgb(24,24,24);
-}
-
-@keyframes mymove {
-    from {
-      background-color: rgb(24,24,24);
-    }
-    to {
-        background-color: rgb(82, 82, 82);
     }
 }
