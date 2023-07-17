@@ -14,7 +14,9 @@
     // transition: all 0.3s ease-in-out;
     animation: cardcarousel 1s inherit alternate linear;
     &:hover{
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px 0 rgba(255, 249, 249, 0.2);
+        background-color: rgb(82, 82, 82);
+
     }
     .image-card{
         margin-bottom: 5px;
@@ -51,3 +53,4 @@
   
     }
   }
+  
