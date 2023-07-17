@@ -3,14 +3,15 @@
     display: flex;
     background-color: #1d1c1c;
     justify-content: space-between;
-    height: 100px;
+    height: 80px;
 }
 .logo{
     width: 50px;
     height: 50px;
+    padding: 5px;
 }
 .LeftHeader{
-    padding: 25px;
+    padding: 10px;
     color:white;
     display: flex;
 }
@@ -22,6 +23,8 @@
 }
 
 .RightHeader{
+    padding-left: 15px;
+    padding-right: 15px;
     align-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -34,12 +37,18 @@ button{
     cursor: pointer;
     padding-left: 10px;
     padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font: normal;
+    font-size: larger;
 }
 button:hover{
     background-color: #193764;
 }
 a{
     text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
     color: white;
 }
 line{
