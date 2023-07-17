@@ -1,4 +1,4 @@
-.Game-card{
+.card{
     position:relative;
     border-radius: 8px;
     width: 150px;
@@ -16,7 +16,7 @@
     &:hover{
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
-    .Game-image-card{
+    .image-card{
         margin-bottom: 10px;
         display: flex;
         justify-content: center;
@@ -30,7 +30,7 @@
             border-radius: 8px;
         }
     }
-    .Game-inside-text{
+    .inside-text{
         display: flex;
         flex-direction: column;
         justify-content: center;

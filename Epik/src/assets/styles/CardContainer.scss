@@ -1,5 +1,5 @@
 
-.Category-cards {
+.Container-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,18 +7,6 @@
     align-items: center;
     gap: 2rem;
     transition: transform 0.3s ease-in-out;
-    .slide-left {
-        transform: translateX(-100%);
-      }
-      
-      .slide-right {
-        transform: translateX(100%);
-      }
-      
-      .Category-cards.slide-left,
-      .Category-cards.slide-right {
-        transform: translateX(0%);
-      }
   }
 
 

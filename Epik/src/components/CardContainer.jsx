@@ -56,7 +56,7 @@ function CardContainer() {
 
 
   return (
-      <div className="Category-cards">
+      <div className="Container-cards">
         {games.map((game) => (
           <HomeCard key={game.id} id={game.id} Title={game.title}  Img={game.image} choosenCard={choosenCard} />
         ))}
