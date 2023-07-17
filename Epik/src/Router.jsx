@@ -8,6 +8,7 @@ import CardContainer from "./components/CardContainer.jsx";
 import App from './App.jsx';
 
 import React, { usestate , useEffect } from "react";
+import Describe from './components/Describe.jsx';
 
 
 const AppRouter = () => {
@@ -20,6 +21,7 @@ const AppRouter = () => {
           <Route path='/Footer' exact element={<Footer/>} />
           <Route path='/Category' exact element={<Category/>} />
           <Route path='/CardContainer' exact element={<CardContainer/>} />
+          <Route path='/Describe' exact element={<Describe/>} />
         </Routes>
       </BrowserRouter>
   );
