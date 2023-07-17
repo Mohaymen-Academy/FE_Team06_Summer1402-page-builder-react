@@ -4,7 +4,6 @@ import gameimage from '../assets/images/gameimage.jpg';
 import '../assets/styles/Category.scss'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 function Category() {
   const [firstGameIndex, setFirstGameIndex] = useState(0);
   
@@ -45,6 +44,7 @@ function Category() {
       cost: "1.99$",
       image: gameimage
     }
+
   ];        
 
   // Define the number of games to show per row for different screen sizes

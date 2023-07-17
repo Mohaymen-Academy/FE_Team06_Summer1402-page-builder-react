@@ -8,6 +8,7 @@
     flex-direction: row ;
     transition: 0.1s;
     cursor: pointer;
+    animation: mymove 5s infinite;
     // margin-bottom: 15px;
     margin: 15px;
     position: relative;
@@ -41,5 +42,19 @@
             font-weight: bold;
             color: #fff;
         }
+    }
+}
+.animation-paused {
+    // animation-fill-mode: forwards;
+    animation-play-state: paused;
+    background-color: rgb(24,24,24);
+}
+
+@keyframes mymove {
+    from {
+      background-color: rgb(24,24,24);
+    }
+    to {
+        background-color: rgb(82, 82, 82);
     }
 }
