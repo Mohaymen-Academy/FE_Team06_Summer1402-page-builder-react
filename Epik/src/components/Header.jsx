@@ -34,29 +34,28 @@ const Header = () => {
                         </p>
                     </a>
                 </div>
-                <div
+                {/* <div
                 style={{display:'flex'}}>
                         <div
                         className='vl'>
                         </div>
                         <div
-                        style={{paddingLeft:"10px"}}>
+                        style={{paddingLeft:"10px"}}
+                        >
                             <a href="">
                             <p>
                                 Unreal Engine
                             </p>
                             </a>
                         </div>
-                </div>
+                </div> */}
             </div>
             <div
                 className={'RightHeader'}>
                 {/* TODO */}
                 {/* <img src="" alt="" /> */}
-                <input type="text" style={{borderRadius:'10px', boxShadow:'none' , border:'none'}}  />
-                <div>
+                {/* <input type="text" style={{borderRadius:'10px', boxShadow:'none' , border:'none'}}  /> */}
                 <button>Sign In</button>
-                </div>
                 <button>Download</button>
             </div>
         </div>

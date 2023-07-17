@@ -9,7 +9,7 @@ const HomeSlider = () => {
     const games = [
         {
           id: 0,
-          title: "Game Title 1",
+          title: "Genshin impact",
           cost: "1.99$",
           image:  homeslide1
         },
@@ -56,6 +56,7 @@ const HomeSlider = () => {
     return (
         <div
         style={{
+        paddingTop:'25px',
         display:'flex'
         ,justifyContent:'center',
         alignContent:'center'}}>

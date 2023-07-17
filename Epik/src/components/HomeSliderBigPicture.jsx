@@ -9,7 +9,7 @@ export default function HomeSliderBigPicture({ image, desc, isFree }) {
             style={{ 
                 backgroundImage: `url(${image})`,
                 backgroundPosition: 'center center',
-                backgroundSize: '800px 500px'
+                backgroundSize: '1000px 500px'
             }}
         >
                 <div
