@@ -7,7 +7,7 @@ const HomeSlider = () => {
         <div
         style={{
         display:'flex'
-        ,justifyContent:'space-between'}}>
+        ,justifyContent:'center'}}>
             <HomeSliderBigPicture 
             image={slideimage} 
             desc={'This is very good game every one should buy this'} 

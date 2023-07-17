@@ -53,7 +53,10 @@ const Header = () => {
                 className={'RightHeader'}>
                 {/* TODO */}
                 {/* <img src="" alt="" /> */}
+                <input type="text" style={{borderRadius:'10px', boxShadow:'none' , border:'none'}}  />
+                <div>
                 <button>Sign In</button>
+                </div>
                 <button>Download</button>
             </div>
         </div>
