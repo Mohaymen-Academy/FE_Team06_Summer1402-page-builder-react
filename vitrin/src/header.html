@@ -1,10 +1,45 @@
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/header.tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Header</title>
 </head>
 <body>
-    
+    <di>
+        <div
+        id="blueheader"
+        class="bg-blue-700  w-[\100%\] h-max flex flex-col justify-start; ">
+            <div class="align-bottom flex flex-col items-center pr-[7%] py-2 w-max h-fit">
+                <img src="./assets/images/logo.png" alt="Soruosh Plus logo" width="45px" height="45px">
+                <h5 class="text-white" >سروش پلاس</h5>
+            </div>
+        </div>
+        <div
+        id="whiteheader"
+        class="flex flex-row justify-evenly text-center h-min pt-[1rem]">
+        <div
+        class="flex flex-row w-fit gap-[2rem]">
+            <a href="">صفحه نخست</a>
+            <a href="">بلاگ</a>
+            <a href="">دریافته برنامه</a>
+        </div>
+        <!-- <div
+        class="w-max h-max"
+        >
+        <i class="fa fa-user icon"></i>
+            <input type="text" placeholder="جستجو در ویترین" class="border rounded-4xl h-[3rem] p-1">
+        </div> -->
+        <div class="relative bg-white text-gray-300 focus-within:text-gray-400">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </button>
+            </span>
+            <input type="search" name="q" class="py-2 px-3 text-sm border rounded-3xl pl-10 focus:outline-none focus:bg-white focus:text-gray-900" placeholder="جستجو در ویترین" autocomplete="off">
+          </div>
+        </div>
+    </div>
 </body>
 </html>
