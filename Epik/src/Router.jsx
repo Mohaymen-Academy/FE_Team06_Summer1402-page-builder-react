@@ -18,7 +18,7 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} />
+        <Route path='/FE_Team06_Summer1402/' element={<App />} />
         <Route path='/Header' element={<Header />} />
         <Route path='/HomeSlider' exact element={<HomeSlider />} />
         <Route path='/Footer' exact element={<Footer />} />
