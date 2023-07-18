@@ -4,15 +4,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/card.tailwind.css">
+
+    <style>
+        /* Additional CSS for carousel styling */
+        .carousel-container.hidden .carousel {
+            opacity: 0.5;
+        }
+
+        .carousel-container.hidden .carousel:hover {
+            opacity: 1;
+        }
+    </style>
+
 </head>
 <body>
-    <div class="flex m-10 w-[110px] h-[150px] justify-between bg-white border rounded-lg ">
-        <div class="p-[5%]">
-            <img  src="./assets/images/logo.png" />
-            <div class="text-center py-[5px]" >
-                سروش
-            </div>
+    <div>
+        <div id="CarouselTopTags" class="flex flex-row justify-evenly">
+            <h3 id="title">Title</h3>
+            <a href="" class="text-blue-700" id="link">
+                <h3>مشاهده همه</h3>
+            </a>
         </div>
-    </div> 
+        <div
+        class="grid justify-center">
+
+            <div class="carousel-container flex flex-row  w-[91%] h-48 overflow-hidden relative gap-[10rem]">
+                <div class="carousel flex transition-transform ease-in" id="carousel">
+                <!-- pl-[4rem] pr-[4rem]  -->
+            </div>
+
+    </div>
+    </div>
+</div>
 </body>
+<script src="./js/script.js"></script>
 </html>
