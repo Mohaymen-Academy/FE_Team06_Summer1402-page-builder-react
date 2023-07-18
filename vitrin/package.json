@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tailwindcss -i ./src/style.css -o ./src/style.tailwind.css --watch"
+    "index": "npx tailwindcss -i ./src/style.css -o ./src/style.tailwind.css --watch",
+    "footer": "npx tailwindcss -i ./src/footer.css -o ./src/footer.tailwind.css --watch",
+    "header": "npx tailwindcss -i ./src/headeer.css -o ./src/header.tailwind.css --watch"
+
+
 
   },
   "author": "",
