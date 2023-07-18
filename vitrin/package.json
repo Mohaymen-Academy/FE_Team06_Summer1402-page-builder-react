@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "index": "npx tailwindcss -i ./src/style.css -o ./src/style.tailwind.css --watch",
-    "footer": "npx tailwindcss -i ./src/footer.css -o ./src/footer.tailwind.css --watch",
-    "header": "npx tailwindcss -i ./src/headeer.css -o ./src/header.tailwind.css --watch"
+    "index": "npx tailwindcss -i ./src /assets/style.css -o ./src/assets/style.tailwind.css --watch",
+    "footer": "npx tailwindcss -i ./src/assets/footer.css -o ./src/assets/footer.tailwind.css --watch",
+    "header": "npx tailwindcss -i ./src/assets/header.css -o ./src/assets/header.tailwind.css --watch"
 
 
 
