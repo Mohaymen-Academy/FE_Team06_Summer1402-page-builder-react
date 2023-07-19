@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 src: "./assets/images/kodak.png",
             },]
         for (let cats in Icons) {
-            console.log(Icons[cats])
             const link = document.createElement("a");
             link.href = "#";
             link.className = "w-max flex px-4";
@@ -74,12 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "pr-[2.5rem]",
         // 'py-10',
         'h-fit',
-        'pt-[10%]',
+        'pt-[8%]',
         );
 
         const link = document.createElement("a");
         link.setAttribute("href", "");
-        link.classList.add("absolute");
+        link.classList.add("absolute","border-zinc-700");
 
         const slideContent = document.createElement("div");
         slideContent.classList.add("flex","h-fit", "bg-white");
@@ -88,11 +87,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const logoImage = document.createElement("img");
         logoImage.setAttribute("src", element.src);
+        logoImage.classList.add('px-[1px]')
         logoImage.setAttribute("style", "width: 75px; height: 75px;");
         logoImage.setAttribute("alt", "Logo");
 
         const logoText = document.createElement("div");
-        logoText.classList.add("text-center", "py-[5px]", "text-sm");
+        logoText.classList.add("text-center", "pb-[5px]", "text-sm");
         logoText.textContent = element.title;
 
         logoContainer.appendChild(logoImage);
@@ -222,3 +222,44 @@ document.addEventListener("DOMContentLoaded", function () {
     createCarousel('tabliq');
     createCarousel('soroush');
 })
+
+// var header = document.getElementById("myHeader");
+const header = document.getElementById("header");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+window.onscroll=()=>{
+    if (window.scrollY > sticky) {
+        header.classList.add("hiddenbb");
+      } else {
+        header.classList.remove("hiddenbb");
+      }
+}
+let lastScrollPosition = window.scrollY;
+
+// window.addEventListener("scroll", () => {
+//     const header =document.getElementById('header')
+//     header.classList.add('hiddenbb')
+//     const currentScrollPosition = window.scrollY;
+//     // console.log()
+//     // Determine the scroll direction
+//     const scrollDirection = currentScrollPosition > lastScrollPosition ? "down" : "up";
+//     console.log(scrollDirection)
+    
+//     console.log(header)
+//     // If the scroll direction is down, add the 'hidden' class to the blue section
+//     // Otherwise, remove the 'hidden' class
+//     if (scrollDirection === "down") {
+//         header.classList.add("hiddenbb");
+//     } else {
+//         header.classList.remove("hiddenbb");
+//     }
+
+//     // Update the last scroll position
+//     lastScrollPosition = currentScrollPosition;
+// });
+
+
+
+
