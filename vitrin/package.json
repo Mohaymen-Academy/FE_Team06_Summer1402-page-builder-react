@@ -9,9 +9,8 @@
     "footer": "npx tailwindcss -i ./src/assets/css/footer.css -o ./src/assets/css/footer.tailwind.css --watch",
     "header": "npx tailwindcss -i ./src/assets/css/header.css -o ./src/assets/css/header.tailwind.css --watch",
     "body": "npx tailwindcss -i ./src/assets/css/body.css -o ./src/assets/css/body.tailwind.css --watch",
-    "card": "npx tailwindcss -i ./src/assets/css/card.css -o ./src/assets/css/card.tailwind.css --watch"
-
-
+    "card": "npx tailwindcss -i ./src/assets/css/card.css -o ./src/assets/css/card.tailwind.css --watch",
+    "icons": "npx tailwindcss -i ./src/assets/css/iconscard.css -o ./src/assets/css/iconscard.tailwind.css --watch"
 
   },
   "author": "",
