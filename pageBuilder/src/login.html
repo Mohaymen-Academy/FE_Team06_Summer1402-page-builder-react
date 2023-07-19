@@ -1,0 +1,68 @@
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/login.tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Jost:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+        /* font-family: '', sans-serif; */
+      }
+    </style>
+</head>
+<body>
+    <div class=" bg-[#D7D8DD] fixed top-0 left-0 w-screen h-screen flex items-center justify-center f">
+        <div class=" absolute w-[450px] h-[500px]   flex flex-col">
+            <div class="h-[90px] flex flex-col items-center m-3 mb-5">
+                <img class="w-[60px]" src="./assets/images/logo.png"/>
+                <div>صفحه‌ساز سروش پلاس</div>
+            </div>
+            <div class="h-[350px] bg-white rounded-lg flex flex-col items-center border">
+                <div class="m-5">
+                    اطلاعات طراحی صفحه
+                </div>
+                <div class="flex flex-col  w-[400px] h-[260px]">
+                    <form class=" rounded ">
+                        <div class="mb-4">
+                          <label class="block text-gray-700 text-[12px] font-bold mb-2 px-1" for="username">
+                            عنوان صفحه خود را وارد کنید
+                          </label>
+                          <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 text-xs leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" placeholder="عنوان صفحه">
+                          <p class="text-gray-700 text-[10px] m-2 mb-5">عنوان صفحه ، تگ عنوان HTML است.</p>
+                        </div>
+                        <div class="mb-2 flex flex-row ">
+                            <div class="ml-3 w-[50%]">
+                                <label class="block text-gray-700 text-[11px] font-bold mb-2 " for="password">
+                                    نام صفحه خود را وارد کنید (انگلیسی)
+                                  </label>
+                                  <input class=" shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 text-xs mb-3 leading-tight focus:outline-none focus:shadow-outline" id="english-name" type="text" placeholder="Page name">
+                            </div>
+                            <div class="w-[50%]">
+                                <label class="block text-gray-700 text-[11px] font-bold mb-2" for="password">
+                                    نام صفحه خود را وارد کنید ( فارسی)
+                                  </label>
+                                  <input class="shadow appearance-none border rounded-lg rounded w-full py-2 px-3 text-gray-700 text-xs mb-3 leading-tight focus:outline-none focus:shadow-outline" id="persian-name" type="text" placeholder="نام صفحه">
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-5 mr-1">
+                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-lg focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="default-checkbox" class="mr-2 text-[10px] font-medium text-gray-900 dark:text-gray-300">در طراحی نمایش داده شود</label>
+                        </div>
+                        <div class="flex items-center justify-between  w-full">
+                          <button class="  w-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-[12px] py-[9px] px-4 rounded-lg focus:outline-none focus:shadow-outline" type="button">
+                            ذخیره و شروع طراحی 
+                          </button>
+                        </div>
+                      </form>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
