@@ -2,23 +2,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.tailwind.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/instagram.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/google.css' rel='stylesheet'>
+    <title>Soroush</title>
+    <header>
+        <di>
+            <div
+            id="blueheader"
+            class="bg-blue-700  w-[\100%\] h-max flex flex-col justify-start; ">
+                <div class="align-bottom flex flex-col items-center pr-[7%] py-2 w-max h-fit">
+                    <img src="./assets/images/logo.png" alt="Soruosh Plus logo" width="45px" height="45px">
+                    <h5 class="text-white" >سروش پلاس</h5>
+                </div>
+            </div>
+            <div
+            id="whiteheader"
+            class=" bg-white flex flex-row justify-evenly text-center h-min pt-[1rem]">
+            <div
+            class="flex flex-row w-fit gap-[2rem]">
+                <a href="">صفحه نخست</a>
+                <a href="">بلاگ</a>
+                <a href="">دریافته برنامه</a>
+            </div>
+            <!-- <div
+            class="w-max h-max"
+            >
+            <i class="fa fa-user icon"></i>
+                <input type="text" placeholder="جستجو در ویترین" class="border rounded-4xl h-[3rem] p-1">
+            </div> -->
+            <div class="relative bg-white text-gray-300 focus-within:text-gray-400">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  </button>
+                </span>
+                <input type="search" name="q" class="py-2 px-3 text-sm border rounded-3xl pl-10 focus:outline-none focus:bg-white focus:text-gray-900" placeholder="جستجو در ویترین" autocomplete="off">
+              </div>
+            </div>
+        </div>
+    
+    </header>
 </head>
-<body>
-    <div class="flex flex-col ">
-        <div data-include="header"></div>
-        <div data-include="footer"></div>
-    </div>
-</body>
-<script>
-    $(function(){
-        var includes=$('[data-include]')
-        $.each(includes,function(){
-            var file='./'+$(this).data('include')+'.html'
-            $(this).load(file)
-        })
 
-    })
-</script>
+    <body class="bg-[#e5ebef] flex flex-col">
+        <div class="items-center flex justify-center">
+            <div class="flex flex-col bg-white justify-center items-center w-fit">
+                <div
+                id="carousel">
+                </div>
+                <div id="bartarin" data-link="" data-title="برترین ها">
+                </div>
+
+                <div class="flex flex-wrap mt-4 ml-4" id="CatsContainer">
+
+                </div>        
+
+                <div>
+                    <a href="">
+                        <img src="./assets/images/amade.png" alt="">
+                    </a>
+                </div>
+
+                <div
+                id="porfrosh" data-link="category/12503" data-title="پرفروش هفته">
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/images/darkh.png" alt="">
+                    </a>
+                </div>
+        
+                <div
+                id="labkhandane" data-link="landing=262" data-title="لبخندانه">
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/images/chesman.png" alt="">
+                    </a>
+                </div>
+                <div id="sabkzendegi" data-link="landing=246" data-title="سبک زندگی">
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/images/sobhane.png" alt="">
+                    </a>
+                </div>
+                <div
+                    id="akhbar" data-link="landing=151" data-title="اخبار">
+                </div>
+            <div>
+                <a href="">
+                    <img src="assets/images/moramel.png" alt="">
+                </a>
+            </div>
+            <div id="mazhabi" data-link="landing=670" data-title="مذهبی">
+            </div>
+            <div>
+                <a href="">
+                    <img src="assets/images/khadamat.png" alt="">
+                </a>
+            </div>
+            <div id="tabliq" data-link="category/12615" data-title="تبلیغ گسترده">
+            </div>
+            <div>
+                <a href="">
+                    <img src="assets/images/sidena.png" alt="">
+                </a>
+            </div>
+            <div id="soroush" data-link="" data-title="سروش پلاس">
+        
+            </div>
+            </div>
+        
+        </div>
+        
+        
+    </body>
+
+    <footer>
+
+        <div class="flex flex-col">   
+            <div class="inset-x-0 bottom-0 h-[12%] bg-[#D9DBDC] flex flex-row">
+            <div class="w-[50%] text-[10px] px-10 py-8 flex flex-row justify-end">
+                <div class="px-1"><i class="gg-instagram"></i></div>
+                <div class="px-1"><i class="gg-google"></i></div>
+                <div class="px-1"><i class="gg-instagram"></i></div>
+                <div class="px-1"><i class="gg-google"></i></div>
+                <div class="px-1"><i class="gg-instagram"></i></div>
+                <div class="px-1"><i class="gg-google"></i></div>
+                
+            </div>
+            <div class="w-[50%] text-[10px] px-[12px] py-8 text-right	">تمامی حقوق مادی و معنوی این صفحه متعلق به پیام رسان سروش پلاس می‌باشد
+                
+            </div>
+        </div>
+    </div>
+    </footer>
+    <script src="./js/script.js"></script>
+
 </html>
