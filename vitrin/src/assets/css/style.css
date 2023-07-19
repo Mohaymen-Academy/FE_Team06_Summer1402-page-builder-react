@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .cardimg{
+        @apply w-[700px] mb-[0.5rem];
+    }
+}

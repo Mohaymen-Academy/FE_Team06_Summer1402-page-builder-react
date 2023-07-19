@@ -568,6 +568,11 @@ video {
   }
 }
 
+.cardimg {
+  margin-bottom: 0.5rem;
+  width: 700px;
+}
+
 .absolute {
   position: absolute;
 }
@@ -594,13 +599,13 @@ video {
   left: 0px;
 }
 
-.m-5 {
-  margin: 1.25rem;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-4 {
@@ -609,10 +614,6 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mr-\[13\%\] {
-  margin-right: 13%;
 }
 
 .flex {
@@ -627,6 +628,10 @@ video {
   display: none;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -639,10 +644,6 @@ video {
   height: 12%;
 }
 
-.h-\[150px\] {
-  height: 150px;
-}
-
 .h-\[3rem\] {
   height: 3rem;
 }
@@ -650,10 +651,6 @@ video {
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .h-max {
@@ -670,16 +667,16 @@ video {
   width: 1.5rem;
 }
 
-.w-\[110px\] {
-  width: 110px;
+.w-\[125px\] {
+  width: 125px;
 }
 
 .w-\[50\%\] {
   width: 50%;
 }
 
-.w-\[75\%\] {
-  width: 75%;
+.w-\[800px\] {
+  width: 800px;
 }
 
 .w-\[91\%\] {
@@ -698,10 +695,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[800px\] {
-  width: 800px;
 }
 
 .transform {
@@ -748,6 +741,10 @@ video {
   gap: 10rem;
 }
 
+.gap-\[1rem\] {
+  gap: 1rem;
+}
+
 .gap-\[2rem\] {
   gap: 2rem;
 }
@@ -792,10 +789,6 @@ video {
   padding: 0.25rem;
 }
 
-.p-\[50\%\] {
-  padding: 50%;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -804,11 +797,6 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
 }
 
 .px-3 {
@@ -824,6 +812,11 @@ video {
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .py-2 {
@@ -854,8 +847,24 @@ video {
   padding-left: 0.5rem;
 }
 
+.pl-\[0\.5rem\] {
+  padding-left: 0.5rem;
+}
+
+.pl-\[2\.95rem\] {
+  padding-left: 2.95rem;
+}
+
 .pl-\[4rem\] {
   padding-left: 4rem;
+}
+
+.pr-\[0\.5rem\] {
+  padding-right: 0.5rem;
+}
+
+.pr-\[2\.5rem\] {
+  padding-right: 2.5rem;
 }
 
 .pr-\[4rem\] {
@@ -864,6 +873,10 @@ video {
 
 .pr-\[7\%\] {
   padding-right: 7%;
+}
+
+.pt-\[10\%\] {
+  padding-top: 10%;
 }
 
 .text-center {
@@ -876,11 +889,6 @@ video {
 
 .align-bottom {
   vertical-align: bottom;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .text-\[10px\] {
