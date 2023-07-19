@@ -68,14 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createSlideElement(element) {
         const slide = document.createElement("div");
-        slide.classList.add("slide", "flex", "justify-center", "items-center", "w-full", "h-full", "text-3xl", "px-20");
+        slide.classList.add("slide", "flex", "justify-center", "items-center", "w-full", "text-3xl", "px-20");
 
         const link = document.createElement("a");
         link.setAttribute("href", "");
         link.classList.add("absolute");
 
         const slideContent = document.createElement("div");
-        slideContent.classList.add("flex", "m-5", "w-[110px]", "h-[150px]", "justify-between", "bg-white");
+        slideContent.classList.add("flex","h-fit", "bg-white");
 
         const logoContainer = document.createElement("div");
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         logoImage.setAttribute("alt", "Logo");
 
         const logoText = document.createElement("div");
-        logoText.classList.add("text-center", "py-[5px]");
+        logoText.classList.add("text-center", "py-[5px]", "text-sm");
         logoText.textContent = element.title;
 
         logoContainer.appendChild(logoImage);
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
 
         ]
-        // const  = document.getElementById("carousel");
+
         cards.forEach(element => {
             const newSlide = createSlideElement(element);
             carousel.appendChild(newSlide);
@@ -155,16 +155,52 @@ document.addEventListener("DOMContentLoaded", function () {
         carouseltag.appendChild(link)
         element.appendChild(carouseltag)
         const carouselgrid = document.createElement('div');
-        carouselgrid.classList.add('grid', 'justify-center')
+        carouselgrid.classList.add('grid', 'justify-between')
         const carouselconainer = document.createElement('div')
-        
-        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[91%]", "h-48", "overflow-hidden", 'relative', "gap-[10rem]")
-        const carousel=document.createElement('div')
-        carousel.classList.add("carousel","flex" ,"transition-transform", "ease-in")
+
+        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-full", "h-48", "overflow-hidden", 'relative', "gap-[10rem]",'px-[10rem]')
+        const carousel = document.createElement('div')
+        carousel.classList.add("carousel", "flex", "transition-transform", "ease-in")
         addSlideToCarousel(carousel)
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
+        const slides=document.querySelectorAll('.slide')
+
+        let isDragging = false;
+        let startX = 0;
+        let translateX = 0;
+        const slideWidth = slides[0].offsetWidth;
+        const maxTranslateX = 1 * slideWidth;
+        const minTranslateX = 0;
+
+        carouselconainer.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - carousel.offsetLeft;
+            carousel.style.transition = "none";
+        });
+        document.addEventListener("mouseup", (e) => {
+            e.preventDefault();
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            e.preventDefault();
+            if (!isDragging) return;
+
+            const x = e.clientX - carousel.offsetLeft;
+            const offsetX = x - startX;
+            let newTranslateX = translateX + offsetX;
+
+            if (newTranslateX > maxTranslateX) {
+                newTranslateX = maxTranslateX;
+            } else if (newTranslateX < minTranslateX) {
+                newTranslateX = minTranslateX;
+            }
+            // console.log(newTranslateX)
+
+            carousel.style.transform = `translateX(${newTranslateX}px)`;
+        });
 
 
     }
@@ -176,49 +212,4 @@ document.addEventListener("DOMContentLoaded", function () {
     createCarousel('mazhabi');
     createCarousel('tabliq');
     createCarousel('soroush');
-    // Call the function to add the slide to the carousel
-    // addSlideToCarousel();
-    // const carouselContainer = document.querySelector(".carousel-container");
-    // const carousel = document.querySelector(".carousel");
-    // const slides = document.querySelectorAll(".slide");
-    // let isDragging = false;
-    // let startX = 0;
-    // let translateX = 0;
-    // const slideWidth = slides[0].offsetWidth;
-    // const maxTranslateX = 1* slideWidth;
-    // const minTranslateX =  0;
-
-    // carouselContainer.addEventListener("mousedown", (e) => {
-    //     e.preventDefault();
-    //     isDragging = true;
-    //     startX = e.clientX - carousel.offsetLeft;
-    //     carousel.style.transition = "none";
-    // });
-
-    // document.addEventListener("mousemove", (e) => {
-    //     e.preventDefault();
-    //     if (!isDragging) return;
-
-    //     const x = e.clientX - carousel.offsetLeft;
-    //     const offsetX = x - startX;
-    //     let newTranslateX = translateX + offsetX;
-    //     if(newTranslateX>=maxTranslateX/2){
-    //         slides[0].style.visibility='hidden';
-    //     }
-
-    //     if (newTranslateX > maxTranslateX) {
-    //         newTranslateX = maxTranslateX;
-    //     } else if (newTranslateX < minTranslateX) {
-    //         newTranslateX = minTranslateX;
-    //     }
-    //     // console.log(newTranslateX)
-
-    //     carousel.style.transform = `translateX(${newTranslateX}px)`;
-    // });
-
-    // document.addEventListener("mouseup", (e) => {
-    //     e.preventDefault()
-    //     // isDragging = false;
-    //     // carousel.style.transition = "transform 0.3s ease";
-    // });
 })
