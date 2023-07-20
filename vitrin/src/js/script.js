@@ -1,6 +1,13 @@
+//* index.html script 
+//* contains some methods for creating dynamic html tags
+//* and some eventlisteners for scrolling and carousel moves 
+
+//* the initializer method for the index file 
+//* in this method we create some carousels and category icons   
+const skeletonimage = './assets/images/had.jpg'
 document.addEventListener("DOMContentLoaded", function () {
-    //TODO 
-    // to add the big icons 
+    //TODO  to add the big icons 
+    //* this method will add categories cards to the div with id  cardContainer  
     function addCard() {
         const cardContainer = document.getElementById('CatsContainer')
         const Icons = [
@@ -40,14 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const link = document.createElement("a");
             link.href = "#";
             link.className = "w-max flex px-4";
-
             const cardDiv = document.createElement("div");
-
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
-            image.src = Icons[cats].src;
+            image.setAttribute('data-src', Icons[cats].src )
+            image.src = skeletonimage;
             image.alt = `${Icons[cats].title}`;
-            image.classList.add('w-[125px]','h-[50px]')
+            image.classList.add('w-[125px]', 'h-[50px]')
             imageDiv.appendChild(image);
 
             const textDiv = document.createElement("div");
@@ -60,33 +66,36 @@ document.addEventListener("DOMContentLoaded", function () {
             link.appendChild(cardDiv);
 
             // Add the card to the container
-            cardContainer.appendChild(link);
+            cardContainer.appendChild(link
+            );
         }
     }
+    //* use the add card method  
     addCard();
-
+    // * create slide and carousel and the append it to element 
     function createSlideElement(element) {
         const slide = document.createElement("div");
-        slide.classList.add("slide", "flex", "justify-center", "items-center", 
-        // "w-full", 
-        "pl-[2.95rem]",
-        "pr-[2.5rem]",
-        // 'py-10',
-        'h-fit',
-        'pt-[8%]',
+        slide.classList.add("slide", "flex", "justify-center", "items-center",
+            // "w-full", 
+            "pl-[2.95rem]",
+            "pr-[2.5rem]",
+            // 'py-10',
+            'h-fit',
+            'pt-[8%]',
         );
 
         const link = document.createElement("a");
         link.setAttribute("href", "");
-        link.classList.add("absolute","border-zinc-700");
+        link.classList.add("absolute", "border-zinc-700");
 
         const slideContent = document.createElement("div");
-        slideContent.classList.add("flex","h-fit", "bg-white");
+        slideContent.classList.add("flex", "h-fit", "bg-white");
 
         const logoContainer = document.createElement("div");
 
         const logoImage = document.createElement("img");
-        logoImage.setAttribute("src", element.src);
+        logoImage.setAttribute("src", skeletonimage);
+        logoImage.setAttribute("data-src", element.src);
         logoImage.classList.add('px-[1px]')
         logoImage.setAttribute("style", "width: 75px; height: 75px;");
         logoImage.setAttribute("alt", "Logo");
@@ -103,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return slide;
     }
+
+    // * add the createded slide to the carousel
     function addSlideToCarousel(
         carousel
     ) {
@@ -146,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const newSlide = createSlideElement(element);
             carousel.appendChild(newSlide);
         });
-
     }
+    // * add the carousel to the div with elementID
     function createCarousel(elementID) {
         const element = document.getElementById(elementID)
         const carouseltag = document.createElement('div');
@@ -174,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
-        const slides=document.querySelectorAll('.slide')
+        const slides = document.querySelectorAll('.slide')
 
         let isDragging = false;
         let startX = 0;
@@ -221,45 +232,37 @@ document.addEventListener("DOMContentLoaded", function () {
     createCarousel('mazhabi');
     createCarousel('tabliq');
     createCarousel('soroush');
+    function lazyLoadImages(entries, observer) {
+        entries.forEach(element => {
+            if (element.isIntersecting) {
+                const img = element.target;
+                const src = img.getAttribute('data-src');
+                if (src) {
+                    img.setAttribute('src', src);
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    }
+    const images = document.querySelectorAll('img')
+    const imageObserver = new IntersectionObserver(lazyLoadImages, {
+        rootMargin: '50px',
+        threshold: 0
+    });
+    images.forEach(image=>
+        imageObserver.observe(image))
 })
 
-// var header = document.getElementById("myHeader");
+// * this section will handle the sticky header  
+// * stick the header to the top by adding a specific css class  
 const header = document.getElementById("header");
-
-// Get the offset position of the navbar
 var sticky = header.offsetTop;
-
-window.onscroll=()=>{
+window.onscroll = () => {
     if (window.scrollY > sticky) {
         header.classList.add("hiddenbb");
-      } else {
+    } else {
         header.classList.remove("hiddenbb");
-      }
+    }
 }
 let lastScrollPosition = window.scrollY;
-
-// window.addEventListener("scroll", () => {
-//     const header =document.getElementById('header')
-//     header.classList.add('hiddenbb')
-//     const currentScrollPosition = window.scrollY;
-//     // console.log()
-//     // Determine the scroll direction
-//     const scrollDirection = currentScrollPosition > lastScrollPosition ? "down" : "up";
-//     console.log(scrollDirection)
-    
-//     console.log(header)
-//     // If the scroll direction is down, add the 'hidden' class to the blue section
-//     // Otherwise, remove the 'hidden' class
-//     if (scrollDirection === "down") {
-//         header.classList.add("hiddenbb");
-//     } else {
-//         header.classList.remove("hiddenbb");
-//     }
-
-//     // Update the last scroll position
-//     lastScrollPosition = currentScrollPosition;
-// });
-
-
-
-
