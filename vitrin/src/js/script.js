@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
             image.setAttribute('data-src', Icons[cats].src )
-            image.src = skeletonimage;
-            image.alt = `${Icons[cats].title}`;
-            image.classList.add('w-[125px]', 'h-[50px]')
+            image.classList.add('animate-skeleton-loading','bg-skeleton')
+            image.alt = "";
+            image.classList.add('w-[125px]')
             imageDiv.appendChild(image);
 
             const textDiv = document.createElement("div");
@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const logoContainer = document.createElement("div");
 
         const logoImage = document.createElement("img");
-        logoImage.setAttribute("src", skeletonimage);
+        // logoImage.setAttribute("src", skeletonimage);
         logoImage.setAttribute("data-src", element.src);
-        logoImage.classList.add('px-[1px]')
+        logoImage.classList.add('px-[1px]','animate-skeleton-loading','bg-skeleton')
         logoImage.setAttribute("style", "width: 75px; height: 75px;");
-        logoImage.setAttribute("alt", "Logo");
+        logoImage.setAttribute("alt", "");
 
         const logoText = document.createElement("div");
         logoText.classList.add("text-center", "pb-[5px]", "text-sm");
@@ -238,6 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const img = element.target;
                 const src = img.getAttribute('data-src');
                 if (src) {
+                    img.classList.remove('animate-skeleton-loading')
                     img.setAttribute('src', src);
                     img.removeAttribute('data-src');
                     observer.unobserve(img);
@@ -257,12 +258,21 @@ document.addEventListener("DOMContentLoaded", function () {
 // * this section will handle the sticky header  
 // * stick the header to the top by adding a specific css class  
 const header = document.getElementById("header");
-var sticky = header.offsetTop;
+let sticky = header.offsetTop;
+var lastScrollPosition = window.scrollY;
 window.onscroll = () => {
-    if (window.scrollY > sticky) {
-        header.classList.add("hiddenbb");
+    const currentScrollPosition = window.scrollY;
+    const direction =  currentScrollPosition> lastScrollPosition ? 'down' : 'up'
+    lastScrollPosition=currentScrollPosition;
+    header.classList.add("sticky");
+    // const blueheader = document.getElementById("blueheader");
+    if (direction==='down') {
+        header.classList.remove('animate-blueheaderanimationopen')
+        header.classList.add("animate-blueheaderanimatioclose");
+        header.classList.add("closeanimation");
     } else {
-        header.classList.remove("hiddenbb");
+        header.classList.remove("animate-blueheaderanimatioclose");
+        header.classList.add("animate-blueheaderanimationopen");
+        header.classList.remove("closeanimation");
     }
 }
-let lastScrollPosition = window.scrollY;
