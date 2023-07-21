@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const cardDiv = document.createElement("div");
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
-            image.setAttribute('data-src', Icons[cats].src )
-            image.classList.add('animate-skeleton-loading','bg-skeleton')
+            image.setAttribute('data-src', Icons[cats].src)
+            image.classList.add('animate-skeleton-loading', 'bg-skeleton')
             image.alt = "";
             image.classList.add('w-[125px]')
             imageDiv.appendChild(image);
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const logoImage = document.createElement("img");
         // logoImage.setAttribute("src", skeletonimage);
         logoImage.setAttribute("data-src", element.src);
-        logoImage.classList.add('px-[1px]','animate-skeleton-loading','bg-skeleton')
+        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton')
         logoImage.setAttribute("style", "width: 75px; height: 75px;");
         logoImage.setAttribute("alt", "");
 
@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // * add the carousel to the div with elementID
     function createCarousel(elementID) {
         const element = document.getElementById(elementID)
+        //* create header section for slider
         const carouseltag = document.createElement('div');
         carouseltag.classList.add('flex', 'flex-row', 'justify-between')
         const title = document.createElement('h3');
@@ -174,54 +175,80 @@ document.addEventListener("DOMContentLoaded", function () {
         link.href = `https://vitrin.splus.ir/${element.dataset.link}`
         carouseltag.appendChild(link)
         element.appendChild(carouseltag)
+
         const carouselgrid = document.createElement('div');
         carouselgrid.classList.add('grid', 'justify-between')
         const carouselconainer = document.createElement('div')
-
-        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-full", "h-36", "overflow-hidden", 'relative', "gap-[10rem]")
+        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36", "overflow-hidden", 'relative', "gap-[10rem]")
         const carousel = document.createElement('div')
-        carousel.classList.add("carousel", "flex", "transition-transform", "ease-in")
+        carousel.classList.add("slider", "flex", "transition-transform", "ease-in")
         addSlideToCarousel(carousel)
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
-        const slides = document.querySelectorAll('.slide')
 
+        // Variables
         let isDragging = false;
-        let startX = 0;
-        let translateX = 0;
-        const slideWidth = slides[0].offsetWidth;
-        const maxTranslateX = 1 * slideWidth;
-        const minTranslateX = 0;
+        let startPosition = 0;
+        let currentTranslate = 0;
+        let maxTranslate = 180;
+        let minTranslate = -10;
+        let prevTranslate = 0;
+        let animationID = 0;
+        const slider = document.querySelector(".slider");
 
-        carouselconainer.addEventListener("mousedown", (e) => {
-            e.preventDefault();
+        // Functions
+        function onTouchStart(event) {
             isDragging = true;
-            startX = e.clientX - carousel.offsetLeft;
-            carousel.style.transition = "none";
-        });
-        document.addEventListener("mouseup", (e) => {
-            e.preventDefault();
-        });
+            startPosition = getPositionX(event);
+            animationID = requestAnimationFrame(animation);
+            slider.classList.add("grabbing");
+        }
 
-        document.addEventListener("mousemove", (e) => {
-            e.preventDefault();
-            if (!isDragging) return;
-
-            const x = e.clientX - carousel.offsetLeft;
-            const offsetX = x - startX;
-            let newTranslateX = translateX + offsetX;
-
-            if (newTranslateX > maxTranslateX) {
-                newTranslateX = maxTranslateX;
-            } else if (newTranslateX < minTranslateX) {
-                newTranslateX = minTranslateX;
+        function onTouchMove(event) {
+            if (isDragging) {
+                const currentPosition = getPositionX(event);
+                currentTranslate = prevTranslate + currentPosition - startPosition;
             }
-            // console.log(newTranslateX)
+        }
 
-            carousel.style.transform = `translateX(${newTranslateX}px)`;
-        });
+        function onTouchEnd() {
+            console.log(animationID)
+            cancelAnimationFrame(animationID);
+            isDragging = false;
+            prevTranslate = currentTranslate;
+            slider.classList.remove("grabbing");
+        }
 
+        function getPositionX(event) {
+            return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+        }
+
+        function animation() {
+            setSliderPosition();
+            if (isDragging) {
+                requestAnimationFrame(animation);
+            }
+        }
+
+
+        function setSliderPosition() {
+            console.log(currentTranslate)
+            if (currentTranslate > maxTranslate) { currentTranslate = maxTranslate; }
+            else if (currentTranslate < minTranslate) { currentTranslate = minTranslate; }
+            carousel.style.transform = `translateX(${currentTranslate}px)`;
+        }
+
+        // Event listeners
+        carousel.addEventListener("mousedown", onTouchStart);
+        carousel.addEventListener("touchstart", onTouchStart);
+
+        carousel.addEventListener("mousemove", onTouchMove);
+        carousel.addEventListener("touchmove", onTouchMove);
+
+        carousel.addEventListener("mouseup", onTouchEnd);
+        carousel.addEventListener("touchend", onTouchEnd);
+        carousel.addEventListener("mouseleave", onTouchEnd);
 
     }
     createCarousel('bartarin');
@@ -251,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
         rootMargin: '50px',
         threshold: 0
     });
-    images.forEach(image=>
+    images.forEach(image =>
         imageObserver.observe(image))
 })
 
@@ -262,11 +289,11 @@ let sticky = header.offsetTop;
 var lastScrollPosition = window.scrollY;
 window.onscroll = () => {
     const currentScrollPosition = window.scrollY;
-    const direction =  currentScrollPosition> lastScrollPosition ? 'down' : 'up'
-    lastScrollPosition=currentScrollPosition;
+    const direction = currentScrollPosition > lastScrollPosition ? 'down' : 'up'
+    lastScrollPosition = currentScrollPosition;
     header.classList.add("sticky");
     // const blueheader = document.getElementById("blueheader");
-    if (direction==='down') {
+    if (direction === 'down') {
         header.classList.remove('animate-blueheaderanimationopen')
         header.classList.add("animate-blueheaderanimatioclose");
         header.classList.add("closeanimation");

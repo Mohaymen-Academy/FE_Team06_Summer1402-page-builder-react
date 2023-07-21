@@ -4,12 +4,15 @@
 
 @layer components{
     .cardimg{
-        @apply w-[700px] mb-[0.5rem];
+        @apply w-[85%] mb-[0.5rem];
     }
     .sticky{
        @apply fixed top-0 w-[100%] z-10;
     }
     .closeanimation{
         @apply top-[-90px];
+    }
+    .bigcardimages{
+        @apply w-[90%] p-0;
     }
 }
