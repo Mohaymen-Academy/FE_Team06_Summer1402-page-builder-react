@@ -5,73 +5,31 @@
     <link rel="stylesheet" href="./assets/css/body.tailwind.css">
     <title>Body</title>
 </head>
-<body class="bg-[#e5ebef]">
-    <div>
-        <div
-        id="carousel">
+<body class="">
+    <div id="slider" class="slider w-[300px] h-[200px]">
+        <div class="wrapper overflow-hidden relative">
+          <div id="items" class="items w-[10000px] relative top-0 left-[-500px] ">
+            <div class="slide w-[300px] cursor-pointer float-left flex flex-col justify-center transition-all duration-1000 relative">
+              <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel1.jpg" alt="">
+          </div>
+          <div class="slide w-[300px] cursor-pointer float-left flex flex-col justify-center transition-all duration-1000 relative">
+            <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel4.jpg" alt="">
         </div>
-        <div id="bartarin" data-link="" data-title="برترین ها">
+        <div class="slide w-[300px] cursor-pointer float-left flex flex-col justify-center transition-all duration-1000 relative">
+            <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel2.jpg" alt="">
         </div>
-        <div class="flex flex-wrap mt-4 ml-4" id="CatsContainer">
-        </div>
-    
+        <!-- <div class="slide w-[300px] cursor-pointer float-left flex flex-col justify-center transition-all duration-1000 relative ">
+              <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel4.jpg" alt="">
+        </div> -->
 
-        <div>
-            <a href="">
-                <img src="./assets/images/amade.png" alt="">
-            </a>
         </div>
-        <div
-        id="porfrosh" data-link="category/12503" data-title="پرفروش هفته">
         </div>
-        <div>
-            <a href="">
-                <img src="assets/images/darkh.png" alt="">
-            </a>
-        </div>
-
-        <div
-        id="labkhandane" data-link="landing=262" data-title="لبخندانه">
-        </div>
-        <div>
-            <a href="">
-                <img src="assets/images/chesman.png" alt="">
-            </a>
-        </div>
-        <div id="sabkzendegi" data-link="landing=246" data-title="سبک زندگی">
-        </div>
-        <div>
-            <a href="">
-                <img src="assets/images/sobhane.png" alt="">
-            </a>
-        </div>
-        <div
-        id="akhbar" data-link="landing=151" data-title="اخبار">
-    </div>
-    <div>
-        <a href="">
-            <img src="assets/images/moramel.png" alt="">
-        </a>
-    </div>
-    <div id="mazhabi" data-link="landing=670" data-title="مذهبی">
-    </div>
-    <div>
-        <a href="">
-            <img src="assets/images/khadamat.png" alt="">
-        </a>
-    </div>
-    
-    <div id="tabliq" data-link="category/12615" data-title="تبلیغ گسترده">
-    </div>
-    <div>
-        <a href="">
-            <img src="assets/images/sidena.png" alt="">
-        </a>
-    </div>
-    <div id="soroush+" data-link="" data-title="سروش پلاس">
-
-    </div>
-    </div>
-    
-</body>
+        <!-- <a id="prev" class="control prev"></a>
+        <a id="next" class="control next"></a> -->
+      </div>          
+    </body>
+    <script
+    src="./js/swipe.js">
+      </script>
+      
 </html>

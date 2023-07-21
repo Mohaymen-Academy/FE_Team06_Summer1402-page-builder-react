@@ -538,9 +538,17 @@ video {
   width: 100%;
 }
 
+.\!container {
+  width: 100% !important;
+}
+
 @media (min-width: 580px) {
   .container {
     max-width: 580px;
+  }
+
+  .\!container {
+    max-width: 580px !important;
   }
 }
 
@@ -548,11 +556,19 @@ video {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 
 @media (min-width: 992px) {
   .container {
     max-width: 992px;
+  }
+
+  .\!container {
+    max-width: 992px !important;
   }
 }
 
@@ -560,11 +576,19 @@ video {
   .container {
     max-width: 1024px;
   }
+
+  .\!container {
+    max-width: 1024px !important;
+  }
 }
 
 @media (min-width: 1240px) {
   .container {
     max-width: 1240px;
+  }
+
+  .\!container {
+    max-width: 1240px !important;
   }
 }
 
@@ -587,6 +611,10 @@ video {
 .bigcardimages {
   width: 90%;
   padding: 0px;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .absolute {
@@ -638,6 +666,10 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -692,6 +724,9 @@ video {
 
 .w-\[125px\] {
   width: 125px;
+}
+.w-\[10000px\] {
+  width: 10000px;
 }
 
 .w-\[50\%\] {
@@ -779,6 +814,10 @@ video {
 
 .animate-skeleton-loading {
   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.resize {
+  resize: both;
 }
 
 .flex-row {
