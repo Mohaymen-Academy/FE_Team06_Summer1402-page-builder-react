@@ -47,16 +47,33 @@
                         <div class="text-[#0066FF] m-4 mb-1">یک قالب را بکشید و رها کنید</div>
                         </div>
                     </div>
-                    <div class="flex flex-row w-[350px] h-[50px] mb-5 text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center">
+                    <div class="flex flex-row w-[350px] h-[50px] mb-5 text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center ">
                         + افزودن صفحه
                     </div>
                 </div>
                 <div class="flex flex-col h-[100%] pt-10 ">
-                    <div class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg"><img class="w-[25px] h-[23px] " src="./assets/images/pen.png"/></div>
-                    <div class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg"><img class="w-[25px] h-[23px] " src="./assets/images/up.png"/></div>
-                    <div class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg"><img class="w-[25px] h-[23px] " src="./assets/images/down.png"/></div>
-                    <div class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg"><img class="w-[25px] h-[23px] " src="./assets/images/lock.png"/></div>
-                    <div class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg"><img class="w-[25px] h-[23px] " src="./assets/images/trash.png"/></div>
+                    <div id="div1" onmouseenter="mouseenter(text1)" onmouseleave="mouseleave(text1)" class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                        <img class="w-[25px] h-[23px] " src="./assets/images/pen.png"/>
+                        <span id="text1"  class="text-xs relative w-[70px] hidden text-center bg-[#2C2C2C] text-white py-1 px-2 left-[20px] rounded-lg bottom-[50px]">ویرایش</span>
+                    </div>
+                    <div id="icon1" onmouseenter="mouseenter(text2)"  onmouseleave="mouseleave(text2)" class="w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                        <img class="w-[25px] h-[23px] " src="./assets/images/up.png"/>
+                        <span id="text2" class="text-xs relative w-[70px] hidden text-center bg-[#2C2C2C] text-white py-1 px-2 left-[20px] rounded-lg bottom-[50px]">صفحه قبل</span>
+
+                    </div>                    
+                    <div onmouseenter="mouseenter(text3)"  onmouseleave="mouseleave(text3)" class="  w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                        <img class="w-[25px] h-[23px] " src="./assets/images/down.png"/>
+                        <span id="text3" class="text-xs relative w-[70px] hidden text-center bg-[#2C2C2C] text-white py-1 px-2 left-[20px] rounded-lg bottom-[50px]">صفحه بعد</span>
+                    </div>
+                    <div onmouseenter="mouseenter(text4)"  onmouseleave="mouseleave(text4)" class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                        <img class="w-[25px] h-[23px] " src="./assets/images/lock.png"/>
+                        <span id="text4" class="text-xs relative w-[90px] hidden text-center bg-[#2C2C2C] text-white py-1 px-2 left-[35px] rounded-lg bottom-[50px]">قفل صفحه</span>
+
+                    </div>
+                    <div onmouseenter="mouseenter(text5)"  onmouseleave="mouseleave(text5)" class=" w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                        <img class="w-[25px] h-[23px] " src="./assets/images/trash.png"/>
+                        <span id="text5" class="text-xs relative w-[70px] text-center bg-[#2C2C2C] text-white py-1 px-2 left-[20px] rounded-lg bottom-[50px] hidden">حذف</span>
+                    </div>
 
                 </div>
             </div>
@@ -84,5 +101,16 @@
             </div>
         </div>
     </div>
+    <script>
+    
+        function mouseenter(Span){
+        //    Get the span element containing the text
+            // const tooltip = document.getElementById(SpanID);
+            Span.classList.replace("hidden","block")
+        }
+        function mouseleave(Span){
+            Span.classList.replace("block","hidden")
+        }
+    </script>
 </body>
-</html>px
+</html>
