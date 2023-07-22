@@ -24,24 +24,29 @@
             </div>
             <div
             id="whiteheader"
-            class=" bg-white flex flex-row justify-evenly text-center h-min py-[1rem] items-center shadow-xl">
-            <div
-            class="flex flex-row w-fit gap-[2rem] vsmmobile:hidden">
-                <a class="font-bold text-sm" href="">صفحه نخست</a>
-                <a class="font-bold text-sm" href="">بلاگ</a>
-                <a class="font-bold text-sm" href="">دریافت برنامه</a>
+            class=" bg-white flex flex-row text-center h-min py-[1rem] items-center shadow-xl">
+                <div id="navlogo" class="align-bottom flex relative animate-logoclose  flex-col items-center pr-[7%] py-2 w-max ">
+                    <img  data-src="./assets/images/logo.png" class="animate-skeleton-loading bg-skeleton rounded-2xl" alt="" width="30px" height="30px">
+                    <h5 class="text-black text-xs" >سروش پلاس</h5>
+                </div>
+                <div class="flex flex-row justify-evenly text-center w-full h-min py-[1rem] items-center">
+                    <div class="flex flex-row justify-around text-center h-min py-[1rem] items-center">
+                        <a class="font-bold text-sm mx-5" href="">صفحه نخست</a>
+                        <a class="font-bold text-sm mx-5" href="">بلاگ</a>
+                        <a class="font-bold text-sm mx-5" href="">دریافت برنامه</a>
+                    </div>
+                    <div class="relative bg-white text-gray-300 focus-within:text-gray-400 vsmmobile:w-[95%]">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                          <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                          </button>
+                        </span>
+                        <input type="search" name="q" class="py-2 px-3 text-sm border rounded-3xl vsmmobile:rounded-sm pl-10 focus:outline-none focus:bg-white focus:text-gray-900 w-[100%]" placeholder="جستجو در ویترین" autocomplete="off">
+        
+                    </div>
+                </div>
             </div>
-            <div class="relative bg-white text-gray-300 focus-within:text-gray-400 vsmmobile:w-[95%]">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                  <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                  </button>
-                </span>
-                <input type="search" name="q" class="py-2 px-3 text-sm border rounded-3xl vsmmobile:rounded-sm pl-10 focus:outline-none focus:bg-white focus:text-gray-900 w-[100%]" placeholder="جستجو در ویترین" autocomplete="off">
-
             </div>
-            </
-            div>
         </div>
     
     </header>
@@ -49,7 +54,7 @@
 
     <body class="bg-[#e5ebef] flex flex-col overflow-x-hidden">
         <div class=" thebody items-center flex justify-center my-2">
-            <div class="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px] ">
+            <div class="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px]  ">
                 <div id="bigslider" class=" ltr big-slider w-[100%] h-[300px] flex mb-[35px]">
                     <div class="overflow-hidden relative h-[100%] my-[20px]">
                       <div id="items" class="items w-[6716px] h-[100%] relative top-0 flex gap-2 left-[-600px]">

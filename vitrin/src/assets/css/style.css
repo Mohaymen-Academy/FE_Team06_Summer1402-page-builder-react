@@ -12,6 +12,9 @@
     .closeanimation{
         @apply top-[-90px];
     }
+    .closelogo{
+        @apply opacity-0;
+    }
     .bigcardimages{
         @apply w-[600px] h-[100%] p-0 rounded-2xl;
     }

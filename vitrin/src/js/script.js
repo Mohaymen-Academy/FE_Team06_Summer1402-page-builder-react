@@ -400,6 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // 'py-10',
             'h-fit',
             'pt-[8%]',
+
         );
 
         const link = document.createElement("a");
@@ -414,8 +415,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const logoImage = document.createElement("img");
         // logoImage.setAttribute("src", skeletonimage);
         logoImage.setAttribute("data-src", element.src);
-        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton')
-        logoImage.setAttribute("style", "width: 75px; height: 75px;");
+        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton' , 'rounded-full' )
+        logoImage.setAttribute("style", "width: 75px; height: 75px; ");
         logoImage.setAttribute("alt", "");
 
         const logoText = document.createElement("div");
@@ -566,6 +567,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // * this section will handle the sticky header  
 // * stick the header to the top by adding a specific css class  
 const header = document.getElementById("header");
+const navlogo = document.getElementById("navlogo");
+
 let sticky = header.offsetTop;
 var lastScrollPosition = window.scrollY;
 window.onscroll = () => {
@@ -578,10 +581,18 @@ window.onscroll = () => {
         header.classList.remove('animate-blueheaderanimationopen')
         header.classList.add("animate-blueheaderanimatioclose");
         header.classList.add("closeanimation");
+        navlogo.classList.replace('animate-logoclose','animate-logoopen')
+        navlogo.classList.remove('closelogo')
+
+
     } else {
         header.classList.remove("animate-blueheaderanimatioclose");
         header.classList.add("animate-blueheaderanimationopen");
         header.classList.remove("closeanimation");
+        navlogo.classList.replace('animate-logoopen','animate-logoclose')
+        navlogo.classList.add('closelogo')
+
+
     }
 }
 
