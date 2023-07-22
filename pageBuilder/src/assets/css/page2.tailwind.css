@@ -542,8 +542,24 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
+.bottom-\[50px\] {
+  bottom: 50px;
+}
+
 .left-0 {
   left: 0px;
+}
+
+.left-\[20px\] {
+  left: 20px;
+}
+
+.left-\[35px\] {
+  left: 35px;
 }
 
 .top-0 {
@@ -666,6 +682,14 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -676,6 +700,10 @@ video {
 
 .inline-flex {
   display: inline-flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-2 {
@@ -698,12 +726,24 @@ video {
   height: 100%;
 }
 
+.h-\[13\%\] {
+  height: 13%;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
 
+.h-\[15px\] {
+  height: 15px;
+}
+
 .h-\[20px\] {
   height: 20px;
+}
+
+.h-\[220px\] {
+  height: 220px;
 }
 
 .h-\[23px\] {
@@ -742,6 +782,10 @@ video {
   height: 700px;
 }
 
+.h-\[80\%\] {
+  height: 80%;
+}
+
 .h-\[90\%\] {
   height: 90%;
 }
@@ -768,6 +812,10 @@ video {
 
 .w-\[10\%\] {
   width: 10%;
+}
+
+.w-\[15px\] {
+  width: 15px;
 }
 
 .w-\[20\%\] {
@@ -822,12 +870,28 @@ video {
   width: 70%;
 }
 
+.w-\[70px\] {
+  width: 70px;
+}
+
+.w-\[90px\] {
+  width: 90px;
+}
+
 .w-full {
   width: 100%;
 }
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[7\\90px\] {
+  width: 7\90px;
 }
 
 .appearance-none {
@@ -844,8 +908,16 @@ video {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -860,24 +932,36 @@ video {
   justify-content: space-between;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.gap-1 {
-  gap: 0.25rem;
+.justify-around {
+  justify-content: space-around;
 }
 
 .gap-2 {
   gap: 0.5rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-br-none {
+  border-bottom-right-radius: 0px;
+}
+
+.rounded-tr-none {
+  border-top-right-radius: 0px;
 }
 
 .border {
@@ -892,6 +976,14 @@ video {
   border-width: 2px;
 }
 
+.border-b-0 {
+  border-bottom-width: 0px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
 .border-dashed {
   border-style: dashed;
 }
@@ -899,6 +991,11 @@ video {
 .border-\[\#0066FF\] {
   --tw-border-opacity: 1;
   border-color: rgb(0 102 255 / var(--tw-border-opacity));
+}
+
+.border-\[\#FFD1A1\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 209 161 / var(--tw-border-opacity));
 }
 
 .border-gray-300 {
@@ -909,6 +1006,11 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.bg-\[\#2C2C2C\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 44 44 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#D7D8DD\] {
@@ -941,6 +1043,14 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
 .p-\[10px\] {
   padding: 10px;
 }
@@ -952,6 +1062,11 @@ video {
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-3 {
@@ -989,9 +1104,8 @@ video {
   padding-bottom: 9px;
 }
 
-.px-2 {
+.pl-2 {
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .pt-10 {
@@ -1018,17 +1132,9 @@ video {
   font-size: 12px;
 }
 
-.text-\[2px\] {
-  font-size: 2px;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[20px\] {
-  font-size: 20px;
 }
 
 .font-bold {
@@ -1073,14 +1179,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-\[\] {
-  color: ;
-}
-
-.text-\[2\] {
-  color: 2;
-}
-
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1115,6 +1213,10 @@ video {
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.group:hover .group-hover\:block {
+  display: block;
 }
 
 @media (prefers-color-scheme: dark) {
