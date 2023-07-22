@@ -573,28 +573,8 @@ video {
   position: relative;
 }
 
-.bottom-\[50px\] {
-  bottom: 50px;
-}
-
-.bottom-\[55px\] {
-  bottom: 55px;
-}
-
 .left-0 {
   left: 0px;
-}
-
-.left-\[20px\] {
-  left: 20px;
-}
-
-.left-\[35px\] {
-  left: 35px;
-}
-
-.left-\[50\%\] {
-  left: 50%;
 }
 
 .top-0 {
@@ -761,10 +741,6 @@ video {
   height: 10%;
 }
 
-.h-\[100\%\] {
-  height: 100%;
-}
-
 .h-\[13\%\] {
   height: 13%;
 }
@@ -909,19 +885,6 @@ video {
   width: 70%;
 }
 
-.w-\[70px\] {
-  width: 70px;
-}
-
-.w-\[90px\] {
-  width: 90px;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .w-full {
   width: 100%;
 }
@@ -980,8 +943,8 @@ video {
   gap: 1.5rem;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded {
@@ -1048,11 +1011,6 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.bg-\[\#2C2C2C\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(44 44 44 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#D7D8DD\] {
   --tw-bg-opacity: 1;
   background-color: rgb(215 216 221 / var(--tw-bg-opacity));
@@ -1102,11 +1060,6 @@ video {
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .px-3 {
@@ -1247,10 +1200,6 @@ video {
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
 
-.group:hover .group-hover\:block {
-  display: block;
-}
-
 @media (prefers-color-scheme: dark) {
   .dark\:border-gray-600 {
     --tw-border-opacity: 1;
@@ -1274,5 +1223,43 @@ video {
   .dark\:focus\:ring-blue-600:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(37 99 235 / var(--tw-ring-opacity));
+  }
+}
+
+@media (max-width: 580px) {
+  .vsmmobile\:hidden {
+    display: none;
+  }
+
+  .vsmmobile\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .vsmmobile\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .vsmmobile\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .vsmmobile\:flex-row {
+    flex-direction: row;
+  }
+
+  .vsmmobile\:flex-col {
+    flex-direction: column;
+  }
+
+  .vsmmobile\:justify-between {
+    justify-content: space-between;
+  }
+
+  .vsmmobile\:justify-around {
+    justify-content: space-around;
+  }
+
+  .vsmmobile\:p-\[10px\] {
+    padding: 10px;
   }
 }

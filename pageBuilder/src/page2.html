@@ -5,9 +5,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/page2.tailwind.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/home.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Black.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Bold.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-ExtraBold.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-ExtraLight.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Light.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Medium.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Regular.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-SemiBold.ttf">
+    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Thin.ttf">
+    <style>
+        *{
+            font-family: Vazir;
+        }
+    </style>
 </head>
 <body>
-    <div class="flex flex-col h-screen w-screen">
+    <div class="flex flex-col h-screen overflow-scroll w-screen">
         <div class="flex flex-row h-[10%] bg-white">
             <div class="flex flex-row items-center  bg-white w-[30%]">
                 <img class="w-[30px] h-[30px] mr-[15px] ml-[mx-\[5px\]]" src="./assets/images/logo.png"/>
@@ -25,11 +39,11 @@
             </div>
         </div>
         <div class="flex flex-row h-[90%] border">
-            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[10%]">
-                <div class="my-3">قالب ها</div>
+            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[10%] vsmmobile:hidden">
+                <div class="my-3 text-xs font-bold">قالب ها</div>
 
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">کارت</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">دکمه ها</div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">دکمه </div>
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">متن</div>
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">عکس</div>
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">ویدئو</div>
@@ -37,9 +51,9 @@
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">آیکون</div>
 
             </div>
-            <div class="flex flex-row w-[70%] h-screen bg-[#D7D8DD] p-10  justify-center items-start">
-                <div class="flex flex-col justify-center items-center pl-2"> 
-                    <div class="flex flex-col w-[350px] h-[700px]  bg-white">
+            <div class="flex flex-row w-[70%] h-screen bg-[#D7D8DD] p-10  justify-center items-start vsmmobile:w-[500px] vsmmobile:p-[10px] overflow-scroll">
+                <div class="flex flex-col justify-center items-center pl-2 "> 
+                    <div class="flex flex-col w-[350px] h-[700px] vsmmobile:w-[90%]  bg-white">
                         <div class="flex flex-col  justify-start items-start g mt-10  h-[220px] m-7 mb-4">
                             <div class="flex flex-row border-solid border-2 border-[#FFD1A1] border-b-0 rounded-full rounded-br-none items-center justify-around h-[13%] w-[30%]">
                                 <img class="w-[15px] h-[15px] " src="./assets/images/yellow pen.png"/>
@@ -58,7 +72,7 @@
                         </div>
 
                     </div>
-                    <div class="flex flex-row w-[350px] h-[50px] mb-5 mt-5 text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center ">
+                    <div class="flex flex-row w-[350px] h-[50px] vsmmobile:w-[70%] mb-5 mt-5 text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center ">
                         + افزودن صفحه
                     </div>
                 </div>
@@ -85,7 +99,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[20%]">
+            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[20%] vsmmobile:hidden">
                 <div class="my-3">عکس</div>
                 <div class="flex flex-row items-center justify-between my-5 w-full  bg-white">
                     <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/1.png"/>
