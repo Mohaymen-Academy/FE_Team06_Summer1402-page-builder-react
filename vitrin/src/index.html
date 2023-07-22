@@ -9,7 +9,8 @@
         * the header section will stick to the top of the window 
         TODO : need to hide the blue section when scrolling  
     -->
-    <header
+    <header 
+
     id="header"
     class ='header'>
         <div>
@@ -39,7 +40,8 @@
                 <input type="search" name="q" class="py-2 px-3 text-sm border rounded-3xl vsmmobile:rounded-sm pl-10 focus:outline-none focus:bg-white focus:text-gray-900 w-[100%]" placeholder="جستجو در ویترین" autocomplete="off">
 
             </div>
-            </div>
+            </
+            div>
         </div>
     
     </header>
@@ -48,26 +50,25 @@
     <body class="bg-[#e5ebef] flex flex-col overflow-x-hidden">
         <div class=" thebody items-center flex justify-center my-2">
             <div class="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px] ">
-                <div id="infinit-carousel-container" class="infinit-carousel-container w-full overflow-hidden ">
-                    <div id="infinit-carousel" class=" carousel flex flex-row-reverse animate-scrollleft inherit right-0">
-                    <div class="carousel-item w-full flex-none text-center ">
-                        <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel1.jpg" alt="">
+                <div id="bigslider" class=" ltr big-slider w-[100%] h-[300px] flex mb-[35px]">
+                    <div class="overflow-hidden relative h-[100%] my-[20px]">
+                      <div id="items" class="items w-[6716px] h-[100%] relative top-0 flex gap-2">
+                        <div class="bigslide w-[600px] cursor-pointer float-left justify-center transition-all duration-1000 relative">
+                          <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel1.jpg" alt="">
+                      </div>
+                      <div class="bigslide w-[600px] cursor-pointer float-left  justify-center transition-all duration-1000 relative">
+                        <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel4.jpg" alt="">
                     </div>
-                    <div class="carousel-item w-full flex-none text-center ">
+                    <div class="bigslide w-[600px] cursor-pointer float-left justify-center transition-all duration-1000 relative">
                         <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel2.jpg" alt="">
                     </div>
-                    <div class="carousel-item w-full flex-none text-center ">
-                          <img class="bigcardimages" data-src="" src="./assets/images/bigcarousel4.jpg" alt="">
                     </div>
                     </div>
-                </div>
+                  </div>
                 <div id="bartarin" data-link="" data-title="برترین ها">
                 </div>
-
                 <div class="flex flex-wrap mb-4 justify-center gap-[1rem]" id="CatsContainer">
-
                 </div>        
-
                 <div>
                     <a class="flex justify-center" href="">
                         <img class="cardimg" data-src="./assets/images/amade.png" class="animate-skeleton-loading" alt="" >

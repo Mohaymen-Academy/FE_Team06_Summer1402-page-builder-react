@@ -13,6 +13,14 @@
         @apply top-[-90px];
     }
     .bigcardimages{
-        @apply w-[90%] p-0;
+        @apply w-[500px] h-[100%] p-0 rounded-2xl;
+    }
+    .bgislide{
+        @apply w-[100%] ;
+    }
+}
+@layer utilities{
+    .ltr{
+        direction: ltr;
     }
 }

@@ -602,10 +602,6 @@ video {
   left: -500px;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -621,6 +617,10 @@ video {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-\[10px\] {
+  margin-bottom: 10px;
 }
 
 .ml-4 {
@@ -663,6 +663,10 @@ video {
   height: 200px;
 }
 
+.h-\[300px\] {
+  height: 300px;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -689,6 +693,10 @@ video {
   width: 125px;
 }
 
+.w-\[1690px\] {
+  width: 1690px;
+}
+
 .w-\[300px\] {
   width: 300px;
 }
@@ -713,10 +721,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.flex-none {
-  flex: none;
 }
 
 .transform {
@@ -751,20 +755,6 @@ video {
   animation: blueheaderanimationopen 1s ease-out;
 }
 
-@keyframes scrollleft {
-  0% {
-    transform:  translateX(0);
-  }
-
-  100% {
-    transform: translateX(-750px);
-  }
-}
-
-.animate-scrollleft {
-  animation: scrollleft 3s linear infinite;
-}
-
 @keyframes skeleton-loading {
   0% {
     border-radius: 20px;
@@ -786,10 +776,6 @@ video {
 
 .flex-row {
   flex-direction: row;
-}
-
-.flex-row-reverse {
-  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -822,6 +808,10 @@ video {
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-\[10rem\] {
@@ -883,11 +873,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-yellow-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
 }
 
 .p-1 {
@@ -1039,6 +1024,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.transition-\[left\] {
+  transition-property: left;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1051,18 +1042,8 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-\[left\] {
-  transition-property: left;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-1000 {
   transition-duration: 1000ms;
-}
-
-.duration-0 {
-  transition-duration: 0s;
 }
 
 .duration-200 {

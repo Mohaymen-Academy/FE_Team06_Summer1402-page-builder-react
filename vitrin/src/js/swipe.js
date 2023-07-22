@@ -1,26 +1,26 @@
-var slider = document.getElementById('slider'),
-    sliderItems = document.getElementById('items');
-slide(slider, sliderItems);
-console.log(sliderItems)
-function slide(wrapper, items) {
+var bigslider = document.getElementById('bigslider'),
+    bigsliderItems = document.getElementById('items');
+bigslide(bigslider, bigsliderItems);
+console.log(bigsliderItems)
+function bigslide(wrapper, items) {
   var posX1 = 0,
       posX2 = 0,
       posInitial,
       posFinal,
       threshold = 100,
-      slides = items.getElementsByClassName('slide'),
-      slidesLength = slides.length,
-      slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
-      firstSlide = slides[0],
-      lastSlide = slides[slidesLength - 1],
-      cloneFirst = firstSlide.cloneNode(true),
-      cloneLast = lastSlide.cloneNode(true),
+      bigslides = items.getElementsByClassName('bigslide'),
+      bigslidesLength = bigslides.length,
+      bigslideSize = items.getElementsByClassName('bigslide')[0].offsetWidth,
+      firstbigslide = bigslides[0],
+      lastbigslide = bigslides[bigslidesLength - 1],
+      cloneFirst = firstbigslide.cloneNode(true),
+      cloneLast = lastbigslide.cloneNode(true),
       index = 0,
       allowShift = true;
   
-  // Clone first and last slide
+  // Clone first and last bigslide
   items.appendChild(cloneFirst);
-  items.insertBefore(cloneLast, firstSlide);
+  items.insertBefore(cloneLast, firstbigslide);
   wrapper.classList.add('loaded');
   
   // Mouse and Touch events
@@ -64,9 +64,9 @@ function slide(wrapper, items) {
   function dragEnd (e) {
     posFinal = items.offsetLeft;
     if (posFinal - posInitial < -threshold) {
-      shiftSlide(1, 'drag');
+      shiftbigslide(1, 'drag');
     } else if (posFinal - posInitial > threshold) {
-      shiftSlide(-1, 'drag');
+      shiftbigslide(-1, 'drag');
     } else {
       items.style.left = (posInitial) + "px";
     }
@@ -74,18 +74,20 @@ function slide(wrapper, items) {
     document.onmousemove = null;
   }
   
-  function shiftSlide(dir, action) {
+  function shiftbigslide(dir, action) {
     items.classList.add('transition-[left]','ease-out','duration-200');
     console.log('shift')
     if (allowShift) {
       if (!action) { posInitial = items.offsetLeft; }
       if (dir == 1) {
         console.log('left')
-        items.style.left = (posInitial - slideSize) + "px";
+        console.log(posInitial - bigslideSize)
+        items.style.left = (posInitial - bigslideSize) + "px";
         index++;      
       } else if (dir == -1) {
         console.log('right')
-        items.style.left = (posInitial + slideSize) + "px";
+        console.log(posInitial + bigslideSize)
+        items.style.left = (posInitial + bigslideSize) + "px";
         index--;      
       }
     };
@@ -98,11 +100,13 @@ function slide(wrapper, items) {
     items.classList.remove('transition-[left]','ease-out','duration-200');
     console.log('check')
     if (index == -1) {
-      items.style.left = -(slidesLength * slideSize) + "px";
-      index = slidesLength - 1;
+      console.log(-(bigslidesLength * bigslideSize))
+      items.style.left = -(bigslidesLength * bigslideSize) + "px";
+      index = bigslidesLength - 1;
     }
-    if (index == slidesLength) {
-      items.style.left = -(1 * slideSize) + "px";
+    if (index == bigslidesLength) {
+      console.log(-(1 * bigslideSize))
+      items.style.left = -(1 * bigslideSize) + "px";
       index = 0;
     }
     
