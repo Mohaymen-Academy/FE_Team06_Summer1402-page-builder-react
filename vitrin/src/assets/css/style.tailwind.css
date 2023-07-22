@@ -586,7 +586,7 @@ video {
 
 .bigcardimages {
   height: 100%;
-  width: 500px;
+  width: 600px;
   border-radius: 1rem;
   padding: 0px;
 }
@@ -629,6 +629,14 @@ video {
   top: 0px;
 }
 
+.left-\[-1800px\] {
+  left: -1800px;
+}
+
+.left-\[-600px\] {
+  left: -600px;
+}
+
 .float-left {
   float: left;
 }
@@ -647,8 +655,8 @@ video {
   margin-bottom: 1rem;
 }
 
-.mb-\[10px\] {
-  margin-bottom: 10px;
+.mb-\[35px\] {
+  margin-bottom: 35px;
 }
 
 .ml-4 {
@@ -657,18 +665,6 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-\[20px\] {
-  margin-top: 20px;
-}
-
-.mb-\[30px\] {
-  margin-bottom: 30px;
-}
-
-.mb-\[35px\] {
-  margin-bottom: 35px;
 }
 
 .flex {

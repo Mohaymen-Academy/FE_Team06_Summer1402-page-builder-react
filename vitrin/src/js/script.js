@@ -4,35 +4,324 @@
 
 //* the initializer method for the index file 
 //* in this method we create some carousels and category icons   
-const skeletonimage = './assets/images/had.jpg'
+// const skeletonimage = 'had.jpg'
 const data={
-    bartarin:[
-        {
-            title:'',
-            src:'',
-        },
-        {
-            title:'',
-            src:'',
-        },
-        {
-            title:'',
-            src:'',
-        },
-        {
-            title:'',
-            src:'',
-        },
-        {
-            title:'',
-            src:'',
-        },
-        {
-            title:'',
-            src:'',
-        },
 
-    ]
+    bartarin:[
+
+        {
+            title:'سروش',
+            src:"./assets/images/ba1.jpeg",
+        },
+        
+        {
+            title:'سروش',
+            src:"./assets/images/ba2.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ba3.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ba4.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ba5.png",
+        },
+        
+        {
+            title:'سروش',
+            src:"./assets/images/ba6.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ba7.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ba8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ba9.jpeg",
+        },
+        
+    ],
+    porfrosh:[
+        {
+            title:'سروش',
+            src:"./assets/images/po.png",
+        }, 
+        {
+            title:'سروش',
+            src:"./assets/images/po1.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po2.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po3.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po4.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po5.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po6.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po7.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/po9.jpeg",
+        },
+        
+    ],
+    labkhandane:[
+        {
+            title:'سروش',
+            src:"./assets/images/lab1.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab2.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab3.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab4.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab5.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab6.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab7.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/lab9.jpeg",
+        },
+        
+    ],
+    sabkzendegi:[
+        {
+            title:'سروش',
+            src:"./assets/images/sab1.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab2.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab3.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab4.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab5.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab6.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab7.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sab9.jpeg",
+        },
+    ],
+    akhbar:[
+        {
+            title:'سروش',
+            src:"./assets/images/akh1.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh2.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh3.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh4.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh5.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh6.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh7.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/akh9.jpeg",
+        },
+    ],
+    mazhabi:[
+        {
+            title:'سروش',
+            src:"./assets/images/m1.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m2.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m3.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m4.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m5.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m6.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m7.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/m9.jpeg",
+        },
+    ],
+    tabliq:[
+        {
+            title:'سروش',
+            src:"./assets/images/ta1.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta2.jfif",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta3.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta4.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta5.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta6.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta7.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta8.jpeg",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/ta9.jpeg",
+        },
+    ],
+    soroush:[
+        {
+            title:'سروش',
+            src:"./assets/images/sp1.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp2.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp3.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp4.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp5.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp6.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp7.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp8.png",
+        },
+        {
+            title:'سروش',
+            src:"./assets/images/sp9.png",
+        },
+    ],
+
 }
 document.addEventListener("DOMContentLoaded", function () {
     //TODO  to add the big icons 
@@ -143,45 +432,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // * add the createded slide to the carousel
-    function addSlideToCarousel(
-        carousel
-    ) {
-        const cards = [
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-            {
-                title: 'سروش',
-                src: "./assets/images/logo.png",
-            },
-
-        ]
-
+    function addSlideToCarousel(carousel,cards) {
+        
         cards.forEach(element => {
             const newSlide = createSlideElement(element);
             carousel.appendChild(newSlide);
@@ -211,7 +463,8 @@ document.addEventListener("DOMContentLoaded", function () {
         carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36", "overflow-hidden", 'relative', "gap-[10rem]")
         const carousel = document.createElement('div')
         carousel.classList.add("slider", "flex", "transition-transform", "ease-in")
-        addSlideToCarousel(carousel)
+        const cards=data[elementID]
+        addSlideToCarousel(carousel,cards)
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
@@ -242,7 +495,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function onTouchEnd() {
-            console.log(animationID)
             cancelAnimationFrame(animationID);
             isDragging = false;
             prevTranslate = currentTranslate;
@@ -262,7 +514,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         function setSliderPosition() {
-            console.log(currentTranslate)
             if (currentTranslate > maxTranslate) { currentTranslate = maxTranslate; }
             else if (currentTranslate < minTranslate) { currentTranslate = minTranslate; }
             carousel.style.transform = `translateX(${currentTranslate}px)`;
@@ -280,6 +531,7 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.addEventListener("mouseleave", onTouchEnd);
 
     }
+    
     createCarousel('bartarin');
     createCarousel('porfrosh');
     createCarousel('labkhandane');
@@ -336,7 +588,6 @@ window.onscroll = () => {
 var bigslider = document.getElementById('bigslider'),
     bigsliderItems = document.getElementById('items');
 bigslide(bigslider, bigsliderItems);
-console.log(bigsliderItems)
 function bigslide(wrapper, items) {
   var posX1 = 0,
       posX2 = 0,
@@ -411,18 +662,13 @@ function bigslide(wrapper, items) {
   
   function shiftbigslide(dir, action) {
     items.classList.add('transition-[left]','ease-out','duration-200');
-    console.log('shift')
     if (allowShift) {
       if (!action) { posInitial = items.offsetLeft; }
       if (dir == 1) {
-        console.log('left')
-        console.log(posInitial - bigslideSize)
-        items.style.left = Math.ceil((posInitial - bigslideSize)) + "px";
+        items.style.left = Math.ceil((posInitial - 600)) + "px";
         index++;      
     } else if (dir == -1) {
-        console.log('right')
-        console.log(posInitial + bigslideSize)
-        items.style.left = Math.ceil((posInitial - bigslideSize)) + "px";
+        items.style.left = Math.ceil((posInitial + bigslideSize)) + "px";
         index--;      
       }
     };
@@ -433,20 +679,14 @@ function bigslide(wrapper, items) {
   function checkIndex (){
       // items.classList.remove('transition-left-200','ease-out');
     items.classList.remove('transition-[left]','ease-out','duration-200');
-    console.log('check')
     if (index == -1) {
-        console.log('check right')
-        console.log(-(bigslidesLength * bigslideSize))
         items.style.left = -(bigslidesLength * bigslideSize) + "px";
         index = bigslidesLength - 1;
     }
     if (index == bigslidesLength) {
-        console.log('check left')
-      console.log(-(1 * bigslideSize))
       items.style.left = -(1 * bigslideSize) + "px";
       index = 0;
     }
-    
     allowShift = true;
   }
 }

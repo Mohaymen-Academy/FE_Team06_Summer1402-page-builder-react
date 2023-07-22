@@ -13,7 +13,7 @@
         @apply top-[-90px];
     }
     .bigcardimages{
-        @apply w-[500px] h-[100%] p-0 rounded-2xl;
+        @apply w-[600px] h-[100%] p-0 rounded-2xl;
     }
     .bgislide{
         @apply w-[100%] ;
