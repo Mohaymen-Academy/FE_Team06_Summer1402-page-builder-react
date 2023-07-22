@@ -541,6 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
     createCarousel('mazhabi');
     createCarousel('tabliq');
     createCarousel('soroush');
+
     function lazyLoadImages(entries, observer) {
         entries.forEach(element => {
             if (element.isIntersecting) {
@@ -583,7 +584,7 @@ window.onscroll = () => {
         header.classList.add("closeanimation");
         navlogo.classList.replace('animate-logoclose','animate-logoopen')
         navlogo.classList.remove('closelogo')
-
+        // navlogo.classList.remove("opacity-0");
 
     } else {
         header.classList.remove("animate-blueheaderanimatioclose");
@@ -674,12 +675,14 @@ function bigslide(wrapper, items) {
   function shiftbigslide(dir, action) {
     items.classList.add('transition-[left]','ease-out','duration-200');
     if (allowShift) {
-      if (!action) { posInitial = items.offsetLeft; }
-      if (dir == 1) {
-        items.style.left = Math.ceil((posInitial - 600)) + "px";
+        if (!action) { posInitial = items.offsetLeft; }
+        if (dir == 1) {
+          console.log((posInitial - bigslideSize -8) ,'what')
+        items.style.left = (posInitial - bigslideSize) -8 + "px";
         index++;      
     } else if (dir == -1) {
-        items.style.left = Math.ceil((posInitial + bigslideSize)) + "px";
+        items.style.left = (posInitial + bigslideSize )+8 + "px";
+        console.log((posInitial + bigslideSize),'what2')
         index--;      
       }
     };
@@ -691,11 +694,13 @@ function bigslide(wrapper, items) {
       // items.classList.remove('transition-left-200','ease-out');
     items.classList.remove('transition-[left]','ease-out','duration-200');
     if (index == -1) {
-        items.style.left = -(bigslidesLength * bigslideSize) + "px";
+        console.log('zorp',bigslidesLength * bigslideSize)
+        items.style.left = (-(bigslidesLength * bigslideSize) -16) + "px";
         index = bigslidesLength - 1;
     }
     if (index == bigslidesLength) {
-      items.style.left = -(1 * bigslideSize) + "px";
+        console.log('zurp')
+      items.style.left = (-(1 * bigslideSize)) + "px";
       index = 0;
     }
     allowShift = true;

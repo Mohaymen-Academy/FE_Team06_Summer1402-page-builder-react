@@ -590,9 +590,14 @@ video {
 
 .bigcardimages {
   height: 100%;
-  width: 600px;
+  width: 100%;
   border-radius: 1rem;
   padding: 0px;
+}
+
+.bigslide {
+  height: 100%;
+  width: 786px;
 }
 
 .absolute {
@@ -629,12 +634,16 @@ video {
   left: -500px;
 }
 
-.left-\[-600px\] {
-  left: -600px;
+.left-\[-660px\] {
+  left: -660px;
 }
 
 .top-0 {
   top: 0px;
+}
+
+.left-\[-787px\] {
+  left: -787px;
 }
 
 .float-left {
@@ -746,12 +755,12 @@ video {
   width: 50%;
 }
 
-.w-\[600px\] {
-  width: 600px;
-}
-
 .w-\[6716px\] {
   width: 6716px;
+}
+
+.w-\[800px\] {
+  width: 800px;
 }
 
 .w-\[91\%\] {
@@ -910,6 +919,10 @@ video {
   overflow-x: hidden;
 }
 
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1004,11 +1017,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.py-\[1rem\] {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .pb-\[5px\] {
   padding-bottom: 5px;
 }
@@ -1079,10 +1087,6 @@ video {
   line-height: 1rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1101,6 +1105,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .shadow-xl {
@@ -1177,12 +1185,16 @@ video {
 }
 
 @media (max-width: 580px) {
+  .vsmmobile\:hidden {
+    display: none;
+  }
+
   .vsmmobile\:w-\[470px\] {
     width: 470px;
   }
 
-  .vsmmobile\:w-\[95\%\] {
-    width: 95%;
+  .vsmmobile\:w-\[90\%\] {
+    width: 90%;
   }
 
   .vsmmobile\:rounded-sm {
@@ -1191,8 +1203,16 @@ video {
 }
 
 @media (min-width: 580px) {
+  .smmobile\:hidden {
+    display: none;
+  }
+
   .smmobile\:w-\[530px\] {
     width: 530px;
+  }
+
+  .smmobile\:w-\[80\%\] {
+    width: 80%;
   }
 }
 
@@ -1200,11 +1220,25 @@ video {
   .mobile\:w-\[580px\] {
     width: 580px;
   }
+
+  .mobile\:w-\[70\%\] {
+    width: 70%;
+  }
 }
 
 @media (min-width: 992px) {
+  .tablet\:flex {
+    display: flex;
+  }
+
   .tablet\:w-\[780px\] {
     width: 780px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .laptop\:w-\[25\%\] {
+    width: 25%;
   }
 }
 
