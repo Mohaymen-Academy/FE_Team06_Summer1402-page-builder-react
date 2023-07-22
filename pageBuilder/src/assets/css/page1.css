@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components{
+    .spantext{
+        @apply text-xs hidden text-center bg-[#2C2C2C] text-white py-1 px-2 left-[20px] rounded-lg bottom-[50px] group-hover:block relative left-[50%] bottom-[55px] w-fit whitespace-nowrap ;
+    }
+}
