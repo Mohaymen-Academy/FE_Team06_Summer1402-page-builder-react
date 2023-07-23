@@ -18,9 +18,13 @@
         *{
             font-family: Vazir;
         }
+        .modal-overlay {
+            display: none;
+        }
     </style>
 </head>
 <body>
+
     <div class="flex flex-col h-screen overflow-hidden  w-screen">
         <div class="flex flex-row h-[10%] bg-white justify-between">
             <div class="flex flex-row items-center  bg-white w-fit">
@@ -109,7 +113,7 @@
                         <img class="w-[25px] h-[23px] " src="./assets/images/trash.png"/>
                         <span class="spantext">حذف</span>
                     </div>
-                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                    <div id = "setting" class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg desktop:hidden laptop:hidden tablet:hidden mobile:hidden ">
                         <img width="25" height="25" src="./assets/images/icons8-setting-24.png" alt="settings"/>
                         <span class="spantext">تنظیمات</span>
                     </div>
@@ -162,8 +166,76 @@
             </div>
         </div>
     </div>
-    <script>
+    <!-- pop up -->
+    <!-- ... (HTML code above) ... -->
+    <div class="fixed inset-0 m-[5%] flex items-center justify-center modal-overlay" id="modalOverlay">
+        <div class="modal bg-white rounded-lg shadow-md p-4 w-[100%] h-[100%] relative" role="dialog">
+        <div class="modal-header flex justify-between items-center border-b border-gray-300 pb-2 mb-4">
+            <h3 class="text-lg font-semibold">تنظیمات</h3>
+            <button class="modal-close text-gray-600 text-2xl" id="modalCloseBtn">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div class="flex flex-col px-4 py-3  bg-white">
+                <div class="my-3">عکس</div>
+                <div class="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/1.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/2.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/3.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/4.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/5.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/6.png"/>
+                    
+                </div>
+                <div class=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mobile:h-[100px] h-[150px] ml-3 mb-3 ">
+                    <div  class="flex flex-col justify-center items-center w-[50px] h-[50px] rounded-lg bg-[#dce5f1]">
+                        <img class="w-[25px] h-[25px]" src="./assets/images/plus.png"/>
+                    </div>
+                    <div class="text-[#0066FF] m-4 mb-1 mobile:text-xs">افزودن عکس</div>
+                    <div class="text-xs mobile:hidden">حجم عکس تا 5 مگابایت و با فرمت PNG, JPG</div>
+                    </div>
+                <div class="flex flex-row justify-between p-[7px] mobile:flex-col mobile:items-center">
+                    <div class="text-[12px]  my-3">عرض عکس</div>
+                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-1  justify-between inline-flex items-center " type="button">پیش فرض 
+                        <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-row justify-between p-[7px]  ">
+                    <div class="text-[12px] my-1 ">حاشیه</div>
+                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">16 
+                    </button>               
+                </div>
+                <div class="flex flex-row justify-between p-[7px] my-0">
+                    <div class="text-[12px] my-1">فاصله</div>
+                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">24
+                    </button>    
+                </div>
+                <div class="flex flex-row justify-between p-[7px]">
+                    <div class="text-[12px]  my-3">گوشه ها</div>
+                    <button class="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">4
+                        <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
     
+    <script>
+        const settingDiv = document.getElementById("setting");
+        const modalOverlay = document.getElementById("modalOverlay");
+        const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+        settingDiv.addEventListener("click", function () {
+            modalOverlay.style.display = "block";
+        });
+
+        modalCloseBtn.addEventListener("click", function () {
+            modalOverlay.style.display = "none";
+        });
     </script>
 </body>
 </html>
