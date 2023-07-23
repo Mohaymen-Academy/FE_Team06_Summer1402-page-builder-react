@@ -893,6 +893,11 @@ video {
   width: 100vw;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -945,6 +950,10 @@ video {
 
 .overflow-scroll {
   overflow: scroll;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .rounded {
@@ -1241,22 +1250,6 @@ video {
 
   .vsmmobile\:w-\[90\%\] {
     width: 90%;
-  }
-
-  .vsmmobile\:flex-row {
-    flex-direction: row;
-  }
-
-  .vsmmobile\:flex-col {
-    flex-direction: column;
-  }
-
-  .vsmmobile\:justify-between {
-    justify-content: space-between;
-  }
-
-  .vsmmobile\:justify-around {
-    justify-content: space-around;
   }
 
   .vsmmobile\:p-\[10px\] {
