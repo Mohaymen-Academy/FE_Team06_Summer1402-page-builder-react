@@ -40,3 +40,8 @@
         direction: ltr;
     }
 }
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir/Vazirmatn-FD-ExtraLight.ttf');
+}

@@ -604,7 +604,7 @@ function bigslide(wrapper, items) {
     var biassize=parseFloat(window.getComputedStyle(items).gap),
         mainbodywidth=parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width);
     items.style.left = (-mainbodywidth + biassize /3) +'px';
-    console.log(mainbodywidth)
+    // console.log(mainbodywidth)
     var posX1 = 0,
         posX2 = 0,
         posInitial,
@@ -621,7 +621,7 @@ function bigslide(wrapper, items) {
     // biassize = parseFloat(window.getComputedStyle(items).gap);
 
     allowShift = true;
-    console.log('slidesize',items.getElementsByClassName('bigslide')[0].width)
+    // console.log('slidesize',items.getElementsByClassName('bigslide')[0].width)
 
     // Clone first and last bigslide
     items.appendChild(cloneFirst);
@@ -680,12 +680,12 @@ function bigslide(wrapper, items) {
     }
 
     function shiftbigslide(dir, action) {
-        console.log('bias:', biassize)
+        // console.log('bias:', biassize)
         items.classList.add('transition-[left]', 'ease-out', 'duration-200');
         if (allowShift) {
             if (!action) { posInitial = items.offsetLeft; }
             if (dir == 1) {
-                console.log((posInitial - bigslideSize), 'what the ficlk')
+                // console.log((posInitial - bigslideSize), 'what the ficlk')
                 items.style.left = (posInitial - bigslideSize - Math.ceil(biassize / 3))
                     // Math.floor(-biassize/3);
                     + "px";
@@ -694,7 +694,7 @@ function bigslide(wrapper, items) {
                 items.style.left = (posInitial + bigslideSize)
                     + Math.floor(biassize / 3)
                     + "px";
-                console.log((posInitial + bigslideSize), 'what2')
+                // console.log((posInitial + bigslideSize), 'what2')
                 index--;
             }
         };
@@ -705,16 +705,16 @@ function bigslide(wrapper, items) {
     function checkIndex() {
         // items.classList.remove('transition-left-200','ease-out');
         items.classList.remove('transition-[left]', 'ease-out', 'duration-200');
-        console.log('slide size', bigslideSize)
+        // console.log('slide size', bigslideSize)
         if (index == -1) {
-            console.log('zorp', bigslidesLength * bigslideSize)
+            // console.log('zorp', bigslidesLength * bigslideSize)
             items.style.left = (-(bigslidesLength * bigslideSize))
                 - biassize/3
                 + "px";
             index = bigslidesLength - 1;
         }
         if (index == bigslidesLength) {
-            console.log('zurp')
+            // console.log('zurp')
             items.style.left = (-(1 * bigslideSize))
                 + Math.floor(biassize / 3)
                 + "px";

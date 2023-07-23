@@ -13,6 +13,9 @@ module.exports = {
       'desktop': '1024px',
     },
     extend: {
+      fontFamily:{
+        vazir:['Vazir']
+      },
       keyframes: {
         'skeleton-loading': {
           '0%': {
