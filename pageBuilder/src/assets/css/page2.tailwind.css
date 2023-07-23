@@ -573,12 +573,20 @@ video {
   position: relative;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .left-0 {
   left: 0px;
 }
 
 .top-0 {
   top: 0px;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-2 {
@@ -603,6 +611,14 @@ video {
 
 .m-\[1px\] {
   margin: 1px;
+}
+
+.m-\[50\%\] {
+  margin: 50%;
+}
+
+.m-\[5\%\] {
+  margin: 5%;
 }
 
 .mx-\[20px\] {
@@ -843,6 +859,10 @@ video {
   height: 100vh;
 }
 
+.h-\[100\%\] {
+  height: 100%;
+}
+
 .max-h-\[23px\] {
   max-height: 23px;
 }
@@ -940,12 +960,24 @@ video {
   width: 100vw;
 }
 
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .max-w-\[25px\] {
   max-width: 25px;
 }
 
 .max-w-\[350px\] {
   max-width: 350px;
+}
+
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .appearance-none {
@@ -1042,6 +1074,10 @@ video {
   border-bottom-width: 0px;
 }
 
+.border-b {
+  border-bottom-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -1116,6 +1152,10 @@ video {
   padding: 7px;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1165,6 +1205,10 @@ video {
   padding-left: 0.5rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1186,12 +1230,26 @@ video {
   line-height: 1rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .leading-tight {
@@ -1228,9 +1286,20 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1333,6 +1402,10 @@ video {
 }
 
 @media (min-width: 581px) and (max-width: 767px) {
+  .smmobile\:visible {
+    visibility: visible;
+  }
+
   .smmobile\:hidden {
     display: none;
   }
@@ -1351,6 +1424,10 @@ video {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .mobile\:visible {
+    visibility: visible;
+  }
+
   .mobile\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
