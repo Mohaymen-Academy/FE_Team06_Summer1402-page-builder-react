@@ -21,13 +21,13 @@
     </style>
 </head>
 <body>
-    <div class="flex flex-col h-screen overflow-y-scroll w-screen">
+    <div class="flex flex-col h-screen overflow-hidden  w-screen">
         <div class="flex flex-row h-[10%] bg-white justify-between">
             <div class="flex flex-row items-center  bg-white w-fit">
                 <img class="w-[30px] h-[30px] mr-[15px] ml-[mx-\[5px\]]" src="./assets/images/logo.png"/>
-                <img class="w-[30px] h-[25px] mr-[10px]" src="./assets/images/home.png"/>
-                <img class="w-[30px] h-[30px] mx-[5px]" src="./assets/images/eye.png"/>
-                <img class="w-[30px] h-[27px] mx-[px]" src="./assets/images/publish.png"/>
+                <img class="w-[30px] smmobile:hidden vsmmobile:hidden h-[25px] mr-[10px]" src="./assets/images/home.png"/>
+                <img class="w-[30px] smmobile:hidden vsmmobile:hidden h-[30px] mx-[5px]" src="./assets/images/eye.png"/>
+                <img class="w-[30px] smmobile:hidden vsmmobile:hidden h-[27px] mx-[px]" src="./assets/images/publish.png"/>
                 
             </div>
             <div class="flex flex-row justify-center items-center bg-white text-[#0066FF] w-fit">
@@ -38,8 +38,20 @@
                 <img class="w-[20px] h-[20px] mx-[20px]" src="./assets/images/back.png"/>
             </div>
         </div>
-        <div class="flex flex-row h-[90%] border">
-            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[10%] vsmmobile:hidden">
+        <div class="flex flex-row h-[10%] desktop:hidden laptop:hidden tablet:hidden mobile:hidden border">
+            <div class="flex flex-row py-2 my-2 justify-around bg-white w-full  ">
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">کارت</div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">دکمه </div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">متن</div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">عکس</div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">ویدئو</div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">اسلایدر</div>
+                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">آیکون</div>
+
+            </div>    
+        </div>
+        <div class="flex flex-row h-[90%] border vsmmobile:h-[80%] smmobile:h-[80%]">
+            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[10%] smmobile:hidden vsmmobile:hidden">
                 <div class="my-3 text-xs font-bold">قالب ها</div>
 
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">کارت</div>
@@ -51,22 +63,22 @@
                 <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">آیکون</div>
 
             </div>
-            <div class="flex flex-row w-[70%] h-screen bg-[#D7D8DD] p-10  justify-center items-start vsmmobile:w-[500px] vsmmobile:p-[10px] overflow-scroll">
+            <div class="flex flex-row w-[70%] overflow-x-hidden h-[screen] bg-[#D7D8DD] p-10  justify-center items-start vsmmobile:w-[100%]  smmobile:w-[100%]  ">
                 <div class="flex flex-col justify-center items-center pl-2 "> 
-                    <div class="flex flex-col w-[350px] h-[700px] vsmmobile:w-[90%]  bg-white">
-                        <div class="flex flex-col  justify-start items-start g mt-10  h-[220px] m-7 mb-4">
-                            <div class="flex flex-row border-solid border-2 border-[#FFD1A1] border-b-0 rounded-full rounded-br-none items-center justify-around h-[13%] w-[30%]">
+                    <div class="flex flex-col max-w-[350px] h-[600px] w-[100%] vsmmobile:h-[550px] smmobile:h-[550px] mobile:h-[550px]  tablet:h-[550px] bg-white">
+                        <div class="flex flex-col  justify-start items-start g mt-10  h-[220px] m-7 mb-4 vsmmobile:mb-0">
+                            <div class="flex flex-row border-solid border-2 border-[#FFD1A1] border-b-0 rounded-full rounded-br-none items-center justify-around h-[13%] w-[30%] ">
                                 <img class="w-[15px] h-[15px] " src="./assets/images/yellow pen.png"/>
                                 <img class="w-[15px] h-[15px]" src="./assets/images/yellow trash.png"/>
                                 <img class="w-[15px] h-[15px]" src="./assets/images/yellow hand.png"/>
                             </div>
-                            <div class="border-solid p-2 border-2 border-[#FFD1A1] rounded-lg rounded-tr-none h-[80%] w-full">
-                                <img class="rounded-lg" src="./assets/images/pic.jpg">
+                            <div class="border-solid p-2 border-2 border-[#FFD1A1] rounded-lg rounded-tr-none h-[80%] vsmmobile:h-[63%]  w-full">
+                                <img class="rounded-lg w-full h-full " src="./assets/images/pic.jpg">
                             </div>
                         </div>
-                        <div class=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mt-2  h-[150px] m-7 ">
-                            <div  class="flex flex-col justify-center items-center w-[50px] h-[50px] rounded-lg bg-[#dce5f1]">
-                                <img class="w-[25px] h-[25px]" src="./assets/images/plus.png"/>
+                        <div class=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mt-2 vsmmobile:h-[140px]  h-[150px] m-7  ">
+                            <div  class="flex flex-col justify-center items-center w-[50px] h-[50px] mt-3 vsmmobile:h-[35px] vsmmobile:w-[35px] rounded-lg bg-[#dce5f1]">
+                                <img class="w-[80%] h-[80%] m-[1px]" src="./assets/images/plus.png"/>
                             </div>
                             <div class="text-[#0066FF] m-4 mb-1">یک قالب را بکشید و رها کنید</div>
                         </div>
@@ -97,27 +109,31 @@
                         <img class="w-[25px] h-[23px] " src="./assets/images/trash.png"/>
                         <span class="spantext">حذف</span>
                     </div>
+                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
+                        <img width="25" height="25" src="./assets/images/icons8-setting-24.png" alt="settings"/>
+                        <span class="spantext">تنظیمات</span>
+                    </div>
                 </div>
             </div>
-            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[20%] vsmmobile:hidden">
+            <div class="flex flex-col px-4 py-3 h-screen bg-white w-[20%] smmobile:hidden vsmmobile:hidden">
                 <div class="my-3">عکس</div>
-                <div class="flex flex-row items-center justify-between my-5 w-full  bg-white">
-                    <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/1.png"/>
-                    <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/2.png"/>
-                    <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/3.png"/>
-                    <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/4.png"/>
-                    <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/5.png"/>
-                    <img class="w-[30px] h-[27px] mx-[5px]" src="./assets/images/6.png"/>
+                <div class="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/1.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/2.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/3.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/4.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/5.png"/>
+                    <img class="max-w-[25px] max-h-[23px] " src="./assets/images/6.png"/>
                     
                 </div>
-                <div class=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg  h-[150px] ml-3 mb-3 ">
+                <div class=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mobile:h-[100px] h-[150px] ml-3 mb-3 ">
                     <div  class="flex flex-col justify-center items-center w-[50px] h-[50px] rounded-lg bg-[#dce5f1]">
                         <img class="w-[25px] h-[25px]" src="./assets/images/plus.png"/>
                     </div>
-                    <div class="text-[#0066FF] m-4 mb-1">افزودن عکس</div>
-                    <div class="text-xs">حجم عکس تا 5 مگابایت و با فرمت PNG, JPG</div>
+                    <div class="text-[#0066FF] m-4 mb-1 mobile:text-xs">افزودن عکس</div>
+                    <div class="text-xs mobile:hidden">حجم عکس تا 5 مگابایت و با فرمت PNG, JPG</div>
                     </div>
-                <div class="flex flex-row justify-between p-[7px]">
+                <div class="flex flex-row justify-between p-[7px] mobile:flex-col mobile:items-center">
                     <div class="text-[12px]  my-3">عرض عکس</div>
                     <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-1  justify-between inline-flex items-center " type="button">پیش فرض 
                         <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -125,19 +141,19 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex flex-row justify-between p-[7px] ">
+                <div class="flex flex-row justify-between p-[7px]  ">
                     <div class="text-[12px] my-1 ">حاشیه</div>
                     <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">16 
                     </button>               
                 </div>
                 <div class="flex flex-row justify-between p-[7px] my-0">
-                    <div class="text-[12px] my-1">فاصله گذاری</div>
+                    <div class="text-[12px] my-1">فاصله</div>
                     <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">24
                     </button>    
                 </div>
                 <div class="flex flex-row justify-between p-[7px]">
                     <div class="text-[12px]  my-3">گوشه ها</div>
-                    <button class="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-3 py-1  justify-between inline-flex items-center " type="button">4
+                    <button class="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">4
                         <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                         </svg>
@@ -148,14 +164,6 @@
     </div>
     <script>
     
-        function mouseenter(Span){
-        //    Get the span element containing the text
-            // const tooltip = document.getElementById(SpanID);
-            Span.classList.replace("hidden","block")
-        }
-        function mouseleave(Span){
-            Span.classList.replace("block","hidden")
-        }
     </script>
 </body>
 </html>

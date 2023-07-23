@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     screens: {
       'vsmmobile': { 'max': '580px' },
-      'smmobile': '580px',
-      'mobile': '768px',
-      'tablet': '992px',
-      'laptop': '1024px',
-      'desktop': '1240px',
+      'smmobile': { 'min': '581px', 'max': '767px' },
+      'mobile': { 'min': '768px', 'max': '991px' },
+      'tablet': { 'min': '992px', 'max': '1023px' },
+      'laptop':   { 'min': '1024px', 'max': '1239px' },
+      'desktop': { 'min': '1240px' },
     },
     extend: {},
   },
