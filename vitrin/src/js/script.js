@@ -450,11 +450,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const carouseltag = document.createElement('div');
         carouseltag.classList.add('flex', 'flex-row', 'justify-between')
         const title = document.createElement('h3');
-        title.classList.add('pr-[0.5rem]')
+        title.classList.add('pr-[4rem]')
         title.textContent = element.dataset.title
         carouseltag.appendChild(title)
         const link = document.createElement('a')
-        link.classList.add('pl-[0.5rem]')
+        link.classList.add('pl-[4rem]')
         link.classList.add('text-blue-700')
         link.textContent = element.dataset.link ? 'مشاهده همه' : '';
         link.href = `https://vitrin.splus.ir/${element.dataset.link}`
@@ -462,9 +462,9 @@ document.addEventListener("DOMContentLoaded", function () {
         element.appendChild(carouseltag)
 
         const carouselgrid = document.createElement('div');
-        carouselgrid.classList.add('grid', 'justify-between')
+        carouselgrid.classList.add('grid', 'justify-between','w-[94%]')
         const carouselconainer = document.createElement('div')
-        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36", "overflow-hidden", 'relative')
+        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36",'pr-[7%]', "overflow-hidden", 'relative')
         const carousel = document.createElement('div')
         carousel.classList.add("slider", "flex", "transition-transform", "ease-in")
         const cards = data[elementID]

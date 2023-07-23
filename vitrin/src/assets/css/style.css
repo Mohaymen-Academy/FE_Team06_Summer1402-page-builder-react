@@ -4,7 +4,7 @@
 
 @layer components{
     .cardimg{
-        @apply w-[85%] mb-[0.5rem];
+        @apply w-[88%] max-w-[660px] mb-[1.5rem];
     }
     .sticky{
        @apply fixed top-0 w-[100%] z-10;
@@ -35,6 +35,12 @@
     }
     .iconcardimg{
         @apply desktop:w-[125px]  tablet:w-[100px] mobile:w-[90px] smmobile:w-[80px] vsmmobile:w-[65px]; 
+    }
+    .slide{
+        @apply w-[10px]
+    }
+    .carouselconteiner{
+        @apply w-[94%] pr-[7%];
     }
     
 }
