@@ -538,9 +538,9 @@ video {
   width: 100%;
 }
 
-@media (min-width: 580px) {
+@media (min-width: 581px) {
   .container {
-    max-width: 580px;
+    max-width: 581px;
   }
 }
 
@@ -597,7 +597,13 @@ video {
 
 .bigslide {
   height: 100%;
-  width: 786px;
+  width: 100%;
+}
+
+@media (max-width: 580px) {
+  .bigslide {
+    width: 450px;
+  }
 }
 
 .absolute {
@@ -634,16 +640,16 @@ video {
   left: -500px;
 }
 
-.left-\[-660px\] {
-  left: -660px;
-}
-
 .top-0 {
   top: 0px;
 }
 
-.left-\[-787px\] {
-  left: -787px;
+.left-\[-10px\] {
+  left: -10px;
+}
+
+.left-\[6px\] {
+  left: 6px;
 }
 
 .float-left {
@@ -755,12 +761,8 @@ video {
   width: 50%;
 }
 
-.w-\[6716px\] {
-  width: 6716px;
-}
-
-.w-\[800px\] {
-  width: 800px;
+.w-\[500\%\] {
+  width: 500%;
 }
 
 .w-\[91\%\] {
@@ -899,8 +901,8 @@ video {
   justify-content: space-evenly;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .gap-\[10rem\] {
@@ -1202,7 +1204,7 @@ video {
   }
 }
 
-@media (min-width: 580px) {
+@media (min-width: 581px) and (max-width: 767px) {
   .smmobile\:hidden {
     display: none;
   }
