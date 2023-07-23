@@ -594,9 +594,9 @@ video {
   width: 100%;
 }
 
-/* .itesm{
-        @apply ;
-    } */
+.itesm {
+  height: 75px;
+}
 
 .iconscarda {
   display: flex;
@@ -608,13 +608,43 @@ video {
 
 @media (max-width: 580px) {
   .iconscarda {
-    width: 40%;
+    width: 22%;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .iconscarda {
-    width: 35%;
+    width: 22%;
+  }
+}
+
+@media (max-width: 580px) {
+  .iconcardimg {
+    width: 65px;
+  }
+}
+
+@media (min-width: 581px) and (max-width: 767px) {
+  .iconcardimg {
+    width: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .iconcardimg {
+    width: 90px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1023px) {
+  .iconcardimg {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .iconcardimg {
+    width: 125px;
   }
 }
 
@@ -751,10 +781,6 @@ video {
 
 .w-\[10000px\] {
   width: 10000px !important;
-}
-
-.w-\[125px\] {
-  width: 125px !important;
 }
 
 .w-\[25\%\] {
@@ -1167,7 +1193,7 @@ video {
 @font-face {
   font-family: 'Vazir';
 
-  src: url('../fonts/Vazir/Vazirmatn-FD-Light.ttf');
+  src: url('../fonts/Vazir/Vazirmatn-FD-ExtraLight.ttf');
 }
 
 .focus-within\:text-gray-400:focus-within {
