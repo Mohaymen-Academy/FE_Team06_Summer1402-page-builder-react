@@ -1,15 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important:true,
   content: ["./src/**/*.{html,js}"],
   theme: {
     screens: {
 
       'vsmmobile': { 'max': '580px' },
       'smmobile': {'min':'581px','max':'767px'},
-      'mobile': '768px',
-      'tablet': '992px',
-      'laptop': '1024px',
-      'desktop': '1240px',
+      'mobile': {'min':'768px','max':'991px'},
+      'tablet': {'min':'992px',"max":'1023px'},
+      // 'laptop': {'min':'1024px',"max":"1239px"},
+      'desktop': '1024px',
     },
     extend: {
       keyframes: {

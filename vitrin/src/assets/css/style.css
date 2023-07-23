@@ -19,8 +19,21 @@
         @apply w-[100%] h-[100%] p-0 rounded-2xl;
     }
     .bigslide{
-        @apply w-[100%] h-[100%] vsmmobile:w-[450px] ;
+        @apply w-[100%] h-[100%] ;
     }
+    /* .itesm{
+        @apply ;
+    } */
+    .iconscarda{
+        @apply w-max flex px-4 vsmmobile:w-[40%] mobile:w-[35%];
+    }
+    .logoanimeclose{
+        @apply animate-logoclose vsmmobile:fixed vsmmobile:top-0 !important;
+    }
+    .logoanimeopen{
+        @apply animate-logoopen vsmmobile:fixed;
+    }
+    
 }
 @layer utilities{
     .ltr{

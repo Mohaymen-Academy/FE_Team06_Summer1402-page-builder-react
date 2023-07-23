@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let cats in Icons) {
             const link = document.createElement("a");
             link.href = "#";
-            link.className = "w-max flex px-4";
+            link.className = "iconscarda";
             const cardDiv = document.createElement("div");
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
@@ -604,6 +604,7 @@ function bigslide(wrapper, items) {
     var biassize=parseFloat(window.getComputedStyle(items).gap),
         mainbodywidth=parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width);
     items.style.left = (-mainbodywidth + biassize /3) +'px';
+    console.log(mainbodywidth)
     var posX1 = 0,
         posX2 = 0,
         posInitial,
@@ -611,16 +612,16 @@ function bigslide(wrapper, items) {
         threshold = 100,
         bigslides = items.getElementsByClassName('bigslide'),
         bigslidesLength = bigslides.length,
-        bigslideSize = parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width),
+        bigslideSize = mainbodywidth,
         firstbigslide = bigslides[0],
         lastbigslide = bigslides[bigslidesLength - 1],
         cloneFirst = firstbigslide.cloneNode(true),
         cloneLast = lastbigslide.cloneNode(true),
         index = 0
     // biassize = parseFloat(window.getComputedStyle(items).gap);
-    allowShift = true;
 
-    console.log(items.getElementsByClassName('bigslide')[0])
+    allowShift = true;
+    console.log('slidesize',items.getElementsByClassName('bigslide')[0].width)
 
     // Clone first and last bigslide
     items.appendChild(cloneFirst);
