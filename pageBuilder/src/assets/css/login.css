@@ -8,7 +8,7 @@
         @apply  fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#D7D8DD];
     }
     .main-div{
-        @apply   absolute w-[450px] h-[500px]   flex flex-col vsmmobile:w-[350px] smmobile:w-[350px];
+        @apply   absolute w-[450px] h-[500px]   flex flex-col vsmmobile:w-[300px] smmobile:w-[350px];
     }
     .logo-div{
         @apply h-[90px] flex flex-col items-center m-3 mb-5;
@@ -17,7 +17,7 @@
         @apply h-[350px] bg-white rounded-lg flex flex-col items-center border;
     }
     .form-div{
-        @apply flex flex-col  w-[400px] h-[260px] vsmmobile:w-[300px] smmobile:w-[300px];
+        @apply flex flex-col  w-[400px] h-[260px] vsmmobile:w-[280px] smmobile:w-[300px];
     }
     .input-text{
         @apply block text-gray-700  font-bold mb-2 px-1;
