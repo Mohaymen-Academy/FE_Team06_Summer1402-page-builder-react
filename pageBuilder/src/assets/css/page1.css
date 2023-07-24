@@ -12,7 +12,7 @@
         @apply w-[20px] h-[20px] mx-[20px];
     }
     .sidebar-button{
-        @apply flex justify-center border rounded-lg text-[12px]  p-[10px] my-1 font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD];
+        @apply flex justify-center border rounded-lg text-[12px] h-[50px]  p-[15px] my-1 font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD];
     }
     .main-div-icon{
         @apply  w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg;
