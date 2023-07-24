@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const logoImage = document.createElement("img");
         // logoImage.setAttribute("src", skeletonimage);
         logoImage.setAttribute("data-src", element.src);
-        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton', 'rounded-full','w-[100%]','itesm')
+        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton', 'rounded-full','w-[100%]','itesm','skeletonwithavatar')
         // logoImage.setAttribute("style", "width: 100%; height: 75px; ");
         logoImage.setAttribute("alt", "");
 
@@ -472,9 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
-        // const slidersize=document.querySelector('.slide')
-        // console.log(slidersize)
-        // Variables
+
         let isDragging = false;
         let startPosition = 0;
         let currentTranslate = 0;
@@ -518,7 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         function setSliderPosition() {
-            console.log(maxTranslate,minTranslate)
+            // console.log(maxTranslate,minTranslate)
             if (currentTranslate > maxTranslate) { currentTranslate = maxTranslate; }
             else if (currentTranslate < minTranslate) { currentTranslate = minTranslate; }
             carousel.style.transform = `translateX(${currentTranslate}px)`;
@@ -535,11 +533,11 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.addEventListener("touchend", onTouchEnd);
         carousel.addEventListener("mouseleave", onTouchEnd);
         let size=parseFloat(window.getComputedStyle(theslide).width);
-        let bodysize=parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width);
-        console.log(cards.length-Math.floor(bodysize/size))
+        let bodysize=parseFloat(window.getComputedStyle(carouselgrid).width);
+        // console.log(cards.length-Math.floor(bodysize/size))
         minTranslate=-(cards.length-Math.floor(bodysize/size)) *size
         maxTranslate=(cards.length-Math.floor(bodysize/size)) *size
-        console.log(maxTranslate,minTranslate)
+        // console.log(maxTranslate,minTranslate)
     }
 
     createCarousel('bartarin');
@@ -558,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const img = element.target;
                 const src = img.getAttribute('data-src');
                 if (src) {
-                    img.classList.remove('animate-skeleton-loading')
+                    img.classList.remove('animate-skeleton-loading','width660','skeletonwithavatar')
                     img.setAttribute('src', src);
                     img.removeAttribute('data-src');
                     observer.unobserve(img);

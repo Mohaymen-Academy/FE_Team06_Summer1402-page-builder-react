@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer components{
+    .width660{
+        @apply  w-[580px]  h-[100px] animate-skeleton-loading !important;
+    }
     .cardimg{
-        @apply w-[88%] max-w-[660px] mb-[1.5rem];
+        @apply   w-[88%] max-w-[660px] mb-[1.5rem] vsmmobile:max-w-[100%];
     }
     .sticky{
        @apply fixed top-0 w-[100%] z-10;
@@ -23,6 +26,9 @@
     }
     .itesm{
         @apply h-[75px] ;
+    }
+    .skeletonwithavatar{
+        @apply w-[75px] !important;
     }
     .iconscarda{
         @apply w-max flex px-4  vsmmobile:w-[22%] mobile:w-[22%];
