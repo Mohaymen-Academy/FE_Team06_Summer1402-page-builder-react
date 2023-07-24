@@ -1,10 +1,6 @@
 //* index.html script 
-//* contains some methods for creating dynamic html tags
-//* and some eventlisteners for scrolling and carousel moves 
 
-//* the initializer method for the index file 
-//* in this method we create some carousels and category icons   
-// const skeletonimage = 'had.jpg'
+//? Data Section
 const data = {
 
     bartarin: [
@@ -323,100 +319,105 @@ const data = {
     ],
 
 }
+
+const Icons = [
+    {
+        title: "بازی و تفریح",
+        src: "./assets/images/bazi.png",
+    },
+    {
+        title: "پخش تلویزیون",
+        src: "./assets/images/pakhsh.png",
+    },
+    {
+        title: "انیمیشن",
+        src: "./assets/images/tv.png",
+    },
+    {
+        title: "مذهبی",
+        src: "./assets/images/mazhabi.png",
+    },
+    {
+        title: "سبک زندگی",
+        src: "./assets/images/sabk.png",
+    },
+    {
+        title: "زنگ مدرسه",
+        src: "./assets/images/zang.png",
+    },
+    {
+        title: "اخبار",
+        src: "./assets/images/news.png",
+    },
+    {
+        title: "کودکانه",
+        src: "./assets/images/kodak.png",
+    },
+]
+//? 
+
+//& Code Section
+//* contains some methods for creating dynamic html tags
+//* and some eventlisteners for scrolling and carousel moves 
+//* the initializer method for the index file 
+//* in this method we create some carousels and category icons   
+
 document.addEventListener("DOMContentLoaded", function () {
-    //TODO  to add the big icons 
+    //^
     //* this method will add categories cards to the div with id  cardContainer  
     function addCard() {
         const cardContainer = document.getElementById('CatsContainer')
-        const Icons = [
-            {
-                title: "بازی و تفریح",
-                src: "./assets/images/bazi.png",
-            },
-            {
-                title: "پخش تلویزیون",
-                src: "./assets/images/pakhsh.png",
-            },
-            {
-                title: "انیمیشن",
-                src: "./assets/images/tv.png",
-            },
-            {
-                title: "مذهبی",
-                src: "./assets/images/mazhabi.png",
-            },
-            {
-                title: "سبک زندگی",
-                src: "./assets/images/sabk.png",
-            },
-            {
-                title: "زنگ مدرسه",
-                src: "./assets/images/zang.png",
-            },
-            {
-                title: "اخبار",
-                src: "./assets/images/news.png",
-            },
-            {
-                title: "کودکانه",
-                src: "./assets/images/kodak.png",
-            },]
-        for (let cats in Icons) {
+        Icons.forEach(icon => {
+            //^ Create element for Category Icon
             const link = document.createElement("a");
             link.href = "#";
             link.className = "iconscarda";
             const cardDiv = document.createElement("div");
+            cardDiv.classList.add('flex','flex-col','gap-2')
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
-            image.setAttribute('data-src', Icons[cats].src)
+            image.setAttribute('data-src', icon.src)
             image.classList.add('animate-skeleton-loading', 'bg-skeleton')
             image.alt = "";
             image.classList.add('iconcardimg')
             imageDiv.appendChild(image);
 
             const textDiv = document.createElement("div");
-            textDiv.className = "text-center";
-            textDiv.textContent = Icons[cats].title;
+            textDiv.classList.add("text-center",'text-xs');
 
-            // Build the structure
+            textDiv.textContent = icon.title;
+
             cardDiv.appendChild(imageDiv);
             cardDiv.appendChild(textDiv);
             link.appendChild(cardDiv);
 
-            // Add the card to the container
+            //* Add the card to the container
             cardContainer.appendChild(link
             );
-        }
+        })
     }
     //* use the add card method  
     addCard();
-    // * create slide and carousel and the append it to element 
+    //*create slide and carousel then append it to element 
     function createSlideElement(element) {
         const slide = document.createElement("div");
         slide.classList.add("slide", "flex", "justify-center", "items-center",
-            // "w-full", 
             "pl-[2.95rem]",
             "pr-[2.5rem]",
-            // 'py-10',
             'h-fit',
             'pt-[8%]',
-
         );
 
         const link = document.createElement("a");
         link.setAttribute("href", "");
         link.classList.add("absolute", "border-zinc-700");
-
         const slideContent = document.createElement("div");
         slideContent.classList.add("flex", "h-fit", "bg-white");
-
         const logoContainer = document.createElement("div");
-
         const logoImage = document.createElement("img");
         // logoImage.setAttribute("src", skeletonimage);
         logoImage.setAttribute("data-src", element.src);
-        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton', 'rounded-full','w-[100%]','itesm','skeletonwithavatar')
-        // logoImage.setAttribute("style", "width: 100%; height: 75px; ");
+        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton', 'rounded-full', 'w-[100%]', 'itesm', 'skeletonwithavatar')
         logoImage.setAttribute("alt", "");
 
         const logoText = document.createElement("div");
@@ -437,13 +438,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let slidesize;
         cards.forEach(element => {
             const newSlide = createSlideElement(element);
-            slidesize=newSlide
+            slidesize = newSlide
             carousel.appendChild(newSlide);
         });
         return slidesize;
-
     }
-    // * add the carousel to the div with elementID
+    //* add the created carousel to the div with elementID
     function createCarousel(elementID) {
         const element = document.getElementById(elementID)
         //* create header section for slider
@@ -462,84 +462,82 @@ document.addEventListener("DOMContentLoaded", function () {
         element.appendChild(carouseltag)
 
         const carouselgrid = document.createElement('div');
-        carouselgrid.classList.add('grid', 'justify-between','w-[94%]')
+        carouselgrid.classList.add('grid', 'justify-between', 'w-[94%]')
         const carouselconainer = document.createElement('div')
-        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36",'pr-[7%]', "overflow-hidden", 'relative')
+        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36", 'pr-[7%]', "overflow-hidden", 'relative')
         const carousel = document.createElement('div')
         carousel.classList.add("slider", "flex", "transition-transform", "ease-in")
         const cards = data[elementID]
-        let theslide=addSlideToCarousel(carousel, cards)
+        let theslide = addSlideToCarousel(carousel, cards)
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
 
+        //^ this section will handle the carousel swapping for the created Carousel
+        //! initial some varaibles
+        let size = parseFloat(window.getComputedStyle(theslide).width);
+        let bodysize = parseFloat(window.getComputedStyle(carouselgrid).width);
+
         let isDragging = false;
         let startPosition = 0;
         let currentTranslate = 0;
-        let maxTranslate = 180;
-        let minTranslate = -10;
+        let maxTranslate = (cards.length - Math.floor(bodysize / size)) * size + 10;
+        let minTranslate = -(cards.length - Math.floor(bodysize / size)) * size / 3;
         let prevTranslate = 0;
         let animationID = 0;
         const slider = document.querySelector(".slider");
-
+        //! get the start positoin for swiping
         function onTouchStart(event) {
             isDragging = true;
             startPosition = getPositionX(event);
             animationID = requestAnimationFrame(animation);
             slider.classList.add("grabbing");
         }
-
+        //* set the translation direction for the swiping
         function onTouchMove(event) {
             if (isDragging) {
                 const currentPosition = getPositionX(event);
                 currentTranslate = prevTranslate + currentPosition - startPosition;
             }
         }
-
+        //* end the touch and mouse movement
         function onTouchEnd() {
             cancelAnimationFrame(animationID);
             isDragging = false;
             prevTranslate = currentTranslate;
             slider.classList.remove("grabbing");
         }
-
+        //* return the event position
         function getPositionX(event) {
             return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
         }
-
+        //* run the animation
         function animation() {
             setSliderPosition();
             if (isDragging) {
                 requestAnimationFrame(animation);
             }
+
         }
 
-
+        //! set the style of the swiper and move to  the directi
         function setSliderPosition() {
-            // console.log(maxTranslate,minTranslate)
             if (currentTranslate > maxTranslate) { currentTranslate = maxTranslate; }
             else if (currentTranslate < minTranslate) { currentTranslate = minTranslate; }
             carousel.style.transform = `translateX(${currentTranslate}px)`;
         }
 
-        // Event listeners
+        //! Event listeners
         carousel.addEventListener("mousedown", onTouchStart);
         carousel.addEventListener("touchstart", onTouchStart);
-
         carousel.addEventListener("mousemove", onTouchMove);
         carousel.addEventListener("touchmove", onTouchMove);
 
         carousel.addEventListener("mouseup", onTouchEnd);
         carousel.addEventListener("touchend", onTouchEnd);
         carousel.addEventListener("mouseleave", onTouchEnd);
-        let size=parseFloat(window.getComputedStyle(theslide).width);
-        let bodysize=parseFloat(window.getComputedStyle(carouselgrid).width);
-        // console.log(cards.length-Math.floor(bodysize/size))
-        minTranslate=-(cards.length-Math.floor(bodysize/size)) *size
-        maxTranslate=(cards.length-Math.floor(bodysize/size)) *size
-        // console.log(maxTranslate,minTranslate)
     }
-
+    //^ add the carousels with their own data 
     createCarousel('bartarin');
     createCarousel('porfrosh');
     createCarousel('labkhandane');
@@ -549,14 +547,15 @@ document.addEventListener("DOMContentLoaded", function () {
     createCarousel('tabliq');
     createCarousel('soroush');
 
-// * lazy loading handling by using Intersection observer Api
+    //^ the next section will hanle the lazy load of images and windowing
+    // * lazy loading handler function which is used by Intersection observer Api
     function lazyLoadImages(entries, observer) {
         entries.forEach(element => {
             if (element.isIntersecting) {
                 const img = element.target;
                 const src = img.getAttribute('data-src');
                 if (src) {
-                    img.classList.remove('animate-skeleton-loading','width660','skeletonwithavatar')
+                    img.classList.remove('animate-skeleton-loading', 'width660', 'skeletonwithavatar')
                     img.setAttribute('src', src);
                     img.removeAttribute('data-src');
                     observer.unobserve(img);
@@ -573,46 +572,50 @@ document.addEventListener("DOMContentLoaded", function () {
         imageObserver.observe(image))
 })
 
-// * this section will handle the sticky header  
-// * stick the header to the top by adding a specific css class  
+//^ this section will handle the sticky header  
+//* stick the header to the top by adding a specific css class  
 const header = document.getElementById("header");
 const navlogo = document.getElementById("navlogo");
 
-let sticky = header.offsetTop;
 var lastScrollPosition = window.scrollY;
+//* this eventlistener will handle the header animation for opening and closing
 window.onscroll = () => {
     const currentScrollPosition = window.scrollY;
     const direction = currentScrollPosition > lastScrollPosition ? 'down' : 'up'
     lastScrollPosition = currentScrollPosition;
     header.classList.add("sticky");
-    // const blueheader = document.getElementById("blueheader");
     if (direction === 'down') {
         header.classList.remove('animate-blueheaderanimationopen')
         header.classList.add("animate-blueheaderanimatioclose");
         header.classList.add("closeanimation");
-        navlogo.classList.replace('animate-logoclose', 'animate-logoopen')
+        navlogo.classList.remove('animate-logoclose')
+        navlogo.classList.add('animate-logoopen')
         navlogo.classList.remove('closelogo')
-        // navlogo.classList.remove("opacity-0");
-
     } else {
         header.classList.remove("animate-blueheaderanimatioclose");
         header.classList.add("animate-blueheaderanimationopen");
         header.classList.remove("closeanimation");
-        navlogo.classList.replace('animate-logoopen', 'animate-logoclose')
+        navlogo.classList.remove('animate-logoopen')
+        navlogo.classList.add('animate-logoclose')
         navlogo.classList.add('closelogo')
 
 
     }
 }
-// * handle infinity loop for the big slider
+
+//^ this section handles the big slider 
+// * first create some variables 
+// * bigslider and items 
 var bigslider = document.getElementById('bigslider'),
     bigsliderItems = document.getElementById('items');
 bigslide(bigslider, bigsliderItems);
+//* this method will handle the movement of the big slider 
 function bigslide(wrapper, items) {
-    var biassize=parseFloat(window.getComputedStyle(items).gap),
-        mainbodywidth=parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width);
-    items.style.left = (-mainbodywidth + biassize /3) +'px';
-    // console.log(mainbodywidth)
+    //* intitial some vavriables for mathematical operations
+    var biassize = parseFloat(window.getComputedStyle(items).gap), //* gap between items
+        mainbodywidth = parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width); //* represent the width of the main div
+    items.style.left = (-mainbodywidth + biassize / 3) + 'px'; //* set the left attribute of the slider with found variables
+    
     var posX1 = 0,
         posX2 = 0,
         posInitial,
@@ -626,26 +629,21 @@ function bigslide(wrapper, items) {
         cloneFirst = firstbigslide.cloneNode(true),
         cloneLast = lastbigslide.cloneNode(true),
         index = 0
-    // biassize = parseFloat(window.getComputedStyle(items).gap);
-
+    
     allowShift = true;
-    // console.log('slidesize',items.getElementsByClassName('bigslide')[0].width)
-
-    // Clone first and last bigslide
+    //* to create a infinity carousel we need to add the last and first elements to the slider
     items.appendChild(cloneFirst);
     items.insertBefore(cloneLast, firstbigslide);
     wrapper.classList.add('loaded');
 
-    // Mouse and Touch events
+    
+    //^ Mouse and Touch events
     items.onmousedown = dragStart;
-
-    // Touch events
+    //* Touch events
     items.addEventListener('touchstart', dragStart);
     items.addEventListener('touchend', dragEnd);
     items.addEventListener('touchmove', dragAction);
-
-
-    // Transition events
+    //* Transition events
     items.addEventListener('transitionend', checkIndex);
 
     function dragStart(e) {
@@ -686,9 +684,8 @@ function bigslide(wrapper, items) {
         document.onmouseup = null;
         document.onmousemove = null;
     }
-
+    //* this function will move the slider to left or fight depends on the choosen direction;
     function shiftbigslide(dir, action) {
-        // console.log('bias:', biassize)
         items.classList.add('transition-[left]', 'ease-out', 'duration-200');
         if (allowShift) {
             if (!action) { posInitial = items.offsetLeft; }
@@ -709,20 +706,16 @@ function bigslide(wrapper, items) {
 
         allowShift = false;
     }
-
+    //* check if the carousel should restart from the start or the end
     function checkIndex() {
-        // items.classList.remove('transition-left-200','ease-out');
         items.classList.remove('transition-[left]', 'ease-out', 'duration-200');
-        // console.log('slide size', bigslideSize)
         if (index == -1) {
-            // console.log('zorp', bigslidesLength * bigslideSize)
             items.style.left = (-(bigslidesLength * bigslideSize))
-                - biassize/3
+                - biassize / 3
                 + "px";
             index = bigslidesLength - 1;
         }
         if (index == bigslidesLength) {
-            // console.log('zurp')
             items.style.left = (-(1 * bigslideSize))
                 + Math.floor(biassize / 3)
                 + "px";
@@ -731,3 +724,4 @@ function bigslide(wrapper, items) {
         allowShift = true;
     }
 }
+//&
