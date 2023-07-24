@@ -10,7 +10,11 @@ module.exports = {
       'laptop':   { 'min': '1024px', 'max': '1239px' },
       'desktop': { 'min': '1240px' },
     },
-    extend: {},
+    fontFamily:{
+      vazir:['Vazir']
+    },
+    extend: {
+    },
   },
   plugins: [],
 }

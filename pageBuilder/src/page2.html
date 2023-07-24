@@ -1,23 +1,11 @@
-<html lang="en" dir="rtl">
+<html lang="en" dir="rtl" class="font-vazir">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page2</title>
     <link rel="stylesheet" href="./assets/css/page2.tailwind.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/home.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Black.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Bold.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-ExtraBold.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-ExtraLight.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Light.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Medium.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Regular.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-SemiBold.ttf">
-    <link rel="stylesheet" href="./assets/ttf/Vazirmatn-FD-Thin.ttf">
     <style>
-        *{
-            font-family: Vazir;
-        }
         .modal-overlay {
             display: none;
         }
@@ -27,29 +15,29 @@
     <div class="flex flex-col h-screen overflow-hidden  w-screen">
         <div class="flex flex-row h-[10%] bg-white justify-between">
             <div class="flex flex-row items-center  bg-white w-fit">
-                <img class="w-[30px] h-[30px] mr-[15px] ml-[mx-\[5px\]]" src="./assets/images/logo.png"/>
-                <img class="w-[30px] smmobile:hidden vsmmobile:hidden h-[25px] mr-[10px]" src="./assets/images/home.png"/>
-                <img class="w-[30px] smmobile:hidden vsmmobile:hidden h-[30px] mx-[5px]" src="./assets/images/eye.png"/>
-                <img class="w-[30px] smmobile:hidden vsmmobile:hidden h-[27px] mx-[px]" src="./assets/images/publish.png"/>
+                <img class="w-[30px] h-[30px] mr-[15px]" src="./assets/images/logo.png"/>
+                <img class="header-icon mr-[10px]" src="./assets/images/home.png"/>
+                <img class="header-icon" src="./assets/images/eye.png"/>
+                <img class="header-icon" src= "./assets/images/publish.png" />
                 
             </div>
             <div class="flex flex-row justify-center items-center bg-white text-[#0066FF] w-fit">
                 نام صفحه
             </div>
             <div class="flex flex-row items-center justify-end bg-white w-fit">
-                <img class="w-[20px] h-[20px] mx-[20px]" src="./assets/images/forward.png"/>
-                <img class="w-[20px] h-[20px] mx-[20px]" src="./assets/images/back.png"/>
+                <img class="header-left-icon" src="./assets/images/forward.png"/>
+                <img class="header-left-icon" src="./assets/images/back.png"/>
             </div>
         </div>
-        <div class="flex flex-row h-[10%] desktop:hidden laptop:hidden tablet:hidden mobile:hidden border">
-            <div class="flex flex-row py-2 my-2 justify-around bg-white w-full  ">
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">کارت</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">دکمه </div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">متن</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">عکس</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">ویدئو</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">اسلایدر</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold  text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">آیکون</div>
+        <div class="flex flex-row h-[10%] justify-center desktop:hidden laptop:hidden tablet:hidden mobile:hidden border">
+            <div class="flex flex-row py-1 my-1 justify-around bg-white w-[90%] items-center ">
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"></div>
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"> </div>
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"></div>
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"></div>
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"></div>
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"></div>
+                <div class="sidebar-button vsmmobile:h-[40px] vsmmobile:p-[7px]"><img src="./assets/images/icons8-cat-50.png"></div>
 
             </div>    
         </div>
@@ -57,13 +45,13 @@
             <div class="flex flex-col px-4 py-3 h-screen bg-white w-[10%] smmobile:hidden vsmmobile:hidden">
                 <div class="my-3 text-xs font-bold">قالب ها</div>
 
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">کارت</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">دکمه </div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">متن</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">عکس</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">ویدئو</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">اسلایدر</div>
-                <div class="flex justify-center border rounded-lg text-[12px]  p-[10px] font-bold my-1 text-[#6C6E78] hover:cursor-pointer hover:bg-[#D7D8DD]">آیکون</div>
+                <div class="sidebar-button">کارت</div>
+                <div class="sidebar-button">دکمه </div>
+                <div class="sidebar-button">متن</div>
+                <div class="sidebar-button">عکس</div>
+                <div class="sidebar-button">ویدئو</div>
+                <div class="sidebar-button">اسلایدر</div>
+                <div class="sidebar-button">آیکون</div>
 
             </div>
             <div class="flex flex-row w-[70%] overflow-x-hidden h-[screen] bg-[#D7D8DD] p-10  justify-center items-start vsmmobile:w-[100%]  smmobile:w-[100%]  ">
@@ -92,27 +80,27 @@
                     </div>
                 </div>
                 <div class="flex flex-col relative">
-                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
-                        <img class="w-[25px] h-[23px] " src="./assets/images/pen.png"/>
+                    <div class="group main-div-icon">
+                        <img class="main-div-icon-size" src="./assets/images/pen.png"/>
                         <span class="spantext">ویرایش</span>
                     </div>
-                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
-                        <img class="w-[25px] h-[23px] " src="./assets/images/up.png"/>
+                    <div class="group main-div-icon">
+                        <img class="main-div-icon-size" src="./assets/images/up.png"/>
                         <span class="spantext">صفحه قبل</span>
                     </div>                    
-                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
-                        <img class="w-[25px] h-[23px] " src="./assets/images/down.png"/>
+                    <div class="group main-div-icon">
+                        <img class="main-div-icon-size" src="./assets/images/down.png"/>
                         <span class="spantext">صفحه بعد</span>
                     </div>
-                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
-                        <img class="w-[25px] h-[23px] " src="./assets/images/lock.png"/>
+                    <div class="group main-div-icon">
+                        <img class="main-div-icon-size" src="./assets/images/lock.png"/>
                         <span class="spantext">قفل صفحه</span>
                     </div>
-                    <div class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg">
-                        <img class="w-[25px] h-[23px] " src="./assets/images/trash.png"/>
+                    <div class="group main-div-icon">
+                        <img class="main-div-icon-size" src="./assets/images/trash.png"/>
                         <span class="spantext">حذف</span>
                     </div>
-                    <div id = "setting" class="group w-[30px] my-[3px] h-[30px] border-white border-[2px] bg-[#EDEEF0] hover:bg-[#D7D8DD] rounded-lg desktop:hidden laptop:hidden tablet:hidden mobile:hidden ">
+                    <div id = "setting" class="group main-div-icon desktop:hidden laptop:hidden tablet:hidden mobile:hidden ">
                         <img width="25" height="25" src="./assets/images/icons8-setting-24.png" alt="settings"/>
                         <span class="spantext">تنظیمات</span>
                     </div>
@@ -146,12 +134,12 @@
                 </div>
                 <div class="flex flex-row justify-between p-[7px]  ">
                     <div class="text-[12px] my-1 ">حاشیه</div>
-                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">16 
+                    <button class="left-sidebar-input " type="button">16 
                     </button>               
                 </div>
                 <div class="flex flex-row justify-between p-[7px] my-0">
                     <div class="text-[12px] my-1">فاصله</div>
-                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">24
+                    <button class="left-sidebar-input " type="button">24
                     </button>    
                 </div>
                 <div class="flex flex-row justify-between p-[7px]">
@@ -202,12 +190,12 @@
                 </div>
                 <div class="flex flex-row justify-between p-[7px]  ">
                     <div class="text-[12px] my-1 ">حاشیه</div>
-                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">16 
+                    <button class="left-sidebar-input" type="button">16 
                     </button>               
                 </div>
                 <div class="flex flex-row justify-between p-[7px] my-0">
                     <div class="text-[12px] my-1">فاصله</div>
-                    <button class="text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center " type="button">24
+                    <button class="left-sidebar-input" type="button">24
                     </button>    
                 </div>
                 <div class="flex flex-row justify-between p-[7px]">
