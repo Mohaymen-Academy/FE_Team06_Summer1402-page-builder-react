@@ -7,7 +7,7 @@
         @apply  w-[580px]  h-[100px] animate-skeleton-loading !important;
     }
     .cardimg{
-        @apply   w-[88%] max-w-[660px] mb-[1.5rem] vsmmobile:max-w-[100%];
+        @apply   w-[88%] max-w-[780px] mb-[1.5rem] vsmmobile:max-w-[100%];
     }
     .sticky{
        @apply fixed top-0 w-[100%] z-10;
