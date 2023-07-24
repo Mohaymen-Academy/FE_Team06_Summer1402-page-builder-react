@@ -5,6 +5,5 @@ https://mohaymen-academy.github.io/FE_Team06_Summer1402/
 ```bash
 git clone --branch testdeploy https://github.com/Mohaymen-Academy/FE_Team06_Summer1402.git
 cd FE_Team06_Summer1402
-npm run install-all
 
 ```
