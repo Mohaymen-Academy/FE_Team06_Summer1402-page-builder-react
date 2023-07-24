@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
             image.setAttribute('data-src', Icons[cats].src)
             image.classList.add('animate-skeleton-loading', 'bg-skeleton')
             image.alt = "";
-            image.classList.add('w-[125px]')
+            image.classList.add('iconcardimg')
             imageDiv.appendChild(image);
 
             const textDiv = document.createElement("div");
@@ -415,8 +415,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const logoImage = document.createElement("img");
         // logoImage.setAttribute("src", skeletonimage);
         logoImage.setAttribute("data-src", element.src);
-        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton', 'rounded-full')
-        logoImage.setAttribute("style", "width: 75px; height: 75px; ");
+        logoImage.classList.add('px-[1px]', 'animate-skeleton-loading', 'bg-skeleton', 'rounded-full','w-[100%]','itesm','skeletonwithavatar')
+        // logoImage.setAttribute("style", "width: 100%; height: 75px; ");
         logoImage.setAttribute("alt", "");
 
         const logoText = document.createElement("div");
@@ -434,11 +434,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // * add the createded slide to the carousel
     function addSlideToCarousel(carousel, cards) {
-
+        let slidesize;
         cards.forEach(element => {
             const newSlide = createSlideElement(element);
+            slidesize=newSlide
             carousel.appendChild(newSlide);
         });
+        return slidesize;
+
     }
     // * add the carousel to the div with elementID
     function createCarousel(elementID) {
@@ -447,11 +450,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const carouseltag = document.createElement('div');
         carouseltag.classList.add('flex', 'flex-row', 'justify-between')
         const title = document.createElement('h3');
-        title.classList.add('pr-[0.5rem]')
+        title.classList.add('pr-[4rem]')
         title.textContent = element.dataset.title
         carouseltag.appendChild(title)
         const link = document.createElement('a')
-        link.classList.add('pl-[0.5rem]')
+        link.classList.add('pl-[4rem]')
         link.classList.add('text-blue-700')
         link.textContent = element.dataset.link ? 'مشاهده همه' : '';
         link.href = `https://vitrin.splus.ir/${element.dataset.link}`
@@ -459,18 +462,17 @@ document.addEventListener("DOMContentLoaded", function () {
         element.appendChild(carouseltag)
 
         const carouselgrid = document.createElement('div');
-        carouselgrid.classList.add('grid', 'justify-between')
+        carouselgrid.classList.add('grid', 'justify-between','w-[94%]')
         const carouselconainer = document.createElement('div')
-        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36", "overflow-hidden", 'relative', "gap-[10rem]")
+        carouselconainer.classList.add('carousel-container', 'flex', 'flex-row', "w-[100%]", "h-36",'pr-[7%]', "overflow-hidden", 'relative')
         const carousel = document.createElement('div')
         carousel.classList.add("slider", "flex", "transition-transform", "ease-in")
         const cards = data[elementID]
-        addSlideToCarousel(carousel, cards)
+        let theslide=addSlideToCarousel(carousel, cards)
         carouselconainer.appendChild(carousel)
         carouselgrid.appendChild(carouselconainer)
         element.appendChild(carouselgrid)
 
-        // Variables
         let isDragging = false;
         let startPosition = 0;
         let currentTranslate = 0;
@@ -480,7 +482,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let animationID = 0;
         const slider = document.querySelector(".slider");
 
-        // Functions
         function onTouchStart(event) {
             isDragging = true;
             startPosition = getPositionX(event);
@@ -515,6 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         function setSliderPosition() {
+            // console.log(maxTranslate,minTranslate)
             if (currentTranslate > maxTranslate) { currentTranslate = maxTranslate; }
             else if (currentTranslate < minTranslate) { currentTranslate = minTranslate; }
             carousel.style.transform = `translateX(${currentTranslate}px)`;
@@ -530,7 +532,12 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.addEventListener("mouseup", onTouchEnd);
         carousel.addEventListener("touchend", onTouchEnd);
         carousel.addEventListener("mouseleave", onTouchEnd);
-
+        let size=parseFloat(window.getComputedStyle(theslide).width);
+        let bodysize=parseFloat(window.getComputedStyle(carouselgrid).width);
+        // console.log(cards.length-Math.floor(bodysize/size))
+        minTranslate=-(cards.length-Math.floor(bodysize/size)) *size
+        maxTranslate=(cards.length-Math.floor(bodysize/size)) *size
+        // console.log(maxTranslate,minTranslate)
     }
 
     createCarousel('bartarin');
@@ -542,13 +549,14 @@ document.addEventListener("DOMContentLoaded", function () {
     createCarousel('tabliq');
     createCarousel('soroush');
 
+// * lazy loading handling by using Intersection observer Api
     function lazyLoadImages(entries, observer) {
         entries.forEach(element => {
             if (element.isIntersecting) {
                 const img = element.target;
                 const src = img.getAttribute('data-src');
                 if (src) {
-                    img.classList.remove('animate-skeleton-loading')
+                    img.classList.remove('animate-skeleton-loading','width660','skeletonwithavatar')
                     img.setAttribute('src', src);
                     img.removeAttribute('data-src');
                     observer.unobserve(img);
@@ -596,7 +604,7 @@ window.onscroll = () => {
 
     }
 }
-
+// * handle infinity loop for the big slider
 var bigslider = document.getElementById('bigslider'),
     bigsliderItems = document.getElementById('items');
 bigslide(bigslider, bigsliderItems);
