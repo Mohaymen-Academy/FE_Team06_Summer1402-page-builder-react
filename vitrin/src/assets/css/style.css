@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer components{
+    .bluheader{ 
+        @apply bg-blue-700  w-[100%] flex flex-col justify-start vsmmobile:hidden;
+    }
+    .whiteheader{
+        @apply bg-white flex flex-row text-center h-min  items-center shadow-xl;    
+        
+    }
     .width660{
         @apply  w-[580px]  h-[100px] animate-skeleton-loading !important;
     }
@@ -16,7 +23,7 @@
         @apply top-[-90px];
     }
     .closelogo{
-        @apply opacity-0;
+        @apply opacity-0 vsmmobile:opacity-100;
     }
     .bigcardimages{
         @apply w-[100%] h-[100%] p-0 rounded-2xl;
@@ -47,6 +54,9 @@
     }
     .carouselconteiner{
         @apply w-[94%] pr-[7%];
+    }
+    .footerfillicon{
+        @apply h-6 w-6 text-black hover:fill-current hover:text-white;
     }
     
 }
