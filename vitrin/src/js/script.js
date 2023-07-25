@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link.href = "#";
             link.className = "iconscarda";
             const cardDiv = document.createElement("div");
-            cardDiv.classList.add('flex','flex-col','gap-2')
+            cardDiv.classList.add('flex', 'flex-col', 'gap-2')
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
             image.setAttribute('data-src', icon.src)
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
             imageDiv.appendChild(image);
 
             const textDiv = document.createElement("div");
-            textDiv.classList.add("text-center",'text-xs');
+            textDiv.classList.add("text-center", 'text-xs');
 
             textDiv.textContent = icon.title;
 
@@ -588,6 +588,7 @@ window.onscroll = () => {
         header.classList.remove('animate-blueheaderanimationopen')
         header.classList.add("animate-blueheaderanimatioclose");
         header.classList.add("closeanimation");
+
         navlogo.classList.remove('animate-logoclose')
         navlogo.classList.add('animate-logoopen')
         navlogo.classList.remove('closelogo')
@@ -595,6 +596,7 @@ window.onscroll = () => {
         header.classList.remove("animate-blueheaderanimatioclose");
         header.classList.add("animate-blueheaderanimationopen");
         header.classList.remove("closeanimation");
+
         navlogo.classList.remove('animate-logoopen')
         navlogo.classList.add('animate-logoclose')
         navlogo.classList.add('closelogo')
@@ -615,7 +617,7 @@ function bigslide(wrapper, items) {
     var biassize = parseFloat(window.getComputedStyle(items).gap), //* gap between items
         mainbodywidth = parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width); //* represent the width of the main div
     items.style.left = (-mainbodywidth + biassize / 3) + 'px'; //* set the left attribute of the slider with found variables
-    
+
     var posX1 = 0,
         posX2 = 0,
         posInitial,
@@ -629,82 +631,82 @@ function bigslide(wrapper, items) {
         cloneFirst = firstbigslide.cloneNode(true),
         cloneLast = lastbigslide.cloneNode(true),
         index = 0
-    
+
     allowShift = true;
     //* to create a infinity carousel we need to add the last and first elements to the slider
     items.appendChild(cloneFirst);
     items.insertBefore(cloneLast, firstbigslide);
     wrapper.classList.add('loaded');
-
-    
     //^ Mouse and Touch events
     items.onmousedown = dragStart;
     //* Touch events
     items.addEventListener('touchstart', dragStart);
     items.addEventListener('touchend', dragEnd);
     items.addEventListener('touchmove', dragAction);
-    //* Transition events
     items.addEventListener('transitionend', checkIndex);
+    //* Transition events
 
     function dragStart(e) {
         e = e || window.event;
         e.preventDefault();
-        posInitial = items.offsetLeft;
-
+        valueRef.posInitial = items.offsetLeft;
         if (e.type == 'touchstart') {
-            posX1 = e.touches[0].clientX;
+            valueRef.posX1 = e.touches[0].clientX;
         } else {
-            posX1 = e.clientX;
+            valueRef.posX1 = e.clientX;
             document.onmouseup = dragEnd;
             document.onmousemove = dragAction;
         }
+
     }
     function dragAction(e) {
         e = e || window.event;
 
         if (e.type == 'touchmove') {
-            posX2 = posX1 - e.touches[0].clientX;
-            posX1 = e.touches[0].clientX;
+            valueRef.posX2 = valueRef.posX1 - e.touches[0].clientX;
+            valueRefposX1 = e.touches[0].clientX;
         } else {
-            posX2 = posX1 - e.clientX;
-            posX1 = e.clientX;
+            valueRef.posX2 = valueRef.posX1 - e.clientX;
+            valueRef.posX1 = e.clientX;
         }
-        items.style.left = (items.offsetLeft - posX2) + "px";
+        items.style.left = (items.offsetLeft - valueRef.posX2) + "px";
+
     }
 
     function dragEnd(e) {
-        posFinal = items.offsetLeft;
-        if (posFinal - posInitial < -threshold) {
+        valueRef.posFinal = items.offsetLeft;
+        if (valueRef.posFinal - valueRef.posInitial < -valueRef.threshold) {
             shiftbigslide(1, 'drag');
-        } else if (posFinal - posInitial > threshold) {
+        } else if (valueRef.posFinal - valueRef.posInitial > valueRef.threshold) {
             shiftbigslide(-1, 'drag');
         } else {
-            items.style.left = (posInitial) + "px";
+            items.style.left = (valueRef.posInitial) + "px";
         }
         document.onmouseup = null;
         document.onmousemove = null;
+
     }
     //* this function will move the slider to left or fight depends on the choosen direction;
     function shiftbigslide(dir, action) {
         items.classList.add('transition-[left]', 'ease-out', 'duration-200');
-        if (allowShift) {
-            if (!action) { posInitial = items.offsetLeft; }
+        if (valueRef.allowShift) {
+            if (!action) { valueRef.posInitial = items.offsetLeft; }
             if (dir == 1) {
                 // console.log((posInitial - bigslideSize), 'what the ficlk')
-                items.style.left = (posInitial - bigslideSize - Math.ceil(biassize / 3))
+                items.style.left = (valueRef.posInitial - valueRef.bigslideSize - Math.ceil(valueRef.biassize / 3))
                     // Math.floor(-biassize/3);
                     + "px";
-                index++;
+                valueRef.index++;
             } else if (dir == -1) {
-                items.style.left = (posInitial + bigslideSize)
-                    + Math.floor(biassize / 3)
+                items.style.left = (valueRef.posInitial + valueRef.bigslideSize)
+                    + Math.floor(valueRef.biassize / 3)
                     + "px";
                 // console.log((posInitial + bigslideSize), 'what2')
-                index--;
+                valueRef.index--;
             }
         };
 
-        allowShift = false;
+        valueRef.allowShift = false;
     }
     //* check if the carousel should restart from the start or the end
     function checkIndex() {

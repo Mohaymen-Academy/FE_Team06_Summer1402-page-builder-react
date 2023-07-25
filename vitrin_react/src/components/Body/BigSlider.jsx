@@ -1,42 +1,40 @@
-import React, { useEffect,useRef,useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-export default function BigSlider({mainbody}) {
+export default function BigSlider({ mainbody }) {
+    // const [left, setleft] = useState(-800);
     const items = useRef(null);
-    var posX1 = 0,
-    bigsliderItems,
-    posX2 = 0,
-    posInitial,
-    posFinal,
-    threshold,
-    bigslides,
-    bigslidesLength,
-    bigslideSize ,
-    firstbigslide,
-    lastbigslide,
-    cloneFirst,
-    cloneLast,
-    index=0,
-    allowShift = true;
-    useEffect(()=>{
-        console.log()
-        // console.log(items);
-        // console.log(window.getComputedStyle(mainbody.current).width);
-        // console.log(
-        //     items.current.getElementsByClassName('bigslide')
-        // );
-        bigsliderItems=items.current;
-        bigslides=items.current.getElementsByClassName('bigslide')
-        bigslidesLength=bigslides.length;
-        bigslideSize=parseFloat(window.getComputedStyle(mainbody.current).width);
-        firstbigslide = bigslides[0];
-        console.log(bigslideSize)
-        lastbigslide = bigslides[bigslidesLength - 1];
-        cloneFirst = firstbigslide.cloneNode(true),
-        cloneLast = lastbigslide.cloneNode(true),
-        bigsliderItems.appendChild(cloneFirst);
-        bigsliderItems.insertBefore(cloneLast, firstbigslide);
-        console.log('zaro')
-        bigsliderItems.style.left='-800px';
+    const valueRef = useRef({
+        posX1: 0,
+        biassize: null,
+        bigsliderItems: null,
+        posX2: 0,
+        posInitial: null,
+        posFinal: null,
+        threshold: 100,
+        bigslides: null,
+        bigslidesLength: null,
+        bigslideSize: null,
+        firstbigslide: null,
+        lastbigslide: null,
+        cloneFirst: null,
+        cloneLast: null,
+        index: 0,
+        allowShift: true
+    });
+
+    useEffect(() => {
+        valueRef.current.bigsliderItems = items.current;
+        valueRef.current.bigslides = items.current.getElementsByClassName('bigslide')
+        valueRef.current.bigslidesLength = valueRef.current.bigslides.length;
+        valueRef.current.biassize = parseInt(window.getComputedStyle(valueRef.current.bigsliderItems).gap)
+        valueRef.current.bigslideSize = parseFloat(window.getComputedStyle(mainbody.current).width);
+        valueRef.current.firstbigslide = valueRef.current.bigslides[0];
+        valueRef.current.lastbigslide = valueRef.current.bigslides[valueRef.current.bigslidesLength - 1];
+        valueRef.current.cloneFirst = valueRef.current.firstbigslide.cloneNode(true),
+        valueRef.current.cloneLast = valueRef.current.lastbigslide.cloneNode(true),
+        valueRef.current.bigsliderItems.appendChild(valueRef.current.cloneFirst);
+        valueRef.current.bigsliderItems.insertBefore(valueRef.current.cloneLast, valueRef.current.firstbigslide);
+        valueRef.current.bigsliderItems.style.left = '-800px';
         window.addEventListener('touchstart', dragStart);
         window.addEventListener('mousedown', dragStart);
         window.addEventListener('touchend', dragEnd);
@@ -44,121 +42,95 @@ export default function BigSlider({mainbody}) {
         window.addEventListener('touchmove', dragAction);
         // window.addEventListener('mousemove', dragAction);
         window.addEventListener('transitionend', checkIndex);
-        return ()=>{
+        return () => {
             window.removeEventListener('touchstart', dragStart);
             window.removeEventListener('touchend', dragEnd);
             window.removeEventListener('touchmove', dragAction);
             window.removeEventListener('transitionend', checkIndex);
-    }},[])
-    // var biassize = parseFloat(window.getComputedStyle(items).gap), //* gap between items
-    //     mainbodywidth = parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width); //* represent the width of the main div
-    // var posX1 = 0,
-    //     posX2 = 0,
-    //     posInitial,
-    //     posFinal,
-    //     threshold = 100,
-    //     bigslides = useRef(null),
-    //     bigslidesLength = bigslides.length,
-    //     bigslideSize = mainbodywidth,
-    //     firstbigslide = bigslides[0],
-    //     lastbigslide = bigslides[bigslidesLength - 1],
-    //     cloneFirst = firstbigslide.cloneNode(true),
-    //     cloneLast = lastbigslide.cloneNode(true),
-    //     index = 0
-    //     allowShift = true;
-
-    // useEffect(() => {
-
-
-    //     }
-    // }, [])
+        }
+    }, [])
     function dragStart(e) {
+
         e = e || window.event;
         e.preventDefault();
-        posInitial = bigsliderItems.offsetLeft;
+        valueRef.current.posInitial = valueRef.current.bigsliderItems.offsetLeft;
 
         if (e.type == 'touchstart') {
-            posX1 = e.touches[0].clientX;
+            valueRef.current.posX1 = e.touches[0].clientX;
         } else {
-            posX1 = e.clientX;
+            valueRef.current.posX1 = e.clientX;
             document.onmouseup = dragEnd;
             document.onmousemove = dragAction;
         }
-        // console.log('zarp1')
-
     }
     function dragAction(e) {
-        // console.log('zarp2')
-
         e = e || window.event;
-
+        
         if (e.type == 'touchmove') {
-            posX2 = posX1 - e.touches[0].clientX;
-            posX1 = e.touches[0].clientX;
+            valueRef.current.posX2 = valueRef.current.posX1 - e.touches[0].clientX;
+            valueRef.current.posX1 = e.touches[0].clientX;
         } else {
-            posX2 = posX1 - e.clientX;
-            posX1 = e.clientX;
+            valueRef.current.posX2 = valueRef.current.posX1 - e.clientX;
+            valueRef.current.posX1 = e.clientX;
         }
-        bigsliderItems.style.left = (bigsliderItems.offsetLeft - posX2) + "px";
+
+        valueRef.current.bigsliderItems.style.left = (items.current.offsetLeft - valueRef.current.posX2) + "px";
+        
     }
 
     function dragEnd(e) {
-
-        posFinal = items.offsetLeft;
-        if (posFinal - posInitial < -threshold) {
+        valueRef.current.posFinal = valueRef.current.bigsliderItems.offsetLeft;
+        if (valueRef.current.posFinal - valueRef.current.posInitial < -valueRef.current.threshold) {
             shiftbigslide(1, 'drag');
-        } else if (posFinal - posInitial > threshold) {
+        } else if (valueRef.current.posFinal - valueRef.current.posInitial > valueRef.current.threshold) {
             shiftbigslide(-1, 'drag');
         } else {
-            bigsliderItems.style.left = (posInitial) + "px";
+            items.current.style.left = (valueRef.current.posInitial) + "px";
         }
         document.onmouseup = null;
         document.onmousemove = null;
     }
     //* this function will move the slider to left or fight depends on the choosen direction;
     function shiftbigslide(dir, action) {
-        // console.log('zarp4')
-        bigsliderItems.classList.add('transition-[left]', 'ease-out', 'duration-200');
-        if (allowShift) {
-            if (!action) { posInitial = bigsliderItems.offsetLeft; }
+        items.current.classList.add('transition-[left]', 'ease-out', 'duration-200');
+        if (valueRef.current.allowShift) {
+            if (!action) { valueRef.current.posInitial = items.current.offsetLeft; }
             if (dir == 1) {
-                // console.log((posInitial - bigslideSize), 'what the ficlk')
-                bigsliderItems.style.left = (posInitial - bigslideSize - Math.ceil(biassize / 3))
+                items.current.style.left = (valueRef.current.posInitial - valueRef.current.bigslideSize - Math.ceil(valueRef.current.biassize / 3))
                     // Math.floor(-biassize/3);
                     + "px";
-                index++;
+                    valueRef.current.index++;
             } else if (dir == -1) {
-                bigsliderItems.style.left = (posInitial + bigslideSize)
-                    + Math.floor(biassize / 3)
+                items.current.style.left = (valueRef.current.posInitial + valueRef.current.bigslideSize)
+                    + Math.floor(valueRef.current.biassize / 3)
                     + "px";
-                // console.log((posInitial + bigslideSize), 'what2')
-                index--;
+                valueRef.current.index--;
             }
         };
 
-        allowShift = false;
+        valueRef.current.allowShift = false;
     }
     //* check if the carousel should restart from the start or the end
     function checkIndex() {
-        bigsliderItems.classList.remove('transition-[left]', 'ease-out', 'duration-200');
-        if (index == -1) {
-            bigsliderItems.style.left = (-(bigslidesLength * bigslideSize))
-                - biassize / 3
+        items.current.classList.remove('transition-[left]', 'ease-out', 'duration-200');
+        if (valueRef.current.index == -1) {
+            items.current.style.left = (-(valueRef.current.bigslidesLength * valueRef.current.bigslideSize))
+                - valueRef.current.biassize / 3
                 + "px";
-            index = bigslidesLength - 1;
+                valueRef.current.index = valueRef.current.bigslidesLength - 1;
         }
-        if (index == bigslidesLength) {
-            bigsliderItems.style.left = (-(1 * bigslideSize))
-                + Math.floor(biassize / 3)
+        if (valueRef.current.index == valueRef.current.bigslidesLength) {
+            items.current.style.left = (-(1 * valueRef.current.bigslideSize))
+                + Math.floor(valueRef.current.biassize / 3)
                 + "px";
-            index = 0;
+                valueRef.current.index = 0;
         }
-        allowShift = true;
+        valueRef.current.allowShift = true;
     }
     return (
         <div id="bigslider" className=" ltr big-slider w-[100%] h-[300px] flex mb-[65px] vsmmobile:mb-0 vsmmobile:h-[40%]">
             <div className="overflow-hidden relative h-[100%] my-[20px]">
-                <div ref={items} className="items w-[700%] h-[100%] relative top-0 flex gap-3 vsmmobile:gap-[2rem] vsmmobile:h-[85%]">
+                <div ref={items} className="items w-[500%] h-[100%] relative top-0 flex gap-3 vsmmobile:gap-[2rem] vsmmobile:h-[85%]">
                     <div className="bigslide cursor-pointer float-left justify-center transition-all duration-1000 relative">
                         <img
                             className="bigcardimages  bg-skeleton"
