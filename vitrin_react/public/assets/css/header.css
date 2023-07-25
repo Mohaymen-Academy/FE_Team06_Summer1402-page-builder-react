@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer components{
+    .header{
+        @apply
+     
+           bg-blue-700  w-[\100%\] h-max flex flex-col justify-start; 
+        }
+        
+    
+} */
