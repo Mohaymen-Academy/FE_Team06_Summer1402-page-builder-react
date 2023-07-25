@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link.href = "#";
             link.className = "iconscarda";
             const cardDiv = document.createElement("div");
-            cardDiv.classList.add('flex', 'flex-col', 'gap-2')
+            cardDiv.classList.add('flex','flex-col','gap-2')
             const imageDiv = document.createElement("div");
             const image = document.createElement("img");
             image.setAttribute('data-src', icon.src)
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
             imageDiv.appendChild(image);
 
             const textDiv = document.createElement("div");
-            textDiv.classList.add("text-center", 'text-xs');
+            textDiv.classList.add("text-center",'text-xs');
 
             textDiv.textContent = icon.title;
 
@@ -617,7 +617,7 @@ function bigslide(wrapper, items) {
     var biassize = parseFloat(window.getComputedStyle(items).gap), //* gap between items
         mainbodywidth = parseFloat(window.getComputedStyle(document.getElementById('mainbody')).width); //* represent the width of the main div
     items.style.left = (-mainbodywidth + biassize / 3) + 'px'; //* set the left attribute of the slider with found variables
-
+    
     var posX1 = 0,
         posX2 = 0,
         posInitial,
@@ -631,7 +631,7 @@ function bigslide(wrapper, items) {
         cloneFirst = firstbigslide.cloneNode(true),
         cloneLast = lastbigslide.cloneNode(true),
         index = 0
-
+    
     allowShift = true;
     //* to create a infinity carousel we need to add the last and first elements to the slider
     items.appendChild(cloneFirst);
@@ -649,11 +649,11 @@ function bigslide(wrapper, items) {
     function dragStart(e) {
         e = e || window.event;
         e.preventDefault();
-        valueRef.posInitial = items.offsetLeft;
+        posInitial = items.offsetLeft;
         if (e.type == 'touchstart') {
-            valueRef.posX1 = e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
         } else {
-            valueRef.posX1 = e.clientX;
+            posX1 = e.clientX;
             document.onmouseup = dragEnd;
             document.onmousemove = dragAction;
         }
@@ -663,24 +663,24 @@ function bigslide(wrapper, items) {
         e = e || window.event;
 
         if (e.type == 'touchmove') {
-            valueRef.posX2 = valueRef.posX1 - e.touches[0].clientX;
-            valueRefposX1 = e.touches[0].clientX;
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
         } else {
-            valueRef.posX2 = valueRef.posX1 - e.clientX;
-            valueRef.posX1 = e.clientX;
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
         }
-        items.style.left = (items.offsetLeft - valueRef.posX2) + "px";
+        items.style.left = (items.offsetLeft - posX2) + "px";
 
     }
 
     function dragEnd(e) {
-        valueRef.posFinal = items.offsetLeft;
-        if (valueRef.posFinal - valueRef.posInitial < -valueRef.threshold) {
+        posFinal = items.offsetLeft;
+        if (posFinal - posInitial < -threshold) {
             shiftbigslide(1, 'drag');
-        } else if (valueRef.posFinal - valueRef.posInitial > valueRef.threshold) {
+        } else if (posFinal - posInitial > threshold) {
             shiftbigslide(-1, 'drag');
         } else {
-            items.style.left = (valueRef.posInitial) + "px";
+            items.style.left = (posInitial) + "px";
         }
         document.onmouseup = null;
         document.onmousemove = null;
@@ -689,24 +689,24 @@ function bigslide(wrapper, items) {
     //* this function will move the slider to left or fight depends on the choosen direction;
     function shiftbigslide(dir, action) {
         items.classList.add('transition-[left]', 'ease-out', 'duration-200');
-        if (valueRef.allowShift) {
-            if (!action) { valueRef.posInitial = items.offsetLeft; }
+        if (allowShift) {
+            if (!action) { posInitial = items.offsetLeft; }
             if (dir == 1) {
                 // console.log((posInitial - bigslideSize), 'what the ficlk')
-                items.style.left = (valueRef.posInitial - valueRef.bigslideSize - Math.ceil(valueRef.biassize / 3))
+                items.style.left = (posInitial - bigslideSize - Math.ceil(biassize / 3))
                     // Math.floor(-biassize/3);
                     + "px";
-                valueRef.index++;
+                index++;
             } else if (dir == -1) {
-                items.style.left = (valueRef.posInitial + valueRef.bigslideSize)
-                    + Math.floor(valueRef.biassize / 3)
+                items.style.left = (posInitial + bigslideSize)
+                    + Math.floor(biassize / 3)
                     + "px";
                 // console.log((posInitial + bigslideSize), 'what2')
-                valueRef.index--;
+                index--;
             }
         };
 
-        valueRef.allowShift = false;
+        allowShift = false;
     }
     //* check if the carousel should restart from the start or the end
     function checkIndex() {
