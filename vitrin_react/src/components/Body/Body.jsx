@@ -1,39 +1,15 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import { Icons, data } from '../../utility/Data';
 import CatIcons from './CatIcons';
 import Slider from './Slider';
+import BigSlider from './BigSlider';
+
 export default function Body() {
-    const source = '../assets/images/bigcarousel4.jpg';
+    const mainbody=useRef(null);
     return (
         <div className=" thebody items-center flex justify-center my-2 pt-[155px]">
-            <div id="mainbody" className="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px]">
-                <div id="bigslider" className=" ltr big-slider w-[100%] h-[300px] flex mb-[65px] vsmmobile:mb-0 vsmmobile:h-[40%]">
-                    <div className="overflow-hidden relative h-[100%] my-[20px]">
-                        <div id="items" className="items w-[300%] h-[100%] relative top-0 flex gap-3 vsmmobile:gap-[2rem] vsmmobile:h-[85%]">
-                            <div className="bigslide cursor-pointer float-left justify-center transition-all duration-1000 relative">
-                                <img
-                                    className="bigcardimages  bg-skeleton"
-                                    src={source}
-                                    alt=""
-                                />
-                            </div>
-                            <div className="bigslide  cursor-pointer float-left  justify-center transition-all duration-1000 relative">
-                                <img
-                                    className="bigcardimages  bg-skeleton"
-                                    src={source}
-                                    alt=""
-                                />
-                            </div>
-                            <div className="bigslide cursor-pointer float-left justify-center transition-all duration-1000 relative">
-                                <img
-                                    className="bigcardimages  bg-skeleton"
-                                    src={'../assets/images/'}
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div ref={mainbody} id="mainbody" className="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px]">
+                <BigSlider mainbody={mainbody}/>
                 <div id="bartarin" data-link="" data-title="برترین ها">
                     {
                         <Slider data={data['bartarin']} title={'برترین ها'} />
@@ -55,7 +31,7 @@ export default function Body() {
                         />
                     </a>
                 </div>
-                <div id="porfrosh" className='sliderDiv' data-link="category/12503" data-title="پرفروش هفته">
+                <div id="porfrosh" data-link="category/12503" data-title="پرفروش هفته">
                     {
                         <Slider data={data['porfrosh']} title={'پرفروش هفته'} />
                     }
