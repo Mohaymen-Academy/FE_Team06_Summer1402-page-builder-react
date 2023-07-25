@@ -34,19 +34,19 @@ export default function BigSlider({ mainbody }) {
         valueRef.current.cloneLast = valueRef.current.lastbigslide.cloneNode(true),
         valueRef.current.bigsliderItems.appendChild(valueRef.current.cloneFirst);
         valueRef.current.bigsliderItems.insertBefore(valueRef.current.cloneLast, valueRef.current.firstbigslide);
-        valueRef.current.bigsliderItems.style.left = '-800px';
-        window.addEventListener('touchstart', dragStart);
-        window.addEventListener('mousedown', dragStart);
-        window.addEventListener('touchend', dragEnd);
-        window.addEventListener('mouseup', dragEnd);
-        window.addEventListener('touchmove', dragAction);
+        items.current.style.left = -valueRef.current.bigslideSize+ valueRef.current.biassize/4+'px';
+        valueRef.current.bigsliderItems.addEventListener('touchstart', dragStart);
+        valueRef.current.bigsliderItems.addEventListener('mousedown', dragStart);
+        valueRef.current.bigsliderItems.addEventListener('touchend', dragEnd);
+        valueRef.current.bigsliderItems.addEventListener('mouseup', dragEnd);
+        valueRef.current.bigsliderItems.addEventListener('touchmove', dragAction);
         // window.addEventListener('mousemove', dragAction);
-        window.addEventListener('transitionend', checkIndex);
+        valueRef.current.bigsliderItems.addEventListener('transitionend', checkIndex);
         return () => {
-            window.removeEventListener('touchstart', dragStart);
-            window.removeEventListener('touchend', dragEnd);
-            window.removeEventListener('touchmove', dragAction);
-            window.removeEventListener('transitionend', checkIndex);
+            valueRef.current.bigsliderItems.removeEventListener('touchstart', dragStart);
+            valueRef.current.bigsliderItems.removeEventListener('touchend', dragEnd);
+            valueRef.current.bigsliderItems.removeEventListener('touchmove', dragAction);
+            valueRef.current.bigsliderItems.removeEventListener('transitionend', checkIndex);
         }
     }, [])
     function dragStart(e) {
@@ -92,7 +92,7 @@ export default function BigSlider({ mainbody }) {
     }
     //* this function will move the slider to left or fight depends on the choosen direction;
     function shiftbigslide(dir, action) {
-        items.current.classList.add('transition-[left]', 'ease-out', 'duration-200');
+        items.current.classList.add ('transition-[left]', 'ease-out', 'duration-200');
         if (valueRef.current.allowShift) {
             if (!action) { valueRef.current.posInitial = items.current.offsetLeft; }
             if (dir == 1) {
