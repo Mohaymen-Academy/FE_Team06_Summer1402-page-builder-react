@@ -14,7 +14,6 @@ export default function Layout({ children }) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const targetImage = entry.target;
-                    // console.log(targetImage.classList)
                     targetImage.classList.remove('animate-skeleton-loading')
                     targetImage.src=targetImage.dataset.src
                 }
