@@ -35,21 +35,22 @@ export default function BigSlider({ mainbody }) {
                     <div className="bigslide cursor-pointer float-left justify-center transition-all duration-1000 relative">
                         <img
                             className="bigcardimages  bg-skeleton"
-                            src={'../assets/images/bigcarousel1.jpg'}
+                            data-src='../assets/images/bigcarousel1.jpg'
+                            src='../assets/images/bigcarousel1.jpg'
                             alt=""
                         />
                     </div>
                     <div className="bigslide  cursor-pointer float-left  justify-center transition-all duration-1000 relative">
                         <img
                             className="bigcardimages  bg-skeleton"
-                            src={'../assets/images/bigcarousel2.jpg'}
+                            data-src='../assets/images/bigcarousel2.jpg'
                             alt=""
                         />
                     </div>
                     <div className="bigslide cursor-pointer float-left justify-center transition-all duration-1000 relative">
                         <img
                             className="bigcardimages  bg-skeleton"
-                            src={'../assets/images/bigcarousel4.jpg'}
+                            data-src='../assets/images/bigcarousel4.jpg'
                             alt=""
                         />
                     </div>

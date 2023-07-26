@@ -7,9 +7,9 @@ function App() {
     <div
       className="rtl bg-[#e5ebef] flex flex-col overflow-x-hidden"
     >
-      <Layout>
-        <Body />
-      </Layout>
+        <Layout>
+          <Body />
+        </Layout>
     </div>
   )
 }

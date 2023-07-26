@@ -16,10 +16,11 @@
     .cardimg{
         @apply mb-[1.5rem] vsmmobile:max-w-[100%];
     }
+    .sticky{
+       @apply fixed top-0 w-[100%] z-10 ;
+    }
     .stickyheader{
-       @apply 
-       fixed 
-       top-0 w-[100%] z-10;
+        @apply fixed top-0 w-[100%] z-10 ;
     }
     .closeanimation{
         @apply top-[-90px];

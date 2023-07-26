@@ -7,7 +7,7 @@ export default function CatIcons({ title, link ,imagesrc}) {
                 <div
                 className='flex flex-col gap-2'>
                     <div>
-                        <img src={imagesrc} alt="" className='iconcardimg' />
+                        <img data-src={imagesrc} alt="" className='iconcardimg' />
                     </div>
                     <div
                     className="text-center text-xs">

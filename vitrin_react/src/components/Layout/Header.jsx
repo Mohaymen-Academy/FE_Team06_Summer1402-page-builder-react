@@ -12,24 +12,24 @@ export default function Header() {
       },[])
 
       function handlescroll (e){
-        console.log(currenetposition-window.scrollY>0 ? 'up':'down')
+
         animationstateset(currenetposition-window.scrollY>0 ? 'up':'down');
         currenetposition=window.scrollY
     }
     return (
         <div
-        className={`stickyheader ${animationstate =='up'? 'animate-blueheaderanimationopen':'animate-blueheaderanimatioclose closeanimation'}`}
+        className={`stickyheader ${animationstate =='up'? 'animate-blueheaderanimationopen':animationstate=='down'?'animate-blueheaderanimatioclose closeanimation':'animate-blueheaderanimationopen'}`}
 
         >
             <div id="blueheader" className="bluheader">
                 <div className={`align-bottom flex flex-col items-center pr-[7%] py-2 w-max h-fit`}>
-                    <img src={'./assets/images/logo.png'} className="rounded-2xl w-[45px] h-[45px]" alt=""/>
+                    <img data-src={'./assets/images/logo.png'} className="rounded-2xl w-[45px] h-[45px]" alt=""/>
                         <h5 className="text-white">سروش پلاس</h5>
                 </div>
             </div>
             <div id="whiteheader" className="whiteheader">
-                <div id="navlogo" className={`align-bottom flex relative flex-col items-center pr-[7%] pt-[0.7rem] pb-[0.5rem] w-max vsmmobile:animate-none vsmmobile:pr-[1%] ${animationstate=='up'?'animate-logoclose closelogo':'animate-logoopen'}`}>
-                    <img src={'./assets/images/logo.png'} className="rounded-2xl w-[30px] h-[30px]" alt=""/>
+                <div id="navlogo" className={`align-bottom flex relative flex-col items-center pr-[7%] pt-[0.7rem] pb-[0.5rem] w-max vsmmobile:animate-none vsmmobile:pr-[1%] ${animationstate=='up'?'animate-logoclose closelogo':animationstate=='down'?'animate-logoopen':'closelogo'}`}>
+                    <img data-src={'./assets/images/logo.png'} className="rounded-2xl w-[30px] h-[30px]" alt=""/>
                         <h5 className="text-black text-xs whitespace-nowrap">سروش پلاس</h5>
                 </div>
                 <div className="flex flex-row justify-evenly text-center w-full h-min  items-center">
