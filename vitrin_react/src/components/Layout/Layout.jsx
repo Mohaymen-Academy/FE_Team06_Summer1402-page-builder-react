@@ -14,14 +14,14 @@ export default function Layout({ children }) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const targetImage = entry.target;
+                    // console.log(targetImage.classList)
+                    targetImage.classList.remove('animate-skeleton-loading')
                     targetImage.src=targetImage.dataset.src
                 }
             });
         }
         observer.current = new IntersectionObserver(handleIntersect, options);
-        // console.log(divRef.current.querySelectorAll('.img'))
         const images = divRef.current.querySelectorAll('img');
-        console.log(images)
         images.forEach((img) => {
             observer.current.observe(img);
         })

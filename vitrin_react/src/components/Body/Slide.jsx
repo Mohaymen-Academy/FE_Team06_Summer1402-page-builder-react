@@ -9,7 +9,7 @@ export default function Slide({imagesrc,title}) {
                 className="flex h-fit bg-white">
                     <div>
 
-                    <img className={'px-[1px] rounded-full w-[100%] itesm '} data-src={imagesrc} alt="" />
+                    <img className={'px-[1px] rounded-full w-[100%] itesm animate-skeleton-loading'} data-src={imagesrc} alt="" />
                     <div
                     className="text-center pb-[5px] text-sm">
                         {title}

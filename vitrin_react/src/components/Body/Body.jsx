@@ -26,7 +26,7 @@ export default function Body() {
                     <a className="flex justify-center" href="">
                         <img
                             data-src="./assets/images/amade.png"
-                            className="cardimg width660 "
+                            className="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -40,7 +40,7 @@ export default function Body() {
                     <a className="flex justify-center" href="">
                         <img
                             data-src="assets/images/darkh.png"
-                            className="cardimg width660 "
+                            className="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -52,7 +52,7 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img className="cardimg width660" data-src="assets/images/chesman.png" alt="" />
+                        <img className="cardimg width660 animate-skeleton-loading" data-src="assets/images/chesman.png" alt="" />
                     </a>
                 </div>
                 <div id="sabkzendegi" data-link="landing=246" data-title="سبک زندگی">
@@ -64,7 +64,7 @@ export default function Body() {
                     <a className="flex justify-center" href="">
                         <img
                             data-src="assets/images/sobhane.png"
-                            className="cardimg width660 "
+                            className="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -78,7 +78,7 @@ export default function Body() {
                     <a className="flex justify-center" href="">
                         <img
                             data-src="assets/images/moramel.png"
-                            className="cardimg width660 "
+                            className="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -93,7 +93,7 @@ export default function Body() {
                     <a className="flex justify-center" href="">
                         <img
                             data-src="assets/images/khadamat.png"
-                            className="cardimg width660 "
+                            className="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -107,7 +107,7 @@ export default function Body() {
                     <a className="flex justify-center" href="">
                         <img
                             data-src="assets/images/sidena.png"
-                            className="cardimg width660 "
+                            className="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
