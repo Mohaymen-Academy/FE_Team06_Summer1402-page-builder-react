@@ -1,17 +1,15 @@
-import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer"
+// import Header from "./components/Layout/Header"
+// import Footer from "./components/Layout/Footer"
 import Body from "./components/Body/Body"
+import Layout from "./components/Layout/Layout"
 function App() {
   return (
     <div
-    // style={{height:'100000px'}}
-    // onScroll={()=>console.log('zarp')}
-    // onScrollCapture={()=>console.log('wer')}
-    className="rtl bg-[#e5ebef] flex flex-col overflow-x-hidden"
+      className="rtl bg-[#e5ebef] flex flex-col overflow-x-hidden"
     >
-      <Header></Header>
-      <Body></Body>
-      <Footer></Footer>
+      <Layout>
+        <Body />
+      </Layout>
     </div>
   )
 }
