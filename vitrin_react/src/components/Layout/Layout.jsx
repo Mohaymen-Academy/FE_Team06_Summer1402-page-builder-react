@@ -1,15 +1,11 @@
-import React,{useRef,useEffect} from 'react'
+import React, { useState, useEffect, createContext} from 'react'
 import Header from './Header'
 import Footer from './Footer'
-export default function Layout({ children }) {
-    const observer = useRef(null);
-    const divRef = useRef(null);
+const IntersectionContext = createContext();
+
+function Layout({ children }) {
+    const [intersectionObserver, setIntersectionObserver] = useState(null);
     useEffect(() => {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        }
         const handleIntersect = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -19,25 +15,24 @@ export default function Layout({ children }) {
                 }
             });
         }
-        observer.current = new IntersectionObserver(handleIntersect, options);
-        const images = divRef.current.querySelectorAll('img');
-        images.forEach((img) => {
-            observer.current.observe(img);
-        })
-        return () => {
-            if (observer.current) {
-                observer.current.disconnect();
-            }
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
         }
 
-
+        const observer = new IntersectionObserver(handleIntersect, options);
+        setIntersectionObserver(observer);
+        return () => {
+            observer.disconnect();
+        };
     }, []);
     return (
-        <div
-        ref={divRef}>
-            <Header/>
-                {children}
-            <Footer/>
-        </div>
+        <IntersectionContext.Provider value={intersectionObserver}>
+            <Header />
+            {children}
+            <Footer />
+        </IntersectionContext.Provider>
     )
 }
+export default { Layout, IntersectionContext };

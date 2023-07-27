@@ -32,7 +32,6 @@ class BitSliderclass {
         this.valueRef.current.bigsliderItems.removeEventListener('transitionend', this.checkIndex.bind(this));
     }
     dragStart(e) {
-
         e = e || window.event;
         e.preventDefault();
         this.valueRef.current.posInitial = this.valueRef.current.bigsliderItems.offsetLeft;
@@ -46,7 +45,6 @@ class BitSliderclass {
     }
     dragAction(e) {
         e = e || window.event;
-
         if (e.type == 'touchmove') {
             this.valueRef.current.posX2 = this.valueRef.current.posX1 - e.touches[0].clientX;
             this.valueRef.current.posX1 = e.touches[0].clientX;
@@ -89,8 +87,9 @@ class BitSliderclass {
 
         this.valueRef.current.allowShift = false;
     }
+
     //* check if the carousel should restart from the start or the end
-    checkIndex() {
+        checkIndex() {
         this.items.current.classList.remove('transition-[left]', 'ease-out', 'duration-200');
         if (this.valueRef.current.index == -1) {
             this.items.current.style.left = (-(this.valueRef.current.bigslidesLength * this.valueRef.current.bigslideSize))

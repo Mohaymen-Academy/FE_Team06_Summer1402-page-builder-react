@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from '../../utility/Image'
 
 export default function Slide({imagesrc,title}) {
     return (
@@ -9,7 +10,7 @@ export default function Slide({imagesrc,title}) {
                 className="flex h-fit bg-white">
                     <div>
 
-                    <img className={'px-[1px] rounded-full w-[100%] itesm animate-skeleton-loading'} data-src={imagesrc} alt="" />
+                    <Image classes={'px-[1px] rounded-full w-[100%] itesm animate-skeleton-loading'} src={imagesrc} alt="" />
                     <div
                     className="text-center pb-[5px] text-sm">
                         {title}

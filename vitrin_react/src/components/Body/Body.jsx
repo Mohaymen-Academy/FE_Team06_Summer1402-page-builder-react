@@ -1,18 +1,21 @@
-import React,{useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Icons, data } from '../../utility/Data';
 import CatIcons from './CatIcons';
-import Slider  from './Slider';
-import BigSlider  from './BigSlider';
+import Slider from './Slider';
+import BigSlider from './BigSlider';
+import Image from '../../utility/Image';
 
 export default function Body() {
-    const mainbody=useRef(null);
+    const mainbody = useRef(null);
+    useEffect(() =>{}, []);
     return (
         <div className=" thebody items-center flex justify-center my-2 pt-[155px]">
             <div ref={mainbody} id="mainbody" className="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px]">
-                <BigSlider  mainbody={mainbody}/>
+                <BigSlider mainbody={mainbody}
+                    imgData={['../assets/images/bigcarousel1.jpg', '../assets/images/bigcarousel2.jpg', '../assets/images/bigcarousel4.jpg']} />
                 <div id="bartarin" data-link="" data-title="برترین ها">
                     {
-                        <Slider mainbody={mainbody} data={data['bartarin']} title={'برترین ها'}  />
+                        <Slider mainbody={mainbody} data={data['bartarin']} title={'برترین ها'} />
                     }
                 </div>
                 <div id="CatsContainer" className="flex flex-wrap mb-6 justify-center gap-[1.5rem] tablet:gap-[2.5rem] smmobile:gap-[10px] mobile:gap-[10px] vsmmobile:gap-[10px]">
@@ -24,10 +27,9 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img
-                            data-src="./assets/images/amade.png"
-                            className="cardimg width660 animate-skeleton-loading"
-                            alt=""
+                        <Image
+                            src="./assets/images/amade.png"
+                            classes="cardimg width660 animate-skeleton-loading"
                         />
                     </a>
                 </div>
@@ -38,9 +40,9 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img
-                            data-src="assets/images/darkh.png"
-                            className="cardimg width660 animate-skeleton-loading"
+                        <Image
+                            src="assets/images/darkh.png"
+                            classes="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -52,7 +54,7 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img className="cardimg width660 animate-skeleton-loading" data-src="assets/images/chesman.png" alt="" />
+                        <Image classes="cardimg width660 animate-skeleton-loading" src="assets/images/chesman.png" alt="" />
                     </a>
                 </div>
                 <div id="sabkzendegi" data-link="landing=246" data-title="سبک زندگی">
@@ -62,9 +64,9 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img
-                            data-src="assets/images/sobhane.png"
-                            className="cardimg width660 animate-skeleton-loading"
+                        <Image
+                            src="assets/images/sobhane.png"
+                            classes="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -76,9 +78,9 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img
-                            data-src="assets/images/moramel.png"
-                            className="cardimg width660 animate-skeleton-loading"
+                        <Image
+                            src="assets/images/moramel.png"
+                            classes="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -91,9 +93,9 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img
-                            data-src="assets/images/khadamat.png"
-                            className="cardimg width660 animate-skeleton-loading"
+                        <Image
+                            src="assets/images/khadamat.png"
+                            classes="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
@@ -105,15 +107,15 @@ export default function Body() {
                 </div>
                 <div>
                     <a className="flex justify-center" href="">
-                        <img
-                            data-src="assets/images/sidena.png"
-                            className="cardimg width660 animate-skeleton-loading"
+                        <Image
+                            src="assets/images/sidena.png"
+                            classes="cardimg width660 animate-skeleton-loading"
                             alt=""
                         />
                     </a>
                 </div>
                 <div id="soroush" data-link="" data-title="سروش پلاس">
-                {
+                    {
                         <Slider mainbody={mainbody} data={data['soroush']} title={'سروش پلاس'} />
                     }
 

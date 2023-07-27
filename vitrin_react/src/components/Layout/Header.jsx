@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 // import logo from '../../';
-
+import Image from '../../utility/Image';
 export default function Header() {    
     let currenetposition=window.scrollY;
     const [animationstate, animationstateset] = useState('')
@@ -23,13 +23,13 @@ export default function Header() {
         >
             <div id="blueheader" className="bluheader">
                 <div className={`align-bottom flex flex-col items-center pr-[7%] py-2 w-max h-fit`}>
-                    <img data-src={'./assets/images/logo.png'} className="animate-skeleton-loading rounded-2xl w-[45px] h-[45px]" alt=""/>
+                        <Image  src={'./assets/images/logo.png'} classes={"animate-skeleton-loading rounded-2xl w-[45px] h-[45px]"}/>
                         <h5 className="text-white">سروش پلاس</h5>
                 </div>
             </div>
             <div id="whiteheader" className="whiteheader">
                 <div id="navlogo" className={`align-bottom flex relative flex-col items-center pr-[7%] pt-[0.7rem] pb-[0.5rem] w-max vsmmobile:animate-none vsmmobile:pr-[1%] ${animationstate=='up'?'animate-logoclose closelogo':animationstate=='down'?'animate-logoopen':'closelogo'}`}>
-                    <img data-src={'./assets/images/logo.png'} className="animate-skeleton-loading rounded-2xl w-[30px] h-[30px]" alt=""/>
+                    <Image src={'./assets/images/logo.png'} classes="animate-skeleton-loading rounded-2xl w-[30px] h-[30px]"/>
                         <h5 className="text-black text-xs whitespace-nowrap">سروش پلاس</h5>
                 </div>
                 <div className="flex flex-row justify-evenly text-center w-full h-min  items-center">
