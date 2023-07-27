@@ -7,7 +7,7 @@ function Header(props) {
             {
                 props.pagename == "page1" ?
                     <div id={props.id} className="flex flex-col max-w-[350px] h-[600px] w-[100%] vsmmobile:h-[550px] smmobile:h-[550px] mobile:h-[550px] mb-5  tablet:h-[550px] bg-white">
-                        <div className=" flex flex-col justify-center items-center border-dashed border-2  border-[#0066FF] rounded-lg mt-7 vsmmobile:h-[140px]  h-[150px] m-7  ">
+                        <div className=" flex flex-col justify-center items-center border-dashed border-2  border-[#0066FF] rounded-lg  vsmmobile:h-[140px]  h-[150px] m-7  ">
                             <div  className="flex flex-col justify-center items-center w-[50px] h-[50px] mt-3 vsmmobile:h-[35px] vsmmobile:w-[35px] rounded-lg bg-[#dce5f1]">
                                 <img className="w-[80%] h-[80%] m-[1px]" src="images/plus.png"/>
                             </div>
