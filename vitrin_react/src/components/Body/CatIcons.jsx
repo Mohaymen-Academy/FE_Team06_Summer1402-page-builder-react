@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from '../../utility/Image'
 
 export default function CatIcons({ title, link ,imagesrc}) {
     return (
@@ -7,7 +8,7 @@ export default function CatIcons({ title, link ,imagesrc}) {
                 <div
                 className='flex flex-col gap-2'>
                     <div>
-                        <img data-src={imagesrc} alt="" className='iconcardimg animate-skeleton-loading' />
+                        <Image src={imagesrc} alt="" classes='iconcardimg animate-skeleton-loading' />
                     </div>
                     <div
                     className="text-center text-xs">

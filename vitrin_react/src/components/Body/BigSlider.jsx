@@ -36,7 +36,7 @@ export default function BigSlider({ mainbody, imgData }) {
                 Values.current.posX2 = Values.current.posX1 - event.clientX;
                 Values.current.posX1 = event.clientX;
             }
-            setLeft((prevstate) => prevstate - Values.current.posX2)
+            setLeft((prevstate) => prevstate - Values.current.posX2);
         }
     }
     function getPosition(event) {

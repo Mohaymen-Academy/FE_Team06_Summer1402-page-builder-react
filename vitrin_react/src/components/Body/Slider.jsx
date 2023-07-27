@@ -1,30 +1,48 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Slide from './Slide'
-import IconSlider from '../../utility/Slider';
-
 export default function Slider({ data, title, mainbody }) {
     const sliderdiv = useRef(null);
+    const [translate, settranslate] = useState(0);
+
     const valueRef = useRef({
         isDragging: false,
-        startPosition: 0,
-        currentTranslate: 0,
         maxTranslate: null,
         minTranslate: null,
-        prevTranslate: 0,
-        animationID: 0,
+        posX1: 0,
+
     });
 
     useEffect(() => {
-        const iconSlider = new IconSlider(valueRef, sliderdiv, mainbody)
-        iconSlider.setEventListeners();
-        
-        return () => {
-            iconSlider.removeEventListeners();
+        if (mainbody.current) {
+            const sliderwidth = parseFloat(window.getComputedStyle(sliderdiv.current).width)
+            const mainbodywidth = parseFloat(window.getComputedStyle(mainbody.current).width)
+            valueRef.current.maxTranslate = Math.abs((sliderwidth * 1.3) - mainbodywidth);
+            valueRef.current.minTranslate = -25;
+        }
+    }, []);
+    function handleMouseDown(e) {
+        valueRef.current.isDragging = true;
+        valueRef.current.posX1 = getPosition(e);
+    }
+    function getPosition(event) {
+        return (event.type === 'touchstart') ? event.touches[0].clientX : event.type == 'touchmove' ? event.touches[0].clientX : event.clientX;
+    }
+    function handlMouseUp(e) {
+        valueRef.current.isDragging = false;
+
+    }
+    function handleMoveOver(e) {
+        console.log(e)
+        if (valueRef.current.isDragging) {
+            const position = getPosition(e)
+            const tranlate = position - valueRef.current.posX1;
+            console.log(translate)
+            if (tranlate < valueRef.current.maxTranslate && tranlate > valueRef.current.minTranslate) {
+                settranslate(tranlate);
+            }
         }
 
-    }, []);
-
-
+    }
     return (
         <div>
             <div
@@ -37,7 +55,14 @@ export default function Slider({ data, title, mainbody }) {
                 <div
                     className='carousel-container flex flex-row w-[100%] h-36 pr-[7%] overflow-hidden relative'>
                     <div
+                        onMouseDown={handleMouseDown}
+                        onTouchStart={handleMouseDown}
+                        onMouseMove={handleMoveOver}
+                        onTouchMove={handleMoveOver}
+                        onTouchEnd={handlMouseUp}
+                        onMouseUp={handlMouseUp}
                         className='slider flex transition-transform ease-in'
+                        style={{ transform: `translateX(${translate}px)` }}
                         ref={sliderdiv}>
 
                         {
