@@ -1,48 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef} from 'react'
 import Slide from './Slide'
+import useSlider from '../../utility/useSlider';
 export default function Slider({ data, title, mainbody }) {
     const sliderdiv = useRef(null);
-    const [translate, settranslate] = useState(0);
-
-    const valueRef = useRef({
-        isDragging: false,
-        maxTranslate: null,
-        minTranslate: null,
-        posX1: 0,
-
-    });
-
-    useEffect(() => {
-        if (mainbody.current) {
-            const sliderwidth = parseFloat(window.getComputedStyle(sliderdiv.current).width)
-            const mainbodywidth = parseFloat(window.getComputedStyle(mainbody.current).width)
-            valueRef.current.maxTranslate = Math.abs((sliderwidth * 1.3) - mainbodywidth);
-            valueRef.current.minTranslate = -25;
-        }
-    }, []);
-    function handleMouseDown(e) {
-        valueRef.current.isDragging = true;
-        valueRef.current.posX1 = getPosition(e);
-    }
-    function getPosition(event) {
-        return (event.type === 'touchstart') ? event.touches[0].clientX : event.type == 'touchmove' ? event.touches[0].clientX : event.clientX;
-    }
-    function handlMouseUp(e) {
-        valueRef.current.isDragging = false;
-
-    }
-    function handleMoveOver(e) {
-        console.log(e)
-        if (valueRef.current.isDragging) {
-            const position = getPosition(e)
-            const tranlate = position - valueRef.current.posX1;
-            console.log(translate)
-            if (tranlate < valueRef.current.maxTranslate && tranlate > valueRef.current.minTranslate) {
-                settranslate(tranlate);
-            }
-        }
-
-    }
+    const [handleMouseDown,handleMoveOver,handlMouseUp,translate]=useSlider(mainbody,sliderdiv);
     return (
         <div>
             <div
@@ -59,8 +20,8 @@ export default function Slider({ data, title, mainbody }) {
                         onTouchStart={handleMouseDown}
                         onMouseMove={handleMoveOver}
                         onTouchMove={handleMoveOver}
-                        onTouchEnd={handlMouseUp}
-                        onMouseUp={handlMouseUp}
+                        onTouchEnd= {handlMouseUp}
+                        onMouseUp=  {handlMouseUp}
                         className='slider flex transition-transform ease-in'
                         style={{ transform: `translateX(${translate}px)` }}
                         ref={sliderdiv}>
