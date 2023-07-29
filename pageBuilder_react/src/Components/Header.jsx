@@ -3,7 +3,7 @@ import "../assets/Styles/Page1.css"
 
 function Header() {
     return (
-        <nav className="flex flex-row fixed w-screen h-[100px] top-0 bg-white justify-between border">
+        <nav className="relative flex flex-row w-screen h-[50px] top-0 bg-white justify-between border">
             <div className="flex flex-row items-center  bg-white w-fit">
                 <img className="w-[30px] h-[30px] mr-[15px] " src="images/logo.png" />
                 <img className="header-icon mr-[10px]" src="images/home.png" />

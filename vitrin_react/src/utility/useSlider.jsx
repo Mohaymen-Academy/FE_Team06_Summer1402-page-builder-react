@@ -13,7 +13,6 @@ export default function useSlider(mainbody, sliderdiv) {
 
     useEffect(() => {
         if (mainbody && sliderdiv) {
-
             const sliderwidth = parseFloat(window.getComputedStyle(sliderdiv.current).width)
             const mainbodywidth = parseFloat(window.getComputedStyle(mainbody.current).width)
             valueRef.current.maxTranslate = Math.abs((sliderwidth * 1.3) - mainbodywidth);

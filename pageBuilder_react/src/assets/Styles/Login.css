@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components{
     .bg-gray{
         @apply  fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#D7D8DD];

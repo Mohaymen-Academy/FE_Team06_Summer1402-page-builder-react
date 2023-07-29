@@ -3,7 +3,7 @@ import "../assets/Styles/Page1.css"
 
 function LeftSideBar(props) {
 	return (
-        <div className="fixed flex flex-col px-4 py-3 left-0 h-screen top-[100px] w-[300px] border border-t-0  bg-white  smmobile:hidden vsmmobile:hidden">
+        <div className="fixed flex flex-col px-4 py-3 left-0 h-screen  w-[300px] border border-t-0  bg-white  smmobile:hidden vsmmobile:hidden">
          {
              props.pagename == "page1" ?
                 <>
