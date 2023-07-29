@@ -11,8 +11,6 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/page1' element={<Page pagename="page1" />} />
-        <Route path='/page2' element={<Page pagename="page2" />} />
         <Route path='/dad' element={<Whitepage id={1} dropdir={'vertical'} components={[]} />} />
         
       </Routes>

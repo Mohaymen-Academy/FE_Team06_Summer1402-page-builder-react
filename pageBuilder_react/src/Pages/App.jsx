@@ -4,10 +4,12 @@ import Layout from '../Components/Layout';
 import Page from '../Pages/Page.jsx';
 import LeftSideBar from '../Components/LeftSideBar';
 function App() {
+  
   const [page, setPage] = useState(0);
   return (
     <>
-      <Layout>
+    {/* layout and page should be used with memo */}
+      <Layout>  
         <Page/>
       </Layout>
       <LeftSideBar pagename={page} />
