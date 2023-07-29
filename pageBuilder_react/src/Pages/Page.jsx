@@ -35,7 +35,7 @@ function Page(props) {
 
     return (
         <Layout>
-            <div className="bg-[#D7D8DD] pt-2 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
+            <div className="bg-[#D7D8DD] pt-10 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
                 <div className={`flex flex-col items-center pl-2 `} style={{height:`${pageCounter.length*50}rem`}}>
                     <div className='h-max'>
                         {
