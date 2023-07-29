@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     const elements = useRef({
         dragged : null,
         Elements:{
-            `x:{},
+            x:{},
         }
     })
     return (
