@@ -8,7 +8,7 @@ import MainButton from '../Components/MainButton.jsx';
 import Layout from '../Components/Layout';
 
 function Page(props) {
-    const [page, setPage] = useState(0);
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [pageCounter, setPageCounter] = useState([1]);
     const [currentPage, setCurrentPage] = useState(0);
@@ -30,11 +30,10 @@ function Page(props) {
         console.log("current");
         console.log(currentPage);
     }
-    useEffect(() => {
-    }, [currentPage]);
+    // useEffect(() => {
+    // }, [currentPage]);
 
     return (
-        <Layout>
             <div className="bg-[#D7D8DD] pt-10 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
                 <div className={`flex flex-col items-center pl-2 `} style={{height:`${pageCounter.length*50}rem`}}>
                     <div className='h-max'>
@@ -57,8 +56,6 @@ function Page(props) {
                     <div onClick={() => setIsModalOpen(true)} ><MainButton src="images/icons8-setting-24.png" text="تنظیمات" isSetting={true} /></div>
                 </div>
             </div>
-            <LeftSideBar pagename={props.pagename} />
-        </Layout>
     );
 }
 

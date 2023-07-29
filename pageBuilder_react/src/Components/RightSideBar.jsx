@@ -5,6 +5,7 @@ function RightSideBar() {
     const [dragged, setdragged] = useState(false);
     const values = useContext(ElementsContext);
     function handleDragStart(number) {
+        // setpager(number)
         console.log(number)
         values.current.dragged = number
     }

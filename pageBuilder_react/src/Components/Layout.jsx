@@ -13,7 +13,7 @@ export default function Layout({ children }) {
     return (
         <ElementsContext.Provider value={elements}>
             <Header />
-            <RightSideBar />
+            <RightSideBar  />
             {children}
         </ElementsContext.Provider>
     )

@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from '../Pages/App.jsx';
 import LoginPage from '../Pages/Login.jsx';
 import Page from '../Pages/Page.jsx';
-
-
+import DropAbleDiv from "../Components/DropAbleDiv.jsx";
+import Whitepage from '../Components/WhitePage.jsx';
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -13,6 +13,7 @@ const AppRouter = () => {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/page1' element={<Page pagename="page1" />} />
         <Route path='/page2' element={<Page pagename="page2" />} />
+        <Route path='/dad' element={<Whitepage id={1} dropdir={'vertical'} components={[]} />} />
         
       </Routes>
     </BrowserRouter>

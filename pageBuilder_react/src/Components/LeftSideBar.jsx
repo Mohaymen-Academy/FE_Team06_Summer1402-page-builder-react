@@ -1,11 +1,12 @@
 import React, { useState,  useEffect } from 'react';
 import "../assets/Styles/Page1.css"
 
-function LeftSideBar(props) {
+function LeftSideBar({pagename}) {
+    console.log(pagename)
 	return (
         <div className="fixed flex flex-col px-4 py-3 left-0 h-screen  w-[300px] border border-t-0  bg-white  smmobile:hidden vsmmobile:hidden">
          {
-             props.pagename == "page1" ?
+             pagename == "page1" ?
                 <>
                 <div className="my-3">تنظیمات صفحه</div>
 
