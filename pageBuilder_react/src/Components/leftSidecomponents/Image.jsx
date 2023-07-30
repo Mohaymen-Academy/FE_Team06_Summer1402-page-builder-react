@@ -13,8 +13,7 @@ function ImageSideBar() {
                     <img className="max-w-[25px] max-h-[23px] " src="images/3.png"/>
                     <img className="max-w-[25px] max-h-[23px] " src="images/4.png"/>
                     <img className="max-w-[25px] max-h-[23px] " src="images/5.png"/>
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png"/>
-                    
+                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png"/>                    
                 </div>
                 <div className=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mobile:h-[100px] h-[150px] ml-3 mb-3 ">
                     <div  className="flex flex-col justify-center items-center w-[50px] h-[50px] rounded-lg bg-[#dce5f1]">

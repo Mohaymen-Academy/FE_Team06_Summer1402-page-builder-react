@@ -9,11 +9,10 @@ function App() {
   const [page, setPage ] = useState(0);
   return (
     <>
-    {/* layout and page should be used with memo */}
       <Layout>  
         <Page setIsModalOpen={setIsModalOpen}/>
       </Layout>
-      <LeftSideBar pagename={5} open={isModalOpen}/>
+      <LeftSideBar pagename={1} open={isModalOpen}/>
     </>
   )
 }
