@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import "../assets/Styles/Page1.css"
 import { ElementsContext } from './Layout';
-function RightSideBar() {
+function RightSideBar({leftsidePager}) {
     const [dragged, setdragged] = useState(false);
     const values = useContext(ElementsContext);
     function handleDragStart(number) {
-        // setpager(number)
-        console.log(number)
+        // console.log(number)
+        leftsidePager(number)
         values.current.dragged = number
     }
     return (
@@ -14,7 +14,7 @@ function RightSideBar() {
             <div className="fixed border h-screen flex flex-col px-4 py-3 border-t-0 bg-white w-[200px] smmobile:hidden vsmmobile:hidden">
                 <div className="my-3 text-xs font-bold">قالب ها</div>
                 <div className="sidebar-button "
-                    onDragStart={()=>handleDragStart(1)}
+                    onDragStart={()=>handleDragStart(2)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
@@ -25,7 +25,7 @@ function RightSideBar() {
                     </div>
                 </div>
                 <div className="sidebar-button"
-                    onDragStart={()=>handleDragStart(2)}
+                    onDragStart={()=>handleDragStart(3)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
@@ -36,7 +36,7 @@ function RightSideBar() {
                     </div>
                 </div>
                 <div className="sidebar-button"
-                    onDragStart={()=>handleDragStart(3)}
+                    onDragStart={()=>handleDragStart(4)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
@@ -47,7 +47,7 @@ function RightSideBar() {
                     </div>
                 </div>
                 <div className="sidebar-button"
-                    onDragStart={()=>handleDragStart(4)}
+                    onDragStart={()=>handleDragStart(5)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
@@ -58,7 +58,7 @@ function RightSideBar() {
                     </div>
                 </div>
                 <div className="sidebar-button"
-                    onDragStart={()=>handleDragStart(5)}
+                    onDragStart={()=>handleDragStart(6)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
@@ -69,7 +69,7 @@ function RightSideBar() {
                     </div>
                 </div>
                 <div className="sidebar-button"
-                    onDragStart={()=>handleDragStart(6)}
+                    onDragStart={()=>handleDragStart(7)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
@@ -80,7 +80,7 @@ function RightSideBar() {
                     </div>
                 </div>
                 <div className="sidebar-button"
-                    onDragStart={()=>handleDragStart(7)}
+                    onDragStart={()=>handleDragStart(8)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">

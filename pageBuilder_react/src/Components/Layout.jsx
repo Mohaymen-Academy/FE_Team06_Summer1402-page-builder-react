@@ -3,17 +3,17 @@ import "../assets/Styles/Page1.css"
 import Header from '../Components/Header.jsx';
 import RightSideBar from '../Components/RightSideBar.jsx';
 const ElementsContext = createContext();
-export default function Layout({ children }) {
+export default function Layout({leftsidePager, children }) {
     const elements = useRef({
         dragged: null,
         elements: {
-            1: [250], //image elements info
-            2: [130],
-            3: [50],
-            4: [200],
-            5: [89],
-            6: [10],
+            2: [250], //image elements info
+            3: [130],
+            4: [50],
+            5: [200],
+            6: [89],
             7: [10],
+            8: [10],
         },
         components: {
             page1: [],
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
     return (
         <ElementsContext.Provider value={elements}>
             <Header />
-            <RightSideBar />
+            <RightSideBar leftsidePager={leftsidePager} />
             {children}
         </ElementsContext.Provider>
     )

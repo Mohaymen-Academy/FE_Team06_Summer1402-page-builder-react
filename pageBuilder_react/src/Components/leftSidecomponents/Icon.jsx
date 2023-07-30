@@ -1,15 +1,9 @@
 import React, { useRef, useState } from 'react'
+import ColorPicker from '../../utility/ColorPicker';
 
 export default function Icon() {
-  const colorref = useRef(null);
-  const [color, setcolor] = useState("#123436");
   const [icon, setIcon] = useState('images/icons8-cat-50.png');
-  function handleCHnage(e) {
-    setcolor(colorref.current.value)
-  }
-  function handleClick(e) {
-    colorref.current.click();
-  }
+
   return (
     <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-auto  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
       <div className="my-3">آیکون
@@ -35,23 +29,14 @@ export default function Icon() {
           <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">12
           </button>
         </div>
-        <div className="flex flex-row justify-between py-[7px]">
-          <div className="text-[12px]  my-3">رنگ آیکون</div>
-          <div>
-            <input ref={colorref} type="color" className='border hidden' name="favcolor" value={color} onChange={handleCHnage} />
-            <div
-              onClick={handleClick}
-              className={`w-[20px] h-[20px] rounded-md`}
-              style={{ backgroundColor: color }}>
-            </div>
-          </div>
-        </div>
+
         <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">فاصله گذاری</div>
           <img src={icon} className='w-[40px] h-[40px] bg-slate-100 rounded-lg' alt="" />
         </div>
+        <ColorPicker title={'رنگ آیکون'}/>
         <div
-        className='h-[150px] overflow-y-scroll flex flex-wrap gap-[12px]'>
+          className='h-[150px] overflow-y-scroll flex flex-wrap gap-[12px]'>
           {Array(100).fill(null).map((icn, index) =>
             <button key={index}>
               <img src={'images/icons8-cat-50.png'} className='w-[40px] h-[40px] bg-slate-100 rounded-lg' alt="" />

@@ -6,13 +6,13 @@ import LeftSideBar from '../Components/LeftSideBar';
 function App() {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [page, setPage ] = useState(0);
+  const [page, setPage ] = useState(1);
   return (
     <>
-      <Layout>  
-        <Page setIsModalOpen={setIsModalOpen}/>
+      <Layout leftsidePager={setPage}>  
+        <Page setIsModalOpen={setIsModalOpen} setPage={setPage}/>
       </Layout>
-      <LeftSideBar pagename={4} open={isModalOpen}/>
+      <LeftSideBar pagename={page} open={isModalOpen}/>
     </>
   )
 }
