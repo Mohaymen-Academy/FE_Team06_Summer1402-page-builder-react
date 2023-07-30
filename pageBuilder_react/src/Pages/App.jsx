@@ -12,7 +12,7 @@ function App() {
       <Layout>  
         <Page setIsModalOpen={setIsModalOpen}/>
       </Layout>
-      <LeftSideBar pagename={2} open={isModalOpen}/>
+      <LeftSideBar pagename={8} open={isModalOpen}/>
     </>
   )
 }

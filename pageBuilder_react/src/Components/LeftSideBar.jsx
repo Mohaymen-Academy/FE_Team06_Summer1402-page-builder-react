@@ -15,7 +15,8 @@ import {
 // import Button from './LeftSideBar/Button';
 function LeftSideBar({ pagename, open }) {
     return (
-        <>
+        <div >
+
             {
                 pagename == 1 ? <DefaultSideBar /> :
                     pagename == 2 ? <CardSideBar /> :
@@ -26,7 +27,7 @@ function LeftSideBar({ pagename, open }) {
                                         pagename == 7 ? <Slider /> : <Icon />
 
             }
-        </>
+        </div>
     );
 }
 
