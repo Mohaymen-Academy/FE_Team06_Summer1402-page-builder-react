@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import "../assets/Styles/Page1.css"
 import { ElementsContext } from './Layout';
 import DropAbleDiv from './DropAbleDiv';
@@ -7,9 +7,17 @@ function WhitePage({
   id, pagename
 }) {
   const [ishover, setishover] = useState(false);
-  const [isDragging, setIsDragging] = useState(false); // New state for drag state
+  // const [isDragging, setIsDragging] = useState(false); // New state for drag state
   const values = useContext(ElementsContext);
-
+  const canvasvalues = useRef(
+    {
+        draggedItemHeight:0,
+        itemIsDragged:false,
+        direction:'',
+        selecteditem:null,
+        replaceditem:null,
+    }
+  );
   function handleDragCapture(e) {
     e.preventDefault();
     if (!ishover) {
@@ -17,11 +25,9 @@ function WhitePage({
     }
   }
   function handleonDrop(e) {
-
     e.preventDefault();
     values.current.components[pagename].push(values.current.dragged)
     setishover(false);
-    console.log('hererer')
   }
   function handleDragLeave(e) {
     e.preventDefault();
@@ -48,7 +54,7 @@ function WhitePage({
         onDragOver={(e) => e.preventDefault()}
         onDragEnterCapture={handleDragCapture}
         // onDragLeave={handleDragLeave}
-        onDrop={handleonDrop}
+        // onDrop={handleonDrop}
         className={`flex flex-col max-w-[350px] h-[40rem] w-[100%] vsmmobile:h-[550px] smmobile:h-[550px] mobile:h-[550px] mb-5  tablet:h-[550px] bg-white ${ishover ? 'shadow-2xl bg-gray-500' : ''
           }`}
       >
@@ -59,11 +65,9 @@ function WhitePage({
           <div className="text-[#0066FF] m-4 mb-1">یک قالب را بکشید و رها کنید</div>
         </div>
         <div
-        className='flex flex-col gap-5 px-[10px] mt-5'>
-          {values.current.components[pagename].map((comptype,index) => {
-
-            return <DropAbleDiv key={index} elementID={comptype} />
-
+          className='flex flex-col gap-5 px-[10px] mt-5'>
+          {values.current.components[pagename].map((comptype, index) => {
+            return <DropAbleDiv key={index} Height={values.current.elements[comptype][0]} canvasvalues={canvasvalues} />
           })}
         </div>
       </div>

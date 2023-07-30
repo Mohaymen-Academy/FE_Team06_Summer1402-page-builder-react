@@ -4,12 +4,15 @@ import CatIcons from './CatIcons';
 import Slider from './Slider';
 import BigSlider from './BigSlider';
 import Image from '../../utility/Image';
-
+import { handlescroll } from '../Layout/Layout';
 export default function Body() {
     const mainbody = useRef(null);
+    // console.log(handleScroll)
     useEffect(() =>{}, []);
     return (
-        <div className=" thebody items-center flex justify-center my-2 pt-[155px]">
+        <div
+        onScroll={handlescroll}
+        className=" thebody items-center flex justify-center my-2 pt-[155px]">
             <div ref={mainbody} id="mainbody" className="flex flex-col bg-white justify-center items-center rounded-lg desktop:w-[800px] tablet:w-[780px] mobile:w-[580px] smmobile:w-[530px] vsmmobile:w-[470px]">
                 <BigSlider mainbody={mainbody}
                     imgData={['../assets/images/bigcarousel1.jpg', '../assets/images/bigcarousel2.jpg', '../assets/images/bigcarousel4.jpg']} />

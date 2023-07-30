@@ -1,7 +1,11 @@
-import React, { useState, useEffect, createContext} from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 const IntersectionContext = createContext();
+
+const handlescroll= (e)=> {
+    console.log('zarp')
+}
 
 function Layout({ children }) {
     const [intersectionObserver, setIntersectionObserver] = useState(null);
@@ -11,7 +15,7 @@ function Layout({ children }) {
                 if (entry.isIntersecting) {
                     const targetImage = entry.target;
                     targetImage.classList.remove('animate-skeleton-loading')
-                    targetImage.src=targetImage.dataset.src
+                    targetImage.src = targetImage.dataset.src
                 }
             });
         }
@@ -27,6 +31,7 @@ function Layout({ children }) {
             observer.disconnect();
         };
     }, []);
+
     return (
         <IntersectionContext.Provider value={intersectionObserver}>
             <Header />
@@ -35,4 +40,5 @@ function Layout({ children }) {
         </IntersectionContext.Provider>
     )
 }
-export default { Layout, IntersectionContext };
+export {IntersectionContext,handlescroll};
+export default Layout;

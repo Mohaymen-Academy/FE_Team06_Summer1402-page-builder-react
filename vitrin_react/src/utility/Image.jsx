@@ -1,8 +1,7 @@
 import React, { useRef, useContext, useEffect } from 'react'
-import LayoutOjb from '../components/Layout/Layout';
+import { IntersectionContext } from '../components/Layout/Layout';
 export default function Image({ classes, src }) {
-    const {_,IntersectionContext}=LayoutOjb;
-    const imageRef = useRef(null);
+    const imageRef = useRef(null);  
     const intersectionObserver = useContext(IntersectionContext);
     useEffect(() => {
         if (intersectionObserver) {

@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 // import logo from '../../';
+// import
 import Image from '../../utility/Image';
 export default function Header() {    
     let currenetposition=window.scrollY;
@@ -12,15 +13,13 @@ export default function Header() {
       },[])
 
       function handlescroll (e){
-
         animationstateset(currenetposition-window.scrollY>0 ? 'up':'down');
         currenetposition=window.scrollY
     }
     return (
         <div
-        className={`stickyheader ${animationstate =='up'? 'animate-blueheaderanimationopen':animationstate=='down'?'animate-blueheaderanimatioclose closeanimation':'animate-blueheaderanimationopen'}`}
-
-        >
+        onScroll={handlescroll}
+        className={`stickyheader ${animationstate =='up'? 'animate-blueheaderanimationopen':animationstate=='down'?'animate-blueheaderanimatioclose closeanimation':'animate-blueheaderanimationopen'}`}>
             <div id="blueheader" className="bluheader">
                 <div className={`align-bottom flex flex-col items-center pr-[7%] py-2 w-max h-fit`}>
                         <Image  src={'./assets/images/logo.png'} classes={"animate-skeleton-loading rounded-2xl w-[45px] h-[45px]"}/>
