@@ -1,18 +1,37 @@
-import React, { usestate, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from '../Pages/App.jsx';
-import LoginPage from '../Pages/Login.jsx';
-import Page from '../Pages/Page.jsx';
-import DropAbleDiv from "../Components/DropAbleDiv.jsx";
-import Whitepage from '../Components/WhitePage.jsx';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'; // Import Navigate from react-router-dom
+import routes from "./Routes/Routes";
+import ErrorPage from '../Pages/ErrorPage.jsx';
+
 const AppRouter = () => {
+  const [isAuth, setIsAuth] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("login");
+    if (token) {
+      setIsAuth(true);
+      console.log("token", token);
+    }
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/dad' element={<Whitepage id={1} dropdir={'vertical'} components={[]} />} />
-        
+      {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              route.Private ? (
+                isAuth ? (
+                  <route.component />
+                ) : (
+                  <ErrorPage/>
+                )
+              ) : (
+                <route.component />
+              )
+            }
+          />
+        ))}
       </Routes>
     </BrowserRouter>
   );

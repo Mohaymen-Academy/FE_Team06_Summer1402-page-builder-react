@@ -8,7 +8,7 @@ function LoginPage() {
     const navigate = useNavigate();
     function handleButtonClick(){
         localStorage.setItem('login' , true);
-        navigate('/');
+        window.location.href = "/App";
     }
 	return (
 		< >
