@@ -24,5 +24,9 @@
     .left-sidebar-input{
         @apply text-[#6C6E78]  gap-6 font-medium border rounded-lg text-[11px] px-5 py-2  justify-between inline-flex items-center ;
     }
-    
 }
+@supports (-webkit-touch-callout: none) {
+    .h-screen {
+      height: -webkit-fill-available;
+    }
+  }
