@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, useReducer } from 'react';
 import "../assets/Styles/Page1.css"
 import WhitePage from '../Components/WhitePage.jsx';
 import MainButton from '../Components/MainButton.jsx';
+import LeftSideBar from '../Components/LeftSideBar';
 import { ElementsContext } from '../Components/Layout';
 function reducer(state, action) {
     console.log("here in redu", state)
@@ -16,8 +17,9 @@ function reducer(state, action) {
 }
 function Page(props) {
     const [pagecounter, setpagecounter] = useState(1);
-    const values = useContext(ElementsContext);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const values = useContext(ElementsContext);
     // const [components, dispatch] = useReducer(reducer, values.current.components);
     const [components, setcomponents] = useState(Object.keys(values.current.components));
     const ScrollPage = (direction) => {
@@ -40,7 +42,8 @@ function Page(props) {
 
     }
     return (
-        <div className="bg-[#D7D8DD] pt-10 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
+        <>
+            <div className="bg-[#D7D8DD] pt-10 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
             <div className={`flex flex-col items-center pl-2 `} style={{ height: `${pagecounter * 50}rem` }}>
                 <div className='h-max'>
                     {
@@ -62,6 +65,27 @@ function Page(props) {
                 <div onClick={() => setIsModalOpen(true)} ><MainButton src="images/icons8-setting-24.png" text="تنظیمات" isSetting={true} /></div>
             </div>
         </div>
+        {
+                isModalOpen &&
+                <div className=" fixed inset-0 m-[5%] flex items-center justify-center" id="modalOverlay">
+                <div className="modal bg-white rounded-lg shadow-md p-4 w-[100%] h-[100%] relative" role="dialog">
+                    <div className="modal-header flex justify-between items-center border-b border-gray-300 pb-2 mb-4">
+                        <h3 className="text-lg font-semibold">تنظیمات</h3>
+                        <button onClick={() => setIsModalOpen(false)} className="modal-close text-gray-600 text-2xl" id="modalCloseBtn">&times;</button>
+                    </div>
+                    <div className="modal-content">
+                        <div className="flex flex-col px-4 py-3 bg-white">
+                            {
+                                props.pagename == "page1" ?
+                                    <LeftSideBar pagename="page1" /> :
+                                    <LeftSideBar pagename="page2" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </>
     );
 }
 

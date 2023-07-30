@@ -5,14 +5,15 @@ import Page from '../Pages/Page.jsx';
 import LeftSideBar from '../Components/LeftSideBar';
 function App() {
   
-  const [page, setPage] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [page, setPage ] = useState(0);
   return (
     <>
     {/* layout and page should be used with memo */}
       <Layout>  
-        <Page/>
+        <Page setIsModalOpen={setIsModalOpen}/>
       </Layout>
-      <LeftSideBar pagename={page} />
+      <LeftSideBar pagename={page} open={isModalOpen}/>
     </>
   )
 }
