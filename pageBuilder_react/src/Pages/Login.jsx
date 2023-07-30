@@ -1,7 +1,15 @@
 import React from 'react';
 import "../assets/Styles/Login.css"
 import logo from "../../public/images/logo.png"
+import { useNavigate } from 'react-router-dom';
+
+
 function LoginPage() {
+    const navigate = useNavigate();
+    function handleButtonClick(){
+        localStorage.setItem('login' , true);
+        window.location.href = "/App";
+    }
 	return (
 		< >
             <div dir='rtl'  className=" bg-gray font-vazir">
@@ -42,7 +50,7 @@ function LoginPage() {
                                     <label for="default-checkbox" className="mr-2 text-[10px] font-medium text-gray-900 dark:text-gray-300">در طراحی نمایش داده شود</label>
                                 </div>
                                 <div className="flex items-center justify-between  w-full">
-                                <button className=" button" type="button">
+                                <button className=" button" type="button" onClick={()=>handleButtonClick()}>
                                     ذخیره و شروع طراحی 
                                 </button>
                                 </div>

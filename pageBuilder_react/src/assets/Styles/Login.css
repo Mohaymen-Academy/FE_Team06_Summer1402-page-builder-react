@@ -28,7 +28,7 @@
         @apply text-gray-700 text-[10px] m-2 mb-5;
     }
     .button{
-        @apply  w-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-[12px] py-[9px] px-4 rounded-lg focus:outline-none ;
+        @apply w-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-[12px] py-[9px] px-4 rounded-lg focus:outline-none ;
     }
     
 }
