@@ -1,6 +1,6 @@
 import React, { useState,  useEffect } from 'react';
-import "../assets/Styles/Page1.css"
-
+import "../../assets/Styles/Page1.css"
+// import ''
 function DefaultSideBar() {
 	return (
         <>

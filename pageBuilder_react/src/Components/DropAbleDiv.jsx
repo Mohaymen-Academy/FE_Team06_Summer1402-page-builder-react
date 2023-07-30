@@ -2,9 +2,7 @@ import React, { useState, useRef } from 'react'
 // import Layout, { ElementsContext } from './Layout';
 
 export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
-    // const layoutvalues = useContext(ElementsContext);
     const [ishover, setishover] = useState(false);
-    // const [top, setTop] = useState(0);
     const scrollvalues = useRef({
         posY1: null,
         isDragging: false,
@@ -15,10 +13,9 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
     function handleDragCapture(e) {
         canvasvalues.current.selecteditem = index
         scrollvalues.current.isDragging = true
-        canvasvalues.current.itemIsDragged=true;
+        canvasvalues.current.itemIsDragged = true;
     }
     function handleDragOver(e) {
-        console.log(scrollvalues.current.isDragging)
         if (!scrollvalues.current.isDragging && canvasvalues.current.itemIsDragged) {
             setishover(true)
         }
@@ -31,9 +28,9 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
             setishover(false)
             dispatch({ type: 'reorder', selecteditem: canvasvalues.current.selecteditem, replaceditem: index })
         }
-        setishover(false)
-        canvasvalues.current.selecteditem=null;
+        canvasvalues.current.selecteditem = null;
     }
+
     function handleDoubleClick(e) {
         dispatch({ type: 'delete', deleteitem: index })
     }
