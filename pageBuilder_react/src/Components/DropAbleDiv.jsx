@@ -1,54 +1,51 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import React, { useState, useRef } from 'react'
 // import Layout, { ElementsContext } from './Layout';
 
-export default function DropAbleDiv({ Height, canvasvalues }) {
+export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
+    // const layoutvalues = useContext(ElementsContext);
     const [ishover, setishover] = useState(false);
-    // const elementsContext = useContext(ElementsContext);
-    const [top, setTop] = useState(0);
+    // const [top, setTop] = useState(0);
     const scrollvalues = useRef({
         posY1: null,
         isDragging: false,
         posY2: null,
         posY3: null,
-
     })
-    function handleDragCapture(e) {
-        scrollvalues.current.posY1 = e.pageY
-        scrollvalues.current.isDragging = true;
-        canvasvalues.current.draggedItemHeight = Height
-        
-    }
-    function handleDragover(e) {
-        e.preventDefault();
-        console.log('zarppp',Height)
-        console.log(scrollvalues.current.isDragging)
-        if (scrollvalues.current.isDragging) {
-            if (scrollvalues.current.posY3 - e.pageY != 0)
-                scrollvalues.current.posY2 = scrollvalues.current.posY3 - e.pageY
-            scrollvalues.current.posY3 = e.pageY
-            canvasvalues.current.direction = scrollvalues.current.posY2 > 0 ? 'up' : 'down';
-            setTop(e.pageY - scrollvalues.current.posY1);
-        }
-        else {
-            console.log('zarp hereeeee');
-            setTop(prevestate => prevestate + canvasvalues.current.draggedItemHeight * (canvasvalues.current.direction == 'up' ? 1 : -1))
-            console.log(
 
-            )
+    function handleDragCapture(e) {
+        canvasvalues.current.selecteditem = index
+        scrollvalues.current.isDragging = true
+        canvasvalues.current.itemIsDragged=true;
+    }
+    function handleDragOver(e) {
+        console.log(scrollvalues.current.isDragging)
+        if (!scrollvalues.current.isDragging && canvasvalues.current.itemIsDragged) {
+            setishover(true)
         }
     }
-    function handleDragLeave(e) {
-        e.preventDefault();
-        if (ishover) {
+    function handleDragleave(e) {
+        setishover(false)
+    }
+    function handleDrop() {
+        if (canvasvalues.current.selecteditem) {
             setishover(false)
+            dispatch({ type: 'reorder', selecteditem: canvasvalues.current.selecteditem, replaceditem: index })
         }
+        setishover(false)
+        canvasvalues.current.selecteditem=null;
+    }
+    function handleDoubleClick(e) {
+        dispatch({ type: 'delete', deleteitem: index })
     }
     return (
         <div
-            onDragOver={handleDragover}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragleave}
+            onDoubleClick={handleDoubleClick}
+            onDrop={handleDrop}
             draggable={'true'}
             onDragStart={handleDragCapture}
-            className='flex relative justify-center border-[0.5px] border-gray-600 border-opacity-85 py-10 rounded-lg hover:border-opacity-60' style={{ height: `${Height}px`, top: `${top}px` }}>
+            className={`flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : 'border-gray-600 border-[0.5px] border-opacity-100'} py-10 rounded-lg `} style={{ height: `${Height}px` }}>
 
         </div>
     )

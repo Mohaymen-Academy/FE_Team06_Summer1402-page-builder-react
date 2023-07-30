@@ -16,7 +16,7 @@ export default function Layout({ children }) {
             7: [10],
         },
         components: {
-            page1: [1,2,3],
+            page1: [],
         }
     })
     return (
