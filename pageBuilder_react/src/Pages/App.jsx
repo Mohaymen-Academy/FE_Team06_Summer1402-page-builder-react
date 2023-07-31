@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../assets/Styles/App.css'
 import Layout from '../Components/Layout';
 import Page from '../Pages/Page.jsx';
 import LeftSideBar from '../Components/LeftSideBar';
-import { NUM_PAGE} from '../utility/Constants';
+import { NUM_PAGE } from '../utility/Constants';
 function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);

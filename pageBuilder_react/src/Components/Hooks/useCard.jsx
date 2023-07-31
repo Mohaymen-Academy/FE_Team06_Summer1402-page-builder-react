@@ -6,14 +6,16 @@ export function useCard() {
     const [gap, setgap] = useState(6);
     const [radisu, setradisu] = useState(10);
     const [text, settext] = useState('');
-    const [image, setimage] = useState(['images/pic.jpg','images/pic.jpg']);
+    const [image, setimage] = useState(['images/pic.jpg', 'images/pic.jpg']);
     const [bgColor, setbgColor] = useState('#000000');
     const [textColor, settextColor] = useState('#121212');
     const [hasIcon, sethasIcon] = useState(false);
     const [link, setlink] = useState(null);
+    const [type, settype] = useState(0);
+
     return {
-        states: { size, padding, gap, radisu, text, image, bgColor, textColor, hasIcon, link },
-        setters: {setsize, setpadding, setgap, setradisu, settext, setimage, setbgColor, settextColor, sethasIcon, setlink}
+        states: { size, padding, gap, radisu, text, image, bgColor, textColor, hasIcon, link, type },
+        setters: { setsize, setpadding, setgap, setradisu, settext, setimage, setbgColor, settextColor, sethasIcon, setlink, settype },
     };
 
 }

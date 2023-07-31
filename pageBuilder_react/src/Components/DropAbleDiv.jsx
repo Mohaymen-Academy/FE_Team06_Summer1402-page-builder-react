@@ -1,21 +1,26 @@
-import React, { useState, useRef, useEffect } from 'react'
-// import Layout, { ElementsContext } from './Layout';
-import CardComp from './DragAndDropComponents/CardComp';
+import React, { useState, useRef, useEffect, useContext } from 'react'
+import Layout, { ElementsContext } from './Layout';
+// import CardComp from './DragAndDropComponents/CardComp';
+import { CardComp, ButtonComp } from './DragAndDropComponents';
 import { NUM_PAGE } from '../utility/Constants';
 export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, leftsidePager, type }) {
     const [ishover, setishover] = useState(false);
+    const layoutelements = useContext(ElementsContext);
     const scrollvalues = useRef({
         posY1: null,
         isDragging: false,
         posY2: null,
         posY3: null,
+        childcompsetters: null
     })
+
     useEffect(() => {
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             leftsidePager(type);
         }
     }, []);
     function handleClick(e) {
+        layoutelements.current.setters = scrollvalues.current.childcompsetters;
         leftsidePager(type)
     }
 
@@ -56,7 +61,8 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
             className={`w-auto h-auto flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : ''} rounded-lg `}
         // style={{ height: `${Height}px` }}
         >
-            <CardComp ischoosen={canvasvalues.current.choosenitem === index} />
+            {/* <CardComp parentvalues={scrollvalues} /> */}
+            <ButtonComp parentvalues={scrollvalues}/>
         </div>
     )
 }
