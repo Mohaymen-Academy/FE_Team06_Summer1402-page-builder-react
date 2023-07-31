@@ -1,8 +1,7 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ElementsContext } from '../Layout';
 export default function Slider() {
   const layoutContext = useContext(ElementsContext);
-  const setter = layoutContext.current.setters
   console.log("HERE ", layoutContext.current.setters)
   return (
     <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-auto  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
