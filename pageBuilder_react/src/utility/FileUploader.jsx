@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useRef, useEffect,useContext } from 'react';
 
 export default function FileUploader({ setVal, func }) {
     const inputref = useRef(null);
