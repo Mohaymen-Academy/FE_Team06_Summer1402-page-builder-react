@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
 import Layout, { ElementsContext } from './Layout';
+import YellowBox from './YellowBox';
 // import CardComp from './DragAndDropComponents/CardComp';
 import { CardComp, ButtonComp, IconComp, ImageComp, SliderComp, TextComp, VideoComp } from './DragAndDropComponents';
 import {
@@ -74,16 +75,18 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
             className={`w-auto h-auto flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : ''} rounded-lg `}
         // style={{ height: `${Height}px` }}
         >
-            {
-                type == NUM_CARD ? <CardComp parentvalues={scrollvalues} /> :
-                    type == NUM_BUTTON ? <ButtonComp parentvalues={scrollvalues} /> :
-                        type == NUM_TEXT ? <TextComp parentvalues={scrollvalues} /> :
-                            type == NUM_IMAGE ? <ImageComp parentvalues={scrollvalues} /> :
-                                type == NUM_VIDEO ? <VideoComp parentvalues={scrollvalues} /> :
-                                    type == NUM_SLIDER ? <SliderComp parentvalues={scrollvalues} /> :
-                                        <IconComp parentvalues={scrollvalues} />
+            <YellowBox>
+                {
+                    type == NUM_CARD ? <CardComp parentvalues={scrollvalues} /> :
+                        type == NUM_BUTTON ? <ButtonComp parentvalues={scrollvalues} /> :
+                            type == NUM_TEXT ? <TextComp parentvalues={scrollvalues} /> :
+                                type == NUM_IMAGE ? <ImageComp parentvalues={scrollvalues} /> :
+                                    type == NUM_VIDEO ? <VideoComp parentvalues={scrollvalues} /> :
+                                        type == NUM_SLIDER ? <SliderComp parentvalues={scrollvalues} /> :
+                                            <IconComp parentvalues={scrollvalues} />
 
-            }
+                }
+            </YellowBox>
         </div>
     )
 }
