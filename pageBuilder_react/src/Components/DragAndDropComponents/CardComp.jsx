@@ -9,7 +9,7 @@ export default function CardComp({ parentvalues }) {
             // onClick={handleClick}
             className={`flex  w-[100px] h-[100px] justify-center`} style={{ gap: states.gap }}>
             {states.image.map((src, index) => {
-                return <img key={index} src={src} style={{ borderRadius: `${states.radisu}px` }} />
+                return <img key={index} src={src} style={{ borderRadius: `${states.radius}px` }} />
             })}
         </div>
     )

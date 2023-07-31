@@ -17,7 +17,7 @@ export default function useCard() {
     const [link, setlink] = useState(null);
 
     return {
-        states: { width, raduis, textAlign, align, size, padding, gap, radius, text, image, bgColor, textColor, hasIcon, link, type },
+        states: { width, radius, textAlign, align, size, padding, gap, radius, text, image, bgColor, textColor, hasIcon, link, type },
         setters: { setwidth, settextAlign, setradius, setalign, setsize, setpadding, setgap, settext, setimage, setbgColor, settextColor, sethasIcon, setlink, settype }
     };
 
