@@ -3,8 +3,9 @@ import "../assets/Styles/Page1.css"
 import Header from '../Components/Header.jsx';
 import RightSideBar from '../Components/RightSideBar.jsx';
 const ElementsContext = createContext();
-export default function Layout({leftsidePager, children }) {
+export default function Layout({ leftsidePager, children }) {
     const elements = useRef({
+        setters: {},
         dragged: null,
         elements: {
             2: [250], //image elements info
@@ -16,7 +17,7 @@ export default function Layout({leftsidePager, children }) {
             8: [10],
         },
         components: {
-            page1: [],
+            page1: [2],
         }
     })
     return (

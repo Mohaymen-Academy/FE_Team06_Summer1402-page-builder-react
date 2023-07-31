@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 // import Layout, { ElementsContext } from './Layout';
-
+import CardComp from './DragAndDropComponents/CardComp';
+import { NUM_PAGE } from '../utility/Constants';
 export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, leftsidePager, type }) {
     const [ishover, setishover] = useState(false);
     const scrollvalues = useRef({
@@ -10,12 +11,9 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
         posY3: null,
     })
     useEffect(() => {
-
-        // console.log(canvasvalues.current.choosenitem!=null , canvasvalues.current.choosenitem == index)
-        if (canvasvalues.current.choosenitem!=null && canvasvalues.current.choosenitem === index) {
+        if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             leftsidePager(type);
         }
-
     }, []);
     function handleClick(e) {
         leftsidePager(type)
@@ -44,6 +42,7 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
 
     function handleDoubleClick(e) {
         dispatch({ type: 'delete', deleteitem: index })
+        leftsidePager(NUM_PAGE)
     }
     return (
         <div
@@ -54,8 +53,10 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
             onDrop={handleDrop}
             draggable={'true'}
             onDragStart={handleDragCapture}
-            className={`flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : 'border-gray-600 border-[0.5px] border-opacity-100'} py-10 rounded-lg `} style={{ height: `${Height}px` }}>
-
+            className={`w-auto h-auto flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : ''} rounded-lg `}
+        // style={{ height: `${Height}px` }}
+        >
+            <CardComp ischoosen={canvasvalues.current.choosenitem === index} />
         </div>
     )
 }

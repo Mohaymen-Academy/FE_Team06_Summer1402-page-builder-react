@@ -11,7 +11,7 @@ export default function ColorPicker({title}) {
       colorref.current.click();
     }
     return (
-        <div className="flex flex-row justify-between py-[7px]">
+        <div className="flex flex-row justify-between py-[7px] items-center">
             <div className="text-[12px]  my-3">{title}</div>
             <div>
                 <input ref={colorref} type="color" className='border hidden' name="favcolor" value={color} onChange={handleCHnage} />

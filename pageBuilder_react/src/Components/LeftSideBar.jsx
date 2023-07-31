@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "../assets/Styles/Page1.css"
 import {
     Button,
@@ -19,17 +19,19 @@ import {
     NUM_VIDEO,
     NUM_SLIDER,
 } from '../utility/Constants';
-
+import { ElementsContext } from './Layout';
 // import Button from './LeftSideBar/Button';
 // import DefaultSideBar from './LeftSideBar/Default';
 // import Button from './LeftSideBar/Button';
 function LeftSideBar({ pagename, open }) {
+
+    // console.log(layoutContext)
     return (
         <div >
 
             {
-                pagename == NUM_PAGE? <DefaultSideBar /> :
-                    pagename == NUM_CARD? <CardSideBar /> :
+                pagename == NUM_PAGE ? <DefaultSideBar /> :
+                    pagename == NUM_CARD ? <CardSideBar /> :
                         pagename == NUM_BUTTON ? <Button /> :
                             pagename == NUM_TEXT ? <Text /> :
                                 pagename == NUM_IMAGE ? <ImageSideBar /> :

@@ -38,7 +38,7 @@ function WhitePage({
       direction: '',
       selecteditem: null,
       replaceditem: null,
-      choosenitem: null,
+      choosenitem: 0,
     }
   );
   function handleonDrop(e) {

@@ -1,8 +1,11 @@
-import React, { useState,  useEffect } from 'react';
+import React, { useState,  useEffect, useContext } from 'react';
 import "../../assets/Styles/Page1.css"
 // import ''
+import { ElementsContext } from '../Layout';
 function DefaultSideBar() {
-	return (
+    const layoutContext=useContext(ElementsContext);
+    
+    return (
         <>
             <div className="fixed flex flex-col px-4 py-3 left-0 h-screen  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">تنظیمات صفحه</div>
