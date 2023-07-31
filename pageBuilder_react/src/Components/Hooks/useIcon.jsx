@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 
 export default function useIcon() {
-    const [size, setsize] = useState(null);
+    const [icon, seticon] = useState('images/cloud.svg');
+    const [size, setsize] = useState(35);
     const [padding, setpadding] = useState(0);
-    const [gap, setgap] = useState(null);
-    const [color, setcolor] = useState('#121212');
-    const [icon, seticon] = useState(null);
-
+    const [gap, setgap] = useState(20);
+    const [color, setcolor] = useState('#faa212');
+    function colorConverter() { }
     return {
-
-
         states: {
             size,
             padding,
