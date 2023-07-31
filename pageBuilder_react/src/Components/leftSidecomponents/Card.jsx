@@ -4,19 +4,19 @@ import ColorPicker from '../../utility/ColorPicker';
 import { ElementsContext } from '../Layout';
 function CardSideBar({ setters }) {
     const layoutContext = useContext(ElementsContext);
+    const setter = layoutContext.current.setters
     console.log("HERE ",layoutContext.current.setters)
     return (
         <>
             <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">کارت</div>
                 <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" />
-
+                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={()=>setter.setalign(1) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={()=>setter.setalign(2) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={()=>setter.setalign(3) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={()=>setter.setalign(4) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={()=>setter.setalign(5) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={()=>setter.setalign(6) } />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <button className="text-[#6C6E78]  font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center w-full h-[35px]" type="button">نوع کارت خود را انتخاب کنید

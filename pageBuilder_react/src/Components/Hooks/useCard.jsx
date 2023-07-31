@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 export function useCard() {
+    const [align, setalign] = useState(0);
     const [size, setsize] = useState(120)
     const [padding, setpadding] = useState(0);
     const [gap, setgap] = useState(6);
@@ -12,8 +13,8 @@ export function useCard() {
     const [hasIcon, sethasIcon] = useState(false);
     const [link, setlink] = useState(null);
     return {
-        states: { size, padding, gap, radisu, text, image, bgColor, textColor, hasIcon, link },
-        setters: {setsize, setpadding, setgap, setradisu, settext, setimage, setbgColor, settextColor, sethasIcon, setlink}
+        states: { align ,size, padding, gap, radisu, text, image, bgColor, textColor, hasIcon, link },
+        setters: {setalign ,setsize, setpadding, setgap, setradisu, settext, setimage, setbgColor, settextColor, sethasIcon, setlink}
     };
 
 }
