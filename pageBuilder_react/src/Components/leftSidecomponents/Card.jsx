@@ -1,97 +1,107 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState,useRef, useEffect,useContext } from 'react';
 import "../../assets/Styles/Page1.css"
 import ColorPicker from '../../utility/ColorPicker';
 import { ElementsContext } from '../Layout';
-function CardSideBar({ setters }) {
+import DropDown from '../DropDown';
+function CardSideBar({ setters , values }) {
     const layoutContext = useContext(ElementsContext);
     const setter = layoutContext.current.setters
-    console.log("HERE ",layoutContext.current.setters)
+    const inputref = useRef(null);
+    function handleSetting(func , value)
+    {
+        layoutContext.current.setters[func](value);
+    }
+    const onButtonClick = () => {
+        inputref.current.click();
+      }
+    const handleChange = function (e) {
+    e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+        handleFile(e.target.files);
+    }
+    };
+    const handleDrag = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+        setDragActive(true);
+    } else if (e.type === "dragleave") {
+        setDragActive(false);
+    }
+    };
+    console.log(layoutContext.current.setters);
     return (
         <>
             <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">کارت</div>
                 <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={()=>setter.setalign(1) } />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={()=>setter.setalign(2) } />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={()=>setter.setalign(3) } />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={()=>setter.setalign(4) } />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={()=>setter.setalign(5) } />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={()=>setter.setalign(6) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={()=>handleSetting("setalign",1) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={()=>handleSetting("setalign",2) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={()=>handleSetting("setalign",3) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={()=>handleSetting("setalign",4) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={()=>handleSetting("setalign",5) } />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={()=>handleSetting("setalign",6) } />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
-                    <button className="text-[#6C6E78]  font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center w-full h-[35px]" type="button">نوع کارت خود را انتخاب کنید
-                        <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                    <DropDown Default=" نوع کارت خود را انتخاب کنید" items={[1,2,3,4]} width="100%" setVal = {handleSetting} func="settype" />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">اندازه کارت</div>
-                    <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center w-[35%] " type="button">متوسط
-                        <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                    <DropDown Default="متوسط" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setsize" />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">عرض کارت</div>
-                    <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center w-[35%] " type="button">پیش فرض
-                        <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                    <DropDown Default="پیش فرض" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setwidth"/>
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">حاشیه</div>
-                    <button className="left-sidebar-input " type="button">16
-                    </button>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e)} defaultValue="16"></input>
                 </div>
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">فاصله</div>
-                    <button className="left-sidebar-input " type="button">24
-                    </button>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e)} defaultValue="24"></input>
+
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">گوشه ها</div>
-                    <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">4
-                        <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
+                    <DropDown Default="4" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setradius"/>
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
                     <div className="text-[12px] mb-3">متن 1</div>
-                    <button className="left-sidebar-input w-full m-0 " type="button">لورم ایپسوم </button>
+                    <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext",e)} defaultValue="لورم ایپسوم"></textarea>
                 </div>
                 <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" />
-
+                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={() => handleSetting("settextAlign",1)} />
+                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={() => handleSetting("settextAlign",2)}/>
+                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={() => handleSetting("settextAlign",3)}/>
+                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={() => handleSetting("settextAlign",4)}/>
+                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={() => handleSetting("settextAlign",5)}/>
+                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("settextAlign",6)}/>
                 </div>
-                <div className=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mobile:h-[100px] h-[150px]  mb-3 ">
+                
+
+                <form onClick={onButtonClick}  className=" flex flex-col justify-center items-center border-dashed border-2 border-[#0066FF] rounded-lg mobile:h-[100px] h-[150px] p-2  mb-3 " onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
+                    <input ref={inputref} type="file" className={'hidden'} multiple={true} onChange={handleChange} />
                     <div className="flex flex-col justify-center items-center w-[50px] h-[50px] rounded-lg bg-[#dce5f1]">
                         <img className="w-[25px] h-[25px]" src="images/plus.png" />
                     </div>
                     <div className="text-[#0066FF] m-4 mb-1 mobile:text-xs">افزودن عکس</div>
                     <div className="text-xs mobile:hidden">حجم عکس تا 5 مگابایت و با فرمت PNG, JPG</div>
-                </div>
-                <ColorPicker title={'رنگ پس زمینه'} />
-                <ColorPicker title={'رنگ متن'} />
+                </form>
+                <ColorPicker title={'رنگ پس زمینه'}setVal = {handleSetting} func="setbgColor" />
+                <ColorPicker title={'رنگ متن'}  setVal = {handleSetting} func="settextColor"/>
 
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">آیکون دار</div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" className="sr-only peer" />
+                        <input type="checkbox" value="" className="sr-only peer" onChange={(e) => handleSetting("sethasIcon",!layoutContext.current.values.hasIcon)} />
                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label>
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
                     <div className="text-[12px] mb-3">لینک دکمه </div>
-                    <button className="left-sidebar-input w-full m-0 " type="button">لینک مورد نظر خود را وارد کنید</button>
+                    <input className="left-sidebar-input  " style={{width:"100%"}} onChange={(e) => handleSetting("setlink",e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
+
                 </div>
             </div>
         </>

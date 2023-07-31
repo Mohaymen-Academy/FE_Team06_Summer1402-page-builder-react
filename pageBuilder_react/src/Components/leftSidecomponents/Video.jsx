@@ -54,7 +54,7 @@ export default function Video() {
       </div>
 
       <div>
-        <form className={'w-[100%] flex justify-center h-fit p-[15px] border-[1px] border-opacity-40 border-dashed border-blue-600'} onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
+        <form onClick={onButtonClick} className={'w-[100%] flex justify-center h-fit p-[15px] border-[1px] border-opacity-40 border-dashed border-blue-600'} onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
           <input ref={inputref} type="file" className={'hidden'} multiple={true} onChange={handleChange} />
           <div
             className={'flex flex-col justify-center items-center'}>

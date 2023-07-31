@@ -4,6 +4,7 @@ export default function CardComp({ parentvalues }) {
     const { states, setters } = useCard();
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
+    console.log(states.type)
     return (
         <div
             // onClick={handleClick}

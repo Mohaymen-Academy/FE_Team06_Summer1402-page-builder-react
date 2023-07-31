@@ -1,11 +1,12 @@
 import React,{useRef,useState} from 'react'
 
-export default function ColorPicker({title}) {
+export default function ColorPicker({title , setVal , func}) {
     const colorref = useRef(null);
     const [color, setcolor] = useState("#123436");
 
     function handleCHnage(e) {
-      setcolor(colorref.current.value)
+        setcolor(colorref.current.value)
+        setVal(func ,colorref.current.value)
     }
     function handleClick(e) {
       colorref.current.click();
