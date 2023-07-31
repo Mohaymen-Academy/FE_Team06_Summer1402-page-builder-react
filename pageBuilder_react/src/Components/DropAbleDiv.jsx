@@ -11,7 +11,8 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
         isDragging: false,
         posY2: null,
         posY3: null,
-        childcompsetters: null
+        childcompsetters: null,
+        childcompvalues: null,
     })
 
     useEffect(() => {
@@ -21,6 +22,7 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
     }, []);
     function handleClick(e) {
         layoutelements.current.setters = scrollvalues.current.childcompsetters;
+        layoutelements.current.values = scrollvalues.current.childcompvalues;
         leftsidePager(type)
     }
 
@@ -62,7 +64,7 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
         // style={{ height: `${Height}px` }}
         >
             {/* <CardComp parentvalues={scrollvalues} /> */}
-            <ButtonComp parentvalues={scrollvalues}/>
+            <ButtonComp parentvalues={scrollvalues} />
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { useCard } from '../Hooks/useCard';
 export default function CardComp({ parentvalues}) {
     const { states, setters } = useCard();
     parentvalues.current.childcompsetters = setters;
+    parentvalues.current.childcompvalues= states;
     return (
         <div 
         // onClick={handleClick}

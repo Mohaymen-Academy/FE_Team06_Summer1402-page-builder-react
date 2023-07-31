@@ -6,6 +6,7 @@ const ElementsContext = createContext();
 export default function Layout({ leftsidePager, children }) {
     const elements = useRef({
         setters: {},
+        values:{},
         dragged: null,
         elements: {
             2: [250], //image elements info
@@ -17,7 +18,7 @@ export default function Layout({ leftsidePager, children }) {
             8: [10],
         },
         components: {
-            page1: [3],
+            page1: [2],
         }
     })
     return (
