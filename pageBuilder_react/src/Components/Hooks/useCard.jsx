@@ -7,7 +7,7 @@ export default function useCard() {
     const [width, setwidth] = useState(120)
     const [padding, setpadding] = useState(0);
     const [gap, setgap] = useState(6);
-    const [raduis, setradius] = useState(10);
+    const [radius, setradius] = useState(10);
     const [text, settext] = useState('');
     const [image, setimage] = useState(['images/pic.jpg', 'images/pic.jpg']);
     const [bgColor, setbgColor] = useState('#000000');
@@ -17,8 +17,8 @@ export default function useCard() {
     const [link, setlink] = useState(null);
 
     return {
-        states: { align, size, padding, gap, radisu, text, image, bgColor, textColor, hasIcon, link, type },
-        setters: { setalign, setsize, setpadding, setgap, setradisu, settext, setimage, setbgColor, settextColor, sethasIcon, setlink, settype }
+        states: { width, raduis, textAlign, align, size, padding, gap, radius, text, image, bgColor, textColor, hasIcon, link, type },
+        setters: { setwidth, settextAlign, setradius, setalign, setsize, setpadding, setgap, settext, setimage, setbgColor, settextColor, sethasIcon, setlink, settype }
     };
 
 }
