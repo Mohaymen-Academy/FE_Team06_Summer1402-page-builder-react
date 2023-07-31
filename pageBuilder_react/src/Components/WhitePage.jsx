@@ -4,15 +4,12 @@ import { ElementsContext } from './Layout';
 import DropAbleDiv from './DropAbleDiv';
 
 function reducer(state, action) {
-
-
   switch (action.type) {
     case 'add':
       return [...state, action.newitem];
       break;
     case 'delete':
       state.splice(action.deleteitem, 1)
-      console.log('remove here',);
       return [...state];
     case 'reorder':
       var element = state[action.selecteditem];

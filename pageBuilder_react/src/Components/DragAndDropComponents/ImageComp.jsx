@@ -5,6 +5,12 @@ export default function ImageComp({ parentvalues }) {
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
     return (
-        <div>ImageComp</div>
+        <div>
+            <img
+                style={{borderRadius:states.radisu}}
+                src={states.image}
+                alt="" />
+
+        </div>
     )
 }

@@ -7,6 +7,14 @@ export default function VideoComp({ parentvalues }) {
     parentvalues.current.childcompvalues = states;
     return (
         <div>
+            <video
+            style={{padding:states.padding}}
+                controls
+                autoPlay={states.autoplay}
+            >
+                <source src={states.src} type='video/mp4' />
+
+            </video>
         </div>
     )
 }

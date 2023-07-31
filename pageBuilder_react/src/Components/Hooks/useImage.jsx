@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 export default function useImage() {
-    const [image, setimage] = useState(null);
+    const [image, setimage] = useState('images/pic.jpg'
+    );
     const [width, setwidth] = useState(null);
     const [padding, setpadding] = useState(0);
     const [gap, setgap] = useState(6);

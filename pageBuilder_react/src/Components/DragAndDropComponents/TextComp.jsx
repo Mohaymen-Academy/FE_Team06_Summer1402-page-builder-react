@@ -7,7 +7,14 @@ export default function TextComp({ parentvalues }) {
     parentvalues.current.childcompvalues = states;
 
     return (
-        <div>
+        <div
+            style={{
+                gap: states.gap,
+                lineHeight: states.lineHeight,
+                color: states.textColor,
+                textAlign: states.textAlign,
+            }}>
+
             {
                 states.text
             }
