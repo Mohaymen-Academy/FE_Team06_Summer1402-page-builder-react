@@ -1,8 +1,17 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
 import Layout, { ElementsContext } from './Layout';
 // import CardComp from './DragAndDropComponents/CardComp';
-import { CardComp, ButtonComp } from './DragAndDropComponents';
-import { NUM_PAGE } from '../utility/Constants';
+import { CardComp, ButtonComp, IconComp, ImageComp, SliderComp, TextComp, VideoComp } from './DragAndDropComponents';
+import {
+    NUM_PAGE,
+    NUM_CARD,
+    NUM_BUTTON,
+    NUM_TEXT,
+    NUM_IMAGE,
+    NUM_VIDEO,
+    NUM_SLIDER,
+} from '../utility/Constants';
+
 export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, leftsidePager, type }) {
     const [ishover, setishover] = useState(false);
     const layoutelements = useContext(ElementsContext);
@@ -17,6 +26,8 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
 
     useEffect(() => {
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
+            layoutelements.current.setters = scrollvalues.current.childcompsetters;
+            layoutelements.current.values = scrollvalues.current.childcompvalues;
             leftsidePager(type);
         }
     }, []);
@@ -63,8 +74,16 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
             className={`w-auto h-auto flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : ''} rounded-lg `}
         // style={{ height: `${Height}px` }}
         >
-            {/* <CardComp parentvalues={scrollvalues} /> */}
-            <ButtonComp parentvalues={scrollvalues} />
+            {
+                type == NUM_CARD ? <CardComp parentvalues={scrollvalues} /> :
+                    type == NUM_BUTTON ? <ButtonComp parentvalues={scrollvalues} /> :
+                        type == NUM_TEXT ? <TextComp parentvalues={scrollvalues} /> :
+                            type == NUM_IMAGE ? <ImageComp parentvalues={scrollvalues} /> :
+                                type == NUM_VIDEO ? <VideoComp parentvalues={scrollvalues} /> :
+                                    type == NUM_SLIDER ? <SliderComp parentvalues={scrollvalues} /> :
+                                        <IconComp parentvalues={scrollvalues} />
+
+            }
         </div>
     )
 }

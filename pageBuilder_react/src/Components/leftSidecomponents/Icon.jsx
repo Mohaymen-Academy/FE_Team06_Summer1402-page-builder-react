@@ -1,8 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useState, useEffect,useContext } from 'react';
 import ColorPicker from '../../utility/ColorPicker';
-
+import { ElementsContext } from '../Layout';
 export default function Icon() {
   const [icon, setIcon] = useState('images/icons8-cat-50.png');
+  const layoutContext = useContext(ElementsContext);
+  const setter = layoutContext.current.setters
+  console.log("HERE ", layoutContext.current.setters)
 
   return (
     <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-auto  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
@@ -34,7 +37,7 @@ export default function Icon() {
           <div className="text-[12px]  my-3">فاصله گذاری</div>
           <img src={icon} className='w-[40px] h-[40px] bg-slate-100 rounded-lg' alt="" />
         </div>
-        <ColorPicker title={'رنگ آیکون'}/>
+        <ColorPicker title={'رنگ آیکون'} />
         <div
           className='h-[150px] overflow-y-scroll flex flex-wrap gap-[12px]'>
           {Array(100).fill(null).map((icn, index) =>

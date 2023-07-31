@@ -1,6 +1,9 @@
-import React from 'react'
-
+import React, { useState, useEffect,useContext } from 'react';
+import { ElementsContext } from '../Layout';
 export default function Slider() {
+  const layoutContext = useContext(ElementsContext);
+  const setter = layoutContext.current.setters
+  console.log("HERE ", layoutContext.current.setters)
   return (
     <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-auto  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
       <div className="my-3">اسلایدر
@@ -15,7 +18,7 @@ export default function Slider() {
       </div>
 
       <div
-      className='flex flex-col gap-3'>
+        className='flex flex-col gap-3'>
         <div
           className={'w-[100%]'}>
           <button className="text-[#6C6E78] w-[100%] text-base gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">ساختار اسلاید خود را انتخاب کنید
@@ -82,22 +85,22 @@ export default function Slider() {
             <p className={'text-[#a8a8a8] text-xs pt-2'}>حجم عکس تا 5 مگابایت و با فرمت PNG, JPG</p>
           </div>
         </form>
-      <div className="flex flex-row justify-between py-[7px]">
-        <div className="text-[12px]  my-3">عرض ویدیو</div>
-        <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">تمامی صفحه ها
-          <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-          </svg>
-        </button>
-      </div>
-      <div className="flex flex-row justify-between py-[7px]">
-        <div className="text-[12px]  my-3">نوع انتقال</div>
-        <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">4
-          <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-          </svg>
-        </button>
-      </div>
+        <div className="flex flex-row justify-between py-[7px]">
+          <div className="text-[12px]  my-3">عرض ویدیو</div>
+          <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">تمامی صفحه ها
+            <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+            </svg>
+          </button>
+        </div>
+        <div className="flex flex-row justify-between py-[7px]">
+          <div className="text-[12px]  my-3">نوع انتقال</div>
+          <button className="text-[#6C6E78]  gap-2 font-medium border rounded-lg text-[11px] px-2 py-1  justify-between inline-flex items-center " type="button">4
+            <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div >
   )

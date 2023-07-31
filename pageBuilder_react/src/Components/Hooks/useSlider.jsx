@@ -1,0 +1,41 @@
+import React, { useState } from 'react'
+
+export default function useSlider() {
+    const [type, settype] = useState(null);
+    const [sliderimg, setsliderimg] = useState(null);
+    const [padding, setpadding] = useState(0);
+    const [gap, setgap] = useState(null);
+    const [slideNumber, setslideNumber] = useState(0);
+    const [display, setdisplay] = useState(0);
+    const [images, setimages] = useState([]);
+    const [transition, settransition] = useState(null);
+    const [widthImg, setwidthImg] = useState(null);
+    const [radius, setradius] = useState(null);
+
+    return {
+        states: {
+            type,
+            sliderimg,
+            padding,
+            gap,
+            slideNumber,
+            display,
+            images,
+            transition,
+            widthImg,
+            radius,
+        },
+        setters: {
+            settype
+            , setsliderimg
+            , setpadding
+            , setgap
+            , setslideNumber
+            , setdisplay
+            , setimages
+            , settransition
+            , setwidthImg
+            , setradius
+        }
+    }
+}

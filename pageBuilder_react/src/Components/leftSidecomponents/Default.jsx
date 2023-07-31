@@ -1,4 +1,4 @@
-import React, { useState,  useEffect, useContext } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import "../../assets/Styles/Page1.css"
 // import ''
 import { ElementsContext } from '../Layout';

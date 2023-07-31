@@ -1,7 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useState,useRef, useEffect,useContext } from 'react';
 import "../../assets/Styles/Page1.css"
-
+import { ElementsContext } from '../Layout';
 export default function Video() {
+  const layoutContext = useContext(ElementsContext);
+  const setter = layoutContext.current.setters
+  console.log("HERE ", layoutContext.current.setters)
   const inputref = useRef(null);
   const [dragActive, setDragActive] = useState(false);
   // handle drag events

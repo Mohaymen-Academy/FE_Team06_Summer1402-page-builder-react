@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export function useButton() {
+export default function useButton() {
     const [size, setsize] = useState(120)
     const [width, setwidth] = useState(120)
     const [padding, setpadding] = useState(0);
