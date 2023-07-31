@@ -24,13 +24,13 @@ function reducer(state, action) {
 }
 
 function WhitePage({
-  id, pagename
+  id, pagename, leftsidepager
 }) {
   const [ishover, setishover] = useState(false);
   const [isDragging, setIsDragging] = useState(false); // New state for drag state
   const values = useContext(ElementsContext);
   const [elements, dispatch] = useReducer(reducer, values.current.components[pagename])
-  // console.log(elements)
+
   const canvasvalues = useRef(
     {
       draggedItemHeight: 0,
@@ -38,15 +38,18 @@ function WhitePage({
       direction: '',
       selecteditem: null,
       replaceditem: null,
+      choosenitem: null,
     }
   );
   function handleonDrop(e) {
     e.preventDefault();
     if (values.current.dragged) {
+      canvasvalues.current.choosenitem = elements.length;
       dispatch({ type: 'add', newitem: values.current.dragged })
       values.current.dragged = null;
     }
   }
+
 
   // function handleDragStart() {
   //   setIsDragging(true); // Set the drag state to active when the drag starts
@@ -77,7 +80,7 @@ function WhitePage({
         <div
           className='flex flex-col gap-5 px-[10px] mt-5'>
           {elements.map((comptype, index) => {
-            return <DropAbleDiv key={index} Height={values.current.elements[comptype][0]} canvasvalues={canvasvalues} index={index} dispatch={dispatch} />
+            return <DropAbleDiv key={index} type={comptype} Height={values.current.elements[comptype][0]} canvasvalues={canvasvalues} index={index} dispatch={dispatch} leftsidePager={leftsidepager} />
           })}
           <div></div>
         </div>

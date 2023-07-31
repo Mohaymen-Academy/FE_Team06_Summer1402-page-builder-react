@@ -4,6 +4,7 @@ import WhitePage from '../Components/WhitePage.jsx';
 import MainButton from '../Components/MainButton.jsx';
 import LeftSideBar from '../Components/LeftSideBar';
 import { ElementsContext } from '../Components/Layout';
+import { NUM_PAGE } from '../utility/Constants';
 function reducer(state, action) {
     console.log("here in redu", state)
     switch (action.type) {
@@ -42,16 +43,17 @@ function Page(props) {
 
     }
     function handleclick(e) {
-        props.setPage(1)
+        props.setPage(NUM_PAGE)
     }
     return (
         <>
             <div onClick={handleclick} className="bg-[#D7D8DD] pt-10 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
                 <div onClick={(e)=>e.stopPropagation()} className={`flex flex-col items-center pl-2 `} style={{ height: `${pagecounter * 50}rem` }}>
+                    
                     <div className='h-max'>
                         {
                             components.map((item, index) => {
-                                return <WhitePage key={index} id={index} pagename={item} />
+                                return <WhitePage key={index} id={index} pagename={item}  leftsidepager={props.setPage} />
                             })
                         }
                         <div onClick={handleAddPage} className="flex flex-row w-[350px] h-[50px] vsmmobile:w-[70%] text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center">

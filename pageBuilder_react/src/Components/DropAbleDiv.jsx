@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 // import Layout, { ElementsContext } from './Layout';
 
-export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
+export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, leftsidePager, type }) {
     const [ishover, setishover] = useState(false);
     const scrollvalues = useRef({
         posY1: null,
@@ -9,6 +9,17 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
         posY2: null,
         posY3: null,
     })
+    useEffect(() => {
+
+        // console.log(canvasvalues.current.choosenitem!=null , canvasvalues.current.choosenitem == index)
+        if (canvasvalues.current.choosenitem!=null && canvasvalues.current.choosenitem === index) {
+            leftsidePager(type);
+        }
+
+    }, []);
+    function handleClick(e) {
+        leftsidePager(type)
+    }
 
     function handleDragCapture(e) {
         canvasvalues.current.selecteditem = index
@@ -36,6 +47,7 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index }) {
     }
     return (
         <div
+            onClick={handleClick}
             onDragOver={handleDragOver}
             onDragLeave={handleDragleave}
             onDoubleClick={handleDoubleClick}

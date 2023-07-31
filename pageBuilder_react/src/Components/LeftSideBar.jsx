@@ -10,6 +10,16 @@ import {
     Icon,
     ImageSideBar
 } from './leftSidecomponents';
+import {
+    NUM_PAGE,
+    NUM_CARD,
+    NUM_BUTTON,
+    NUM_TEXT,
+    NUM_IMAGE,
+    NUM_VIDEO,
+    NUM_SLIDER,
+} from '../utility/Constants';
+
 // import Button from './LeftSideBar/Button';
 // import DefaultSideBar from './LeftSideBar/Default';
 // import Button from './LeftSideBar/Button';
@@ -18,13 +28,13 @@ function LeftSideBar({ pagename, open }) {
         <div >
 
             {
-                pagename == 1 ? <DefaultSideBar /> :
-                    pagename == 2 ? <CardSideBar /> :
-                        pagename == 3 ? <Button /> :
-                            pagename == 4 ? <Text /> :
-                                pagename == 5 ? <ImageSideBar /> :
-                                    pagename == 6 ? <Video /> :
-                                        pagename == 7 ? <Slider /> : <Icon />
+                pagename == NUM_PAGE? <DefaultSideBar /> :
+                    pagename == NUM_CARD? <CardSideBar /> :
+                        pagename == NUM_BUTTON ? <Button /> :
+                            pagename == NUM_TEXT ? <Text /> :
+                                pagename == NUM_IMAGE ? <ImageSideBar /> :
+                                    pagename == NUM_VIDEO ? <Video /> :
+                                        pagename == NUM_SLIDER ? <Slider /> : <Icon />
 
             }
         </div>
