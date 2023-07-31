@@ -51,7 +51,7 @@ function CardSideBar({ setters , values }) {
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
                     <div className="text-[12px] mb-3">متن 1</div>
-                    <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext",e)} defaultValue="لورم ایپسوم"></textarea>
+                    <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext",e.target.value)} defaultValue="لورم ایپسوم"></textarea>
                 </div>
                 <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
                     <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={() => handleSetting("settextAlign",1)} />

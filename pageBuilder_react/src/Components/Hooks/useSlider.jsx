@@ -11,9 +11,11 @@ export default function useSlider() {
     const [transition, settransition] = useState(null);
     const [widthImg, setwidthImg] = useState(null);
     const [radius, setradius] = useState(null);
+    const [align, setalign] = useState(0);
 
     return {
         states: {
+            align,
             type,
             sliderimg,
             padding,
@@ -27,6 +29,7 @@ export default function useSlider() {
         },
         setters: {
             settype
+            , setalign
             , setsliderimg
             , setpadding
             , setgap
