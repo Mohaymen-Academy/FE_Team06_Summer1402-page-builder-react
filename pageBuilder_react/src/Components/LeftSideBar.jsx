@@ -18,26 +18,25 @@ import {
     NUM_IMAGE,
     NUM_VIDEO,
     NUM_SLIDER,
+    NUM_ICON
 } from '../utility/Constants';
 import { ElementsContext } from './Layout';
-// import Button from './LeftSideBar/Button';
-// import DefaultSideBar from './LeftSideBar/Default';
-// import Button from './LeftSideBar/Button';
-function LeftSideBar({ pagename, open }) {
 
-    // console.log(layoutContext)
+function LeftSideBar({ pagename, open }) {
+    const Pages = {
+        [NUM_PAGE]: <DefaultSideBar />,
+        [NUM_CARD]: <CardSideBar />,
+        [NUM_BUTTON]: <Button />,
+        [NUM_TEXT]: <Text />,
+        [NUM_IMAGE]: <ImageSideBar />,
+        [NUM_VIDEO]: <Video />,
+        [NUM_SLIDER]: <Slider />,
+        [NUM_ICON]: <Icon />,
+    };
     return (
         <div >
-
             {
-                pagename == NUM_PAGE ? <DefaultSideBar /> :
-                    pagename == NUM_CARD ? <CardSideBar /> :
-                        pagename == NUM_BUTTON ? <Button /> :
-                            pagename == NUM_TEXT ? <Text /> :
-                                pagename == NUM_IMAGE ? <ImageSideBar /> :
-                                    pagename == NUM_VIDEO ? <Video /> :
-                                        pagename == NUM_SLIDER ? <Slider /> : <Icon />
-
+                Pages[pagename]
             }
         </div>
     );

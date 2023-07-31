@@ -1,3 +1,13 @@
+import {
+    Button,
+    CardSideBar,
+    DefaultSideBar,
+    Slider,
+    Text,
+    Video,
+    Icon,
+    ImageSideBar
+} from '../Components/leftSidecomponents';
 const
     NUM_PAGE = 1,
     NUM_CARD = 2,
@@ -7,6 +17,7 @@ const
     NUM_VIDEO = 6,
     NUM_SLIDER = 7,
     NUM_ICON = 8;
+
 export {
     NUM_PAGE,
     NUM_CARD,
@@ -17,3 +28,4 @@ export {
     NUM_SLIDER,
     NUM_ICON,
 };
+// export { Pages };

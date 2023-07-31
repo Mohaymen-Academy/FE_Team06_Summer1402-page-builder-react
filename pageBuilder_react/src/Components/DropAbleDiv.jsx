@@ -2,7 +2,15 @@ import React, { useState, useRef, useEffect, useContext } from 'react'
 import Layout, { ElementsContext } from './Layout';
 import YellowBox from './YellowBox';
 // import CardComp from './DragAndDropComponents/CardComp';
-import { CardComp, ButtonComp, IconComp, ImageComp, SliderComp, TextComp, VideoComp } from './DragAndDropComponents';
+import {
+    CardComp,
+    ButtonComp,
+    IconComp,
+    ImageComp,
+    SliderComp,
+    TextComp,
+    VideoComp
+} from './DragAndDropComponents';
 import {
     NUM_PAGE,
     NUM_CARD,
@@ -11,6 +19,7 @@ import {
     NUM_IMAGE,
     NUM_VIDEO,
     NUM_SLIDER,
+    NUM_ICON,
 } from '../utility/Constants';
 
 export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, leftsidePager, type }) {
@@ -24,6 +33,15 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
         childcompsetters: null,
         childcompvalues: null,
     })
+    const Comps = {
+        [NUM_CARD]: <CardComp parentvalues={scrollvalues} />,
+        [NUM_BUTTON]: <ButtonComp parentvalues={scrollvalues} />,
+        [NUM_TEXT]: <TextComp parentvalues={scrollvalues} />,
+        [NUM_IMAGE]: <ImageComp parentvalues={scrollvalues} />,
+        [NUM_SLIDER]: <SliderComp parentvalues={scrollvalues} />,
+        [NUM_VIDEO]: <VideoComp parentvalues={scrollvalues} />,
+        [NUM_ICON]: <IconComp parentvalues={scrollvalues} />,
+    }
 
     useEffect(() => {
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
@@ -73,18 +91,10 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
             draggable={'true'}
             onDragStart={handleDragCapture}
             className={`w-auto h-auto flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : ''} rounded-lg `}
-        // style={{ height: `${Height}px` }}
         >
             <YellowBox>
                 {
-                    type == NUM_CARD ? <CardComp parentvalues={scrollvalues} /> :
-                        type == NUM_BUTTON ? <ButtonComp parentvalues={scrollvalues} /> :
-                            type == NUM_TEXT ? <TextComp parentvalues={scrollvalues} /> :
-                                type == NUM_IMAGE ? <ImageComp parentvalues={scrollvalues} /> :
-                                    type == NUM_VIDEO ? <VideoComp parentvalues={scrollvalues} /> :
-                                        type == NUM_SLIDER ? <SliderComp parentvalues={scrollvalues} /> :
-                                            <IconComp parentvalues={scrollvalues} />
-
+                    Comps[type]
                 }
             </YellowBox>
         </div>
