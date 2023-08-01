@@ -1,8 +1,8 @@
 import React,{useRef,useState} from 'react'
 
-export default function ColorPicker({title , setVal , func}) {
+export default function ColorPicker({title,defualcolor , setVal , func}) {
     const colorref = useRef(null);
-    const [color, setcolor] = useState("#123436");
+    const [color, setcolor] = useState(defualcolor);
 
     function handleCHnage(e) {
         setcolor(colorref.current.value)

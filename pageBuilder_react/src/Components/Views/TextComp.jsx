@@ -14,9 +14,11 @@ export default function TextComp({ parentvalues }) {
                 color: states.textColor,
                 textAlign: states.textAlign,
             }}>
-
             {
-                states.text
+                states.link ?
+                    <a href={states.link}>
+                        {states.text}
+                    </a> : states.text
             }
         </div>
     )

@@ -8,9 +8,18 @@ export default function CardComp({ parentvalues }) {
     return (
         <div
             // onClick={handleClick}
-            className={`flex  w-[100px] h-[100px] justify-center`} style={{ gap: `${states.gap }px`}}>
+            className={`flex justify-center`}
+            style={{
+                gap: `${states.gap}px`,
+                width: `${states.size * states.width}px`,
+                backgroundColor: states.bgColor,
+                padding:`${states.padding}px`,
+            }}>
             {states.image.map((src, index) => {
-                return <img key={index} src={src} style={{ borderRadius: `${states.radius}px` }} />
+                return <img key={index} src={src}
+                    style={{
+                        borderRadius: `${states.radius}px`,
+                    }} />
             })}
         </div>
     )

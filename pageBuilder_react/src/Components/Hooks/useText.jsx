@@ -8,7 +8,7 @@ export default function useText() {
     const [textColor, settextColor] = useState('#121212');
     const [padding, setpadding] = useState(0);
     const [gap, setgap] = useState(6);
-    const [link, setlink] = useState(null);
+    const [link, setlink] = useState('https://google.com/');
     const [fontsize, setfontsize] = useState(null);
     const [lineHeight, setlineHeight] = useState(null);
     const [textAlign, settextAlign] = useState('end');

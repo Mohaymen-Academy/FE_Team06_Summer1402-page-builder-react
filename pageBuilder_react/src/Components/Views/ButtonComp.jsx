@@ -5,7 +5,8 @@ export default function ButtonComp({ parentvalues }) {
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
     return (
-        <div>
+        <div
+        style={{backgroundColor:states.bgcolor}}>
             <button
                 style={{
                     color: states.textColor,

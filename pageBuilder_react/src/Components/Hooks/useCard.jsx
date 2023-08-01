@@ -3,18 +3,18 @@ import React, { useState } from 'react'
 export default function useCard() {
     const [align, setalign] = useState(0);
     const [type, settype] = useState(0);
-    const [size, setsize] = useState(120)
-    const [width, setwidth] = useState(120)
+    const [size, setsize] = useState(1)
+    const [width, setwidth] = useState(80);
     const [padding, setpadding] = useState(0);
     const [gap, setgap] = useState(6);
     const [radius, setradius] = useState(10);
     const [text, settext] = useState('');
-    const [image, setimage] = useState(['images/pic.jpg', 'images/pic.jpg']);
-    const [bgColor, setbgColor] = useState('#000000');
+    const [image, setimage] = useState(['images/pic.jpg']);
+    const [bgColor, setbgColor] = useState('#afa123');
     const [textColor, settextColor] = useState('#121212');
     const [textAlign, settextAlign] = useState(null);
-    const [hasIcon, sethasIcon] = useState(false);
-    const [link, setlink] = useState(null);
+    const [hasIcon, sethasIcon] = useState(true);
+    const [link, setlink] = useState('');
 
     return {
         states: { width, radius, textAlign, align, size, padding, gap, radius, text, image, bgColor, textColor, hasIcon, link, type },
