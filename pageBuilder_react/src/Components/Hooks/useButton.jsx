@@ -13,7 +13,7 @@ export default function useButton() {
     const [bgcolor, setbgcolor] = useState('#fff142');
     const [link, setlink] = useState(null);
     const [textAlign, settextAlign] = useState(0);
-    const [hasIcon, sethasIcon] = useState(false);
+    const [hasIcon, sethasIcon] = useState('');
 
 
     return {

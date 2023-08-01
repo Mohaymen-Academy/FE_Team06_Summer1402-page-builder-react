@@ -6,13 +6,13 @@ export default function ButtonComp({ parentvalues }) {
     parentvalues.current.childcompvalues = states;
     console.log(states)
     return (
-        <div
-            style={{
-                backgroundColor: states.bgcolor,
-                borderRadius: `${states.radisu}px`,
-            }}>
+        <div>
             <button
+                className='flex flex-row
+            items-center gap-[5px]'
                 style={{
+                    backgroundColor: states.bgcolor,
+                    borderRadius: `${states.radisu}px`,
                     width: `${states.size * states.width}px`,
                     color: states.textColor,
                     // backgroundColor: states.bgcolor,
@@ -20,8 +20,13 @@ export default function ButtonComp({ parentvalues }) {
 
                     // fontSize:states.fontSize
                 }}>
+                {states.hasIcon ? <img src={states.hasIcon}
+                    width={'20px'}
+                    height={'20px'}
+                /> : <></>}
                 {states.text}
             </button>
+
         </div>
     )
 }

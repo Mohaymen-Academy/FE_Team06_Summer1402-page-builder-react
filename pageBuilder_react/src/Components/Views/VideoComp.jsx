@@ -5,11 +5,13 @@ export default function VideoComp({ parentvalues }) {
     const { states, setters } = useVideo();
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
+    console.log(states)
     return (
-        <div>
+        <div
+        className='flex justify-center'>
             <video
                 style={{
-                    padding: states.padding,
+                    padding: `${states.padding}px`,
                     width: `${states.width}%`,
                     margin:`${states.gap}px`
                 }}
