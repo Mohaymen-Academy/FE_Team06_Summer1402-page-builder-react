@@ -15,8 +15,7 @@ function Button() {
     }
     return (
         <>
-            <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
-                <div className="my-3">دکمه</div>
+               <div className="my-3">دکمه</div>
                 <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
                     <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={()=> handleSetting("setalign",1)} />
                     <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={()=> handleSetting("setalign",2)} />
@@ -28,24 +27,42 @@ function Button() {
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">اندازه دکمه</div>
-                    <DropDown Default="متوسط" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setsize" />
+                    <DropDown Default={getValue(layoutContext, 'size')} width="35%"
+                        title_items={{
+                            1: 'کوچک',
+                            2: 'متوسط',
+                            3: 'بزرگ',
+                            4: 'خیل بزرگ',
+                        }} setVal = {handleSetting} func="setsize" />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">عرض دکمه</div>
-                    <DropDown Default="پیش فرض" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setwidth" />
+                    <DropDown Default={getValue(layoutContext, 'width')} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }} setVal = {handleSetting} func="setwidth" />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">حاشیه</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue="16"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue={getValue(layoutContext, 'padding')}></input>
                 </div>
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">فاصله</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue="24"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue={getValue(layoutContext, 'gap')}></input>
 
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">گوشه ها</div>
-                    <DropDown Default="4" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setradius"/>
+                    <DropDown Default={getValue(layoutContext, 'width')} width="20%"
+                        title_items={{
+                            1: '1 ',
+                            2: ' 2  ',
+                            3: '3 ',
+                            4: '4 ',
+                        }} setVal = {handleSetting} func="setradius"/>
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
                     <div className="text-[12px] mb-3">متن 1</div>
@@ -73,10 +90,9 @@ function Button() {
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
                     <div className="text-[12px] mb-3">لینک دکمه </div>
-                    <input className="left-sidebar-input  " style={{width:"100%"}} onChange={(e) => handleSetting("setlink",e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
+                    <input className="left-sidebar-input  " style={{width:"100%"}} onChange={(e) => handleSetting("setlink",e)} defaultValue={getValue(layoutContext,'link')} placeholder="لینک مورد نظر خود را وارد کنید"></input>
 
                 </div>
-            </div>
         </>
     );
 }

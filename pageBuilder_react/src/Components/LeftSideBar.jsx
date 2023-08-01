@@ -34,8 +34,8 @@ function LeftSideBar({ pagename, open }) {
         [NUM_ICON]: <Icon />,
     };
     return (
-        <div >
-            {
+        <div className="fixed flex flex-col px-4 py-3 left-0 h-screen  w-[300px] border border-t-0  bg-white  ">
+        {
                 Pages[pagename]
             }
         </div>

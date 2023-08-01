@@ -17,7 +17,6 @@ export default function Icon() {
   
   return (
     <>
-    <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
         <div className="my-3">آیکون</div>
         <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
             <img className="max-w-[25px] max-h-[23px]" src="images/2.png" onClick={()=>handleSetting("setalign",1) } />
@@ -55,7 +54,6 @@ export default function Icon() {
           }
 
         </div>
-    </div>
 </>
   )
 }

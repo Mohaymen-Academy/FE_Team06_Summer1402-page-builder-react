@@ -7,7 +7,6 @@ function DefaultSideBar() {
     
     return (
         <>
-            <div className="fixed flex flex-col px-4 py-3 left-0 h-screen  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">تنظیمات صفحه</div>
 
                 <div className="flex flex-row justify-between p-[7px] mobile:flex-col mobile:items-center">
@@ -28,7 +27,6 @@ function DefaultSideBar() {
                     <button className="left-sidebar-input" type="button">24
                     </button>    
                 </div>      
-            </div>
         </>
         );
     }

@@ -3,6 +3,7 @@ import "../../assets/Styles/Page1.css"
 import { ElementsContext } from '../Layout';
 import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
+import { getValue } from '../../utility/Functions';
 
 export default function Video() {
   const layoutContext = useContext(ElementsContext);
@@ -16,8 +17,7 @@ export default function Video() {
       layoutContext.current.setters[func](value);
   }
 return (
-
-    <div className="fixed flex flex-col px-4 py-3 left-0 h-screen  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
+  <>
       <div className="my-3">ویدئو
       </div>
       <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
@@ -40,7 +40,13 @@ return (
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">عرض ویدئو</div>
-                    <DropDown Default="پیش فرض" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setwidth"/>
+                    <DropDown Default={getValue(layoutContext, 'width')} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }} setVal = {handleSetting} func="setwidth"/>
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">حاشیه</div>
@@ -51,8 +57,7 @@ return (
                     <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue="24"></input>
 
                 </div>
-      </div>
     </div>
-
+</>
   )
 }

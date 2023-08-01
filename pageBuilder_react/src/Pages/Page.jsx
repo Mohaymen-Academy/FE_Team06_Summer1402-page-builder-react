@@ -70,9 +70,9 @@ function Page(props) {
                     <div onClick={() => setIsModalOpen(true)} ><MainButton src="images/icons8-setting-24.png" text="تنظیمات" isSetting={true} /></div>
                 </div>
             </div>
-            {/* {
+            {
                 isModalOpen &&
-                <div className=" fixed inset-0 m-[5%] flex items-center justify-center" id="modalOverlay">
+                <div className=" fixed inset-0 m-[5%] flex items-center justify-center desktop:hidden laptop:hidden tablet:hidden" id="modalOverlay">
                 <div className="modal bg-white rounded-lg shadow-md p-4 w-[100%] h-[100%] relative" role="dialog">
                     <div className="modal-header flex justify-between items-center border-b border-gray-300 pb-2 mb-4">
                         <h3 className="text-lg font-semibold">تنظیمات</h3>
@@ -81,15 +81,13 @@ function Page(props) {
                     <div className="modal-content">
                         <div className="flex flex-col px-4 py-3 bg-white">
                             {
-                                props.pagename == "page1" ?
-                                    <LeftSideBar pagename="page1" /> :
-                                    <LeftSideBar pagename="page2" />
+                                <LeftSideBar pagename={1} />
                             }
                         </div>
                     </div>
                 </div>
             </div>
-        } */}
+        }
         </>
     );
 }

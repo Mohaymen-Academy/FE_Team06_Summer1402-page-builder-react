@@ -11,7 +11,7 @@ export default function Slider() {
   }
   console.log("HERE ", layoutContext.current.setters)
   return (
-    <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-auto  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
+    <>
       <div className="my-3">اسلایدر
       </div>
       <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
@@ -50,7 +50,7 @@ export default function Slider() {
                     <div className="text-[12px]  my-3">عرض ویدیو</div>
                     <DropDown Default="پیش فرض" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setwidthImg"/>
         </div>
-    </div >
+    </ >
   )
 }
 

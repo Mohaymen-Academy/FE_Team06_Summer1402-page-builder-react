@@ -4,6 +4,7 @@ import ColorPicker from '../../utility/ColorPicker';
 import { ElementsContext } from '../Layout';
 import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
+import { getValue } from '../../utility/Functions';
 
 function Text() {
     const layoutContext = useContext(ElementsContext);
@@ -15,7 +16,6 @@ function Text() {
     }
     return (
         <>
-            <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">متن</div>
                 <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
                     <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={()=>handleSetting("setalign",1) } />
@@ -27,11 +27,21 @@ function Text() {
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3"> نوع متن</div>
-                    <DropDown Default="متوسط" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setfontfamliy" />
+                    <DropDown Default={getValue(layoutContext, 'size')} title_items={{
+                        1: 'کوچک',
+                        2: 'متوسط',
+                        3: 'بزرگ',
+                        4: 'خیل بزرگ',
+                    }} width="35%" setVal = {handleSetting} func="setfontfamliy" />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">نوع عنوان </div>
-                    <DropDown Default="پیش فرض" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="settitle"/>
+                    <DropDown Default={getValue(layoutContext, 'size')} title_items={{
+                        1: 'کوچک',
+                        2: 'متوسط',
+                        3: 'بزرگ',
+                        4: 'خیل بزرگ',
+                    }} width="35%" setVal = {handleSetting} func="settitle"/>
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
                     <div className="text-[12px] mb-3">متن مورد نظر خود را وارد کنید</div>
@@ -50,20 +60,20 @@ function Text() {
                 
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">سایز فونت</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setfontsize",e.target.value)} defaultValue="16"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setfontsize",e.target.value)} defaultValue={getValue(layoutContext,'fontsize')}></input>
                 </div>
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">ارتفاع خط</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setlineHeight",e.target.value)} defaultValue="24"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setlineHeight",e.target.value)} defaultValue={getValue(layoutContext,'lineHeight')}></input>
 
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">حاشیه</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue="16"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue={getValue(layoutContext,'padding')}></input>
                 </div>
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">فاصله</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue="24"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue={getValue(layoutContext,'gap')}></input>
 
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
@@ -71,7 +81,6 @@ function Text() {
                     <input className="left-sidebar-input  " style={{width:"100%"}} onChange={(e) => handleSetting("setlink",e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
 
                 </div>
-            </div>
         </>
     );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-function DropDown({ Default, title_items, titles, items, width, setVal, func }) {
+function DropDown({ Default, title_items, width, setVal, func }) {
   const [open, setOpen] = useState(false);
   const [choice, setchoice] = useState('');
   const dropdownRef = useRef();
