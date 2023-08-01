@@ -44,8 +44,9 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
     }
 
     useEffect(() => {
-        scrollvalues.current.isDragging=false;
-        console.log('useEffect')
+        scrollvalues.current.isDragging = false;
+    },);
+    useEffect(() => {
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             layoutelements.current.setters = scrollvalues.current.childcompsetters;
             layoutelements.current.values = scrollvalues.current.childcompvalues;
@@ -65,9 +66,9 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
         canvasvalues.current.itemIsDragged = true;
     }
     function handleDragEnter(e) {
-        console.log('enter', ishover, index)
-        console.log('zarp', scrollvalues.current.isDragging, index);
-        console.log('zorp', canvasvalues.current.itemIsDragged, index);
+        // console.log('enter', ishover, index)
+        // console.log('zarp', scrollvalues.current.isDragging, index);
+        // console.log('zorp', canvasvalues.current.itemIsDragged, index);
         if (!scrollvalues.current.isDragging && canvasvalues.current.itemIsDragged) {
             setishover(true)
         }
@@ -78,13 +79,10 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
     function handleDrop() {
         if (canvasvalues.current.selecteditem != null) {
             setishover(false)
-            const selectedIItem = canvasvalues.current.selecteditem;
-            canvasvalues.current.selecteditem = null;
-            dispatch({ type: 'reorder', selecteditem: selectedIItem, replaceditem: index });
+            // const selectedIItem = canvasvalues.current.selecteditem;
+            // canvasvalues.current.selecteditem = null;
+            dispatch({ type: 'reorder', selecteditem: canvasvalues.current.selecteditem, replaceditem: index });
         }
-    }
-    function handleonDrop(e) {
-        console.log(index, ' in handle drop')
     }
 
     function handleDoubleClick(e) {

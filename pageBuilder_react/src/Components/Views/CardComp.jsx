@@ -23,7 +23,7 @@ export default function CardComp({ parentvalues }) {
                     //     style={{
                     //         borderRadius: `${states.radius}px`,
                     //     }} />
-                    return <Card imgsrc={'images/cardType1.png'} type={states.type} text={states.text} />
+                    return <Card key={index} imgsrc={'images/cardType1.png'} type={states.type} text={states.text} />
                 })
             }
         </div>

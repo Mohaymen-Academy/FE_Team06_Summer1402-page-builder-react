@@ -4,7 +4,6 @@ import { ElementsContext } from './Layout';
 import DropAbleDiv from './DropAbleDiv';
 
 function reducer(state, action) {
-  console.log('zarp')
   switch (action.type) {
     case 'add':
       return [...state, action.newitem];
@@ -13,7 +12,6 @@ function reducer(state, action) {
       state.splice(action.deleteitem, 1)
       return [...state];
     case 'reorder':
-      reoder(action.selecteditem, action.replaceditem);
       var element = state[action.selecteditem];
       state.splice(action.selecteditem, 1);
       state.splice(action.replaceditem, 0, element);
@@ -21,9 +19,7 @@ function reducer(state, action) {
 
   }
 }
-function reoder(selecteditem, replaceditem) { 
-  console.log(selecteditem,replaceditem)
-}
+
 
 function WhitePage({
   id, pagename, leftsidepager
