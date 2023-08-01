@@ -8,7 +8,7 @@ export default function CardComp({ parentvalues }) {
     return (
         <div
             // onClick={handleClick}
-            className={`flex justify-center`}
+            className={`flex justify-center pointer-events-none`}
             style={{
                 color: states.textColor,
                 gap: `${states.gap}px`,

@@ -8,6 +8,7 @@ export default function TextComp({ parentvalues }) {
 
     return (
         <div
+            className='pointer-events-none'
             style={{
                 gap: states.gap,
                 lineHeight: states.lineHeight,
@@ -16,7 +17,9 @@ export default function TextComp({ parentvalues }) {
             }}>
             {
                 states.link ?
-                    <a href={states.link}>
+                    <a
+                        className='pointer-events-none'
+                        href={states.link}>
                         {states.text}
                     </a> : states.text
             }

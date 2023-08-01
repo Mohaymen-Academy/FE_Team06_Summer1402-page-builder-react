@@ -6,7 +6,8 @@ export default function SliderComp({ parentvalues }) {
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
     return (
-        <div>
+        <div
+            className='pointer-events-none'>
         </ div>
     )
 }

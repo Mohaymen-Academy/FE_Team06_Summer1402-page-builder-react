@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <Layout leftsidePager={setPage}>
-        <Page setIsModalOpen={setIsModalOpen} setPage={setPage} />
-        <LeftSideBar pagename={page} open={isModalOpen} />
+        <Page setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} setPage={setPage} />
+        <LeftSideBar setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} pagename={page} open={isModalOpen} />
       </Layout>
     </>
   )

@@ -9,7 +9,7 @@ import { getValue } from '../../utility/Functions';
 function Text() {
     const layoutContext = useContext(ElementsContext);
     const setter = layoutContext.current.setters
-    console.log("HERE ", layoutContext.current.setters)
+    // console.log("HERE ", layoutContext.current.setters)
     function handleSetting(func, value) {
         layoutContext.current.setters[func](value);
     }

@@ -8,7 +8,7 @@ export default function VideoComp({ parentvalues }) {
     console.log(states)
     return (
         <div
-        className='flex justify-center'>
+        className='flex justify-center pointer-events-none'>
             <video
                 style={{
                     padding: `${states.padding}px`,
@@ -18,7 +18,7 @@ export default function VideoComp({ parentvalues }) {
                 controls={states.autoplay ? '' : 'controls'}
                 autoPlay={states.autoplay}
             >
-                <source src={states.src} type='video/mp4' />
+                <source className='pointer-events-none' src={states.src} type='video/mp4' />
 
             </video>
         </div>

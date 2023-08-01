@@ -8,9 +8,11 @@ export default function ({ parentvalues }) {
     parentvalues.current.childcompvalues = states;
     return (
         <div
+        className={'pointer-events-none'}
             style={{ margin: `${states.gap}px`,
             padding:`${states.padding}px` }}>
             <FaBeer
+            className='pointer-events-none'
                 size={states.size}
                 fill={states.color} />
         </div>

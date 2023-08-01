@@ -8,7 +8,7 @@ export default function Icon() {
   const [icon, setIcon] = useState('images/icons8-cat-50.png');
   const layoutContext = useContext(ElementsContext);
   const setter = layoutContext.current.setters
-  console.log("HERE ", layoutContext.current.setters)
+  // console.log("HERE ", layoutContext.current.setters)
 
 
   function handleSetting(func, value) {
@@ -46,7 +46,7 @@ export default function Icon() {
           <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setgap", e.target.value)} defaultValue={getValue(layoutContext, "gap")}></input>
 
         </div>
-        <ColorPicker title={'رنگ آیکون'} setVal={handleSetting} func="setcolor" defaultValue={getValue(layoutContext, "color")} />
+        <ColorPicker title={'رنگ آیکون'} defualcolor={getValue(layoutContext,'color')} setVal={handleSetting} func="setcolor" defaultValue={getValue(layoutContext, "color")} />
         <div className="flex flex-row justify-between py-[7px] my-2">
           <div className="text-[12px]  my-3">جایزگزینی آیکون</div>
           <img src={icon} className='w-[40px] h-[40px] bg-slate-100 rounded-lg' alt="" />

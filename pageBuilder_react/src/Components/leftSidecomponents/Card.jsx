@@ -14,7 +14,7 @@ function CardSideBar({ setters, values }) {
         layoutContext.current.setters[func](value);
     }
 
-    console.log(layoutContext.current.setters);
+    // console.log(layoutContext.current.setters);
     return (
         <>
             <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">

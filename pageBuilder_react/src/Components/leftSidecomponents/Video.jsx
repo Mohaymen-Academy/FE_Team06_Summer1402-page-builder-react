@@ -8,7 +8,7 @@ import { getValue } from '../../utility/Functions';
 export default function Video() {
   const layoutContext = useContext(ElementsContext);
   const setter = layoutContext.current.setters
-  console.log("HERE ", layoutContext.current.setters)
+//   console.log("HERE ", layoutContext.current.setters)
   const inputref = useRef(null);
   const [dragActive, setDragActive] = useState(false);
   // handle drag events
