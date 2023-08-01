@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ElementsContext } from '../Layout';
-
+import { getValue } from '../../utility/Functions';
 import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
 export default function Slider() {
@@ -9,7 +9,6 @@ export default function Slider() {
   {
       layoutContext.current.setters[func](value);
   }
-  console.log("HERE ", layoutContext.current.setters)
   return (
     <>
       <div className="my-3">اسلایدر
