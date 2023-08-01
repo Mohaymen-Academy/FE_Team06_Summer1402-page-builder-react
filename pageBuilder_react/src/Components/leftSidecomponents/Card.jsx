@@ -28,13 +28,8 @@ function CardSideBar({ setters, values }) {
                     <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("setalign", 6)} />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
-                    {/* <DropDown Default="" title_items={{
-                        1:'', 
-                        2:'', 
-                        3:'', 
-                        4:''}} width="100%" setVal={handleSetting} func="settype" /> */}
+                    <CardPicker setCard={layoutContext.current.setters['settype']} />
                 </div>
-                <CardPicker />
 
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">اندازه کارت</div>
@@ -63,10 +58,10 @@ function CardSideBar({ setters, values }) {
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">فاصله</div>
                     <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setgap", e.target.value)} defaultValue={getValue(layoutContext, 'gap')}></input>
-
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">گوشه ها</div>
+                    <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setradius", e.target.value)} defaultValue={getValue(layoutContext, 'radius')}></input>
                     {/* <DropDown Default="4" items={[1, 2, 3, 4]} width="35%" setVal={handleSetting} func="setradius" /> */}
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
@@ -84,8 +79,8 @@ function CardSideBar({ setters, values }) {
 
 
                 <FileUploader setVal={handleSetting} func="setimage" />
-                <ColorPicker defualcolor={getValue(layoutContext,'bgColor')} title={'رنگ پس زمینه'} setVal={handleSetting} func="setbgColor" />
-                <ColorPicker defualcolor={getValue(layoutContext,'textColor')} title={'رنگ متن'} setVal={handleSetting} func="settextColor" />
+                <ColorPicker defualcolor={getValue(layoutContext, 'bgColor')} title={'رنگ پس زمینه'} setVal={handleSetting} func="setbgColor" />
+                <ColorPicker defualcolor={getValue(layoutContext, 'textColor')} title={'رنگ متن'} setVal={handleSetting} func="settextColor" />
 
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">آیکون دار</div>

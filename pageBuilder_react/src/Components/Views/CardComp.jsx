@@ -1,10 +1,11 @@
 import React from 'react'
 import { useCard } from '../Hooks';
+import Card from '../../utility/Card';
 export default function CardComp({ parentvalues }) {
     const { states, setters } = useCard();
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
-    console.log(states.gap)
+    console.log(states)
     return (
         <div
             // onClick={handleClick}
@@ -13,14 +14,18 @@ export default function CardComp({ parentvalues }) {
                 gap: `${states.gap}px`,
                 width: `${states.size * states.width}px`,
                 backgroundColor: states.bgColor,
-                padding:`${states.padding}px`,
+                padding: `${states.padding}px`,
+                // borderRadius: `${states.radius}px`,
             }}>
-            {states.image.map((src, index) => {
-                return <img key={index} src={src}
-                    style={{
-                        borderRadius: `${states.radius}px`,
-                    }} />
-            })}
+            {
+                states.image.map((src, index) => {
+                    // return <img key={index} src={src}
+                    //     style={{
+                    //         borderRadius: `${states.radius}px`,
+                    //     }} />
+                    return <Card imgsrc={'images/pic.jpg'} type={3} />
+                })
+            }
         </div>
     )
 }

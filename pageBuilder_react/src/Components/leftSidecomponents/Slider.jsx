@@ -23,7 +23,15 @@ export default function Slider() {
                     <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={()=>handleSetting("setalign",6) } />
       </div>
       <div className="flex flex-row justify-between py-[7px]">
-          <DropDown Default=" ساختار اسلاید خود را انتخاب کنید" items={[1,2,3,4]} width="100%" setVal = {handleSetting} func="settype" />
+      <DropDown Default={80} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }}
+                        setVal={handleSetting} func="setwidth" />
+
       </div>
       <div className="flex flex-row justify-between py-[7px]  ">
           <div className="text-[12px] my-1 ">حاشیه</div>
@@ -35,20 +43,48 @@ export default function Slider() {
       </div>
       <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">تعداد محتوای اسلایدر</div>
-          <DropDown Default="4" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setslideNumber"/>
+          <DropDown Default={80} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }}
+                        setVal={handleSetting} func="setwidth" />
       </div>
       <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">نحوه نمایش اسلایدر</div>
-          <DropDown Default="4" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setdisplay"/>
+          <DropDown Default={80} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }}
+                        setVal={handleSetting} func="setwidth" />
       </div>
       <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">نوع انتقال </div>
-          <DropDown Default=" تمام صفحه" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="settransition"/>
+          <DropDown Default={80} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }}
+                        setVal={handleSetting} func="setwidth" />
       </div>
       <FileUploader setVal = {handleSetting} func="setimage"/>
       <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">عرض ویدیو</div>
-                    <DropDown Default="پیش فرض" items={[1,2,3,4]} width="35%" setVal = {handleSetting} func="setwidthImg"/>
+                    <DropDown Default={80} width="35%"
+                        title_items={{
+                            80: 'پیش فرض',
+                            100: 'یک و نیم برابر',
+                            120: 'دو برابر',
+                            240: 'سه برابر',
+                        }}
+                        setVal={handleSetting} func="setwidth" />
         </div>
     </ >
   )
