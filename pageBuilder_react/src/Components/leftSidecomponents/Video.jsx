@@ -34,7 +34,7 @@ return (
         <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">پخش خودکار </div>
                     <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value="" className="sr-only peer" onChange={(e) => handleSetting("setautoplay",!layoutContext.current.values.hasIcon)} />
+                        <input type="checkbox" value={getValue(layoutContext,'hasIcon')} className="sr-only peer" onChange={(e) => handleSetting("setautoplay",!layoutContext.current.values.hasIcon)} />
                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label>
                 </div>
@@ -50,11 +50,11 @@ return (
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
                     <div className="text-[12px] my-1 ">حاشیه</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue="16"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue={getValue(layoutContext,'padding')}></input>
                 </div>
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">فاصله</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue="24"></input>
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue={getValue(layoutContext,'gap')}></input>
 
                 </div>
     </div>

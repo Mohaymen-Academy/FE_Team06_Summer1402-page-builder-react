@@ -22,8 +22,9 @@ export default function Slider() {
                     <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={()=>handleSetting("setalign",5) } />
                     <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={()=>handleSetting("setalign",6) } />
       </div>
-      <div className="flex flex-row justify-between py-[7px]">
-      <DropDown Default={80} width="35%"
+      <div className="flex flex-col justify-between py-[7px]">
+      <div className="text-[12px]  my-3">ساختار اسلایدر را انتخاب کنید  </div>
+      <DropDown Default={80} width="100%"
                         title_items={{
                             80: 'پیش فرض',
                             100: 'یک و نیم برابر',
@@ -35,11 +36,11 @@ export default function Slider() {
       </div>
       <div className="flex flex-row justify-between py-[7px]  ">
           <div className="text-[12px] my-1 ">حاشیه</div>
-          <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue="16"></input>
+          <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue={getValue(layoutContext,'padding')}></input>
       </div>
       <div className="flex flex-row justify-between py-[7px] my-0">
           <div className="text-[12px] my-1">فاصله</div>
-          <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue="24"></input>
+          <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue={getValue(layoutContext,'gap')}></input>
       </div>
       <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">تعداد محتوای اسلایدر</div>
