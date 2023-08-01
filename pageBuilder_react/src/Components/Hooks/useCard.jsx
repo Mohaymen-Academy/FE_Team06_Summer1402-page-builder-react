@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function useCard() {
-    const [align, setalign] = useState(0);
+    const [align, setalign] = useState(1);
     const [type, settype] = useState(0);
     const [size, setsize] = useState(1)
     const [width, setwidth] = useState(80);
@@ -12,7 +12,7 @@ export default function useCard() {
     const [image, setimage] = useState(['images/pic.jpg']);
     const [bgColor, setbgColor] = useState('#fff000');
     const [textColor, settextColor] = useState('#121212');
-    const [textAlign, settextAlign] = useState(null);
+    const [textAlign, settextAlign] = useState(1);
     const [hasIcon, sethasIcon] = useState(true);
     const [link, setlink] = useState('');
 

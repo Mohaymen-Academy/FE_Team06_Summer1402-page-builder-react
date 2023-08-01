@@ -4,6 +4,8 @@ import { ElementsContext } from '../Layout';
 import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
 import { getValue } from '../../utility/Functions';
+import Align from '../../utility/Align';
+
 export default function Icon() {
   const [icon, setIcon] = useState('images/icons8-cat-50.png');
   const layoutContext = useContext(ElementsContext);
@@ -18,14 +20,8 @@ export default function Icon() {
   return (
     <>
         <div className="my-3">آیکون</div>
-        <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-          <img className="max-w-[25px] max-h-[23px]" src="images/2.png" onClick={() => handleSetting("setalign", 1)} />
-          <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={() => handleSetting("setalign", 2)} />
-          <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={() => handleSetting("setalign", 3)} />
-          <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={() => handleSetting("setalign", 4)} />
-          <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={() => handleSetting("setalign", 5)} />
-          <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("setalign", 6)} />
-        </div>
+        <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
+
         <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">اندازه آیکون</div>
           <DropDown Default={100} width="35%"

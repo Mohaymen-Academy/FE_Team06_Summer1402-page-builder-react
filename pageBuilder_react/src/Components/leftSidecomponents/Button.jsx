@@ -4,6 +4,7 @@ import ColorPicker from '../../utility/ColorPicker';
 import { ElementsContext } from '../Layout';
 import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
+import Align from '../../utility/Align';
 
 import { getValue } from '../../utility/Functions';
 function Button() {
@@ -16,15 +17,8 @@ function Button() {
     return (
         <>
                <div className="my-3">دکمه</div>
-                <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={()=> handleSetting("setalign",1)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={()=> handleSetting("setalign",2)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={()=> handleSetting("setalign",3)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={()=> handleSetting("setalign",4)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={()=> handleSetting("setalign",5)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={()=> handleSetting("setalign",6)} />
+               <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
 
-                </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">اندازه دکمه</div>
                     <DropDown Default={getValue(layoutContext, 'size')} width="35%"
@@ -69,14 +63,8 @@ function Button() {
                     <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext",e)} defaultValue={getValue(layoutContext,'text')}></textarea>
                 </div>
 
-                <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={() => handleSetting("settextAlign",1)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={() => handleSetting("settextAlign",2)}/>
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={() => handleSetting("settextAlign",3)}/>
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={() => handleSetting("settextAlign",4)}/>
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={() => handleSetting("settextAlign",5)}/>
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("settextAlign",6)}/>
-                </div>
+                <Align type="text" handleSetting={handleSetting} Default={getValue(layoutContext,"textAlign")} />
+
                 
                 <ColorPicker title={'رنگ پس زمینه'} setVal = {handleSetting} func="setbgcolor" />
                 <ColorPicker title={'رنگ متن'}  setVal = {handleSetting} func="settextColor"/>

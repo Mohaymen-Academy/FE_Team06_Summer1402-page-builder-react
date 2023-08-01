@@ -6,6 +6,7 @@ import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
 import { getValue } from '../../utility/Functions';
 import CardPicker from '../../utility/CardPicker';
+import Align from '../../utility/Align';
 
 function CardSideBar({ setters, values }) {
     const layoutContext = useContext(ElementsContext);
@@ -19,14 +20,7 @@ function CardSideBar({ setters, values }) {
         <>
             <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">کارت</div>
-                <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={() => handleSetting("setalign", 1)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={() => handleSetting("setalign", 2)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={() => handleSetting("setalign", 3)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={() => handleSetting("setalign", 4)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={() => handleSetting("setalign", 5)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("setalign", 6)} />
-                </div>
+                <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
                 <div className="flex flex-row justify-between py-[7px]">
                     <CardPicker setCard={layoutContext.current.setters['settype']} />
                 </div>
@@ -68,14 +62,8 @@ function CardSideBar({ setters, values }) {
                     <div className="text-[12px] mb-3">متن 1</div>
                     <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext", e.target.value)} defaultValue={getValue(layoutContext, 'text')}></textarea>
                 </div>
-                <div className="flex flex-row items-center justify-between mx-[8%] mobile:mx-0  my-5 w-[80%] h-[30px]  bg-white">
-                    <img className="max-w-[25px] max-h-[23px] " src="images/1.png" onClick={() => handleSetting("settextAlign", 1)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/2.png" onClick={() => handleSetting("settextAlign", 2)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/3.png" onClick={() => handleSetting("settextAlign", 3)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/4.png" onClick={() => handleSetting("settextAlign", 4)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/5.png" onClick={() => handleSetting("settextAlign", 5)} />
-                    <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("settextAlign", 6)} />
-                </div>
+
+                <Align type="text" handleSetting={handleSetting} Default={getValue(layoutContext,"textAlign")} />
 
 
                 <FileUploader setVal={handleSetting} func="setimage" />
