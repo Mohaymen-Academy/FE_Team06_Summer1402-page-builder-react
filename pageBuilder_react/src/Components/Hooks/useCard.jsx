@@ -10,7 +10,7 @@ export default function useCard() {
     const [radius, setradius] = useState(10);
     const [text, settext] = useState('');
     const [image, setimage] = useState(['images/pic.jpg']);
-    const [bgColor, setbgColor] = useState('#afa123');
+    const [bgColor, setbgColor] = useState('#fff000');
     const [textColor, settextColor] = useState('#121212');
     const [textAlign, settextAlign] = useState(null);
     const [hasIcon, sethasIcon] = useState(true);

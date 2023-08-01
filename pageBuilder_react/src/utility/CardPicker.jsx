@@ -21,10 +21,22 @@ export default function CardPicker({ setCard }) {
                 </svg>
             </button>
             <div className={`transition-all ease-in-out duration-1000 flex flex-wrap gap-[20px] overflow-hidden ${open ? 'h-[220px]' : 'h-0'}`}>
-                <img className='w-[100px] h-[103px]' src="images/cardType1.png" alt="" />
-                <img className='w-[100px] h-[103px]' src="images/cardType2.png" alt="" />
-                <img className='w-[100px] h-[100px]' src="images/cardType3.png" alt="" />
-                <img className='w-[100px] h-[100px]' src="images/cardType4.png" alt="" />
+                <button
+                    onClick={(e) => setCard(1)}>
+                    <img className='w-[100px] h-[103px]' src="images/cardType1.png" alt="" />
+                </button>
+                <button
+                    onClick={(e) => setCard(2)}>
+                    <img className='w-[100px] h-[103px]' src="images/cardType2.png" alt="" />
+                </button>
+                <button
+                    onClick={(e) => setCard(3)}>
+                    <img className='w-[100px] h-[100px]' src="images/cardType3.png" alt="" />
+                </button>
+                <button
+                    onClick={(e) => setCard(4)}>
+                    <img className='w-[100px] h-[100px]' src="images/cardType4.png" alt="" />
+                </button>
             </div>
         </div>
     )
