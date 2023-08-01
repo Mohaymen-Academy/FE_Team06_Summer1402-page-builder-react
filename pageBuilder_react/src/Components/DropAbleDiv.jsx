@@ -10,7 +10,7 @@ import {
     SliderComp,
     TextComp,
     VideoComp
-} from './DragAndDropComponents';
+} from './Views';
 import {
     NUM_PAGE,
     NUM_CARD,

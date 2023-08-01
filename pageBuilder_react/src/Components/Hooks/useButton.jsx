@@ -8,7 +8,7 @@ export default function useButton() {
     const [padding, setpadding] = useState(10);
     const [gap, setgap] = useState(6);
     const [radisu, setradius] = useState(10);
-    const [text, settext] = useState('لورم ایپسام');
+    const [text, settext] = useState('لورم ');
     const [textColor, settextColor] = useState('#FA0A0A');
     const [bgcolor, setbgcolor] = useState('#fff142');
     const [link, setlink] = useState(null);

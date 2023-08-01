@@ -5,7 +5,7 @@ export default function useVideo() {
     const [autoplay, setautoplay] = useState(true);
     const [width, setwidth] = useState(null);
     const [padding, setpadding] = useState(0);
-    const [gap, setgap] = useState(6);
+    const [gap, setgap] = useState(10);
     return {
         states: {
             src,

@@ -8,8 +8,12 @@ export default function VideoComp({ parentvalues }) {
     return (
         <div>
             <video
-            style={{padding:states.padding}}
-                controls
+                style={{
+                    padding: states.padding,
+                    width: `${states.width}%`,
+                    margin:`${states.gap}px`
+                }}
+                controls={states.autoplay ? '' : 'controls'}
                 autoPlay={states.autoplay}
             >
                 <source src={states.src} type='video/mp4' />
