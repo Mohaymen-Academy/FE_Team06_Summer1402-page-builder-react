@@ -18,7 +18,7 @@ function reducer(state, action) {
 }
 function Page(props) {
     const [pagecounter, setpagecounter] = useState(1);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
     const values = useContext(ElementsContext);
     // const [components, dispatch] = useReducer(reducer, values.current.components);
@@ -67,27 +67,10 @@ function Page(props) {
                     <div ><MainButton src="images/down.png" text="صفحه بعد" isSetting={false} /></div>
                     <MainButton src="images/lock.png" text="قفل صفحه" isSetting={false} />
                     <MainButton src="images/trash.png" text="حذف" isSetting={false} />
-                    <div onClick={() => setIsModalOpen(true)} ><MainButton src="images/icons8-setting-24.png" text="تنظیمات" isSetting={true} /></div>
+                    <div onClick={() => props.setIsModalOpen(true)} ><MainButton src="images/icons8-setting-24.png" text="تنظیمات" isSetting={true} /></div>
                 </div>
             </div>
-            {
-                isModalOpen &&
-                <div className=" fixed inset-0 m-[5%] flex items-center justify-center desktop:hidden laptop:hidden tablet:hidden" id="modalOverlay">
-                <div className="modal bg-white rounded-lg shadow-md p-4 w-[100%] h-[100%] relative" role="dialog">
-                    <div className="modal-header flex justify-between items-center border-b border-gray-300 pb-2 mb-4">
-                        <h3 className="text-lg font-semibold">تنظیمات</h3>
-                        <button onClick={() => setIsModalOpen(false)} className="modal-close text-gray-600 text-2xl" id="modalCloseBtn">&times;</button>
-                    </div>
-                    <div className="modal-content">
-                        <div className="flex flex-col px-4 py-3 bg-white">
-                            {
-                                <LeftSideBar pagename={1} />
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
+
         </>
     );
 }
