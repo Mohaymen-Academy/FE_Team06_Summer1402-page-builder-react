@@ -31,10 +31,10 @@ function ImageSideBar() {
                     <div className="text-[12px]  my-3">عرض عکس</div>
                     <DropDown Default={getValue(layoutContext, 'width')} width="35%"
                         title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
+                            100: 'پیش فرض',
+                            180: 'یک و نیم برابر',
+                            240: 'دو برابر',
+                            300: 'سه برابر',
                         }} setVal = {handleSetting} func="setwidth"/>
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
@@ -48,13 +48,15 @@ function ImageSideBar() {
                 </div>
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">گوشه ها</div>
-                    <DropDown Default={getValue(layoutContext, 'width')} width="35%"
+                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setradisu",e.target.value)} defaultValue={getValue(layoutContext, 'radisu')}></input>
+
+                    {/* <DropDown Default={getValue(layoutContext, 'radisu')} width="35%"
                         title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
-                        }} setVal = {handleSetting} func="setradisu"/>
+                            10: 'پیش فرض',
+                            15: 'یک و نیم برابر',
+                            20: 'دو برابر',
+                            30: 'سه برابر',
+                        }} setVal = {handleSetting} func="setradisu"/> */}
                 </div>
         </>
     );

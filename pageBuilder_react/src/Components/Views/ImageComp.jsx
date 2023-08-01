@@ -8,7 +8,7 @@ export default function ImageComp({ parentvalues }) {
         <div>
             <img
                 style={{
-                    borderRadius: states.radisu,
+                    borderRadius: `${states.radisu}px`,
                     width: `${states.width}px`,
                     margin: `${states.gap}px`,
                     padding: `${states.padding}px`,

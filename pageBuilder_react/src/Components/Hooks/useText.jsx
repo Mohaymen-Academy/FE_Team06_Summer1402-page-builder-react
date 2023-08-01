@@ -16,32 +16,10 @@ export default function useText() {
 
     return {
         states: {
-            align,
-            title,
-            textAlign,
-            fonttype,
-            fontfamliy,
-            text,
-            textColor,
-            padding,
-            gap,
-            link,
-            fontsize,
-            lineHeight,
+            align, title, textAlign, fonttype, fontfamliy, text, textColor, padding, gap, link, fontsize, lineHeight,
         },
         setters: {
-            setalign,
-            settitle,
-            settextAlign,
-            setfonttype,
-            setfontfamliy,
-            settext,
-            settextColor,
-            setpadding,
-            setgap,
-            setlink,
-            setfontsize,
-            setlineHeight
+            setalign, settitle, settextAlign, setfonttype, setfontfamliy, settext, settextColor, setpadding, setgap, setlink, setfontsize, setlineHeight
         }
     };
 
