@@ -1,6 +1,6 @@
 import React, { useState,useRef, useEffect,useContext } from 'react';
 
-export default function FileUploader({ setVal, func }) {
+export default function FileUploader({ setVal, func , Title }) {
     const inputref = useRef(null);
     const onButtonClick = () => {
         inputref.current.click();
@@ -28,7 +28,11 @@ export default function FileUploader({ setVal, func }) {
                 <div className="flex flex-col justify-center items-center w-[50px] h-[50px] rounded-lg bg-[#dce5f1]">
                     <img className="w-[25px] h-[25px]" src="images/plus.png" />
                 </div>
-                <div className="text-[#0066FF] m-4 mb-1 mobile:text-xs">افزودن عکس</div>
+                <div className="text-[#0066FF] m-4 mb-1 mobile:text-xs">
+                    {
+                        Title ? Title : "افزودن عکس"
+                    }
+                    </div>
                 <div className="text-xs mobile:hidden">حجم عکس تا 5 مگابایت و با فرمت PNG, JPG</div>
             </form>
         </div>
