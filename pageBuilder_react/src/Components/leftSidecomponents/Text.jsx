@@ -67,7 +67,7 @@ function Text() {
 
                 </div>
                 <div className="flex flex-col justify-between py-[7px]">
-                    <div className="text-[12px] mb-3">لینک دکمه </div>
+                    <div className="text-[12px] mb-3">لینک متن </div>
                     <input className="left-sidebar-input  " style={{width:"100%"}} onChange={(e) => handleSetting("setlink",e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
 
                 </div>
