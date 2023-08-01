@@ -5,18 +5,20 @@ export default function VideoComp({ parentvalues }) {
     const { states, setters } = useVideo();
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
+    console.log(states)
     return (
-        <div>
+        <div
+        className='flex justify-center pointer-events-none'>
             <video
                 style={{
-                    padding: states.padding,
+                    padding: `${states.padding}px`,
                     width: `${states.width}%`,
                     margin:`${states.gap}px`
                 }}
                 controls={states.autoplay ? '' : 'controls'}
                 autoPlay={states.autoplay}
             >
-                <source src={states.src} type='video/mp4' />
+                <source className='pointer-events-none' src={states.src} type='video/mp4' />
 
             </video>
         </div>

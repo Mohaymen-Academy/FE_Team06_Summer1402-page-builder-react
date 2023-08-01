@@ -20,6 +20,7 @@ function reducer(state, action) {
   }
 }
 
+
 function WhitePage({
   id, pagename, leftsidepager
 }) {

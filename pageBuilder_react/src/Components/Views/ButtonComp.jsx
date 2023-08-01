@@ -4,19 +4,31 @@ export default function ButtonComp({ parentvalues }) {
     const { states, setters } = useButton();
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
+    // console.log(states)
     return (
         <div
-        style={{backgroundColor:states.bgcolor}}>
+            className='pointer-events-none'>
             <button
+                className='flex flex-row
+            items-center gap-[5px]
+            pointer-events-none'
                 style={{
-                    color: states.textColor,
                     backgroundColor: states.bgcolor,
-                    padding:`${states.padding}px`,
-                    borderRadius:states.radisu,
-                    // fontSize:states.fontSize
+                    borderRadius: `${states.radisu}px`,
+                    width: `${states.size * states.width}px`,
+                    color: states.textColor,
+                    padding: `${states.padding}px`,
                 }}>
+                {states.hasIcon ?
+                    <img
+                        className={'pointer-events-none'}
+                        src={states.hasIcon}
+                        width={'20px'}
+                        height={'20px'}
+                    /> : <></>}
                 {states.text}
             </button>
+
         </div>
     )
 }

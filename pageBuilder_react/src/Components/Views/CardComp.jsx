@@ -8,7 +8,7 @@ export default function CardComp({ parentvalues }) {
     return (
         <div
             // onClick={handleClick}
-            className={`flex justify-center`}
+            className={`flex justify-center pointer-events-none`}
             style={{
                 color: states.textColor,
                 gap: `${states.gap}px`,
@@ -23,7 +23,7 @@ export default function CardComp({ parentvalues }) {
                     //     style={{
                     //         borderRadius: `${states.radius}px`,
                     //     }} />
-                    return <Card imgsrc={'images/cardType1.png'} type={states.type} text={states.text} />
+                    return <Card key={index} imgsrc={'images/cardType1.png'} type={states.type} text={states.text} />
                 })
             }
         </div>

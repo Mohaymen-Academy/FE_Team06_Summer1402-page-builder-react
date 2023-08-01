@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "../../assets/Styles/Page1.css"
 import ColorPicker from '../../utility/ColorPicker';
 import { ElementsContext } from '../Layout';
@@ -10,9 +10,8 @@ import Align from '../../utility/Align';
 function Text() {
     const layoutContext = useContext(ElementsContext);
     const setter = layoutContext.current.setters
-    console.log("HERE ", layoutContext.current.setters)
-    function handleSetting(func , value)
-    {
+    // console.log("HERE ", layoutContext.current.setters)
+    function handleSetting(func, value) {
         layoutContext.current.setters[func](value);
     }
     return (
@@ -54,22 +53,32 @@ function Text() {
                 <div className="flex flex-row justify-between py-[7px] my-0">
                     <div className="text-[12px] my-1">ارتفاع خط</div>
                     <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setlineHeight",e.target.value)} defaultValue={getValue(layoutContext,'lineHeight')}></input>
+                </div>
+            <ColorPicker title={'رنگ متن'} defualcolor={getValue(layoutContext, 'textColor')} setVal={handleSetting} func="settextColor" />
 
-                </div>
-                <div className="flex flex-row justify-between py-[7px]  ">
-                    <div className="text-[12px] my-1 ">حاشیه</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue={getValue(layoutContext,'padding')}></input>
-                </div>
-                <div className="flex flex-row justify-between py-[7px] my-0">
-                    <div className="text-[12px] my-1">فاصله</div>
-                    <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue={getValue(layoutContext,'gap')}></input>
+            <div className="flex flex-row justify-between py-[7px]  ">
+                <div className="text-[12px] my-1 ">سایز فونت</div>
+                <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setfontsize", e.target.value)} defaultValue={getValue(layoutContext, 'fontsize')}></input>
+            </div>
+            <div className="flex flex-row justify-between py-[7px] my-0">
+                <div className="text-[12px] my-1">ارتفاع خط</div>
+                <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setlineHeight", e.target.value)} defaultValue={getValue(layoutContext, 'lineHeight')}></input>
 
-                </div>
-                <div className="flex flex-col justify-between py-[7px]">
-                    <div className="text-[12px] mb-3">لینک متن </div>
-                    <input className="left-sidebar-input  " style={{width:"100%"}} onChange={(e) => handleSetting("setlink",e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
+            </div>
+            <div className="flex flex-row justify-between py-[7px]  ">
+                <div className="text-[12px] my-1 ">حاشیه</div>
+                <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setpadding", e.target.value)} defaultValue={getValue(layoutContext, 'padding')}></input>
+            </div>
+            <div className="flex flex-row justify-between py-[7px] my-0">
+                <div className="text-[12px] my-1">فاصله</div>
+                <input className="left-sidebar-input text-center " style={{ width: "20%" }} onChange={(e) => handleSetting("setgap", e.target.value)} defaultValue={getValue(layoutContext, 'gap')}></input>
 
-                </div>
+            </div>
+            <div className="flex flex-col justify-between py-[7px]">
+                <div className="text-[12px] mb-3">لینک متن </div>
+                <input className="left-sidebar-input  " style={{ width: "100%" }} onChange={(e) => handleSetting("setlink", e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
+
+            </div>
         </>
     );
 }

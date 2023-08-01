@@ -5,10 +5,12 @@ export default function ImageComp({ parentvalues }) {
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
     return (
-        <div>
+        <div
+            className='pointer-events-none'>
             <img
+                className='pointer-events-none'
                 style={{
-                    borderRadius: states.radisu,
+                    borderRadius: `${states.radisu}px`,
                     width: `${states.width}px`,
                     margin: `${states.gap}px`,
                     padding: `${states.padding}px`,

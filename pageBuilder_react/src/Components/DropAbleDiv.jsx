@@ -44,6 +44,9 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
     }
 
     useEffect(() => {
+        scrollvalues.current.isDragging = false;
+    },);
+    useEffect(() => {
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             layoutelements.current.setters = scrollvalues.current.childcompsetters;
             layoutelements.current.values = scrollvalues.current.childcompvalues;
@@ -57,11 +60,15 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
     }
 
     function handleDragCapture(e) {
+        // console.log(index)
         canvasvalues.current.selecteditem = index
         scrollvalues.current.isDragging = true
         canvasvalues.current.itemIsDragged = true;
     }
-    function handleDragOver(e) {
+    function handleDragEnter(e) {
+        // console.log('enter', ishover, index)
+        // console.log('zarp', scrollvalues.current.isDragging, index);
+        // console.log('zorp', canvasvalues.current.itemIsDragged, index);
         if (!scrollvalues.current.isDragging && canvasvalues.current.itemIsDragged) {
             setishover(true)
         }
@@ -70,21 +77,23 @@ export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, lef
         setishover(false)
     }
     function handleDrop() {
-        if (canvasvalues.current.selecteditem) {
+        if (canvasvalues.current.selecteditem != null) {
             setishover(false)
-            dispatch({ type: 'reorder', selecteditem: canvasvalues.current.selecteditem, replaceditem: index })
+            // const selectedIItem = canvasvalues.current.selecteditem;
+            // canvasvalues.current.selecteditem = null;
+            dispatch({ type: 'reorder', selecteditem: canvasvalues.current.selecteditem, replaceditem: index });
         }
-        canvasvalues.current.selecteditem = null;
     }
 
     function handleDoubleClick(e) {
-        dispatch({ type: 'delete', deleteitem: index })
+        dispatch({ type: 'delete', deleteitem: index });
         leftsidePager(NUM_PAGE)
     }
     return (
         <div
             onClick={handleClick}
-            onDragOver={handleDragOver}
+            // onDragOver={handleDragOver}
+            onDragEnter={handleDragEnter}
             onDragLeave={handleDragleave}
             onDoubleClick={handleDoubleClick}
             onDrop={handleDrop}
