@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 export default function useButton() {
     const [align, setalign] = useState(0);
 
-    const [size, setsize] = useState(120)
-    const [width, setwidth] = useState(120)
+    const [size, setsize] = useState(60)
+    const [width, setwidth] = useState(1)
     const [padding, setpadding] = useState(10);
     const [gap, setgap] = useState(6);
     const [radisu, setradius] = useState(10);
