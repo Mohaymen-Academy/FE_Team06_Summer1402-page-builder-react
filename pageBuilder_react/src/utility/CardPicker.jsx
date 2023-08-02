@@ -31,11 +31,11 @@ export default function CardPicker({ setCard }) {
                 </button>
                 <button
                     onClick={(e) => setCard(3)}>
-                    <img className='w-[100px] h-[100px]' src="images/cardType3.png" alt="" />
+                    <img className='w-[100px] h-[100px]' src="images/cardType4.png" alt="" />
                 </button>
                 <button
                     onClick={(e) => setCard(4)}>
-                    <img className='w-[100px] h-[100px]' src="images/cardType4.png" alt="" />
+                    <img className='w-[100px] h-[100px]' src="images/cardType3.png" alt="" />
                 </button>
             </div>
         </div>

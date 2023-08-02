@@ -11,7 +11,7 @@ export default function YellowBox({ children }) {
           <img className="pointer-events-none w-[15px] h-[15px] vsmmobile:w-[10px] vsmmobile:h-[10px]" src="images/yellow trash.png" />
           <img className="pointer-events-none w-[15px] h-[15px] vsmmobile:w-[10px] vsmmobile:h-[10px]" src="images/yellow hand.png" />
         </div>
-        <div className="pointer-events-none p-[20px] flex justify-center items-center border-solid border-2 border-[#FFD1A1] rounded-lg rounded-tr-none h-[80%] vsmmobile:h-[63%]  w-full">
+        <div className="pointer-events-none  flex justify-center items-center border-solid border-2 border-[#FFD1A1] rounded-lg rounded-tr-none h-[80%] vsmmobile:h-[63%]  w-full">
           {children}
         </div>
       </div>

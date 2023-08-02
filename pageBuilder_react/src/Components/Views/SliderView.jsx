@@ -3,9 +3,9 @@ import BigSlider from '../../utility/BigSlider';
 export default function SliderView({ states }) {
     return (
         <div
-            className='w-fit overflow-hidden'
+            className='overflow-hidden'
             draggable={'false'}>
-            <BigSlider imgData={states.images} />
+            <BigSlider states={states} imgData={states.images} />
         </ div>
     )
 }

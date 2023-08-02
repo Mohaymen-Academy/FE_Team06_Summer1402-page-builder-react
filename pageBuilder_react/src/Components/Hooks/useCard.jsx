@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 
 export default function useCard() {
     const [align, setalign] = useState(1);
-    const [type, settype] = useState(0);
+    const [type, settype] = useState(3);
     const [size, setsize] = useState(1)
     const [width, setwidth] = useState(80);
     const [padding, setpadding] = useState(0);
-    const [gap, setgap] = useState(6);
-    const [radius, setradius] = useState(10);
-    const [text, settext] = useState('');
-    const [image, setimage] = useState(['images/pic.jpg']);
+    const [gap, setgap] = useState(0);
+    const [radius, setradius] = useState(0);
+    const [text, settext] = useState('گل');
+    const [image, setimage] = useState(['images/cardPic.avif']);
     const [bgColor, setbgColor] = useState('#fff000');
-    const [textColor, settextColor] = useState('#121212');
+    const [textColor, settextColor] = useState('#ffffff');
     const [textAlign, settextAlign] = useState(1);
     const [hasIcon, sethasIcon] = useState(true);
     const [link, setlink] = useState('');

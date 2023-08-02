@@ -1,7 +1,8 @@
 import React from 'react'
 
-export default function Card({ type, imgsrc, text, link, width, size }) {
+export default function Card({ type, imgsrc, text,bgcolor, link, width, size, borderRadius ,margin,padding}) {
     // console.log(imgsrc)
+    console.log(bgcolor)
     return (
         <div>
             {
@@ -9,13 +10,25 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                     <div
                         className={'pointer-events-none'}
                         style={{
-                            border: 'none',
+                            borderRadius: `${borderRadius}px`,
                             width: `${size * width}px`,
-                        }}>
+                            backgroundColor:bgcolor,
+                            padding: `${padding}px`,
+                            margin: `${margin}px`,
+
+                        }}
+                    >
                         <img
-                            className={'rounded-t-lg pointer-events-none'}
-                            src="images/cardType3.png" alt="" />
-                        <p className='text-right break-words' >
+                            className={'pointer-events-none'}
+                            style={{
+                                borderTopLeftRadius: `${borderRadius}px`,
+                                borderTopRightRadius: `${borderRadius}px`,
+                            }}
+                            src={imgsrc} alt="" />
+                        <p className='text-right break-words'
+                            style={{
+                                width: `${size * width}px`,
+                            }}>
                             <a href={link}>
                                 {text}
                             </a>
@@ -26,12 +39,21 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                         <div
                             className={'pointer-events-none'}
                             style={{
-                                border: 'none',
-                            }}>
+                                borderRadius: `${borderRadius}px`,
+                                width: `${size * width}px`,
+                                backgroundColor:bgcolor,
+                                padding: `${padding}px`,
+                                margin: `${margin}px`,
+                        }}>
                             <img
-                                className='rounded-t-lg pointer-events-none'
-                                src="images/cardType3.png" alt="" />
-                            <p className='text-right pointer-events-none break-words' >
+                                className='pointer-events-none'
+                                style={{ borderRadius: `${borderRadius}px` }}
+                                src={imgsrc} alt="" />
+                            <p
+                                className='text-right pointer-events-none break-words'
+                                style={{
+                                    width: `${size * width}px`,
+                                }}>
                                 <a href={link}>
 
                                     {text}
@@ -40,32 +62,46 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                         </div> :
                         type == 3 ?
                             <div
+                                className='relative'
                                 style={{
-                                    backgroundImage: `url(${imgsrc})`,
                                     backgroundPosition: 'center center',
                                     backgroundSize: '100% 100%',
+                                    width: `${size * width}px`,
+                                    height: `${size * width}px`,
+                                    padding: `${padding}px`,
+                                    margin: `${margin}px`,
                                 }}>
                                 <div
+                                    className='absolute'
                                     style={{
+                                        borderRadius: `${borderRadius}px`,
+                                        backgroundImage: `url(${imgsrc})`,
+                                        backgroundPosition: 'center center',
+                                        backgroundSize: '100% 100%',
                                         width: `${size * width}px`,
                                         height: `${size * width}px`,
-                                    }}
-                                    className='absolute bottom-[25px] pointer-events-none'>
-                                    <a href={link} className='break-words'>
+                                    }}>
+
+                                    <a href={link}
+                                        className='absolute bottom-0'
+                                    >
                                         {text}
                                     </a>
-
                                 </div>
-
-                            </div> :
+                            </div>
+                            :
                             <div
                                 className='pointer-events-none'
                                 style={{
+                                    borderRadius: `${borderRadius}px`,
                                     backgroundImage: `url(${imgsrc})`,
                                     backgroundPosition: 'center center',
                                     backgroundSize: '100% 100%',
                                     width: `${size * width}px`,
                                     height: `${size * width}px`,
+                                    padding: `${padding}px`,
+                                    margin: `${margin}px`,
+
 
                                 }}
                             >

@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 export default function useSlider() {
     const [type, settype] = useState(null);
     const [sliderimg, setsliderimg] = useState(null);
-    const [padding, setpadding] = useState(0);
-    const [gap, setgap] = useState(null);
+    const [padding, setpadding] = useState(10);
+    const [gap, setgap] = useState(0);
     const [slideNumber, setslideNumber] = useState(0);
     const [display, setdisplay] = useState(0);
     const [images, setimages] = useState(['images/cardType1.png','images/cardType4.png','images/pic.jpg',]);
