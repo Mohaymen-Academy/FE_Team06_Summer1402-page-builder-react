@@ -19,7 +19,7 @@ export default function Layout({ leftsidePager, children }) {
             8: [10],
         },
         components: {
-            page1: [],
+            page1: [3],
         }
     })
     return (

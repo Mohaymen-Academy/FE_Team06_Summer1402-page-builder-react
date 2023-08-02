@@ -11,7 +11,9 @@ export default function ButtonView({ states }) {
                     width: `${states.size * states.width}px`,
                     color: states.textColor,
                     padding: `${states.padding}px`,
+                    margin: `${states.gap}px`,
                     fontWeight: states.isbold ? 'bold' : '',
+                    justifyContent: states.textAlign,
                 }}>
                 {states.hasIcon ?
                     <img
