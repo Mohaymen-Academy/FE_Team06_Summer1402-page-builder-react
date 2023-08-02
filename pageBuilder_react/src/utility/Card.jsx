@@ -1,7 +1,6 @@
 import React from 'react'
 
-export default function Card({ type, imgsrc, text,bgcolor, link, width, size, borderRadius ,margin,padding}) {
-    // console.log(imgsrc)
+export default function Card({ type, imgsrc, text, bgcolor, link, width, size, borderRadius, margin, padding, textAlign, isbold, isunderline }) {
     console.log(bgcolor)
     return (
         <div>
@@ -12,7 +11,7 @@ export default function Card({ type, imgsrc, text,bgcolor, link, width, size, bo
                         style={{
                             borderRadius: `${borderRadius}px`,
                             width: `${size * width}px`,
-                            backgroundColor:bgcolor,
+                            backgroundColor: bgcolor,
                             padding: `${padding}px`,
                             margin: `${margin}px`,
 
@@ -25,9 +24,12 @@ export default function Card({ type, imgsrc, text,bgcolor, link, width, size, bo
                                 borderTopRightRadius: `${borderRadius}px`,
                             }}
                             src={imgsrc} alt="" />
-                        <p className='text-right break-words'
+                        <p
+                            className={`text-right pointer-events-none break-words ${isunderline ? 'underline' : ''}`}
                             style={{
                                 width: `${size * width}px`,
+                                textAlign: textAlign,
+                                fontWeight: isbold ? 'bold' : '',
                             }}>
                             <a href={link}>
                                 {text}
@@ -41,18 +43,20 @@ export default function Card({ type, imgsrc, text,bgcolor, link, width, size, bo
                             style={{
                                 borderRadius: `${borderRadius}px`,
                                 width: `${size * width}px`,
-                                backgroundColor:bgcolor,
+                                backgroundColor: bgcolor,
                                 padding: `${padding}px`,
                                 margin: `${margin}px`,
-                        }}>
+                            }}>
                             <img
                                 className='pointer-events-none'
                                 style={{ borderRadius: `${borderRadius}px` }}
                                 src={imgsrc} alt="" />
                             <p
-                                className='text-right pointer-events-none break-words'
+                                className={`pointer-events-none break-words ${isunderline ? 'underline' : ''}`}
                                 style={{
                                     width: `${size * width}px`,
+                                    textAlign: textAlign,
+                                    fontWeight: isbold ? 'bold' : '',
                                 }}>
                                 <a href={link}>
 

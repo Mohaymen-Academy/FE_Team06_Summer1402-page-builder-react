@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, createContext } from 'react';
 import "../assets/Styles/Page1.css"
 import Header from '../Components/Header.jsx';
 import RightSideBar from '../Components/RightSideBar.jsx';
-import { NUM_SLIDER } from '../utility/Constants';
+// import { NUM_SLIDER } from '../utility/Constants';
 const ElementsContext = createContext();
 export default function Layout({ leftsidePager, children }) {
     const elements = useRef({
@@ -19,7 +19,7 @@ export default function Layout({ leftsidePager, children }) {
             8: [10],
         },
         components: {
-            page1: [2],
+            page1: [],
         }
     })
     return (
