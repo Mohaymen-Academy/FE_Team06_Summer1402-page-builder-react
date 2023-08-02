@@ -4,15 +4,14 @@ export default function ButtonView({ states }) {
         <div
             className='pointer-events-none'>
             <button
-                className='flex flex-row
-            items-center gap-[5px]
-            pointer-events-none'
+                className={`flex flex-row items-center gap-[5px] pointer-events-none ${states.isItalic ? 'underline' : ''}`}
                 style={{
                     backgroundColor: states.bgcolor,
                     borderRadius: `${states.radisu}px`,
                     width: `${states.size * states.width}px`,
                     color: states.textColor,
                     padding: `${states.padding}px`,
+                    fontWeight: states.isbold ? 'bold' : '',
                 }}>
                 {states.hasIcon ?
                     <img

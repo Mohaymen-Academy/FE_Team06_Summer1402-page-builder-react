@@ -12,12 +12,14 @@ export default function useButton() {
     const [textColor, settextColor] = useState('#FA0A0A');
     const [bgcolor, setbgcolor] = useState('#fff142');
     const [link, setlink] = useState(null);
-    const [textAlign, settextAlign] = useState(0);
+    const [textAlign, settextAlign] = useState('center');
     const [hasIcon, sethasIcon] = useState('');
-
-
+    const [isItalic, setisItalic] = useState(false);
+    const [isbold,   setIsBold] = useState(false);
     return {
         states: {
+            isItalic,
+            isbold,
             align,
             bgcolor,
             size,
@@ -32,6 +34,8 @@ export default function useButton() {
             hasIcon
         },
         setters: {
+            setisItalic,
+            setIsBold,
             setalign,
             setbgcolor,
             setsize,

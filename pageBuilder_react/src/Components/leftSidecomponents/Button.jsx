@@ -16,7 +16,7 @@ function Button() {
     return (
         <>
                <div className="my-3">دکمه</div>
-               <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
+               <Align  type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
 
                 <div className="flex flex-row justify-between py-[7px]">
                     <div className="text-[12px]  my-3">اندازه دکمه</div>
@@ -74,7 +74,7 @@ function Button() {
                 <img className="max-w-[25px] max-h-[23px] " src="images/6.png" onClick={() => handleSetting("settextAlign", 6)} />
             </div>
 
-                <Align type="text" handleSetting={handleSetting} Default={getValue(layoutContext,"textAlign")} />
+                <Align layoutContext={layoutContext} type="text" handleSetting={handleSetting} Default={getValue(layoutContext,"textAlign")} />
 
             <ColorPicker title={'رنگ پس زمینه'} defualcolor={getValue(layoutContext,'bgcolor')} setVal={handleSetting} func="setbgcolor" />
             <ColorPicker title={'رنگ متن'}    defualcolor={getValue(layoutContext,'textColor')} setVal={handleSetting} func="settextColor" />

@@ -4,12 +4,14 @@ export default function CardView({ states }) {
     return (
         <div
             // onClick={handleClick}
-            className={`flex justify-center pointer-events-none`}
+            className={`flex justify-center pointer-events-none w-[60%]`}
             style={{
                 color: states.textColor,
                 gap: `${states.gap}px`,
                 width: `${states.size * states.width}px`,
                 padding: `${states.padding}px`,
+                textDecoration: states.isItalic ? 'underline' : '',
+                fontWeight: states.isbold ? 'bold' : '',
             }}>
             {
                 states.image.map((src, index) => {

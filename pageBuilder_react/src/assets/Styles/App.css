@@ -7,3 +7,19 @@
       height: -webkit-fill-available;
     }
   }
+  @font-face {
+    font-family: 'Estedad';
+    src: url('../fonts/Estedad-Black.ttf');
+  }
+  @font-face {
+    font-family: 'IRANSans';
+    src: url('../fonts/IRANSansWeb.ttf');
+  }
+  @font-face {
+    font-family: 'LaleZar';
+    src: url('../fonts/Lalezar-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'Shabnam';
+    src: url('../fonts/Shabnam-Medium.ttf');
+  }

@@ -11,12 +11,11 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                         style={{
                             border: 'none',
                             width: `${size * width}px`,
-
                         }}>
                         <img
                             className={'rounded-t-lg pointer-events-none'}
                             src="images/cardType3.png" alt="" />
-                        <p className='text-right' >
+                        <p className='text-right break-words' >
                             <a href={link}>
                                 {text}
                             </a>
@@ -32,7 +31,7 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                             <img
                                 className='rounded-t-lg pointer-events-none'
                                 src="images/cardType3.png" alt="" />
-                            <p className='text-right pointer-events-none' >
+                            <p className='text-right pointer-events-none break-words' >
                                 <a href={link}>
 
                                     {text}
@@ -49,11 +48,10 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                                 <div
                                     style={{
                                         width: `${size * width}px`,
-                                        height:`${size * width}px`,
+                                        height: `${size * width}px`,
                                     }}
                                     className='absolute bottom-[25px] pointer-events-none'>
-                                    <a href={link}>
-
+                                    <a href={link} className='break-words'>
                                         {text}
                                     </a>
 
@@ -67,7 +65,7 @@ export default function Card({ type, imgsrc, text, link, width, size }) {
                                     backgroundPosition: 'center center',
                                     backgroundSize: '100% 100%',
                                     width: `${size * width}px`,
-                                    height:`${size * width}px`,
+                                    height: `${size * width}px`,
 
                                 }}
                             >

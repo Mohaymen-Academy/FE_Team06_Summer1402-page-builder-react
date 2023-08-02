@@ -11,14 +11,19 @@ export default function useText() {
     const [link, setlink] = useState('https://google.com/');
     const [fontsize, setfontsize] = useState(10);
     const [lineHeight, setlineHeight] = useState(1.5);
-    const [textAlign, settextAlign] = useState('end');
+    const [textAlign, settextAlign] = useState('center');
     const [align, setalign] = useState(0);
-
+    const [isItalic, setisItalic] = useState(false);
+    const [isbold,   setIsBold] = useState(false);
     return {
         states: {
+            isItalic,
+            isbold,
             align, title, textAlign, fonttype, fontfamliy, text, textColor, padding, gap, link, fontsize, lineHeight,
         },
         setters: {
+            setisItalic,
+            setIsBold,
             setalign, settitle, settextAlign, setfonttype, setfontfamliy, settext, settextColor, setpadding, setgap, setlink, setfontsize, setlineHeight
         }
     };

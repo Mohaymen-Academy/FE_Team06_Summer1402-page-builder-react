@@ -63,7 +63,7 @@ function CardSideBar({ setters, values }) {
                     <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext", e.target.value)} defaultValue={getValue(layoutContext, 'text')}></textarea>
                 </div>
 
-                <Align type="text" handleSetting={handleSetting} Default={getValue(layoutContext, "textAlign")} />
+                <Align layoutContext={layoutContext}  type="text" handleSetting={handleSetting} Default={getValue(layoutContext, "textAlign")} />
 
 
                 <FileUploader setVal={handleSetting} func="setimage" />

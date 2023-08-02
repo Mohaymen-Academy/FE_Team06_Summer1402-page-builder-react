@@ -76,7 +76,7 @@ function WhitePage({
           <div className="text-[#0066FF] m-4 mb-1">یک قالب را بکشید و رها کنید</div>
         </div>
         <div
-          className='flex flex-col px-[10px] mt-5 overflow-y-scroll'>
+          className='flex flex-col px-[10px] mt-5 overflow-y-auto'>
           {elements.map((comptype, index) => {
             return <DropAbleDiv key={index} type={comptype} Height={values.current.elements[comptype][0]} canvasvalues={canvasvalues} index={index} dispatch={dispatch} leftsidePager={leftsidepager} />
           })}

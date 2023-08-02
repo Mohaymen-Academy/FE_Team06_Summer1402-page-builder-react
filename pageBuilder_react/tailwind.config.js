@@ -14,7 +14,11 @@ export default {
       'desktop': { 'min': '1240px' },
     },
     fontFamily:{
-      vazir:['Vazir']
+      estedad:['Estedad'],
+      iRANSans:['IRANSans'],
+      laleZar:['LaleZar'],
+      shabnam:['Shabnam'],
+
     },
     extend: {},
   },

@@ -15,10 +15,18 @@ export default function useCard() {
     const [textAlign, settextAlign] = useState(1);
     const [hasIcon, sethasIcon] = useState(true);
     const [link, setlink] = useState('');
-
+    const [isItalic, setisItalic] = useState(false);
+    const [isbold, setIsBold] = useState(false);
     return {
-        states: { width, radius, textAlign, align, size, padding, gap, radius, text, image, bgColor, textColor, hasIcon, link, type },
-        setters: { setwidth, settextAlign, setradius, setalign, setsize, setpadding, setgap, settext, setimage, setbgColor, settextColor, sethasIcon, setlink, settype }
+        states: {
+            isItalic,
+            isbold, width, radius, textAlign, align, size, padding, gap, radius, text, image, bgColor, textColor, hasIcon, link, type
+        },
+        setters: {
+            setisItalic
+            , setIsBold,
+            setwidth, settextAlign, setradius, setalign, setsize, setpadding, setgap, settext, setimage, setbgColor, settextColor, sethasIcon, setlink, settype
+        }
     };
 
 }

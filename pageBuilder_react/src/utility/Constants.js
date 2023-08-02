@@ -28,4 +28,10 @@ export {
     NUM_SLIDER,
     NUM_ICON,
 };
+export const Fonts = {
+    1: 'shabnam',
+    2: 'iRANSans',
+    3: 'laleZar',
+    4: 'estedad',
+}
 // export { Pages };

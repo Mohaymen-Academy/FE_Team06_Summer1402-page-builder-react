@@ -1,21 +1,37 @@
 import React from 'react'
+import { Fonts } from '../../utility/Constants'
 export default function TextView({ states }) {
+    console.log(states.isbold)
     return (
         <div
-            className='pointer-events-none'
+            className='pointer-events-none break-words w-[100%]'
             style={{
                 gap: states.gap,
                 lineHeight: states.lineHeight,
                 color: states.textColor,
-                textAlign: states.textAlign,
+                fontFamily: Fonts[states.fontfamliy]
             }}>
             {
                 states.link ?
                     <a
-                        className='pointer-events-none'
+                        className={`${states.isItalic ? 'underline' : ''}`}
+                        style={{
+                            textAlign: states.textAlign,
+                            fontWeight: states.isbold ? 'bold' : '',
+                            // fontdec:states.isbold?'bold':'none',
+                        }}
                         href={states.link}>
+
+                        <p>
+                            {states.text}
+                        </p>
+
+                    </a>
+                    :
+                    <p>
                         {states.text}
-                    </a> : states.text
+                    </p>
+
             }
         </div>
     )
