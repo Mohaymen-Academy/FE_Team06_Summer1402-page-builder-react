@@ -9,17 +9,11 @@ export default function CardView({ states }) {
                 color: states.textColor,
                 gap: `${states.gap}px`,
                 width: `${states.size * states.width}px`,
-                // backgroundColor: states.bgColor,
                 padding: `${states.padding}px`,
-                // borderRadius: `${states.radius}px`,
             }}>
             {
                 states.image.map((src, index) => {
-                    // return <img key={index} src={src}
-                    //     style={{
-                    //         borderRadius: `${states.radius}px`,
-                    //     }} />
-                    return <Card key={index} imgsrc={'images/cardType1.png'} type={states.type} text={states.text} />
+                    return <Card key={index} imgsrc={'images/cardType1.png'} type={states.type} text={states.text} link={states.link} width={states.width} size={states.size} />
                 })
             }
         </div>

@@ -32,10 +32,10 @@ function Button() {
                     <div className="text-[12px]  my-3">عرض دکمه</div>
                     <DropDown Default={getValue(layoutContext, 'width')} width="35%"
                         title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
+                            60: 'پیش فرض',
+                            80: 'یک و نیم برابر',
+                            100: 'دو برابر',
+                            120: 'سه برابر',
                         }} setVal = {handleSetting} func="setwidth" />
                 </div>
                 <div className="flex flex-row justify-between py-[7px]  ">
@@ -79,13 +79,13 @@ function Button() {
             <ColorPicker title={'رنگ پس زمینه'} defualcolor={getValue(layoutContext,'bgcolor')} setVal={handleSetting} func="setbgcolor" />
             <ColorPicker title={'رنگ متن'}    defualcolor={getValue(layoutContext,'textColor')} setVal={handleSetting} func="settextColor" />
 
-            <div className="flex flex-row justify-between py-[7px]  ">
+            {/* <div className="flex flex-row justify-between py-[7px]  ">
                 <div className="text-[12px] my-1 ">آیکون دار</div>
                 <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" checked={getValue(layoutContext,'hasIcon')} className="sr-only peer" onChange={(e) => handleSetting("sethasIcon", !layoutContext.current.values.hasIcon)} />
                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                 </label>
-            </div>
+            </div> */}
             <div className="flex flex-col justify-between py-[7px]">
                 <div className="text-[12px] mb-3">لینک دکمه </div>
                 <input className="left-sidebar-input  " style={{ width: "100%" }} onChange={(e) => handleSetting("sethasIcon", e.target.value)} defaultValue={getValue(layoutContext, 'hasIcon')} placeholder="لینک مورد نظر خود را وارد کنید"></input>

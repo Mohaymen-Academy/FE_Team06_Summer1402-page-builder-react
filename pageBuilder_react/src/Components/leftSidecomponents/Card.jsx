@@ -20,7 +20,7 @@ function CardSideBar({ setters, values }) {
         <>
             <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%] overflow-y-scroll  w-[300px] border border-t-0  bg-white smmobile:hidden vsmmobile:hidden ">
                 <div className="my-3">کارت</div>
-                <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
+                <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext, "align")} />
                 <div className="flex flex-row justify-between py-[7px]">
                     <CardPicker setCard={layoutContext.current.setters['settype']} />
                 </div>
@@ -63,22 +63,15 @@ function CardSideBar({ setters, values }) {
                     <textarea className="left-sidebar-input" name="Text1" cols="40" rows="1" onChange={(e) => handleSetting("settext", e.target.value)} defaultValue={getValue(layoutContext, 'text')}></textarea>
                 </div>
 
-                <Align type="text" handleSetting={handleSetting} Default={getValue(layoutContext,"textAlign")} />
+                <Align type="text" handleSetting={handleSetting} Default={getValue(layoutContext, "textAlign")} />
 
 
                 <FileUploader setVal={handleSetting} func="setimage" />
                 <ColorPicker defualcolor={getValue(layoutContext, 'bgColor')} title={'رنگ پس زمینه'} setVal={handleSetting} func="setbgColor" />
                 <ColorPicker defualcolor={getValue(layoutContext, 'textColor')} title={'رنگ متن'} setVal={handleSetting} func="settextColor" />
 
-                <div className="flex flex-row justify-between py-[7px]  ">
-                    <div className="text-[12px] my-1 ">آیکون دار</div>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" value={getValue(layoutContext, 'hasIcon')} className="sr-only peer" onChange={(e) => handleSetting("sethasIcon", !layoutContext.current.values.hasIcon)} />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                    </label>
-                </div>
                 <div className="flex flex-col justify-between py-[7px]">
-                    <div className="text-[12px] mb-3">لینک دکمه </div>
+                    <div className="text-[12px] mb-3">لینک متن </div>
                     <input className="left-sidebar-input " value={getValue(layoutContext, 'link')} style={{ width: "100%" }} onChange={(e) => handleSetting("setlink", e)} placeholder="لینک مورد نظر خود را وارد کنید"></input>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Card({ type, imgsrc, text }) {
+export default function Card({ type, imgsrc, text, link, width, size }) {
     // console.log(imgsrc)
     return (
         <div>
@@ -10,11 +10,17 @@ export default function Card({ type, imgsrc, text }) {
                         className={'pointer-events-none'}
                         style={{
                             border: 'none',
+                            width: `${size * width}px`,
+
                         }}>
                         <img
                             className={'rounded-t-lg pointer-events-none'}
                             src="images/cardType3.png" alt="" />
-                        <p className='text-right' >{text}</p>
+                        <p className='text-right' >
+                            <a href={link}>
+                                {text}
+                            </a>
+                        </p>
                     </div>
                     :
                     type == 2 ?
@@ -26,30 +32,43 @@ export default function Card({ type, imgsrc, text }) {
                             <img
                                 className='rounded-t-lg pointer-events-none'
                                 src="images/cardType3.png" alt="" />
-                            <p className='text-right pointer-events-none' >{text}</p>
+                            <p className='text-right pointer-events-none' >
+                                <a href={link}>
+
+                                    {text}
+                                </a>
+                            </p>
                         </div> :
                         type == 3 ?
                             <div
-                                className='w-[100px] h-[100px] pointer-events-none'
                                 style={{
                                     backgroundImage: `url(${imgsrc})`,
                                     backgroundPosition: 'center center',
-                                    backgroundSize: '100% 100%'
-                                }}
-                            >
+                                    backgroundSize: '100% 100%',
+                                }}>
                                 <div
+                                    style={{
+                                        width: `${size * width}px`,
+                                        height:`${size * width}px`,
+                                    }}
                                     className='absolute bottom-[25px] pointer-events-none'>
-                                    <p>{text}</p>
+                                    <a href={link}>
+
+                                        {text}
+                                    </a>
 
                                 </div>
 
                             </div> :
                             <div
-                                className='w-[100px] h-[100px] pointer-events-none'
+                                className='pointer-events-none'
                                 style={{
                                     backgroundImage: `url(${imgsrc})`,
                                     backgroundPosition: 'center center',
-                                    backgroundSize: '100% 100%'
+                                    backgroundSize: '100% 100%',
+                                    width: `${size * width}px`,
+                                    height:`${size * width}px`,
+
                                 }}
                             >
                             </div>
