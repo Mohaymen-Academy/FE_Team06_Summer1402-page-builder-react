@@ -7,7 +7,7 @@ export default function useSlider() {
     const [gap, setgap] = useState(null);
     const [slideNumber, setslideNumber] = useState(0);
     const [display, setdisplay] = useState(0);
-    const [images, setimages] = useState([]);
+    const [images, setimages] = useState(['images/cardType1.png','images/cardType4.png','images/pic.jpg',]);
     const [transition, settransition] = useState(null);
     const [widthImg, setwidthImg] = useState(null);
     const [radius, setradius] = useState(null);

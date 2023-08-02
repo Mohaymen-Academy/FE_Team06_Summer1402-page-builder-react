@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-
+import { Icons } from '../../utility/Icons';
 export default function useIcon() {
-    const [icon, seticon] = useState('images/cloud.svg');
-    const [size, setsize] = useState(35);
+    const [size, setsize] = useState(55);
     const [padding, setpadding] = useState(0);
     const [gap, setgap] = useState(20);
     const [color, setcolor] = useState('#faa212');
     const [align, setalign] = useState(0);
+    const [icon, seticon] = useState(<Icons.beer/>);
     function colorConverter() { }
     return {
         states: {

@@ -1,10 +1,5 @@
 import React from 'react'
-import { useButton } from '../Hooks'
-export default function ButtonComp({ parentvalues }) {
-    const { states, setters } = useButton();
-    parentvalues.current.childcompsetters = setters;
-    parentvalues.current.childcompvalues = states;
-    // console.log(states)
+export default function ButtonView({ states }) {
     return (
         <div
             className='pointer-events-none'>

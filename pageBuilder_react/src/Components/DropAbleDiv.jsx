@@ -10,7 +10,7 @@ import {
     SliderComp,
     TextComp,
     VideoComp
-} from './Views';
+} from './ProxyComp';
 import {
     NUM_PAGE,
     NUM_CARD,

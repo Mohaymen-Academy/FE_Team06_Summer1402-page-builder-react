@@ -1,9 +1,5 @@
 import React from 'react'
-import { useImage } from '../Hooks'
-export default function ImageComp({ parentvalues }) {
-    const { states, setters } = useImage();
-    parentvalues.current.childcompsetters = setters;
-    parentvalues.current.childcompvalues = states;
+export default function ImageView({ states }) {
     return (
         <div
             className='pointer-events-none'>

@@ -1,19 +1,14 @@
 import React from 'react'
-import { useVideo } from '../Hooks';
 
-export default function VideoComp({ parentvalues }) {
-    const { states, setters } = useVideo();
-    parentvalues.current.childcompsetters = setters;
-    parentvalues.current.childcompvalues = states;
-    console.log(states)
+export default function VideoView({ states }) {
     return (
         <div
-        className='flex justify-center pointer-events-none'>
+            className='flex justify-center pointer-events-none'>
             <video
                 style={{
                     padding: `${states.padding}px`,
                     width: `${states.width}%`,
-                    margin:`${states.gap}px`
+                    margin: `${states.gap}px`
                 }}
                 controls={states.autoplay ? '' : 'controls'}
                 autoPlay={states.autoplay}

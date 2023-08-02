@@ -1,10 +1,6 @@
 import React from 'react'
-import { useCard } from '../Hooks';
 import Card from '../../utility/Card';
-export default function CardComp({ parentvalues }) {
-    const { states, setters } = useCard();
-    parentvalues.current.childcompsetters = setters;
-    parentvalues.current.childcompvalues = states;
+export default function CardView({ states }) {
     return (
         <div
             // onClick={handleClick}
