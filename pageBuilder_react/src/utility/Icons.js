@@ -4,9 +4,13 @@ import {
     FaAccusoft,
     FaAccessibleIcon,
     Fa500Px,
+    FaCat,
+    FaCar
 } from 'react-icons/fa';
 
 export const Icons = {
+    car:FaCar,
+    cat: FaCat,
     beer: FaBeer,
     user: FaUser,
     search: FaSearch,
