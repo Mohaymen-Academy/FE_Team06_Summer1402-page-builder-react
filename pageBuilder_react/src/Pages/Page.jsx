@@ -18,9 +18,22 @@ function reducer(state, action) {
     }
 }
 function Page(props) {
-    const [pagecounter, setpagecounter] = useState(1);
+    const [pagecounter, setpagecounter] = useState(0);
     const values = useContext(ElementsContext);
-    const [components, setcomponents] = useState(Object.keys(values.current.components));
+    const [pages, setpages] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3000/pages',
+            {
+                method: 'Get',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+
+            }).then(
+                response => response.json()
+            ).then(data => setpages(Object.entries(data)))
+
+    }, [])
 
     const ScrollPage = (direction) => {
         if (direction == "next") {
@@ -36,10 +49,10 @@ function Page(props) {
         }
     }
     function handleAddPage(e) {
-        values.current.components[v4()] = [];
+        const id = v4()
+        const page = [id, { elements: {} }];
         setpagecounter(pagecounter + 1);
-        setcomponents(Object.keys(values.current.components))
-
+        setpages([...pages, page])
     }
     function handleclick(e) {
         props.setPage({ type: NUM_PAGE })
@@ -51,8 +64,9 @@ function Page(props) {
 
                     <div className='h-max'>
                         {
-                            components.map((item, index) => {
-                                return <WhitePage key={index} id={item} pagename={item} leftsidepager={props.setPage} />
+                            pages.map((item, index) => {
+                                console.log(item)
+                                return <WhitePage key={item[0]} id={item[0]} pagename={item[0]} leftsidepager={props.setPage} elements={Object.entries(item[1].elements)} />
                             })
                         }
                         <div onClick={handleAddPage} className="flex flex-row w-[350px] h-[50px] vsmmobile:w-[70%] text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center">

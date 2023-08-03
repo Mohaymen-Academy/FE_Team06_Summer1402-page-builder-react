@@ -18,8 +18,6 @@ export default function Layout({ leftsidePager, children }) {
             7: [10],
             8: [10],
         },
-        components: {
-        }
     })
     return (
         <ElementsContext.Provider value={elements}>

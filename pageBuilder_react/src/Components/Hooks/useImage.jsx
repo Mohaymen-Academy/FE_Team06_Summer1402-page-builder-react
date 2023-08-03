@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 
-export default function useImage() {
-    const [image, setimage] = useState('images/pic.jpg'
-    );
-    const [width, setwidth] = useState(100);
-    const [align,setalign] = useState(0);
-    const [padding, setpadding] = useState(0);
-    const [gap, setgap] = useState(0); // this is margin
-    const [radisu, setradisu] = useState(10);
-    
+export default function useImage(compstates) {
+    const [image, setimage] = useState(compstates?.image || 'images/pic.jpg');
+    const [width, setwidth] = useState(compstates?.width || 100);
+    const [align, setalign] = useState(compstates?.align || 0);
+    const [padding, setpadding] = useState(compstates?.padding || 0);
+    const [gap, setgap] = useState(compstates?.gap || 0); // this is margin
+    const [radisu, setradisu] = useState(compstates?.radisu || 10);
+
     return {
         states: {
             image,

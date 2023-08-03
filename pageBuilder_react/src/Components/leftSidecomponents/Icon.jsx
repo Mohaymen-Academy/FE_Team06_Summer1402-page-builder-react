@@ -8,17 +8,16 @@ import Align from '../../utility/Align';
 import { Icons } from '../../utility/Icons';
 export default function Icon() {
   const layoutContext = useContext(ElementsContext);
-  const [icon, setIcon] = useState(React.createElement(layoutContext.current.values.icon.type,{
-    size:'40'
-  }));
+  console.log(Icons[layoutContext.current.values.icon])
+  const [ChoosenIcon, setChoosenIcon] = useState(layoutContext.current.values.icon);
+  let CompIcon = Icons[ChoosenIcon]
 
   function handleSetting(func, value) {
     layoutContext.current.setters[func](value);
   }
   function changeIcon(type) {
-    const Choosenicon = Icons[type]
-    setIcon(<Choosenicon size={40}/>)
-    handleSetting('seticon', <Choosenicon />)
+    setChoosenIcon(type)
+    handleSetting('seticon', type)
   }
 
   return (
@@ -49,7 +48,7 @@ export default function Icon() {
       <ColorPicker title={'رنگ آیکون'} defualcolor={getValue(layoutContext, 'color')} setVal={handleSetting} func="setcolor" defaultValue={getValue(layoutContext, "color")} />
       <div className="flex flex-row justify-between py-[7px] my-2">
         <div className="text-[12px]  my-3">جایزگزینی آیکون</div>
-        {icon}
+        {<CompIcon size={40} />}
       </div>
       <div className='h-[150px] overflow-y-scroll flex flex-wrap gap-[12px] justify-center'>
         {Object.entries(Icons).map((icn, index) => {
@@ -57,7 +56,10 @@ export default function Icon() {
             <button key={index}
               onClick={
                 // changeIcon(icn[0])
-                (e) => changeIcon(icn[0])
+                (e) => {
+                  console.log(icn)
+                  changeIcon(icn[0])
+                }
               }>
               {
                 React.createElement(icn[1], {

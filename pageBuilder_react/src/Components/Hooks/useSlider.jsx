@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 
-export default function useSlider() {
-    const [type, settype] = useState(null);
-    const [sliderimg, setsliderimg] = useState(null);
-    const [padding, setpadding] = useState(10);
-    const [gap, setgap] = useState(0);
-    const [slideNumber, setslideNumber] = useState(0);
-    const [display, setdisplay] = useState(0);
-    const [images, setimages] = useState(['images/cardType1.png','images/cardType4.png','images/pic.jpg',]);
-    const [transition, settransition] = useState(null);
-    const [widthImg, setwidthImg] = useState(null);
-    const [radius, setradius] = useState(null);
-    const [align, setalign] = useState(0);
+export default function useSlider(compstates) {
+    const [type, settype] = useState(compstates?.type || null);
+    const [sliderimg, setsliderimg] = useState(compstates?.sliderimg || null);
+    const [padding, setpadding] = useState(compstates?.padding || 10);
+    const [gap, setgap] = useState(compstates?.gap || 0);
+    const [slideNumber, setslideNumber] = useState(compstates?.slideNumber || 0);
+    const [display, setdisplay] = useState(compstates?.display || 0);
+    const [images, setimages] = useState(compstates?.images || ['images/cardType1.png', 'images/cardType4.png', 'images/pic.jpg',]);
+    const [transition, settransition] = useState(compstates?.transition || null);
+    const [widthImg, setwidthImg] = useState(compstates?.widthImg || null);
+    const [radius, setradius] = useState(compstates?.radius || null);
+    const [align, setalign] = useState(compstates?.align || 0);
 
     return {
         states: {

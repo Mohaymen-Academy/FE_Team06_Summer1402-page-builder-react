@@ -6,7 +6,9 @@ import { v4 as uuid } from 'uuid'
 function reducer(state, action) {
   switch (action.type) {
     case 'add':
-      return [...state, { id: uuid(), type: action.newitem, states: {} }];
+      // const id = uuid()
+      return[...state, [action.id, { type: action.newitem, states: {} }]];
+      // return [...state, action.id];
     case 'delete':
       state.splice(action.deleteitem, 1)
       return [...state];
@@ -19,17 +21,42 @@ function reducer(state, action) {
   }
 }
 
-
-
 function WhitePage({
-  id, pagename, leftsidepager
+  id, pagename, leftsidepager, elements, elementsObj
 }) {
+  console.log(elementsObj)
+  useEffect(() => {
+    // const interval = setInterval(checkdata, 15000);
+    // return () => clearInterval(interval);
+  }, [])
+  async function checkdata() {
+    // console.log('checkdata', canvasvalues.current.elements);
+    // fetch('http://localhost:3000/pages',
+    //   {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       [id]: {
+    //         elements: canvasvalues.current.elements
+    //       }
+    //     })
+
+    //   })
+  }
+  function zarp() {
+
+  }
+  // console.log(elements)
+
   const [isDragging, setIsDragging] = useState(false); // New state for drag state
   const values = useContext(ElementsContext);
-  const [elements, dispatch] = useReducer(reducer, values.current.components[id])
-  console.log(elements)
+  const [theelements, dispatch] = useReducer(reducer, elements)
+  // console.log(elements)
   const canvasvalues = useRef(
     {
+      elements: {},
       draggedItemHeight: 0,
       itemIsDragged: false,
       direction: '',
@@ -41,8 +68,10 @@ function WhitePage({
   function handleonDrop(e) {
     e.preventDefault();
     if (values.current.dragged) {
+      const id = uuid();
+      // elementsObj[id] = { states: {}, type: values.current.dragged }
       canvasvalues.current.choosenitem = elements.length;
-      dispatch({ type: 'add', newitem: values.current.dragged })
+      dispatch({ type: 'add', newitem: values.current.dragged, id: id })
       values.current.dragged = null;
     }
   }
@@ -64,8 +93,9 @@ function WhitePage({
         </div>
         <div
           className='flex flex-col px-[10px] mt-5 overflow-y-auto'>
-          {elements.map((canvas, index) => {
-            return <DropAbleDiv key={index} type={canvas.type} canvasvalues={canvasvalues} index={index} dispatch={dispatch} leftsidePager={leftsidepager} id={canvas.id} states={canvas.states} />
+          {theelements.map((canvas, index) => {
+            console.log(canvas)
+            return <DropAbleDiv key={index} type={canvas[1].type} canvasvalues={canvasvalues} index={index} dispatch={dispatch} leftsidePager={leftsidepager} id={canvas[0]} states={canvas[1].states} />
           })}
           <div></div>
         </div>

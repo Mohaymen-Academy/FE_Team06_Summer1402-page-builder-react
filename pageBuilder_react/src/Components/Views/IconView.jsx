@@ -4,10 +4,7 @@ import { Icons } from '../../utility/Icons';
 export default function IconView({ states }) {
     let Icon = null;
     if (states.icon != null) {
-        Icon = createElement(states.icon.type, {
-            color: states.color,
-            size: `${states.size}px`
-        })
+        Icon = Icons[states.icon];
     }
     return (
         <div
@@ -16,7 +13,7 @@ export default function IconView({ states }) {
                 margin: `${states.gap}px`,
                 padding: `${states.padding}px`
             }}>
-            {Icon ? Icon : <FaFreeCodeCamp />}
+            {Icon ? <Icon size={states.size} color={states.color} /> : <Icons.accessible />}
         </div>
     )
 }

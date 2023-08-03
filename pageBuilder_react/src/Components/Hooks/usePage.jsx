@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-export default function usePage() {
-    const [distance, setdistance] = useState(null);
-    const [margin, setmargin] = useState(null);
-    const [padding, setpadding] = useState(null);
+export default function usePage(compstates) {
+    const [distance, setdistance] = useState(compstates?.distance||null);
+    const [margin, setmargin] = useState(compstates?.margin||null);
+    const [padding, setpadding] = useState(compstates?.padding||null);
 
     return {
         states: { distance, margin, padding },

@@ -51,13 +51,18 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
         scrollvalues.current.isDragging = false;
     },);
     useEffect(() => {
+        const interval = setInterval(sendDataToParent, 10000);
         console.log(id, type)
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             layoutelements.current.setters = scrollvalues.current.childcompsetters;
             layoutelements.current.values = scrollvalues.current.childcompvalues;
             leftsidePager({ type: type, id: id });
         }
+        return () => clearInterval(interval);
     }, []);
+    function sendDataToParent() {
+        canvasvalues.current.elements[id] = {states:scrollvalues.current.childcompvalues,type:type};
+    }
     function handleClick(e) {
         layoutelements.current.setters = scrollvalues.current.childcompsetters;
         layoutelements.current.values = scrollvalues.current.childcompvalues;
