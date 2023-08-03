@@ -22,7 +22,7 @@ import {
 } from '../utility/Constants';
 import { ElementsContext } from './Layout';
 
-function LeftSideBar({ pagename ,isModalOpen ,setIsModalOpen }) {
+function LeftSideBar({ pagename, isModalOpen, setIsModalOpen }) {
     const Pages = {
         [NUM_PAGE]: <DefaultSideBar />,
         [NUM_CARD]: <CardSideBar />,
@@ -44,6 +44,7 @@ function LeftSideBar({ pagename ,isModalOpen ,setIsModalOpen }) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    console.log(pagename,'left')
     return (
         <>
             {
@@ -57,7 +58,7 @@ function LeftSideBar({ pagename ,isModalOpen ,setIsModalOpen }) {
                             </div>
                             <div className="relative flex flex-col px-4 py-3 left-0 h-[94%]  w-[100%]  bg-white">
                                 {
-                                    Pages[pagename]
+                                    Pages[pagename.type]
                                 }
                             </div>
                         </div>
@@ -65,7 +66,7 @@ function LeftSideBar({ pagename ,isModalOpen ,setIsModalOpen }) {
                     :
                     <div className="fixed flex flex-col px-4 py-3 left-0 h-[94%]  w-[300px] border border-t-0 overflow-auto bg-white smmobile:hidden vsmmobile:hidden">
                         {
-                            Pages[pagename]
+                            Pages[pagename.type]
                         }
                     </div>
             }

@@ -6,8 +6,7 @@ const middlewares = jsonServer.defaults();
 const PORT = 3000;
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
-
-// Add any custom routes or middleware here if needed
+// server.
 
 server.use(router);
 

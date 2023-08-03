@@ -23,9 +23,10 @@ import {
     NUM_ICON,
 } from '../utility/Constants';
 
-export default function DropAbleDiv({ canvasvalues, dispatch, index, leftsidePager, type ,id }) {
-    const compid= id || uuid4();
-    console.log(compid)
+export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, leftsidePager, type, id, states }) {
+    const compid = id || uuid4();
+    // console.log(type, typeof (type))
+    // console.log(compid)
     const [ishover, setishover] = useState(false);
     const layoutelements = useContext(ElementsContext);
     const scrollvalues = useRef({
@@ -37,41 +38,38 @@ export default function DropAbleDiv({ canvasvalues, dispatch, index, leftsidePag
         childcompvalues: null,
     })
     const Comps = {
-        [NUM_CARD]: <CardComp parentvalues={scrollvalues} />,
-        [NUM_BUTTON]: <ButtonComp parentvalues={scrollvalues} />,
-        [NUM_TEXT]: <TextComp parentvalues={scrollvalues} />,
-        [NUM_IMAGE]: <ImageComp parentvalues={scrollvalues} />,
-        [NUM_SLIDER]: <SliderComp parentvalues={scrollvalues} />,
-        [NUM_VIDEO]: <VideoComp parentvalues={scrollvalues} />,
-        [NUM_ICON]: <IconComp parentvalues={scrollvalues} />,
+        [NUM_CARD]: <CardComp parentvalues={scrollvalues} compstates={states} />,
+        [NUM_BUTTON]: <ButtonComp parentvalues={scrollvalues} compstates={states} />,
+        [NUM_TEXT]: <TextComp parentvalues={scrollvalues} compstates={states} />,
+        [NUM_IMAGE]: <ImageComp parentvalues={scrollvalues} compstates={states} />,
+        [NUM_SLIDER]: <SliderComp parentvalues={scrollvalues} compstates={states} />,
+        [NUM_VIDEO]: <VideoComp parentvalues={scrollvalues} compstates={states} />,
+        [NUM_ICON]: <IconComp parentvalues={scrollvalues} compstates={states} />,
     }
 
     useEffect(() => {
         scrollvalues.current.isDragging = false;
     },);
     useEffect(() => {
+        console.log(id, type)
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             layoutelements.current.setters = scrollvalues.current.childcompsetters;
             layoutelements.current.values = scrollvalues.current.childcompvalues;
-            leftsidePager(type);
+            leftsidePager({ type: type, id: id });
         }
     }, []);
     function handleClick(e) {
         layoutelements.current.setters = scrollvalues.current.childcompsetters;
         layoutelements.current.values = scrollvalues.current.childcompvalues;
-        leftsidePager(type)
+        leftsidePager({ type: type, id: id });
     }
 
     function handleDragCapture(e) {
-        // console.log(index)
         canvasvalues.current.selecteditem = index
         scrollvalues.current.isDragging = true
         canvasvalues.current.itemIsDragged = true;
     }
     function handleDragEnter(e) {
-        // console.log('enter', ishover, index)
-        // console.log('zarp', scrollvalues.current.isDragging, index);
-        // console.log('zorp', canvasvalues.current.itemIsDragged, index);
         if (!scrollvalues.current.isDragging && canvasvalues.current.itemIsDragged) {
             setishover(true)
         }
@@ -82,15 +80,13 @@ export default function DropAbleDiv({ canvasvalues, dispatch, index, leftsidePag
     function handleDrop() {
         if (canvasvalues.current.selecteditem != null) {
             setishover(false)
-            // const selectedIItem = canvasvalues.current.selecteditem;
-            // canvasvalues.current.selecteditem = null;
             dispatch({ type: 'reorder', selecteditem: canvasvalues.current.selecteditem, replaceditem: index });
         }
     }
 
     function handleDoubleClick(e) {
         dispatch({ type: 'delete', deleteitem: index });
-        leftsidePager(NUM_PAGE)
+        leftsidePager({ type: NUM_PAGE })
     }
     return (
         <div
