@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useReducer } from 'react';
+import React, { useState, useContext, useRef, useReducer, useEffect } from 'react';
 import "../assets/Styles/Page1.css"
 import { ElementsContext } from './Layout';
 import DropAbleDiv from './DropAbleDiv';
@@ -7,7 +7,6 @@ function reducer(state, action) {
   switch (action.type) {
     case 'add':
       return [...state, action.newitem];
-      break;
     case 'delete':
       state.splice(action.deleteitem, 1)
       return [...state];
@@ -19,6 +18,7 @@ function reducer(state, action) {
 
   }
 }
+
 
 
 function WhitePage({
@@ -47,7 +47,15 @@ function WhitePage({
       values.current.dragged = null;
     }
   }
+  // useEffect(() => {
+  //   const interval = setInterval(sendData, 10000);
 
+  //   return () => clearInterval(interval);
+  // }, []);
+  // function sendData() {
+  //   console.log(elements)
+  //   console.log('hey 10 saniey bia binam')
+  // }
 
   // function handleDragStart() {
   //   setIsDragging(true); // Set the drag state to active when the drag starts
@@ -59,8 +67,6 @@ function WhitePage({
 
   return (
     <>
-      {/* { */}
-      {/* props.pagename == "page1" ? */}
       <div
         data-zarp={'zarp'}
         id={id}

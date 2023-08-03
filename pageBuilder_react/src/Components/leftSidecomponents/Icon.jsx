@@ -8,7 +8,9 @@ import Align from '../../utility/Align';
 import { Icons } from '../../utility/Icons';
 export default function Icon() {
   const layoutContext = useContext(ElementsContext);
-  const [icon, setIcon] = useState(layoutContext.current.values.icon);
+  const [icon, setIcon] = useState(React.createElement(layoutContext.current.values.icon.type,{
+    size:'40'
+  }));
 
   function handleSetting(func, value) {
     layoutContext.current.setters[func](value);

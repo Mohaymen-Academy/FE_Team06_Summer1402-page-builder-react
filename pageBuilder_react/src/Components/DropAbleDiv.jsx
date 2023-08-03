@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from 'react'
 import Layout, { ElementsContext } from './Layout';
 import YellowBox from './YellowBox';
+import { v4 as uuid4 } from 'uuid';
 // import CardComp from './DragAndDropComponents/CardComp';
 import {
     CardComp,
@@ -22,7 +23,9 @@ import {
     NUM_ICON,
 } from '../utility/Constants';
 
-export default function DropAbleDiv({ Height, canvasvalues, dispatch, index, leftsidePager, type }) {
+export default function DropAbleDiv({ canvasvalues, dispatch, index, leftsidePager, type ,id }) {
+    const compid= id || uuid4();
+    console.log(compid)
     const [ishover, setishover] = useState(false);
     const layoutelements = useContext(ElementsContext);
     const scrollvalues = useRef({

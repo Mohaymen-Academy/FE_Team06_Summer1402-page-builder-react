@@ -5,8 +5,7 @@ export default function ButtonComp({ parentvalues }) {
     const { states, setters } = useButton();
     parentvalues.current.childcompsetters = setters;
     parentvalues.current.childcompvalues = states;
-    // console.log(states)
     return (
-        <ButtonView states={states}/>
-        )
+        <ButtonView states={states} />
+    )
 }
