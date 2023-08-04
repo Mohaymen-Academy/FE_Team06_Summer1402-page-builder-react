@@ -8,7 +8,7 @@ import Align from '../../utility/Align';
 import { Icons } from '../../utility/Icons';
 export default function Icon() {
   const layoutContext = useContext(ElementsContext);
-  console.log(Icons[layoutContext.current.values.icon])
+  // console.log(Icons[layoutContext.current.values.icon])
   const [ChoosenIcon, setChoosenIcon] = useState(layoutContext.current.values.icon);
   let CompIcon = Icons[ChoosenIcon]
 
@@ -57,7 +57,7 @@ export default function Icon() {
               onClick={
                 // changeIcon(icn[0])
                 (e) => {
-                  console.log(icn)
+                  // console.log(icn)
                   changeIcon(icn[0])
                 }
               }>

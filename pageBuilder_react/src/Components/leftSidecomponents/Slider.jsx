@@ -72,7 +72,7 @@ export default function Slider() {
       </div>
       <FileUploader setVal = {handleSetting} func="setimage"/>
       <div className="flex flex-row justify-between py-[7px]">
-                    <div className="text-[12px]  my-3">عرض ویدیو</div>
+                    <div className="text-[12px]  my-3">عرض عکس</div>
                     <DropDown Default={80} width="35%"
                         title_items={{
                             80: 'پیش فرض',
@@ -82,6 +82,10 @@ export default function Slider() {
                         }}
                         setVal={handleSetting} func="setwidth" />
         </div>
+                        <div className="flex flex-row justify-between py-[7px] my-0">
+                            <div className="text-[12px] my-1">گوشه ها</div>
+                            <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setradius",e.target.value)} defaultValue={getValue(layoutContext,'radius')}></input>
+                        </div>
     </ >
   )
 }

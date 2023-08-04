@@ -6,17 +6,6 @@ import LeftSideBar from '../Components/LeftSideBar';
 import { ElementsContext } from '../Components/Layout';
 import { NUM_PAGE } from '../utility/Constants';
 import { v4 as uuid, v4 } from 'uuid';
-function reducer(state, action) {
-    console.log("here in redu", state)
-    switch (action.type) {
-        case 'add':
-            console.log('add here', action);
-            break;
-        case 'delete':
-            console.log('remove here', action);
-            break;
-    }
-}
 function Page(props) {
     const [pagecounter, setpagecounter] = useState(0);
     const values = useContext(ElementsContext);
@@ -57,16 +46,16 @@ function Page(props) {
     function handleclick(e) {
         props.setPage({ type: NUM_PAGE })
     }
+    // console.log(pages)
     return (
         <>
-            <div onClick={handleclick} className="bg-[#D7D8DD] pt-10 justify-center flex flex-row overflow-y-scroll h-screen fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
+            <div onClick={handleclick} className="bg-[#D7D8DD] pt-5 justify-center flex flex-row overflow-y-auto h-[96%] fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative">
                 <div onClick={(e) => e.stopPropagation()} className={`flex flex-col items-center pl-2 `} style={{ height: `${pagecounter * 50}rem` }}>
-
                     <div className='h-max'>
                         {
                             pages.map((item, index) => {
-                                console.log(item)
-                                return <WhitePage key={item[0]} id={item[0]} pagename={item[0]} leftsidepager={props.setPage} elements={Object.entries(item[1].elements)} />
+                                console.log()
+                                return <WhitePage key={item[0]} id={item[0]} pagename={item[0]} leftsidepager={props.setPage} elements={item[1].elements} elementsID={Object.keys(item[1].elements)} />
                             })
                         }
                         <div onClick={handleAddPage} className="flex flex-row w-[350px] h-[50px] vsmmobile:w-[70%] text-[#0066FF]  border-white border-[2px] bg-[#EDEEF0] rounded-lg justify-center text-center items-center">

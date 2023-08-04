@@ -24,9 +24,6 @@ import {
 } from '../utility/Constants';
 
 export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, leftsidePager, type, id, states }) {
-    const compid = id || uuid4();
-    // console.log(type, typeof (type))
-    // console.log(compid)
     const [ishover, setishover] = useState(false);
     const layoutelements = useContext(ElementsContext);
     const scrollvalues = useRef({
@@ -52,7 +49,7 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
     },);
     useEffect(() => {
         const interval = setInterval(sendDataToParent, 10000);
-        console.log(id, type)
+        // console.log(id, type)
         if (canvasvalues.current.choosenitem != null && canvasvalues.current.choosenitem === index) {
             layoutelements.current.setters = scrollvalues.current.childcompsetters;
             layoutelements.current.values = scrollvalues.current.childcompvalues;
@@ -61,7 +58,7 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
         return () => clearInterval(interval);
     }, []);
     function sendDataToParent() {
-        canvasvalues.current.elements[id] = {states:scrollvalues.current.childcompvalues,type:type};
+        canvasvalues.current.elements[id] = { states: scrollvalues.current.childcompvalues, type: type };
     }
     function handleClick(e) {
         layoutelements.current.setters = scrollvalues.current.childcompsetters;
@@ -96,7 +93,6 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
     return (
         <div
             onClick={handleClick}
-            // onDragOver={handleDragOver}
             onDragEnter={handleDragEnter}
             onDragLeave={handleDragleave}
             onDoubleClick={handleDoubleClick}

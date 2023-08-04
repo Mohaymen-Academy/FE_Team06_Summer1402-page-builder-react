@@ -11,7 +11,7 @@ function DropDown({ Default, title_items, width, setVal, func }) {
   };
 
   const handlechoiceSelect = (val) => {
-    console.log(val)
+    // console.log(val)
     setchoice(val);
     setVal(func, val);
     setOpen(false);
