@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 export default function usePage(compstates) {
-    const [distance, setdistance] = useState(compstates?.distance||null);
-    const [margin, setmargin] = useState(compstates?.margin||null);
-    const [padding, setpadding] = useState(compstates?.padding||null);
+    const [gap, setgap] = useState(compstates?.distance || 5);
+    const [margin, setmargin] = useState(compstates?.margin || 0);
+    const [padding, setpadding] = useState(compstates?.padding || 0);
 
     return {
-        states: { distance, margin, padding },
-        setters: { setdistance, setmargin, setpadding },
+        states: { gap, margin, padding },
+        setters: { setgap, setmargin, setpadding },
     };
 }

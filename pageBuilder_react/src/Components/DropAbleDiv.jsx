@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useEffect, useContext, memo } from 'react'
 import Layout, { ElementsContext } from './Layout';
 import YellowBox from './YellowBox';
 import { v4 as uuid4 } from 'uuid';
@@ -13,7 +13,6 @@ import {
     VideoComp
 } from './ProxyComp';
 import {
-    NUM_PAGE,
     NUM_CARD,
     NUM_BUTTON,
     NUM_TEXT,
@@ -23,7 +22,7 @@ import {
     NUM_ICON,
 } from '../utility/Constants';
 
-export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, leftsidePager, type, id, states }) {
+const DropAbleDiv = memo(({ canvasvalues, dispatch, pageid, index, leftsidePager, type, id, states }) => {
     const [ishover, setishover] = useState(false);
     const layoutelements = useContext(ElementsContext);
     const scrollvalues = useRef({
@@ -61,6 +60,7 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
         canvasvalues.current.elements[id] = { states: scrollvalues.current.childcompvalues, type: type };
     }
     function handleClick(e) {
+        e.stopPropagation();
         layoutelements.current.setters = scrollvalues.current.childcompsetters;
         layoutelements.current.values = scrollvalues.current.childcompvalues;
         leftsidePager({ type: type, id: id });
@@ -88,7 +88,7 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
 
     function handleDoubleClick(e) {
         dispatch({ type: 'delete', deleteitem: index });
-        leftsidePager({ type: NUM_PAGE })
+        // leftsidePager({ type: NUM_PAGE })
     }
     return (
         <div
@@ -108,4 +108,5 @@ export default function DropAbleDiv({ canvasvalues, dispatch, pageid, index, lef
             </YellowBox>
         </div>
     )
-}
+})
+export default DropAbleDiv
