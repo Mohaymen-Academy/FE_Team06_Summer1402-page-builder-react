@@ -3,5 +3,5 @@ build
 *.css.map
 Epik
 phase4
-# vitrin
+vitrin*
 # pageBuilder
