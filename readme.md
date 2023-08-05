@@ -5,7 +5,7 @@ This project is a page builder that you can create your own page with it. You ca
 we implemented this project with react, Tailwind CSS, json-server , nginx and docker.
 we also create some hooks for managing state and some components for reusability. 
 Drag and drop is also implemented in this project.
-
+![](https://github.com/Mohaymen-Academy/FE_Team06_Summer1402-page-builder-react/blob/finalbranch/pagebuilder/pbapp/public/images/preview.gif)
 ## Team Members
 - [Hesam Behboudi]
 - [Zahra Tabatabaee]
