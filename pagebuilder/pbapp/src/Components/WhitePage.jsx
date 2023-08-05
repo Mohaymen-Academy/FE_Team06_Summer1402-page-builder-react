@@ -8,9 +8,7 @@ import { NUM_PAGE } from '../utility/Constants';
 function reducer(state, action) {
   switch (action.type) {
     case 'add':
-      // const id = uuid()
       return [...state, action.id];
-    // return [...state, action.id];
     case 'delete':
       state.splice(action.deleteitem, 1)
       return [...state];
@@ -26,30 +24,13 @@ function reducer(state, action) {
 function WhitePage({
   id, leftsidepager, elements, elementsID, pagestates
 }) {
-  useEffect(() => {
-    const interval = setInterval(checkdata, 5000);
-    return () => clearInterval(interval);
-  }, [])
-  // console.log()
-  async function checkdata() {
-    console.log('sdfwer',canvasvalues.current.elements)
-
-    console.log('checkdata', canvasvalues.current.elements);
-    fetch('http://localhost:3000/pages',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          [id]: {
-            elements: canvasvalues.current.elements,
-              states:states
-          }
-        })
-
-      })
-  }
+  // // console.log()
+  // console.log(localStorage.getItem('zarp'))
+  // async function checkdata() {
+  //   console.log('sdfwer', localStorage.getItem('zarp'))
+  //   // console.log('checkdata', canvasvalues.current.elements);
+  //   localStorage.setItem('zarp','hellow')
+  // }
 
   // console.log(elements)
   let { states, setters } = usePage(pagestates);
@@ -66,8 +47,29 @@ function WhitePage({
       selecteditem: null,
       replaceditem: null,
       choosenitem: null,
-    }
-  );
+    });
+
+    useEffect(() => {
+    const interval = setInterval(checkdata, 30000);
+
+    return () => clearInterval(interval);
+  }, [])
+  function checkdata() {
+    console.log('herere :',canvasvalues.current.elements)
+    fetch('http://localhost:3000/pages',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          [id]: {
+            elements: canvasvalues.current.elements,
+            states: states
+          }
+        })
+      })
+  }
 
   function handleonDrop(e) {
     e.preventDefault();
@@ -84,8 +86,8 @@ function WhitePage({
   // console.log(theelements, 'thelements')
   function setPager() {
     console.log('sare')
-    values.current.setters=setters;
-    values.current.values=states;
+    values.current.setters = setters;
+    values.current.values = states;
     leftsidepager({ type: NUM_PAGE, id: id });
   }
   return (
