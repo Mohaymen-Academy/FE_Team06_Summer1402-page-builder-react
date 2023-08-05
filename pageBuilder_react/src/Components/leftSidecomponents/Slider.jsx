@@ -4,6 +4,7 @@ import { getValue } from '../../utility/Functions';
 import DropDown from '../DropDown';
 import FileUploader from '../../utility/FileUploader';
 import Align from '../../utility/Align';
+import SliderPicker from '../../utility/SliderPicker';
 
 export default function Slider() {
   const layoutContext = useContext(ElementsContext);
@@ -17,18 +18,7 @@ export default function Slider() {
       </div>
       <Align type="item" handleSetting={handleSetting} Default={getValue(layoutContext,"align")} />
 
-      <div className="flex flex-col justify-between py-[7px]">
-      <div className="text-[12px]  my-3">ساختار اسلایدر را انتخاب کنید  </div>
-      <DropDown Default={80} width="100%"
-                        title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
-                        }}
-                        setVal={handleSetting} func="setwidth" />
-
-      </div>
+        {<SliderPicker setSliderType={layoutContext.current.setters.settype} />}
       <div className="flex flex-row justify-between py-[7px]  ">
           <div className="text-[12px] my-1 ">حاشیه</div>
           <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setpadding",e.target.value)} defaultValue={getValue(layoutContext,'padding')}></input>
@@ -37,48 +27,26 @@ export default function Slider() {
           <div className="text-[12px] my-1">فاصله</div>
           <input className="left-sidebar-input text-center " style={{width:"20%"}} onChange={(e) => handleSetting("setgap",e.target.value)} defaultValue={getValue(layoutContext,'gap')}></input>
       </div>
-      <div className="flex flex-row justify-between py-[7px]">
-          <div className="text-[12px]  my-3">تعداد محتوای اسلایدر</div>
-          <DropDown Default={80} width="35%"
-                        title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
-                        }}
-                        setVal={handleSetting} func="setwidth" />
-      </div>
-      <div className="flex flex-row justify-between py-[7px]">
-          <div className="text-[12px]  my-3">نحوه نمایش اسلایدر</div>
-          <DropDown Default={80} width="35%"
-                        title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
-                        }}
-                        setVal={handleSetting} func="setwidth" />
-      </div>
+      
       <div className="flex flex-row justify-between py-[7px]">
           <div className="text-[12px]  my-3">نوع انتقال </div>
-          <DropDown Default={80} width="35%"
+          <DropDown Default={getValue(layoutContext,'transition')} width="35%"
                         title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
+                            [-1]: 'چپ به راست',
+                            1: 'راست به چپ',
                         }}
-                        setVal={handleSetting} func="setwidth" />
+                        setVal={handleSetting} func="settransition" />
       </div>
+      
       <FileUploader setVal = {handleSetting} func="setimage"/>
       <div className="flex flex-row justify-between py-[7px]">
-                    <div className="text-[12px]  my-3">عرض عکس</div>
-                    <DropDown Default={80} width="35%"
+                    <div className="text-[12px] my-3">عرض عکس</div>
+                    <DropDown Default={getValue(layoutContext,'width')} width="35%"
                         title_items={{
-                            80: 'پیش فرض',
-                            100: 'یک و نیم برابر',
-                            120: 'دو برابر',
-                            240: 'سه برابر',
+                            225: '75 درصد',
+                            300: 'پیش فرض',
+                            375: '125 درصد',
+                            450: '150 درصد',
                         }}
                         setVal={handleSetting} func="setwidth" />
         </div>

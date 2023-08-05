@@ -5,7 +5,7 @@ export default function VideoView({ states }) {
         <div
             className='flex justify-center'>
             <video
-                // controls
+            // loop={states.autoPlay}
                 style={{
                     padding: `${states.padding}px`,
                     width: `${states.width}%`,

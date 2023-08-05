@@ -51,7 +51,7 @@ function Page(props) {
     return (
         <>
             <div
-                className="bg-[#D7D8DD] pt-5 justify-center flex flex-row overflow-y-auto h-[96%] fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative"
+                className="bg-[#D7D8DD] py-1 justify-center flex flex-row overflow-y-auto h-[100%] fixed left-[300px] right-[200px] smmobile:left-0 smmobile:right-0 smmobile:relative vsmmobile:left-0 vsmmobile:right-0 vsmmobile:relative"
             >
                 <div
                     onClick={(e) => e.stopPropagation()}

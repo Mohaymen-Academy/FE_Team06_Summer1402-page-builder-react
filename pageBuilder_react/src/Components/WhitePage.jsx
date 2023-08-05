@@ -69,8 +69,10 @@ function WhitePage({
       choosenitem: null,
     }
   );
+
   function handleonDrop(e) {
     e.preventDefault();
+    console.log('ewropewirzarp')
     if (values.current.dragged) {
       const id = uuid();
       canvasvalues.current.choosenitem = theelements.length;
@@ -92,6 +94,7 @@ function WhitePage({
       <div
         data-zarp={'zarp'}
         // id={id}
+        onTouchEnd={handleonDrop}
         onClick={
           setPager
         }

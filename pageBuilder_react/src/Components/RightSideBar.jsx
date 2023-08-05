@@ -15,8 +15,7 @@ function RightSideBar() {
     const values = useContext(ElementsContext);
     
     function handleDragStart(number) {
-        // console.log(number)
-        // leftsidePager(number)
+        console.log('zarp')
         values.current.dragged = number
     }
 
@@ -26,8 +25,10 @@ function RightSideBar() {
                 <div className="my-3 text-xs font-bold">قالب ها</div>
                 <div className="sidebar-button "
                     onDragStart={() => handleDragStart(NUM_CARD)}
+                    onTouchStart={()=>handleDragStart(NUM_CARD)}
+                    onTouchMove={()=>handleDragStart(NUM_CARD)}
                     draggable={'true'}
-                >
+                    >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
                         <img src="images/icons8-card-32.png" />
                         <button>
@@ -37,8 +38,9 @@ function RightSideBar() {
                 </div>
                 <div className="sidebar-button"
                     onDragStart={() => handleDragStart(NUM_BUTTON)}
+                    onTouchStart={()=>handleDragStart(NUM_BUTTON)}
                     draggable={'true'}
-                >
+                    >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
                         <img src="images/icons8-button-16.png" />
                         <button>
@@ -48,8 +50,9 @@ function RightSideBar() {
                 </div>
                 <div className="sidebar-button"
                     onDragStart={() => handleDragStart(NUM_TEXT)}
+                    onTouchStart={()=>handleDragStart(NUM_TEXT)}
                     draggable={'true'}
-                >
+                    >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
                         <img src="images/icons8-text-30.png" />
                         <button>
@@ -59,8 +62,9 @@ function RightSideBar() {
                 </div>
                 <div className="sidebar-button"
                     onDragStart={() => handleDragStart(NUM_IMAGE)}
+                    onTouchStart={()=>handleDragStart(NUM_IMAGE)}
                     draggable={'true'}
-                >
+                    >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
                         <img src="images/icons8-picture-24.png" />
                         <button>
@@ -70,8 +74,9 @@ function RightSideBar() {
                 </div>
                 <div className="sidebar-button"
                     onDragStart={() => handleDragStart(NUM_VIDEO)}
+                    onTouchStart={()=>handleDragStart(NUM_VIDEO)}
                     draggable={'true'}
-                >
+                    >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
                         <img src="images/icons8-video-24.png" />
                         <button>
@@ -81,8 +86,9 @@ function RightSideBar() {
                 </div>
                 <div className="sidebar-button"
                     onDragStart={() => handleDragStart(NUM_SLIDER)}
+                    onTouchStart={()=>handleDragStart(NUM_SLIDER)}
                     draggable={'true'}
-                >
+                    >
                     <div className="flex justify-evenly h-[100%] w-[100%]">
                         <img src="images/icons8-slider-50.png" />
                         <button>
@@ -92,6 +98,7 @@ function RightSideBar() {
                 </div>
                 <div className="sidebar-button"
                     onDragStart={() => handleDragStart(NUM_ICON)}
+                    onTouchStart={()=>handleDragStart(NUM_ICON)}
                     draggable={'true'}
                 >
                     <div className="flex justify-evenly h-[100%] w-[100%]">

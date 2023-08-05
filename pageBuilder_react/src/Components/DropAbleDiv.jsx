@@ -87,21 +87,28 @@ const DropAbleDiv = memo(({ canvasvalues, dispatch, pageid, index, leftsidePager
     }
 
     function handleDoubleClick(e) {
+        console.log('wer2rwfds')
         dispatch({ type: 'delete', deleteitem: index });
-        // leftsidePager({ type: NUM_PAGE })
+        leftsidePager({ type: 0 })
     }
     return (
         <div
             onClick={handleClick}
+            onTouchStart={handleClick}
+            // onDoubleTouch={handleDoubleClick}
             onDragEnter={handleDragEnter}
+            onTouchMove={handleDragEnter}
             onDragLeave={handleDragleave}
             onDoubleClick={handleDoubleClick}
             onDrop={handleDrop}
+            onTouchEnd={handleDrop}
             draggable={'true'}
             onDragStart={handleDragCapture}
             className={`w-auto h-auto flex relative justify-center ${ishover ? 'border-yellow-500 border-opacity-100 border-[1px]' : ''} rounded-lg `}
         >
-            <YellowBox>
+            <YellowBox
+                remove={handleDoubleClick}
+            >
                 {
                     Comps[type]
                 }

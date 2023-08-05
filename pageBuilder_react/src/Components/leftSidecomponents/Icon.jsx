@@ -27,13 +27,13 @@ export default function Icon() {
 
       <div className="flex flex-row justify-between py-[7px]">
         <div className="text-[12px]  my-3">اندازه آیکون</div>
-        <DropDown Default={100} width="35%"
+        <DropDown Default={getValue(layoutContext,'size')} width="35%"
           title_items={{
-            100: "کوچک",
-            120: "متوسط",
-            240: "بزرگ",
+            55: "کوچک",
+            75: "متوسط",
+            100: "بزرگ",
           }}
-          setVal={handleSetting} func="setwidth" />
+          setVal={handleSetting} func="setsize" />
         {/* <DropDown Default="متوسط" items={["کوچک","متوسط","بزرگ"]} width="35%" setVal = {handleSetting} func="setsize" /> */}
       </div>
       <div className="flex flex-row justify-between py-[7px]  ">
