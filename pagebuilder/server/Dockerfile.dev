@@ -6,4 +6,4 @@ RUN npm install -g json-server
 COPY . .
 # RUN npm run build
 EXPOSE 4321
-CMD ["json-server", "-p","4321" ,"--host" ,"0.0.0.0","--watch", "db.json"]
+CMD ["npm","run","serve"]

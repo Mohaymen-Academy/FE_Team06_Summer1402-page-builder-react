@@ -18,6 +18,11 @@ const routes = [
         component: ErrorPage,
         Private: false,
     },
+    {
+        path: '/',
+        component: LoginPage,
+        Private: false,
+    },
     
 ];
 
