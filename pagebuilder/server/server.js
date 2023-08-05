@@ -3,7 +3,7 @@ const express = require('express');
 const jsonfile = require('jsonfile');
 
 const server = jsonServer.create();
-const router = jsonServer.router('db.json');
+let router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
 const dataFilePath = 'db.json';
@@ -21,9 +21,6 @@ server.post('/pages', (req, res) => {
       res.status(500).send('Erro in data file');
     }
     else{
-      const items=req.body;
-      // console.log(data.pages)
-      // console.log(req.body)
       console.log({...req.body})
       jsonfile.writeFile(dataFilePath, {pages:{...req.body}}, (err) => {
         if (err){
@@ -31,6 +28,7 @@ server.post('/pages', (req, res) => {
           res.status(500).send('Erro in data file');
         }
         else{
+          router=jsonServer.router('db.json')
           res.status(200).send('OK');
         }
       });
