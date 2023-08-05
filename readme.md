@@ -27,5 +27,10 @@ docker compose up --build
 ```
 http://localhost:4173/
 ```
-
+# production
+for production you can use this command
+```
+git checkout production
+docker compose up --build
+```
 
