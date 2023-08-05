@@ -1,0 +1,54 @@
+{
+  "pages": {
+    "cd53b96c-6dbc-4559-a4a8-2b560cc1024d": {
+      "elements": {
+        "540cf1bc-23e1-4e6e-989f-cb1b36b2cc6f": {
+          "states": {
+            "isItalic": false,
+            "isbold": false,
+            "width": 80,
+            "radius": 0,
+            "textAlign": "right",
+            "align": 1,
+            "size": 1,
+            "padding": 0,
+            "gap": 5,
+            "text": "گل",
+            "image": [
+              "images/cardPic.avif"
+            ],
+            "bgColor": "#fff000",
+            "textColor": "#ffffff",
+            "hasIcon": true,
+            "link": "",
+            "type": 1
+          },
+          "type": 2
+        },
+        "540cf1bc-23e1-4e6e-989f-cb1b36b2cc5f": {
+          "states": {
+            "isItalic": false,
+            "isbold": false,
+            "width": 80,
+            "radius": 0,
+            "textAlign": "right",
+            "align": 1,
+            "size": 1,
+            "padding": 0,
+            "gap": 5,
+            "text": "گل",
+            "image": [
+              "images/cardPic.avif"
+            ],
+            "bgColor": "#fff000",
+            "textColor": "#ffffff",
+            "hasIcon": true,
+            "link": "",
+            "type": 1
+          },
+          "type": 2
+        }
+      }
+    }
+  }
+}

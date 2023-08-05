@@ -1,0 +1,21 @@
+version: '3'
+services:
+  pagebuilder_react:
+    build:
+      context: ./pbapp
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./pbapp:/app
+    ports:
+      - '4173:4173'
+  pagebuilder_server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    ports:
+      - '4321:4321'
+  
