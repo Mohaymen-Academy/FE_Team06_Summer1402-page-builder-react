@@ -11,7 +11,7 @@ function Page(props) {
     const values = useContext(ElementsContext);
     const [pages, setpages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3000/pages',
+        fetch('http://localhost:4321/pages',
             {
                 method: 'Get',
                 headers: {
