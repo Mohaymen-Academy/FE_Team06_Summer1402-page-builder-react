@@ -1,6 +1,10 @@
 # FE_Team06_Summer1402-page-builder-react
 
 ## Project Description
+This project is a page builder that you can create your own page with it. You can add some components like text, image, video, etc. to your page and then save it. You can also edit your page later.
+we implemented this project with react, Tailwind CSS, json-server , nginx and docker.
+we also create some hooks for managing state and some components for reusability. 
+Drag and drop is also implemented in this project.
 
 ## Team Members
 - [Hesam Behboudi]
