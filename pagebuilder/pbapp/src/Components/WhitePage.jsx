@@ -32,26 +32,25 @@ function WhitePage({
   }, [])
   // console.log()
   async function checkdata() {
-    // console.log(Object(elements))
+    console.log('sdfwer',canvasvalues.current.elements)
 
-    // console.log('checkdata', canvasvalues.current.elements);
-    // fetch('http://localhost:3000/pages',
-    //   {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //       [id]: {
-    //         elements: canvasvalues.current.elements
-    //       }
-    //     })
+    console.log('checkdata', canvasvalues.current.elements);
+    fetch('http://localhost:3000/pages',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          [id]: {
+            elements: canvasvalues.current.elements,
+              states:states
+          }
+        })
 
-    //   })
+      })
   }
-  function zarp() {
 
-  }
   // console.log(elements)
   let { states, setters } = usePage(pagestates);
   const [isDragging, setIsDragging] = useState(false); // New state for drag state

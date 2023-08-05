@@ -88,6 +88,8 @@ const DropAbleDiv = memo(({ canvasvalues, dispatch, pageid, index, leftsidePager
 
     function handleDoubleClick(e) {
         console.log('wer2rwfds')
+        delete canvasvalues.current.elements[id];
+        // console.log(canvasvalues.current.elements)
         dispatch({ type: 'delete', deleteitem: index });
         leftsidePager({ type: 0 })
     }

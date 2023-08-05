@@ -20,7 +20,9 @@ function Page(props) {
 
             }).then(
                 response => response.json()
-            ).then(data => setpages(Object.entries(data)))
+            ).then(data => {
+                console.log("zarp",Object.values(data));
+                setpages(Object.entries(data.pages))})
 
     }, [])
 
@@ -61,7 +63,7 @@ function Page(props) {
                     <div className='h-max'>
                         {
                             pages.map((item, index) => {
-                                console.log()
+                                console.log(item)
                                 return <WhitePage key={item[0]} id={item[0]} leftsidepager={props.setPage} elements={item[1].elements} elementsID={Object.keys(item[1].elements)} pagestates={item[1].states} />
                             })
                         }
